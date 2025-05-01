@@ -1,0 +1,46 @@
+@use '../global/variables' as *;
+
+.hero {
+	.hero-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+		max-width: 100%;
+
+		@container (min-width: #{$breakpoint-lg}) {
+			grid-template-columns: 2fr 2fr;
+			justify-items: flex-end;
+		}
+
+		> div {
+			display: flex;
+			justify-content: flex-start;
+			flex-direction: column;
+
+			&.text-container {
+				order: -1;
+				padding: $spacing-xxl $spacing-lg;
+
+				@container (min-width: #{$breakpoint-xl}) {
+					max-width: 70%;
+					justify-content: center;
+					align-items: flex-start;
+					padding: 0;
+				}
+
+				.hero-icon {
+					width: 200px;
+					margin: 0 auto;
+
+					@container (min-width: #{$breakpoint-xl}) {
+						margin: 0;
+					}
+				}
+			}
+
+			&.image-container {
+				order: 1;
+			}
+		}
+	}
+}

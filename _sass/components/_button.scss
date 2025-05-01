@@ -1,0 +1,71 @@
+@use '../global/variables' as *;
+
+button,
+a.button,
+.button a {
+	display: flex;
+	font-family: $font-heading;
+	font-weight: 700;
+	font-size: $font-size-sm;
+	letter-spacing: $letter-spacing-tight;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	// vertical-align: middle;
+	border-radius: $border-radius-xl;
+	border: 2px solid $secondary-color;
+	box-shadow: $drop-shadow-sm;
+	gap: $spacing-sm;
+	padding: $spacing-sm $spacing-md;
+	width: auto;
+	transition: all $transition;
+	cursor: pointer;
+
+	@container (min-width: #{$container-lg}) {
+		border-radius: $border-radius;
+	}
+
+	&:hover {
+		background-color: $secondary-color;
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+a.button-primary {
+	background-color: $white;
+	color: $secondary-color;
+	border-color: $white;
+
+	&:hover {
+		background-color: $secondary-color;
+		color: $white;
+	}
+}
+
+a.button-secondary {
+	background-color: $accent-color;
+	color: $white;
+	border-color: $accent-color;
+
+	&:hover {
+		background-color: $tertiary-color;
+		border-color: $tertiary-color;
+		color: $white;
+	}
+
+	svg {
+		fill: $white;
+		color: $white;
+	}
+}
+
+.button-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-md;
+
+	@container (min-width: #{$container-lg}) {
+		flex-direction: row;
+	}
+}

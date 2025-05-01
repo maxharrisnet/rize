@@ -1,0 +1,86 @@
+@use 'fonts';
+
+// Color variables
+$primary-color: #2d63b4; // Blue
+$secondary-color: #3399ff; // Light Blue
+$tertiary-color: rgba(45, 99, 180, 1); // Dark Blue
+$background-color: #f7f9fa; // Light Gray
+$background-color-dark: #2d2d2d; // Dark Gray
+$border-color: rgba(135, 135, 135, 0.14); // Light Gray
+$accent-color: #56bf68; // Green
+
+$white: #ffffff; // White
+
+// Effect variables
+$drop-shadow: 0px 4px 13px 0px rgba(26, 77, 128, 0.2);
+$drop-shadow-sm: 0px 4px 8px 0px rgba(158, 158, 158, 0.199);
+
+// Motion variables
+$transition-fast: 0.2s ease-in-out;
+$transition: 0.3s ease-in-out;
+
+// Font Face variables
+$font-heading: 'Nunito', sans-serif;
+$font-body: 'Open Sans', sans-serif;
+
+// Font size variables
+$font-size-jumbo: 60px; // h1
+$font-size-xxxl: 38px; //  h2
+$font-size-xxl: 36px; // (alt h2)
+$font-size-xl: 28px; // (alt h3)
+$font-size-lg: 26px; //  h3
+$font-size-md: 21px; // Medium
+$font-size-body: 18px; // Body text (paragraphs)
+$font-size-sm: 17px; // Small (buttons)
+$font-size-xs: 15px; // Extra small (footer links)
+$font-size-xxs: 14px; // Extra extra small (copyright)
+
+// Line height variables
+$line-height-xl: 54px; //  h1
+$line-height-lg: 42px; //  h2
+$line-height-md: 34px; // question
+$line-height-body: 28px; // paragraph, alt h3, time
+$line-height-sm: 24px; // address
+$line-height-xs: 20px; // Extra small (footer links copyright links)
+
+// Font weight variables
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+$font-weight-black: 700;
+
+// Letter spacing variables
+$letter-spacing-none: 0px;
+$letter-spacing-tight: 0.36px;
+
+// Border radius variables
+$border-radius-sm: 4px; // Small border radius
+$border-radius: 10px; // General border radius
+$border-radius-lg: 20px; // Large border radius
+$border-radius-xl: 42px; // Full border radius
+
+// Container variables
+$container-width: 1200px;
+$container-xs: 375px;
+$container-sm: 576px;
+$container-lg: 768px;
+$container-lg: 992px;
+$container-xl: 1200px;
+$header-height: 80px; // Mobile header height
+$header-height-lg: 105px;
+
+// Spacing variables (use t-shirt sizes)
+$spacing-xs: 4px; // Extra small
+$spacing-sm: 8px; // Small
+$spacing-md: 15px; // Medium
+$spacing-lg: 24px; // Large
+$spacing-xl: 32px; // Extra large
+$spacing-xxl: 60px; // ?
+$spacing-xxxl: 80px; // Extra extra extra large
+
+// Breakpoint variables mobile-first
+$breakpoint-xs: 375px; // Phone
+$breakpoint-sm: 576px; // Tablet
+$breakpoint-md: 768px; // Desktop
+$breakpoint-lg: 992px; // Large Desktop
+$breakpoint-xl: 1200px; // Extra large Desktop

@@ -1,0 +1,152 @@
+@use '../global/variables' as *;
+
+body {
+	padding-top: $header-height;
+	container-type: inline-size;
+
+	@media (min-width: #{$container-lg}) {
+		padding-top: $header-height-lg;
+	}
+}
+
+header.main-header {
+	display: flex;
+	position: fixed;
+	background-color: $white;
+	box-shadow: $drop-shadow;
+	width: 100%;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	.header-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px;
+
+		.logo {
+			height: 70px;
+			flex: 0 0 auto;
+			display: none;
+
+			img {
+				height: 100%;
+			}
+
+			@container (min-width: #{$container-lg}) {
+				display: block;
+			}
+		}
+
+		.header-title {
+			color: $primary-color;
+		}
+	}
+}
+
+.hamburger-menu {
+	background: none;
+	border: none;
+	box-shadow: none;
+	cursor: pointer;
+	width: 32px;
+	height: 18px;
+	position: relative;
+	padding: 0;
+	z-index: 1100;
+
+	span {
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: $secondary-color;
+		margin-bottom: 5px;
+		transition: transform 0.3s ease, opacity 0.3s ease;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&.active {
+		background-color: transparent;
+
+		span:nth-child(1) {
+			transform: translateY(10px) rotate(45deg);
+		}
+
+		span:nth-child(2) {
+			opacity: 0;
+		}
+
+		span:nth-child(3) {
+			transform: translateY(-10px) rotate(-45deg);
+		}
+	}
+
+	@media (min-width: #{$container-lg}) {
+		display: none;
+	}
+}
+
+.header-nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 70%;
+	background-color: $white;
+	box-shadow: $drop-shadow;
+	z-index: 1000;
+	padding: $spacing-xxxl $spacing-lg;
+	transform: translateX(100%);
+	transition: transform 0.3s ease;
+
+	ul.nav-links {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			margin-bottom: $spacing-md;
+
+			a {
+				font-family: $font-heading;
+				font-size: $font-size-sm;
+				color: $secondary-color;
+				text-decoration: none;
+
+				&:hover {
+					color: $primary-color;
+				}
+			}
+		}
+	}
+
+	&.active {
+		transform: translateX(0);
+	}
+
+	@media (min-width: #{$container-lg}) {
+		display: block;
+		position: static;
+		transform: none;
+		width: auto;
+		height: auto;
+		box-shadow: none;
+		padding: 0;
+
+		ul.nav-links {
+			display: flex;
+			flex-direction: row;
+			text-align: center;
+
+			li {
+				margin: 0;
+			}
+		}
+	}
+}

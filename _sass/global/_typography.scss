@@ -1,0 +1,193 @@
+@use 'variables' as *;
+
+body {
+	font-family: $font-body;
+	color: $tertiary-color;
+	background-color: $background-color;
+}
+
+main {
+	text-align: center;
+}
+
+h1 {
+	font-family: $font-heading;
+	font-weight: $font-weight-light;
+	font-size: $font-size-xxl;
+	line-height: $line-height-xl;
+	letter-spacing: $letter-spacing-tight;
+
+	@container (min-width: #{$container-lg}) {
+		font-size: $font-size-jumbo;
+		line-height: $line-height-lg;
+	}
+}
+
+h2 {
+	font-weight: $font-weight-light;
+	font-size: $font-size-xxxl;
+	line-height: $line-height-lg;
+	letter-spacing: $letter-spacing-none;
+}
+
+h3 {
+	font-weight: $font-weight-light;
+	font-size: $font-size-lg;
+	line-height: $line-height-md;
+	letter-spacing: $letter-spacing-none;
+}
+
+h4 {
+	font-weight: $font-weight-regular;
+	font-size: $font-size-md;
+	line-height: $line-height-sm;
+	letter-spacing: $letter-spacing-none;
+}
+
+.heading-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: $spacing-xxl;
+	gap: $spacing-lg;
+
+	@container (min-width: #{$container-lg}) {
+		text-align: left;
+	}
+}
+
+p {
+	font-weight: $font-weight-regular;
+	font-size: $font-size-body;
+	line-height: $line-height-body;
+	letter-spacing: $letter-spacing-none;
+}
+
+a {
+	color: $secondary-color;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+}
+
+details {
+	summary {
+		display: block;
+		font-family: $font-heading;
+		font-size: $font-size-lg;
+		font-weight: 600;
+		line-height: $line-height-md;
+		letter-spacing: $letter-spacing-none;
+		padding: $spacing-lg 0;
+		cursor: pointer;
+
+		svg {
+			margin-left: $spacing-sm;
+			transform: rotate(0deg);
+			transition: transform 0.3s ease;
+
+			&[open] {
+				transform: rotate(90deg);
+			}
+
+			@container (min-width: #{$container-lg}) {
+				display: none;
+			}
+		}
+	}
+}
+
+address {
+	font-style: normal;
+}
+
+strong {
+	font-weight: $font-weight-bold;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: column;
+	padding: $spacing-md 0;
+	justify-content: space-between;
+
+	@container (min-width: #{$container-lg}) {
+		flex-direction: row;
+	}
+
+	@container (min-width: #{$container-lg}) {
+		gap: $spacing-xxl;
+	}
+
+	li {
+		display: inline-flex;
+		align-items: center;
+
+		a {
+			font-family: $font-heading;
+			font-size: $font-size-body;
+			font-weight: 700;
+			text-decoration: none;
+
+			&:hover {
+				color: $secondary-color;
+			}
+		}
+	}
+}
+
+.text-centered {
+	text-align: center;
+}
+
+.heading-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	gap: $spacing-lg;
+
+	@container (min-width: #{$container-lg}) {
+		text-align: left;
+	}
+}
+
+.text-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	gap: $spacing-lg;
+
+	@container (min-width: #{$container-lg}) {
+		text-align: left;
+	}
+}
+
+@container (min-width: #{$container-lg}) {
+	main {
+		text-align: left;
+
+		.desktop-heading {
+			display: block;
+		}
+
+		.mobile-heading {
+			display: none;
+		}
+	}
+}

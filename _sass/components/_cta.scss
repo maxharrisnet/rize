@@ -1,0 +1,65 @@
+@use '../global/variables' as *;
+
+.cta-section {
+	padding: $spacing-xxl $spacing-lg;
+	.cta-body {
+		display: flex;
+		flex-direction: column;
+		background-color: $accent-color;
+		border-radius: $border-radius-lg;
+		color: $white;
+		padding: $spacing-xl;
+		width: fit-content;
+
+		@container (min-width: #{$container-lg}) {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.cta-image {
+			flex: 1 0 auto;
+			padding: $spacing-lg;
+		}
+
+		.cta-text {
+			display: flex;
+			flex-flow: column;
+			gap: $spacing-lg;
+
+			.heading-wrapper {
+				padding: $spacing-md;
+				gap: $spacing-md;
+			}
+		}
+	}
+}
+
+.cta-content {
+	display: flex;
+	flex-direction: column;
+	border-radius: $border-radius-lg;
+	justify-content: center;
+	align-items: center;
+	background-color: $accent-color;
+	color: $white;
+	gap: $spacing-lg;
+	padding: $spacing-lg;
+	text-align: center;
+}
+
+.inline-cta {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: $spacing-lg;
+	width: 100%;
+	padding: $spacing-xxl;
+
+	@container (min-width: #{$container-lg}) {
+		flex-direction: row;
+		gap: $spacing-lg;
+		padding: $spacing-xxl;
+	}
+}
