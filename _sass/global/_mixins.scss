@@ -1,0 +1,63 @@
+@use 'variables' as *;
+
+// Container query mixins for component-based responsive design
+@mixin container-xs {
+	@container (min-width: $breakpoint-xs) {
+		@content;
+	}
+}
+
+@mixin container-sm {
+	@container (min-width: $breakpoint-sm) {
+		@content;
+	}
+}
+
+@mixin container-md {
+	@container (min-width: $breakpoint-md) {
+		@content;
+	}
+}
+
+@mixin container-lg {
+	@container (min-width: $breakpoint-lg) {
+		@content;
+	}
+}
+
+@mixin container-xl {
+	@container (min-width: $breakpoint-xl) {
+		@content;
+	}
+}
+
+// Media query mixins for consistent breakpoint usage
+@mixin mobile {
+	@media (min-width: $breakpoint-xs) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: $breakpoint-sm) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: $breakpoint-md) {
+		@content;
+	}
+}
+
+@mixin large-desktop {
+	@media (min-width: $breakpoint-lg) {
+		@content;
+	}
+}
+
+@mixin xlarge-desktop {
+	@media (min-width: $breakpoint-xl) {
+		@content;
+	}
+}

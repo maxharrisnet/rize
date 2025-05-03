@@ -11,7 +11,7 @@ main {
 }
 
 h1 {
-	font-family: $font-heading;
+	font-family: $font-family-display;
 	font-weight: $font-weight-light;
 	font-size: $font-size-xxl;
 	line-height: $line-height-xl;
@@ -87,7 +87,7 @@ li {
 details {
 	summary {
 		display: block;
-		font-family: $font-heading;
+		font-family: $font-family-display;
 		font-size: $font-size-lg;
 		font-weight: 600;
 		line-height: $line-height-md;
@@ -138,7 +138,7 @@ nav ul {
 		align-items: center;
 
 		a {
-			font-family: $font-heading;
+			font-family: $font-family-display;
 			font-size: $font-size-body;
 			font-weight: 700;
 			text-decoration: none;

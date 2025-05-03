@@ -16,8 +16,9 @@ $background-color-dark: #2d2d2d; // Dark Gray
 $border-color: rgba(135, 135, 135, 0.14); // Light Gray
 
 // Typography
-$font-heading: 'Rubik', sans-serif;
-$font-body: 'Inter', 'Open Sans', sans-serif;
+$font-family-display: 'Rubik', sans-serif;
+$font-family-sans-serif: 'Inter', 'Open Sans', 'Arial', sans-serif;
+$font-family-serif: 'Lora', 'Georgia', serif;
 
 // Font size variables
 $font-size-jumbo: 3.75rem; // 60px, h1
@@ -38,7 +39,7 @@ $line-height-xs: 1.1; // For jumbo/h1 text (display typography)
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-bold: 600;
-$font-weight-black: 700;
+$font-weight-black: 900;
 
 // Letter spacing
 $letter-spacing-none: 0px;
@@ -52,13 +53,21 @@ $border-radius-full: 100%;
 
 // Containers
 $container-width: 1200px;
-$container-xs: 375px;
-$container-sm: 576px;
-$container-lg: 768px;
-$container-lg: 992px;
-$container-xl: 1200px;
-$header-height: 80px; // Mobile header height
-$header-height-lg: 105px;
+
+// Containers - Maximum content widths at each breakpoint
+$container-xs: 23.4375rem; // 375px
+$container-sm: 36rem; // 576px
+$container-md: 48rem; // 768px
+$container-lg: 62rem; // 992px
+$container-xl: 75rem; // 1200px
+
+// Container padding - horizontal spacing between content and viewport edge
+$container-padding-sm: $spacing-md; // Smaller screens
+$container-padding-lg: $spacing-xl; // Larger screens
+
+// Header heights
+$header-height: 5rem; // 80px Mobile header height
+$header-height-lg: 6.5rem; // 105px Desktop header height
 
 // Spacing
 $spacing-xs: 0.25rem; // 4px
@@ -70,16 +79,16 @@ $spacing-xl: 2rem; // 32px
 $spacing-xxl: 3.75rem; // 60px
 $spacing-xxxl: 5rem; // 80px
 
-// Breakpoint variables mobile-first
-$breakpoint-xs: 375px; // Phone
-$breakpoint-sm: 576px; // Tablet
-$breakpoint-md: 768px; // Desktop
-$breakpoint-lg: 992px; // Large Desktop
-$breakpoint-xl: 1200px; // Extra large Desktop
-
 // Effects
 $drop-shadow: 0px 4px 13px 0px rgba(15, 15, 15, 0.25);
 $drop-shadow-sm: 0px 4px 8px 0px rgba(15, 15, 15, 0.15);
 
 $transition-fast: 0.2s ease-in-out;
 $transition: 0.3s ease-in-out;
+
+// Breakpoint variables mobile-first
+$breakpoint-xs: 375px; // Phone
+$breakpoint-sm: 576px; // Tablet
+$breakpoint-md: 768px; // Desktop
+$breakpoint-lg: 992px; // Large Desktop
+$breakpoint-xl: 1200px; // Extra large Desktop
