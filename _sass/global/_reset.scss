@@ -1,19 +1,75 @@
-* {
-	margin: 0;
-	padding: 0;
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
-	border: 1px solid red;
 }
 
 html {
 	font-size: 16px;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
 }
 
 body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
 	container-type: inline-size;
 }
 
+/* Images */
 img {
 	max-width: 100%;
-	height: auto;
+}
+
+/* Lists */
+ul[class],
+ol[class] {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* Forms */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+button {
+	background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }

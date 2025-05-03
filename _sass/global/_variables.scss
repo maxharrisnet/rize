@@ -1,27 +1,32 @@
 @use 'fonts';
 
 // Color variables
-$primary-color: #2d63b4; // Blue
-$secondary-color: #3399ff; // Light Blue
-$tertiary-color: rgba(45, 99, 180, 1); // Dark Blue
+$colo-primary: #b31917; // Scarlet
+$colo-primary-bright: #de1f1d; // Rooster Comb
+$colo-primary-dark: #5e0d0c; // Redrum
+$color-secondary: #17b51aff; // Lime Green
+$color-secondary-light: #1cde1fff; // Electric Lime
+$color-secondary-dark: #0a510c; // Forest
+
+$color-black: #0f0f0f; // Black Sheep
+$color-gray-dark: #706f6e; // Dark Gray
+$color-white: #e1dfdc; // Ghosted
+
 $background-color: #f7f9fa; // Light Gray
 $background-color-dark: #2d2d2d; // Dark Gray
 $border-color: rgba(135, 135, 135, 0.14); // Light Gray
-$accent-color: #56bf68; // Green
-
-$white: #ffffff; // White
 
 // Effect variables
-$drop-shadow: 0px 4px 13px 0px rgba(26, 77, 128, 0.2);
-$drop-shadow-sm: 0px 4px 8px 0px rgba(158, 158, 158, 0.199);
+$drop-shadow: 0px 4px 13px 0px rgba(15, 15, 15, 0.25);
+$drop-shadow-sm: 0px 4px 8px 0px rgba(15, 15, 15, 0.15);
 
 // Motion variables
 $transition-fast: 0.2s ease-in-out;
 $transition: 0.3s ease-in-out;
 
 // Font Face variables
-$font-heading: 'Nunito', sans-serif;
-$font-body: 'Open Sans', sans-serif;
+$font-heading: 'Rubik', sans-serif;
+$font-body: 'Inter', 'Open Sans', sans-serif;
 
 // Font size variables
 $font-size-jumbo: 60px; // h1
@@ -43,23 +48,23 @@ $line-height-body: 28px; // paragraph, alt h3, time
 $line-height-sm: 24px; // address
 $line-height-xs: 20px; // Extra small (footer links copyright links)
 
-// Font weight variables
+// Font weight
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-bold: 600;
 $font-weight-black: 700;
 
-// Letter spacing variables
+// Letter spacing
 $letter-spacing-none: 0px;
 $letter-spacing-tight: 0.36px;
 
-// Border radius variables
+// Border radius
 $border-radius-sm: 4px; // Small border radius
 $border-radius: 10px; // General border radius
 $border-radius-lg: 20px; // Large border radius
 $border-radius-xl: 42px; // Full border radius
 
-// Container variables
+// Containers
 $container-width: 1200px;
 $container-xs: 375px;
 $container-sm: 576px;
@@ -69,7 +74,7 @@ $container-xl: 1200px;
 $header-height: 80px; // Mobile header height
 $header-height-lg: 105px;
 
-// Spacing variables (use t-shirt sizes)
+// Spacing
 $spacing-xs: 4px; // Extra small
 $spacing-sm: 8px; // Small
 $spacing-md: 15px; // Medium
