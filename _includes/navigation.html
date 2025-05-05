@@ -1,0 +1,17 @@
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/images/rize-logo.svg" alt="Rize Digital Logo"></a>
+    </div>
+    <nav>
+      {% for item in site.data.navigation %}
+      <a href="{{ item.link }}" {% if page.url==item.link %}style="color: red;" {% endif %}>
+        {{ item.name }}
+      </a>
+      {% endfor %}
+    </nav>
+    <div class="menu-icon">
+      <a href="javascript:void(0);" onclick="toggleMenu()">&#9776;</a>
+    </div>
+  </div>
+</header>
