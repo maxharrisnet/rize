@@ -14,11 +14,7 @@ footer.main-footer {
 		}
 
 		.footer-logo {
-			font-family: $font-heading;
-			font-size: $font-size-lg;
-			color: $white;
-			text-decoration: none;
-			margin-bottom: 10px;
+			fill: $color-white;
 		}
 
 		@container (min-width: #{$container-lg}) {
@@ -32,12 +28,10 @@ footer.main-footer {
 			gap: 20px;
 
 			a {
-				font-family: $font-body;
 				font-size: $font-size-sm;
-				text-decoration: none;
 
 				&:hover {
-					color: $secondary-color;
+					color: $color-secondary;
 				}
 			}
 		}

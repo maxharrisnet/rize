@@ -1,20 +1,16 @@
 @use 'variables' as *;
 
 body {
-	font-family: $font-body;
-	color: $tertiary-color;
-	background-color: $background-color;
-}
-
-main {
-	text-align: center;
+	font-family: $font-family-sans-serif;
+	color: $color-black;
+	background-color: $color-white;
 }
 
 h1 {
 	font-family: $font-family-display;
 	font-weight: $font-weight-light;
-	font-size: $font-size-xxl;
-	line-height: $line-height-xl;
+	font-size: $font-size-jumbo;
+	line-height: $line-height-lg;
 	letter-spacing: $letter-spacing-tight;
 
 	@container (min-width: #{$container-lg}) {
@@ -25,7 +21,7 @@ h1 {
 
 h2 {
 	font-weight: $font-weight-light;
-	font-size: $font-size-xxxl;
+	font-size: $font-size-xl;
 	line-height: $line-height-lg;
 	letter-spacing: $letter-spacing-none;
 }
@@ -39,7 +35,7 @@ h3 {
 
 h4 {
 	font-weight: $font-weight-regular;
-	font-size: $font-size-md;
+	font-size: $font-size-body;
 	line-height: $line-height-sm;
 	letter-spacing: $letter-spacing-none;
 }
@@ -60,12 +56,12 @@ h4 {
 p {
 	font-weight: $font-weight-regular;
 	font-size: $font-size-body;
-	line-height: $line-height-body;
+	line-height: $line-height-md;
 	letter-spacing: $letter-spacing-none;
 }
 
 a {
-	color: $secondary-color;
+	color: $color-secondary;
 	text-decoration: none;
 
 	&:hover {
@@ -144,7 +140,7 @@ nav ul {
 			text-decoration: none;
 
 			&:hover {
-				color: $secondary-color;
+				color: $color-secondary;
 			}
 		}
 	}

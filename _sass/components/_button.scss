@@ -4,7 +4,7 @@ button,
 a.button,
 .button a {
 	display: flex;
-	font-family: $font-heading;
+	font-family: $font-family-display;
 	font-weight: 700;
 	font-size: $font-size-sm;
 	letter-spacing: $letter-spacing-tight;
@@ -12,8 +12,8 @@ a.button,
 	align-items: center;
 	text-align: center;
 	// vertical-align: middle;
-	border-radius: $border-radius-xl;
-	border: 2px solid $secondary-color;
+	border-radius: $border-radius-lg;
+	border: 2px solid $color-secondary;
 	box-shadow: $drop-shadow-sm;
 	gap: $spacing-sm;
 	padding: $spacing-sm $spacing-md;
@@ -26,37 +26,37 @@ a.button,
 	}
 
 	&:hover {
-		background-color: $secondary-color;
-		color: $white;
+		background-color: $color-secondary;
+		color: $color-white;
 		text-decoration: none;
 	}
 }
 
 a.button-primary {
-	background-color: $white;
-	color: $secondary-color;
-	border-color: $white;
+	background-color: $color-white;
+	color: $color-secondary;
+	border-color: $color-white;
 
 	&:hover {
-		background-color: $secondary-color;
-		color: $white;
+		background-color: $color-secondary;
+		color: $color-white;
 	}
 }
 
 a.button-secondary {
-	background-color: $accent-color;
-	color: $white;
-	border-color: $accent-color;
+	background-color: $color-secondary;
+	color: $color-white;
+	border-color: $color-secondary;
 
 	&:hover {
-		background-color: $tertiary-color;
-		border-color: $tertiary-color;
-		color: $white;
+		background-color: $color-secondary;
+		border-color: $color-secondary;
+		color: $color-white;
 	}
 
 	svg {
-		fill: $white;
-		color: $white;
+		fill: $color-white;
+		color: $color-white;
 	}
 }
 

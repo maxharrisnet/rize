@@ -1,7 +1,7 @@
 @use '../global/variables' as *;
 
 .location-wrapper {
-	background-color: $white;
+	background-color: $color-white;
 	border-radius: $border-radius;
 	display: flex;
 	flex-flow: column;
@@ -42,17 +42,17 @@
 				box-shadow: $drop-shadow-sm;
 
 				svg {
-					fill: $white;
-					color: $white;
+					fill: $color-white;
+					color: $color-white;
 					width: 20px;
 					height: 20px;
 				}
 			}
 
 			&.clinic-name {
-				font-family: $font-heading;
+				font-family: $font-family-display;
 				font-size: $font-size-lg;
-				color: $tertiary-color;
+				color: $color-secondary
 				text-decoration: none;
 			}
 

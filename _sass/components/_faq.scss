@@ -1,7 +1,7 @@
 @use '../global/variables' as *;
 
 .faq-section {
-	background-color: $white;
+	background-color: $color-white;
 
 	.faq-container {
 		display: flex;
@@ -42,11 +42,10 @@
 				}
 
 				.faq-question {
-					// font-family: $font-heading;
 					// font-size: $font-size-lg;
-					color: $secondary-color;
+					color: $color-secondary;
 					// text-decoration: none;
-					background-color: $white;
+					background-color: $color-white;
 					padding: $spacing-md;
 					cursor: pointer;
 					flex: 1 1 48%;
@@ -56,7 +55,7 @@
 					}
 
 					&:hover {
-						color: $secondary-color;
+						color: $color-secondary;
 					}
 				}
 
@@ -68,7 +67,7 @@
 					}
 
 					p {
-						font-family: $font-body;
+						// font-family: $font-body;
 						font-size: $font-size-xs;
 						font-style: italic;
 						line-height: $line-height-sm;
