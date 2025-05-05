@@ -1,24 +1,23 @@
 @use '../global/variables' as *;
 
 body {
-	padding-top: $header-height;
 	container-type: inline-size;
-
-	@media (min-width: #{$container-lg}) {
-		padding-top: $header-height-lg;
-	}
 }
 
-header.main-header {
-	display: flex;
+header {
 	position: fixed;
 	background-color: $color-white;
-	box-shadow: $drop-shadow;
+	// box-shadow: $drop-shadow;
+	height: $header-height;
 	width: 100%;
 	z-index: 1000;
 	top: 0;
 	left: 0;
 	right: 0;
+
+	@container (min-width: #{$container-lg}) {
+		height: $header-height-lg;
+	}
 
 	.header-container {
 		display: flex;
@@ -28,7 +27,7 @@ header.main-header {
 		padding: 20px;
 
 		.logo {
-			height: 70px;
+			height: 4rem;
 			flex: 0 0 auto;
 			display: none;
 
@@ -41,8 +40,40 @@ header.main-header {
 			}
 		}
 
-		.header-title {
-			color: $color-primary;
+		nav {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			flex: 1 1 auto;
+
+			@container (min-width: #{$container-lg}) {
+				justify-content: flex-end;
+			}
+
+			.nav-links {
+				display: flex;
+				flex-direction: column;
+				gap: $spacing-lg;
+
+				@container (min-width: #{$container-lg}) {
+					flex-direction: row;
+					gap: $spacing-xl;
+				}
+
+				a {
+					color: $color-black;
+					font-family: $font-family-display;
+					font-size: $font-size-md;
+					font-weight: $font-weight-regular;
+					text-decoration: none;
+					text-transform: uppercase;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
 		}
 	}
 }

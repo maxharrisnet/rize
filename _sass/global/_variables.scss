@@ -29,9 +29,10 @@ $font-family-serif: 'Lora', 'Georgia', serif;
 
 // Font size variables
 $font-size-jumbo: 3.75rem; // 60px, h1
-$font-size-xl: 2.5rem; // 40px, h2
-$font-size-ml: 2rem; // 32px, between h2 and h3
+$font-size-xxl: 2.5rem; // 40px, h2
+$font-size-xl: 2rem; // 32px, between h2 and h3
 $font-size-lg: 1.625rem; // 26px, h3
+$font-size-md: 1.225rem; // 22px, nav links
 $font-size-body: 1.125rem; // 18px, Body text (paragraphs)
 $font-size-sm: 1rem; // 16px, Small (buttons)
 $font-size-xs: 0.875rem; // 14px, Extra extra small (copyright)
@@ -63,7 +64,7 @@ $spacing-xxl: 3.75rem; // 60px
 $spacing-xxxl: 5rem; // 80px
 
 // Containers
-$container-width: 1200px;
+$container-width: 90%;
 
 // Containers - Maximum content widths at each breakpoint
 $container-xs: 23.4375rem; // 375px

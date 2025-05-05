@@ -1,7 +1,24 @@
 @use '../global/variables' as *;
 
-footer.main-footer {
-	.container.footer-container {
+footer.footer {
+	background-color: $color-black;
+	color: $color-white;
+	padding: $spacing-lg 0;
+	position: relative;
+
+	@container (min-width: #{$container-lg}) {
+		padding: $spacing-xxxl 0;
+	}
+
+	a {
+		color: $color-white;
+
+		&:hover {
+			// text-decoration: none;
+		}
+	}
+
+	.container {
 		display: flex;
 		flex-direction: column;
 
@@ -26,14 +43,6 @@ footer.main-footer {
 		.footer-links {
 			display: flex;
 			gap: 20px;
-
-			a {
-				font-size: $font-size-sm;
-
-				&:hover {
-					color: $color-secondary;
-				}
-			}
 		}
 
 		.footer-subnav-column-container {
@@ -75,13 +84,26 @@ footer.main-footer {
 	}
 }
 
-.menu-icon {
-	display: inline-flex;
-	align-items: center;
-	margin-right: 10px;
+.back-to-top {
+	// @extend %button;
+	// @extend %button--primary;
+	// @extend %button--icon;
+
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1000;
+	flex: 0 0 auto;
+	width: 50px;
+	height: 50px;
+
+	&:hover {
+		background-color: $color-secondary;
+	}
 }
 
-.menu-icon-svg {
-	width: 20px;
-	height: 20px;
+@media (prefers-reduced-motion: reduce) {
+	.back-to-top {
+		transition: none;
+	}
 }
