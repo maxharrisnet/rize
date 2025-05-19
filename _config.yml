@@ -26,6 +26,11 @@ baseurl: '' # the subpath of your site, e.g. /blog
 url: '' # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username: maxharrisnet
+collections:
+  projects:
+    output: true
+    permalink: /work/:path/
+    sort_by: position
 
 # Build settings
 theme: minima

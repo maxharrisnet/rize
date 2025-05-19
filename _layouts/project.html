@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<article class="project-detail">
+  <div class="container">
+    <header class="project-header">
+      <h1>{{ page.title }}</h1>
+      <p class="client">{{ page.client }}</p>
+    </header>
+
+    {% if page.hero_image %}
+    <div class="hero-image">
+      <img src="{{ page.hero_image }}" alt="{{ page.title }}">
+    </div>
+    {% endif %}
+
+    <div class="project-meta">
+      <div class="meta-section">
+        <h3>Date</h3>
+        <p>{{ page.date | date: "%B %Y" }}</p>
+      </div>
+
+      {% if page.categories %}
+      <div class="meta-section">
+        <h3>Categories</h3>
+        <ul>
+          {% for category in page.categories %}
+          <li>{{ category }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if page.technologies %}
+      <div class="meta-section">
+        <h3>Technologies</h3>
+        <ul>
+          {% for tech in page.technologies %}
+          <li>{{ tech }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="project-content">
+      {{ content }}
+    </div>
+  </div>
+</article>

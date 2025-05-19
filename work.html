@@ -1,0 +1,22 @@
+---
+layout: default
+title: Work
+permalink: /work/
+---
+
+<section class="portfolio">
+  <div class="container">
+    <h1>Our Work</h1>
+
+    <div class="portfolio-grid">
+      {% for project in site.projects %}
+      <div class="project-card">
+        <img src="{{ project.thumbnail }}" alt="{{ project.title }}">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.client }}</p>
+        <a href="{{ project.url }}">View Project</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
