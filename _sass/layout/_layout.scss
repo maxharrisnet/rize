@@ -23,7 +23,7 @@ main {
 
 	@container (min-width: #{$container-lg}) {
 		flex-direction: row;
-		max-width: $container-width;
+		// max-width: $container-width;
 		padding-top: $spacing-xxxl;
 		padding-bottom: $spacing-xxxl;
 	}
