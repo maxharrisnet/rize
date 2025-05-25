@@ -24,10 +24,10 @@ header {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		padding: 20px;
+		padding: $spacing-md;
 
 		.logo {
-			height: 4rem;
+			height: 3.25rem;
 			flex: 0 0 auto;
 			display: none;
 
@@ -64,8 +64,8 @@ header {
 				a {
 					color: $color-black;
 					font-family: $font-family-display;
-					font-size: $font-size-md;
-					font-weight: $font-weight-regular;
+					font-size: $font-size-sm;
+					font-weight: $font-weight-light;
 					text-decoration: none;
 					text-transform: uppercase;
 

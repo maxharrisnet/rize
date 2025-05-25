@@ -1,6 +1,13 @@
 @use '../global/variables' as *;
 
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
 main {
+	flex: 1 0 auto;
 	margin-top: $header-height;
 
 	@container (min-width: #{$container-lg}) {
@@ -11,7 +18,7 @@ main {
 .container {
 	display: flex;
 	margin: 0 auto;
-	padding: $spacing-lg 0;
+	padding: $spacing-lg $spacing-md;
 	width: 100%;
 
 	@container (min-width: #{$container-lg}) {
@@ -19,7 +26,6 @@ main {
 		max-width: $container-width;
 		padding-top: $spacing-xxxl;
 		padding-bottom: $spacing-xxxl;
-		gap: $spacing-xxl;
 	}
 
 	&.column {

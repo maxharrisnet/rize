@@ -1,14 +1,10 @@
 @use '../global/variables' as *;
 
-footer.footer {
+footer {
 	background-color: $color-black;
 	color: $color-white;
-	padding: $spacing-lg 0;
 	position: relative;
-
-	@container (min-width: #{$container-lg}) {
-		padding: $spacing-xxxl 0;
-	}
+	font-size: $font-size-sm;
 
 	a {
 		color: $color-white;
@@ -18,16 +14,22 @@ footer.footer {
 		}
 	}
 
-	.container {
+	.footer-container {
 		display: flex;
 		flex-direction: column;
+		padding: $spacing-md;
+		gap: $spacing-lg;
 
-		@container (min-width: $container-lg) {
+		@container (min-width: #{$container-lg}) {
+			flex-flow: row wrap;
 			justify-content: space-between;
+			padding: $spacing-xxxl $spacing-lg $spacing-xl;
 		}
 
 		> div {
-			width: 100%;
+			display: flex;
+			gap: $spacing-md;
+			// width: 100%;
 		}
 
 		.footer-logo {
@@ -38,11 +40,6 @@ footer.footer {
 			.footer-mobile-nav {
 				display: none;
 			}
-		}
-
-		.footer-links {
-			display: flex;
-			gap: 20px;
 		}
 
 		.footer-subnav-column-container {
@@ -77,9 +74,10 @@ footer.footer {
 		}
 
 		.subfooter {
-			display: flex;
-			flex-flow: row;
-			justify-content: space-between;
+			font-size: $font-size-xs;
+			// display: flex;
+			// flex-flow: row;
+			// justify-content: space-between;
 		}
 	}
 }
