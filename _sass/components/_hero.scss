@@ -16,24 +16,11 @@
 			grid-template-columns: 2fr 2fr;
 		}
 
-		> div {
-			display: flex;
-			justify-content: flex-start;
-			flex-direction: column;
+		.text-container {
+			order: -1;
+			padding: $spacing-xxl $spacing-lg;
 
-			&.text-container {
-				order: -1;
-				padding: $spacing-xxl $spacing-lg;
-
-				@container (min-width: #{$breakpoint-xl}) {
-					// max-width: 70%;
-					// justify-content: center;
-					// align-items: flex-start;
-					// padding: 0;
-				}
-			}
-
-			&.image-container {
+			.image-container {
 				order: 1;
 			}
 		}

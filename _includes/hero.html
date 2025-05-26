@@ -2,8 +2,15 @@
   <div class="container hero-container">
     <div class="hero-text">
       <h1>{{ page.hero-title }}</h1>
+
       {% if page.hero-subtitle %}
       <h2>{{ page.hero-subtitle }}</h2>
+      {% endif %}
+
+      {% if page.hero-cta-url %}
+      <div class="button-wrapper">
+        <a href="{{ page.hero-cta-url }}" class="button">{{ page.hero-cta-text }}</a>
+      </div>
       {% endif %}
     </div>
 
@@ -12,5 +19,6 @@
       <img src="{{ page.hero-image }}" alt="{{ page.title }}">
     </div>
     {% endif %}
+
   </div>
 </section>
