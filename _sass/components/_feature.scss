@@ -1,0 +1,18 @@
+@use '../global/variables' as *;
+
+.feature {
+	display: flex;
+
+	@container (min-width: #{$container-lg}) {
+		flex-flow: row;
+	}
+
+	.text-container {
+		padding: $spacing-base;
+		flex: 1 0 50%;
+	}
+
+	.graphic-container {
+		flex: 1 1 auto;
+	}
+}
