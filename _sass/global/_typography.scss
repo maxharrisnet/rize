@@ -9,14 +9,15 @@ body {
 main {
 	h1 {
 		font-family: $font-family-display;
-		font-weight: $font-weight-light;
+		font-weight: $font-weight-black;
 		font-size: $font-size-jumbo;
-		line-height: $line-height-lg;
+		line-height: $line-height-sm;
 		letter-spacing: $letter-spacing-tight;
+		margin-bottom: $spacing-base;
+		text-transform: uppercase;
 
 		@container (min-width: #{$container-lg}) {
 			font-size: $font-size-jumbo;
-			line-height: $line-height-lg;
 		}
 	}
 
