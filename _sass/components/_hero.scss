@@ -7,10 +7,8 @@
 		color: $color-white;
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 1.5rem;
 		max-width: 100%;
-		padding-top: 0;
-		padding-bottom: 0;
+		padding: 0;
 
 		@container (min-width: #{$breakpoint-lg}) {
 			grid-template-columns: 2fr 2fr;
@@ -18,10 +16,16 @@
 
 		.text-container {
 			order: -1;
-			padding: $spacing-xxl $spacing-lg;
+			padding: $spacing-xl $spacing-xxl;
+		}
 
-			.image-container {
-				order: 1;
+		.image-container {
+			height: 100%;
+			order: 1;
+
+			img {
+				height: 100%;
+				object-fit: cover;
 			}
 		}
 	}

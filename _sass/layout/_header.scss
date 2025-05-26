@@ -7,7 +7,6 @@ body {
 header {
 	position: fixed;
 	background-color: $color-white;
-	// box-shadow: $drop-shadow;
 	height: $header-height;
 	width: 100%;
 	z-index: 1000;
@@ -24,7 +23,7 @@ header {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		padding: $spacing-md;
+		padding: $spacing-md $spacing-xl;
 
 		.logo {
 			height: 3.25rem;

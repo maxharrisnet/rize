@@ -1,6 +1,6 @@
 <section class="hero">
   <div class="container hero-container">
-    <div class="hero-text">
+    <div class="text-container">
       <h1>{{ page.hero-title }}</h1>
 
       {% if page.hero-subtitle %}
@@ -15,7 +15,7 @@
     </div>
 
     {% if page.hero-image %}
-    <div class="hero-image">
+    <div class="image-container">
       <img src="{{ page.hero-image }}" alt="{{ page.title }}">
     </div>
     {% endif %}
