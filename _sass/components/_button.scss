@@ -25,6 +25,10 @@ a.button,
 		color: $color-black;
 		text-decoration: none;
 	}
+
+	@container (min-width: #{$container-lg}) {
+		align-self: flex-start;
+	}
 }
 
 a.button-primary {

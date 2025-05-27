@@ -13,7 +13,6 @@ main {
 		font-size: $font-size-jumbo;
 		line-height: $line-height-sm;
 		letter-spacing: $letter-spacing-tight;
-		margin-bottom: $spacing-base;
 		text-transform: uppercase;
 
 		@container (min-width: #{$container-lg}) {
@@ -22,18 +21,21 @@ main {
 	}
 
 	h2 {
-		font-weight: $font-weight-light;
-		font-size: $font-size-xl;
+		font-family: $font-family-display;
+		font-weight: $font-weight-black;
+		font-size: $font-size-jumbo;
 		line-height: $line-height-lg;
 		letter-spacing: $letter-spacing-none;
-		margin-bottom: $spacing-xl;
+		text-transform: uppercase;
 	}
 
 	h3 {
-		font-weight: $font-weight-light;
-		font-size: $font-size-lg;
-		line-height: $line-height-md;
+		font-family: $font-family-display;
+		font-weight: $font-weight-black;
+		font-size: $font-size-xxl;
+		line-height: $line-height-sm;
 		letter-spacing: $letter-spacing-none;
+		text-transform: uppercase;
 	}
 
 	h4 {
@@ -104,6 +106,12 @@ main {
 	strong {
 		font-weight: $font-weight-bold;
 	}
+
+	.subtitle {
+		font-size: $font-size-xl;
+		font-weight: $font-weight-light;
+		line-height: $line-height-md;
+	}
 }
 
 nav ul {
@@ -142,28 +150,16 @@ nav ul {
 	text-align: center;
 }
 
-.heading-wrapper {
+.heading-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: $spacing-xxl;
-	gap: $spacing-lg;
 
 	@container (min-width: #{$container-lg}) {
-		text-align: left;
-	}
-}
-
-.heading-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	gap: $spacing-lg;
-
-	@container (min-width: #{$container-lg}) {
-		text-align: left;
+		text-align: center;
+		max-width: 960px;
 	}
 }
 
