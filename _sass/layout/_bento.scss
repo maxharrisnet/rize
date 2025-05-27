@@ -7,7 +7,11 @@ $breakpoint-md: 768px;
 
 .bento-container {
 	display: grid;
-	gap: $spacing-xxl;
+	gap: $spacing-xl;
+
+	@media (min-width: $breakpoint-md) {
+		gap: $spacing-xxxl;
+	}
 }
 
 .bento-grid {
