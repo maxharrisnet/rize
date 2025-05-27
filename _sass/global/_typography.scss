@@ -169,8 +169,10 @@ nav ul {
 	justify-content: center;
 	text-align: center;
 	gap: $spacing-lg;
+	padding: $spacing-xl;
 
-	@container (min-width: #{$container-lg}) {
+	@container (min-width: #{$breakpoint-lg}) {
+		padding: $spacing-xxxl $spacing-xxl;
 		text-align: left;
 	}
 }
