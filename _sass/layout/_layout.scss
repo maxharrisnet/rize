@@ -81,28 +81,28 @@ main {
 	}
 }
 
-.step {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	padding: $spacing-lg;
+// .step {
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: center;
+// 	align-items: center;
+// 	width: 100%;
+// 	padding: $spacing-lg;
 
-	@container (min-width: #{$container-lg}) {
-		flex-direction: row;
-		gap: $spacing-lg;
-		padding: $spacing-xxl;
-	}
+// 	@container (min-width: #{$container-lg}) {
+// 		flex-direction: row;
+// 		gap: $spacing-lg;
+// 		padding: $spacing-xxl;
+// 	}
 
-	.step-image {
-		flex: 0 0 auto;
+// 	.step-image {
+// 		flex: 0 0 auto;
 
-		@container (min-width: #{$container-lg}) {
-			flex: 0 0 15%;
-		}
-	}
-}
+// 		@container (min-width: #{$container-lg}) {
+// 			flex: 0 0 15%;
+// 		}
+// 	}
+// }
 
 section {
 	position: relative;

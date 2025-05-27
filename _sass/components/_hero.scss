@@ -16,7 +16,11 @@
 
 		.text-container {
 			order: -1;
-			padding: $spacing-xl $spacing-xxl;
+			padding: $spacing-xl;
+
+			@container (min-width: #{$breakpoint-lg}) {
+				padding: $spacing-xxxl $spacing-xxl;
+			}
 		}
 
 		.image-container {

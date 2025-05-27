@@ -29,6 +29,17 @@ a.button,
 	@container (min-width: #{$container-lg}) {
 		align-self: flex-start;
 	}
+
+	&.button-alt {
+		color: $color-white;
+		background-color: $color-black;
+		border-color: $color-black;
+
+		&:hover {
+			background-color: $color-white;
+			color: $color-black;
+		}
+	}
 }
 
 a.button-primary {

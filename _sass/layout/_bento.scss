@@ -39,6 +39,7 @@ $breakpoint-md: 768px;
 	&--feature {
 		background-color: $color-black;
 		box-shadow: $drop-shadow;
+		color: $color-white;
 
 		@media (min-width: $breakpoint-md) {
 			grid-template-columns: 2fr 2fr;
@@ -46,7 +47,6 @@ $breakpoint-md: 768px;
 	}
 
 	.bento-section {
-		color: $color-white;
 		border-radius: $border-radius;
 		overflow: hidden;
 		display: flex;
@@ -73,5 +73,22 @@ $breakpoint-md: 768px;
 		width: auto;
 		border-radius: $border-radius;
 		object-fit: cover;
+	}
+}
+
+.tile-grid {
+	max-width: 1200px;
+	text-align: center;
+
+	li.bento-section {
+		background-color: $color-black;
+		border: 3px solid $color-black;
+		box-shadow: $drop-shadow-sm;
+		color: $color-white;
+		font-size: $font-size-lg;
+		font-weight: $font-weight-black;
+		justify-content: center;
+		text-transform: uppercase;
+		padding: $spacing-xl;
 	}
 }
