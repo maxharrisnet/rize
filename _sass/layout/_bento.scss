@@ -5,6 +5,11 @@ $gap: 1rem;
 $border-radius: 1rem;
 $breakpoint-md: 768px;
 
+.bento-container {
+	display: grid;
+	gap: $spacing-xxl;
+}
+
 .bento-grid {
 	display: grid;
 	gap: $gap;
@@ -29,7 +34,7 @@ $breakpoint-md: 768px;
 
 	&--feature {
 		background-color: $color-black;
-		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+		box-shadow: $drop-shadow;
 
 		@media (min-width: $breakpoint-md) {
 			grid-template-columns: 2fr 2fr;
@@ -60,8 +65,8 @@ $breakpoint-md: 768px;
 	}
 
 	.bento-image {
-		width: 100%;
-		height: auto;
+		height: 100%;
+		width: auto;
 		border-radius: $border-radius;
 		object-fit: cover;
 	}
