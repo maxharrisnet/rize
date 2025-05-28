@@ -1,24 +1,27 @@
 <section class="hero">
   <div class="container hero-container">
     <div class="text-container">
-      <h1>{{ page.hero-title }}</h1>
+      <h1>{{ include.title }}</h1>
 
-      {% if page.hero-subtitle %}
-      <p class="subtitle">{{ page.hero-subtitle }}</p>
+      {% if include.subtitle %}
+      <p class="subtitle">{{ include.subtitle }}</p>
       {% endif %}
 
-      {% if page.hero-cta-url %}
+      {% if include.description %}
+      <p class="subtitle">{{ include.description }}</p>
+      {% endif %}
+
+      {% if include.cta_url %}
       <div class="button-wrapper">
-        <a href="{{ page.hero-cta-url }}" class="button">{{ page.hero-cta-text }}</a>
+        <a href="{{ include.cta_url }}" class="button">{{ include.cta_text }}</a>
       </div>
       {% endif %}
     </div>
 
-    {% if page.hero-image %}
+    {% if include.image %}
     <div class="image-container">
-      <img src="{{ page.hero-image }}" alt="{{ page.title }}">
+      <img src="{{ include.image }}" alt="{{ include.title }}">
     </div>
     {% endif %}
-
   </div>
 </section>
