@@ -1,8 +1,9 @@
-- name: Services
-  link: /services/
-- name: Work
-  link: /work/
-- name: About
-  link: /about/
-- name: Contact
-  link: /contact/
+- name: Learn
+  link: /learn/
+- name: Build
+  link: /build/
+- name: Grow
+  link: /grow/
+- name: Rize
+  link: /rize/
+  class: button

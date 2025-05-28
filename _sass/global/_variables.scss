@@ -29,6 +29,7 @@ $font-family-serif: 'Lora', 'Georgia', serif;
 
 // Font size variables
 $font-size-jumbo: 4.75rem; // 60px, h1
+$font-size-xxxl: 3.75rem;
 $font-size-xxl: 3.25rem; // 40px, h3
 $font-size-xl: 2rem; // 32px, between h2 and h3
 $font-size-lg: 1.625rem; // 26px, h3
@@ -52,7 +53,8 @@ $font-weight-black: 900;
 
 // Letter spacing
 $letter-spacing-none: 0px;
-$letter-spacing-tight: 0.36px;
+$letter-spacing-tight: 0.16rem;
+$letter-spacing-loose: 0.22rem;
 
 // Spacing
 $spacing-xs: 0.25rem; // 4px

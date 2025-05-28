@@ -7,13 +7,13 @@ body {
 header {
 	position: fixed;
 	background-color: $color-white;
-	// box-shadow: $drop-shadow-sm;
+	box-shadow: $drop-shadow-sm;
 	height: $header-height;
-	width: 100%;
-	z-index: 1000;
 	top: 0;
 	left: 0;
 	right: 0;
+	width: 100%;
+	z-index: 1000;
 
 	@container (min-width: #{$container-lg}) {
 		height: $header-height-lg;
@@ -64,12 +64,14 @@ header {
 				a {
 					color: $color-black;
 					font-family: $font-family-display;
-					font-size: $font-size-md;
-					font-weight: $font-weight-black;
+					font-size: $font-size-body;
+					font-weight: $font-weight-regular;
+					letter-spacing: $letter-spacing-loose;
 					text-decoration: none;
 					text-transform: uppercase;
 
 					&:hover {
+						color: $color-primary-bright;
 						text-decoration: none;
 					}
 				}

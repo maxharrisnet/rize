@@ -20,6 +20,17 @@
 			padding: $spacing-xxl $spacing-xxxl;
 		}
 
+		h2 {
+			@container (min-width: #{$container-lg}) {
+				font-size: $font-size-xxxl;
+				line-height: $line-height-sm;
+			}
+		}
+
+		.button {
+			display: inline-block;
+		}
+
 		.cta-image {
 			flex: 1 0 auto;
 			padding: $spacing-lg;
@@ -28,19 +39,15 @@
 		.cta-text {
 			display: flex;
 			flex-flow: column;
+			align-items: center;
 			gap: $spacing-lg;
 
-			.heading-wrapper {
-				padding: $spacing-md;
-				gap: $spacing-md;
-			}
-		}
-
-		.button-container {
-			margin-top: $spacing-xl;
-
-			.button {
-				display: inline-block;
+			p {
+				@container (min-width: #{$container-lg}) {
+					// max-width: 90%;
+					font-size: $font-size-md;
+					padding: 0 $spacing-xl;
+				}
 			}
 		}
 	}
