@@ -160,6 +160,19 @@ nav ul {
 	@container (min-width: #{$container-lg}) {
 		text-align: center;
 		max-width: 960px;
+		justify-self: center;
+	}
+
+	h3 {
+		font-size: $font-size-xl;
+		line-height: $line-height-sm;
+		letter-spacing: $letter-spacing-tight;
+		text-transform: uppercase;
+		text-align: center;
+		border-radius: $border-radius-lg;
+		border: 3px solid $color-black;
+		padding: $spacing-lg $spacing-xxxl;
+		justify-self: center;
 	}
 }
 
