@@ -43,7 +43,30 @@ $breakpoint-md: 768px;
 		color: $color-white;
 
 		@media (min-width: $breakpoint-md) {
-			grid-template-columns: 2fr 2fr;
+			display: grid;
+			grid-template-columns: 3fr 2fr;
+			align-items: stretch;
+		}
+
+		.bento-section,
+		.bento-image-wrapper {
+			@media (min-width: $breakpoint-md) {
+				grid-column: auto;
+			}
+		}
+
+		// If image comes first, reverse columns
+		&.image-first {
+			@media (min-width: $breakpoint-md) {
+				grid-template-columns: 2fr 3fr;
+			}
+		}
+
+		.bento-image-wrapper {
+			@media (min-width: $breakpoint-md) {
+				// Always 1/3 width
+				// No need for explicit width, grid handles it
+			}
 		}
 	}
 
@@ -65,6 +88,7 @@ $breakpoint-md: 768px;
 
 			.bento-image {
 				border-radius: 0;
+				filter: grayscale(100%);
 			}
 		}
 	}
