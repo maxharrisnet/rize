@@ -4,6 +4,16 @@ main img {
 	filter: grayscale(100%);
 }
 
+.image-container {
+	position: relative;
+	overflow: hidden;
+
+	img {
+		position: absolute;
+		object-fit: cover;
+	}
+}
+
 .circle {
 	width: 100;
 	height: auto;

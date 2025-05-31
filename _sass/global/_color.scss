@@ -1,0 +1,10 @@
+@use 'variables' as *;
+
+.bg-red {
+	background-color: $color-primary;
+}
+
+.bg-light {
+	background-color: $color-white;
+	color: $color-black;
+}
