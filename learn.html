@@ -6,27 +6,58 @@ permalink: /learn/
 
 <!-- Hero -->
 {% include hero.html
-title="Learn With Purpose"
-subtitle="Lead With Confidence."
+title="Digital Skills for Work & Life"
+subtitle="Lead With Confidence.Workshops and training that help communities build digital confidence. Whether you're a small business, a nonprofit team, or a family learning together, we teach the skills that make technology feel approachable, useful, and empowering."
 image="/assets/images/pages/learn/learn3.jpg"
 cta_text="Get In Touch"
 cta_url="/contact"
 %}
 
+<!-- Section - What We Offer -->
+<section>
+  <div class="container column">
+    <div class="heading-container">
+      <h2>What We Offer</h2>
+    </div>
+    <div class="bento-container">
+      {% include feature.html
+      title="Workshops for Organizations & Teams"
+      description="Equip your team with practical knowledge to use digital tools with confidence. From improving workflows with tools like Slack and Google Workspace to managing your website and building an engaged community through accessible, values-based social media."
+      image="/assets/images/pages/learn/workshops.jpg"
+      image_alt="Team Workshop Session"
+      button_text="Book a Team Session"
+      button_url="/contact?type=team"
+      icon="✦"
+      %}
 
-<!-- Section -->
+      {% include feature.html
+      title="Community Education"
+      description="Make digital spaces safer, more understandable, and more inclusive. We help families and elders navigate the online world with confidence, teach youth how to critically engage with social media and online content, and promote digital wellness and safety in community contexts."
+      image="/assets/images/pages/learn/learn2.jpg"
+      image_alt="Community Education Workshop"
+      button_text="Book a Community Workshop"
+      button_url="/contact?type=community"
+      icon="✦"
+      reverse=true
+      %}
 
-
-<!-- Section -->
-
-
-<!-- Section -->
-
+      {% include feature.html
+      title="Tech Careers & Skills Training"
+      description="Support individuals looking to explore or grow into digital careers. Learn web development basics like HTML, CSS, and JavaScript, discover career paths in tech and creative fields, and get guidance on resumes, portfolios, and project-based learning."
+      image="/assets/images/pages/learn/career.jpg"
+      image_alt="Tech Skills Training"
+      button_text="Start a Career-Focused Session"
+      button_url="/contact?type=career"
+      icon="✦"
+      %}
+    </div>
+  </div>
+</section>
 
 <!-- CTA Section -->
 {% include cta.html
-title="Let’s grow your digital confidence!"
-text="We offer workshops and training that meet you where you are—whether you're just getting started or expanding your skills. For individuals, teams, or entire communities, we’ll help you navigate tech with clarity and care."
+title="Grow your digital confidence"
+text="We offer workshops and training that meet you where you are—whether you're just getting started or expanding your skills. For individuals, teams, or entire communities, we'll help you navigate tech with clarity and care."
 button_text="Book a Workshop or Session"
 link="/contact?type=build"
 %}
