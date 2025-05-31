@@ -1,0 +1,21 @@
+{% comment %}
+Social media links component
+@param {string} class - Additional classes for the container (optional)
+@param {boolean} show_handles - Whether to show the @ handles (optional)
+{% endcomment %}
+
+<div class="social-links {% if include.class %}{{ include.class }}{% endif %}">
+  {% for social in site.data.social %}
+  <a
+    href="{{ social[1].url }}"
+    class="social-link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="{{ social[1].label }}">
+    <span class="icon icon-{{ social[1].icon }}"></span>
+    {% if include.show_handles %}
+    <span class="social-handle">{{ social[1].handle }}</span>
+    {% endif %}
+  </a>
+  {% endfor %}
+</div>

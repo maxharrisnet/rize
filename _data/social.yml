@@ -1,0 +1,17 @@
+facebook:
+  handle: '@WeAllRize'
+  url: 'https://facebook.com/WeAllRize'
+  icon: 'facebook'
+  label: 'Facebook'
+
+instagram:
+  handle: '@WeAllRize'
+  url: 'https://instagram.com/WeAllRize'
+  icon: 'instagram'
+  label: 'Instagram'
+
+linkedin:
+  handle: '@WeAllRize'
+  url: 'https://linkedin.com/company/WeAllRize'
+  icon: 'linkedin'
+  label: 'LinkedIn'
