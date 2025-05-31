@@ -74,11 +74,11 @@ $breakpoint-md: 768px;
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
-		padding: $spacing-md;
-		gap: $spacing-md;
+		padding: $spacing-sm;
+		gap: $spacing-sm;
 
 		@media (min-width: $breakpoint-md) {
-			padding: $spacing-xxxl $spacing-xxl;
+			padding: $spacing-md;
 		}
 
 		&.bento-image-wrapper {

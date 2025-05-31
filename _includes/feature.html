@@ -1,0 +1,29 @@
+{% comment %}
+Feature component for bento grid
+@param {string} title - The title of the feature
+@param {string} description - The description text
+@param {string} image - The image path
+@param {string} image_alt - Alt text for the image
+@param {string} button_text - Text for the CTA button
+@param {string} button_url - URL for the CTA button
+@param {boolean} reverse - Whether to reverse the layout (optional)
+@param {string} icon - Emoji icon for the title (optional)
+{% endcomment %}
+
+<div class="bento-grid bento-grid--feature {% if include.reverse %}reverse{% endif %}">
+  <div class="bento-section bento-image-wrapper">
+    <img
+      src="{{ include.image }}"
+      alt="{{ include.image_alt }}"
+      class="bento-image" />
+  </div>
+  <div class="bento-section">
+    <h3>{% if include.icon %}{{ include.icon }} {% endif %}{{ include.title }}</h3>
+    <p class="bento-description">
+      {{ include.description }}
+    </p>
+    {% if include.button_text and include.button_url %}
+    <a href="{{ include.button_url }}" class="button">{{ include.button_text }}</a>
+    {% endif %}
+  </div>
+</div>

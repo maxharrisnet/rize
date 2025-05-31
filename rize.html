@@ -24,7 +24,7 @@ cta_url="/contact"
         <h2>Our Mission</h2>
         <p class="subtitle">We are entering a new digital era and everyone deserves a place in it. Rize Digital helps communities rise by building the skills, tools, and confidence needed to thrive online.</p>
         <p class="subtitle">Our mission is to uplift underserved communities by bridging gaps in access and creating space for growth, creativity, and connection.</p>
-        <p class="subtitle">Together, we’re building a future where everyone can rise.</p>
+        <p class="subtitle">Together, we're building a future where everyone can rise.</p>
       </div>
     </div>
     <div class="col">
@@ -44,65 +44,47 @@ cta_url="/contact"
       <!-- <p class="subtitle">We offer support where you need it most—always guided by care, clarity, and community.</p> -->
     </div>
     <div class="bento-container">
-      <div class="bento-grid bento-grid--feature reverse">
-        <div class="bento-section bento-image-wrapper">
-          <img
-            src="/assets/images/pages/home/navigate-digital.jpg"
-            alt="Community Partnerships"
-            class="bento-image" />
-        </div>
-        <div class="bento-section">
-          <h3>🌾 Community Rooted</h3>
-          <p class="bento-description">
-            We don’t just work in communities—we work with them. Our approach is grounded in listening, learning, and building relationships. By staying culturally informed and people-centered, we create digital solutions that reflect the strengths, voices, and values of the communities we serve. </p>
-          <a href="/services" class="button">Explore Our Services</a>
-        </div>
-      </div>
-      <div class="bento-grid bento-grid--feature">
-        <div class="bento-section">
-          <h3>🌱 Empowerment Through Education</h3>
-          <p class="bento-description">
-            We believe that knowledge should be shared, not gatekept. Whether through workshops, one-on-one support, or clear documentation, we help clients build skills and confidence that last.
-          </p>
-          <a href="#" class="button">Learn More</a>
-        </div>
-        <div class="bento-section bento-image-wrapper">
-          <img
-            src="/assets/images/pages/home/digital-presence.jpg"
-            alt="Community Partnerships"
-            class="bento-image" />
-        </div>
-      </div>
-      <div class="bento-grid bento-grid--feature reverse">
-        <div class="bento-section bento-image-wrapper">
-          <img
-            src="/assets/images/pages/home/plan-purpose.jpg"
-            alt="Community Partnerships"
-            class="bento-image" />
-        </div>
-        <div class="bento-section">
-          <h3>🌿 Technology for Good</h3>
-          <p class="bento-description">
-            We use digital tools to uplift—not extract. Our approach is grounded in digital sovereignty, safe and healthy online spaces, real-world wellbeing, and sustainability to build a better future for communities and the planet.
-          </p>
-          <a href="#" class="button">Learn More</a>
-        </div>
-      </div>
-      <div class="bento-grid bento-grid--feature">
-        <div class="bento-section">
-          <h3>🚀 Innovation with Intention</h3>
-          <p class="bento-description">
-            We believe in using the right tools—not just the newest ones. Our choices are driven by your goals, not trends or hype. Whether it’s a simple website or a custom solution, we make sure the technology fits your needs and helps you do what you do best.
-          </p>
-          <a href="#" class="button">Learn More</a>
-        </div>
-        <div class="bento-section bento-image-wrapper">
-          <img
-            src="/assets/images/pages/home/empower-your-team.jpg"
-            alt="Community Partnerships"
-            class="bento-image" />
-        </div>
-      </div>
+      {% include feature.html
+      title="Community Rooted"
+      description="We don't just work in communities—we work with them. Our approach is grounded in listening, learning, and building relationships. By staying culturally informed and people-centered, we create digital solutions that reflect the strengths, voices, and values of the communities we serve."
+      image="/assets/images/pages/home/navigate-digital.jpg"
+      image_alt="Community Partnerships"
+      button_text="Explore Our Services"
+      button_url="/services"
+      icon="🌾"
+      reverse=true
+      %}
+
+      {% include feature.html
+      title="Empowerment Through Education"
+      description="We believe that knowledge should be shared, not gatekept. Whether through workshops, one-on-one support, or clear documentation, we help clients build skills and confidence that last."
+      image="/assets/images/pages/home/digital-presence.jpg"
+      image_alt="Community Partnerships"
+      button_text="Learn More"
+      button_url="#"
+      icon="🌱"
+      %}
+
+      {% include feature.html
+      title="Technology for Good"
+      description="We use digital tools to uplift—not extract. Our approach is grounded in digital sovereignty, safe and healthy online spaces, real-world wellbeing, and sustainability to build a better future for communities and the planet."
+      image="/assets/images/pages/home/plan-purpose.jpg"
+      image_alt="Community Partnerships"
+      button_text="Learn More"
+      button_url="#"
+      icon="🌿"
+      reverse=true
+      %}
+
+      {% include feature.html
+      title="Innovation with Intention"
+      description="We believe in using the right tools—not just the newest ones. Our choices are driven by your goals, not trends or hype. Whether it's a simple website or a custom solution, we make sure the technology fits your needs and helps you do what you do best."
+      image="/assets/images/pages/home/empower-your-team.jpg"
+      image_alt="Community Partnerships"
+      button_text="Learn More"
+      button_url="#"
+      icon="🚀"
+      %}
     </div>
   </div>
 </section>
@@ -116,12 +98,12 @@ cta_url="/contact"
       </div>
       <div class="bento-section">
         <h2>Your Digital Partner</h2>
-        <p>I’m Max Harris — a web developer, educator, and community-minded technologist based in Vancouver. After more than a decade working in fast-paced startups and marketing teams, I made a conscious decision: to use my skills to serve the communities that matter most to me.</p>
-        <p>That’s what Rize Digital is all about.</p>
-        <p>As a Black technologist with deep ties to Indigenous communities through my family, I understand that access to digital tools and knowledge isn’t equal — but it should be. I’ve taught web development to learners from all walks of life, built accessible websites for nonprofits, and helped entrepreneurs bring their ideas online with confidence.</p>
-        <p>Now, I’m bringing that experience to Rize Digital — to support small businesses, non-profits, and community organizations through thoughtful web development, culturally-informed digital strategy, and hands-on education.
-          Whether you need a website, a workshop, or a roadmap for digital transformation, I’m here to build with you — not just for you.
-          Let’s rise together.
+        <p>I'm Max Harris — a web developer, educator, and community-minded technologist based in Vancouver. After more than a decade working in fast-paced startups and marketing teams, I made a conscious decision: to use my skills to serve the communities that matter most to me.</p>
+        <p>That's what Rize Digital is all about.</p>
+        <p>As a Black technologist with deep ties to Indigenous communities through my family, I understand that access to digital tools and knowledge isn't equal — but it should be. I've taught web development to learners from all walks of life, built accessible websites for nonprofits, and helped entrepreneurs bring their ideas online with confidence.</p>
+        <p>Now, I'm bringing that experience to Rize Digital — to support small businesses, non-profits, and community organizations through thoughtful web development, culturally-informed digital strategy, and hands-on education.
+          Whether you need a website, a workshop, or a roadmap for digital transformation, I'm here to build with you — not just for you.
+          Let's rise together.
         </p>
       </div>
     </div>
@@ -130,8 +112,8 @@ cta_url="/contact"
 
 <!-- CTA Section -->
 {% include cta.html
-title="Let’s start with a conversation"
-text="Have a project in mind? Curious how we might work together? Tell us what you’re thinking — we’ll follow up with next steps, resources, or a consultation."
+title="Let's start with a conversation"
+text="Have a project in mind? Curious how we might work together? Tell us what you're thinking — we'll follow up with next steps, resources, or a consultation."
 button_text="Start a Conversation"
 link="/contact?type=build"
 %}
