@@ -12,6 +12,13 @@ main img {
 		position: absolute;
 		object-fit: cover;
 	}
+
+	> div {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		z-index: 10;
+	}
 }
 
 .circle {
