@@ -10,7 +10,7 @@ main {
 	h1 {
 		font-family: $font-family-display;
 		font-weight: $font-weight-black;
-		font-size: $font-size-jumbo;
+		font-size: $font-size-xl;
 		line-height: $line-height-sm;
 		letter-spacing: $letter-spacing-tight;
 		text-transform: uppercase;
@@ -23,19 +23,27 @@ main {
 	h2 {
 		font-family: $font-family-display;
 		font-weight: $font-weight-black;
-		font-size: $font-size-jumbo;
-		line-height: $line-height-lg;
+		font-size: $font-size-xl;
+		line-height: $line-height-sm;
 		letter-spacing: $letter-spacing-none;
 		text-transform: uppercase;
+
+		@container (min-width: #{$container-lg}) {
+			font-size: $font-size-jumbo;
+		}
 	}
 
 	h3 {
 		font-family: $font-family-display;
 		font-weight: $font-weight-black;
-		font-size: $font-size-xxl;
+		font-size: $font-size-lg;
 		line-height: $line-height-sm;
 		letter-spacing: $letter-spacing-none;
 		text-transform: uppercase;
+
+		@container (min-width: #{$container-lg}) {
+			font-size: $font-size-xxl;
+		}
 	}
 
 	h4 {
@@ -47,9 +55,14 @@ main {
 
 	p {
 		font-weight: $font-weight-regular;
-		font-size: $font-size-lg;
+		font-size: $font-size-md;
+
 		line-height: $line-height-lg;
 		letter-spacing: $letter-spacing-none;
+
+		@container (min-width: #{$container-lg}) {
+			font-size: $font-size-lg;
+		}
 	}
 
 	a {
@@ -108,9 +121,13 @@ main {
 	}
 
 	.subtitle {
-		font-size: $font-size-xl;
+		font-size: $font-size-md;
 		font-weight: $font-weight-light;
 		line-height: $line-height-md;
+
+		@container (min-width: #{$container-lg}) {
+			font-size: $font-size-xl;
+		}
 	}
 }
 
@@ -122,14 +139,16 @@ main {
 .heading-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: $spacing-xxl;
+	padding: $spacing-md 0 $spacing-lg;
+	gap: $spacing-sm;
 
 	@container (min-width: #{$container-lg}) {
+		align-items: center;
+		justify-content: center;
 		text-align: center;
 		max-width: 960px;
 		justify-self: center;
+		padding: $spacing-xxl $spacing-xxl;
 	}
 
 	h3 {
@@ -159,13 +178,11 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	text-align: center;
 	gap: $spacing-lg;
 	padding: $spacing-xl;
 
 	@container (min-width: #{$breakpoint-lg}) {
 		padding: $spacing-xxxl $spacing-xxl;
-		text-align: left;
 	}
 }
 

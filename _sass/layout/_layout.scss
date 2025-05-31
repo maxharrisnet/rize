@@ -17,6 +17,7 @@ main {
 
 .container {
 	display: flex;
+	flex-flow: column;
 	margin: 0 auto;
 	padding: $spacing-lg $spacing-md;
 	width: 100%;
@@ -89,10 +90,10 @@ hr {
 	}
 }
 
-.column {
-	flex-flow: column;
-	align-items: center;
-}
+// .column {
+// 	flex-flow: column;
+// 	align-items: center;
+// }
 
 .section-centered {
 	display: flex;

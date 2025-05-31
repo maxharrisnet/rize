@@ -24,7 +24,11 @@ header {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		padding: $spacing-md $spacing-xl;
+		padding: $spacing-md;
+
+		@container (min-width: #{$container-lg}) {
+			padding: $spacing-md $spacing-xl;
+		}
 
 		.logo {
 			height: 3.25rem;
@@ -40,10 +44,16 @@ header {
 			}
 		}
 
+		.logo-mobile {
+			@container (min-width: #{$container-lg}) {
+				display: none;
+			}
+		}
+
 		nav {
 			display: flex;
 			flex-direction: row;
-			justify-content: space-between;
+			justify-content: center;
 			align-items: center;
 			flex: 1 1 auto;
 
@@ -53,8 +63,7 @@ header {
 
 			.nav-links {
 				display: flex;
-				flex-direction: column;
-				gap: $spacing-lg;
+				gap: $spacing-md;
 
 				@container (min-width: #{$container-lg}) {
 					flex-direction: row;
@@ -64,11 +73,14 @@ header {
 				a {
 					color: $color-black;
 					font-family: $font-family-display;
-					font-size: $font-size-body;
-					font-weight: $font-weight-regular;
-					letter-spacing: $letter-spacing-loose;
+					font-size: $font-size-sm;
+					font-weight: $font-weight-bold;
 					text-decoration: none;
 					text-transform: uppercase;
+
+					@container (min-width: #{$container-lg}) {
+						letter-spacing: $letter-spacing-tight;
+					}
 
 					&:hover {
 						color: $color-primary-bright;

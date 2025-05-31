@@ -12,7 +12,12 @@ Social media links component
     target="_blank"
     rel="noopener noreferrer"
     aria-label="{{ social[1].label }}">
-    <span class="icon icon-{{ social[1].icon }}"></span>
+    <img
+      src="/assets/images/social/{{ social[1].icon }}.svg"
+      alt="{{ social[1].label }} icon"
+      class="social-icon"
+      width="24"
+      height="24" />
     {% if include.show_handles %}
     <span class="social-handle">{{ social[1].handle }}</span>
     {% endif %}

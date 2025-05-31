@@ -119,13 +119,20 @@ ul.bento-list {
 		border: 3px solid;
 		border-radius: $border-radius-xl;
 		display: flex;
-		font-size: $font-size-lg;
-		padding: $spacing-lg $spacing-xxl;
+		font-size: $font-size-md;
+		letter-spacing: $letter-spacing-loose;
+		line-height: $line-height-md;
+		padding: $spacing-sm $spacing-md;
 		text-transform: uppercase;
 		font-weight: $font-weight-black;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
+
+		@media (min-width: $breakpoint-md) {
+			font-size: $font-size-lg;
+			padding: $spacing-lg $spacing-xxl;
+		}
 	}
 }
 
