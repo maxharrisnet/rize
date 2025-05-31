@@ -55,7 +55,15 @@ $breakpoint-md: 768px;
 			}
 		}
 
+		.bento-image-wrapper {
+			order: 2;
+		}
+
 		&.reverse {
+			.bento-image-wrapper {
+				order: -1;
+			}
+
 			@media (min-width: $breakpoint-md) {
 				grid-template-columns: 2fr 3fr;
 			}

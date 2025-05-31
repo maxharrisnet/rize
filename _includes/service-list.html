@@ -1,0 +1,10 @@
+{% comment %}
+Service list component for feature sections
+@param {array} services - Array of service items to display
+{% endcomment %}
+
+<ul class="service-list">
+  {% for service in include.services %}
+  <li>{{ service }}</li>
+  {% endfor %}
+</ul>

@@ -1,4 +1,12 @@
+@use '../global/variables' as *;
+
 main img {
 	filter: grayscale(100%);
 }
 
+.circle {
+	width: 100;
+	height: auto;
+	border-radius: $border-radius-full;
+	overflow: hidden;
+}
