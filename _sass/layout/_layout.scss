@@ -36,6 +36,7 @@ main {
 .container-full-width {
 	display: flex;
 	flex-flow: column;
+	padding: $spacing-xxl $spacing-md;
 
 	> div {
 		flex: 1 1 50%;

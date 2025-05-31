@@ -1,0 +1,19 @@
+{% comment %}
+Mission component
+@param {string} title - The mission title
+@param {string} image - The image path
+@param {string} image_alt - Alt text for the image
+@param {array} paragraphs - Array of paragraphs to display
+{% endcomment %}
+
+<div class="container-full-width">
+  <div class="text-container">
+    <h2>{{ include.title }}</h2>
+    {% for paragraph in include.paragraphs %}
+    <p class="subtitle">{{ paragraph }}</p>
+    {% endfor %}
+  </div>
+  <div class="image-container">
+    <img src="{{ include.image }}" alt="{{ include.image_alt }}" />
+  </div>
+</div>

@@ -1,0 +1,20 @@
+{% comment %}
+Text and image layout component
+@param {string} title - The section title
+@param {string} image - The image path
+@param {string} image_alt - Alt text for the image
+@param {array} paragraphs - Array of paragraphs to display
+@param {string} class - Additional classes for the container (optional)
+{% endcomment %}
+
+<div class="container-full-width {% if include.class %}{{ include.class }}{% endif %}">
+  <div class="text-container">
+    <h2>{{ include.title }}</h2>
+    {% for paragraph in include.paragraphs %}
+    <p class="subtitle">{{ paragraph }}</p>
+    {% endfor %}
+  </div>
+  <div class="image-container">
+    <img src="{{ include.image }}" alt="{{ include.image_alt }}" />
+  </div>
+</div>

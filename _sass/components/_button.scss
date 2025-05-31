@@ -74,7 +74,7 @@ a.button-secondary {
 	display: flex;
 	flex-direction: column;
 	gap: $spacing-md;
-	padding: $spacing-md 0;
+	padding: $spacing-base 0;
 
 	@container (min-width: #{$container-lg}) {
 		flex-direction: row;
