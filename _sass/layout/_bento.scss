@@ -45,7 +45,7 @@ $breakpoint-md: 768px;
 		@media (min-width: $breakpoint-md) {
 			display: grid;
 			grid-template-columns: 3fr 2fr;
-			align-items: stretch;
+			// align-items: stretch;
 		}
 
 		.bento-section,
@@ -55,8 +55,7 @@ $breakpoint-md: 768px;
 			}
 		}
 
-		// If image comes first, reverse columns
-		&.image-first {
+		&.reverse {
 			@media (min-width: $breakpoint-md) {
 				grid-template-columns: 2fr 3fr;
 			}
@@ -83,12 +82,14 @@ $breakpoint-md: 768px;
 		}
 
 		&.bento-image-wrapper {
-			padding: 0;
 			border-radius: 0;
 
-			.bento-image {
-				border-radius: 0;
-				filter: grayscale(100%);
+			&.flush {
+				padding: 0;
+
+				.bento-image {
+					border-radius: 0;
+				}
 			}
 		}
 	}

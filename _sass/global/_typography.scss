@@ -2,8 +2,8 @@
 
 body {
 	font-family: $font-family-sans-serif;
-	color: $color-black;
-	background-color: $color-white;
+	color: $color-white;
+	background-color: $color-black;
 }
 
 main {
@@ -111,37 +111,6 @@ main {
 		font-size: $font-size-xl;
 		font-weight: $font-weight-light;
 		line-height: $line-height-md;
-	}
-}
-
-nav ul {
-	display: flex;
-	flex-direction: column;
-	padding: $spacing-md 0;
-	justify-content: space-between;
-
-	@container (min-width: #{$container-lg}) {
-		flex-direction: row;
-	}
-
-	@container (min-width: #{$container-lg}) {
-		gap: $spacing-xxl;
-	}
-
-	li {
-		display: inline-flex;
-		align-items: center;
-
-		a {
-			font-family: $font-family-display;
-			font-size: $font-size-body;
-			font-weight: 700;
-			text-decoration: none;
-
-			&:hover {
-				color: $color-secondary;
-			}
-		}
 	}
 }
 

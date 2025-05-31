@@ -33,6 +33,19 @@ main {
 	}
 }
 
+.container-full-width {
+	display: flex;
+	flex-flow: column;
+
+	> div {
+		flex: 1;
+	}
+
+	@container (min-width: #{$container-lg}) {
+		flex-flow: row;
+	}
+}
+
 .feature-section {
 	background-color: $color-white;
 	// padding: $spacing-xl;
