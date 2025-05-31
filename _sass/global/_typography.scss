@@ -145,6 +145,16 @@ main {
 	}
 }
 
+.heading-container--sm {
+	text-align: center;
+	justify-content: center;
+	padding: $spacing-md;
+
+	@container (min-width: #{$container-lg}) {
+		padding: $spacing-lg;
+	}
+}
+
 .text-container {
 	display: flex;
 	flex-direction: column;

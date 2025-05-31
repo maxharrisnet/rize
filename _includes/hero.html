@@ -11,6 +11,13 @@
       <p class="subtitle">{{ include.description }}</p>
       {% endif %}
 
+
+      {% if include.social_links %}
+      <div class="button-wrapper">
+        {% include social-links.html %}
+      </div>
+      {% endif %}
+
       {% if include.cta_url %}
       <div class="button-wrapper">
         <a href="{{ include.cta_url }}" class="button">{{ include.cta_text }}</a>

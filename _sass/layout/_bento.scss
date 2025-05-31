@@ -110,19 +110,21 @@ $breakpoint-md: 768px;
 	}
 }
 
-.bento-list {
+ul.bento-list {
 	display: grid;
 	gap: $spacing-md;
-	padding: $spacing-lg;
+	padding: $spacing-md $spacing-lg $spacing-xxl;
 
 	li {
 		border: 3px solid;
 		border-radius: $border-radius-xl;
+		display: flex;
 		font-size: $font-size-lg;
 		padding: $spacing-lg $spacing-xxl;
 		text-transform: uppercase;
 		font-weight: $font-weight-black;
 		justify-content: center;
+		align-items: center;
 		text-align: center;
 	}
 }
