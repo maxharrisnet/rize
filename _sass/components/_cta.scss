@@ -24,22 +24,28 @@
 			padding: $spacing-xl;
 		}
 
-		h2 {
-			font-size: $font-size-lg;
+		.heading-container {
+			padding: $spacing-md 0;
 
-			@container (min-width: #{$container-lg}) {
-				font-size: $font-size-xxxl;
-				line-height: $line-height-sm;
+			h2 {
+				font-size: $font-size-lg;
+
+				@container (min-width: #{$container-lg}) {
+					font-size: $font-size-xxxl;
+					line-height: $line-height-sm;
+				}
+			}
+
+			p {
+				@container (min-width: #{$container-lg}) {
+					font-size: $font-size-body;
+					line-height: $line-height-md;
+				}
 			}
 		}
 
-		p {
-			font-size: $font-size-body;
-			line-height: $line-height-md;
-		}
-
 		.button {
-			display: inline-block;
+			// display: inline-block;
 		}
 	}
 }

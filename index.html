@@ -6,7 +6,7 @@ title: Rize Digital
 <!-- Hero -->
 {% include hero.html
 title="Together, We Rize"
-subtitle="Subheading:We help community-driven organizations and changemakers use technology to thrive—through websites, workshops, strategy, and systems that work for real people."
+subtitle="We help community-driven organizations and changemakers use technology to thrive—through websites, workshops, strategy, and systems that work for real people."
 image="/assets/images/pages/home/hero-home.jpg"
 cta_text="Get In Touch"
 cta_url="/connect"
@@ -19,57 +19,46 @@ cta_url="/connect"
     <div class="heading-container">
       <h2>Our Value to You</h2>
       <p class="subtitle">
-        You're doing important work—serving your community, telling your story, organizing change. We're here to make the digital side of that work easier, more effective, and more empowering.
+        You're doing important work—serving your community, telling your story, organizing change. We're here to make the digital side of that work easier, more effective, and more empowering. We help nonprofits, grassroots organizations, educators, and entrepreneurs:
       </p>
     </div>
   </div>
 </section>
 
-
-<section>
+<section class="bg-light">
   <div class="container column">
-    <div class="heading-container">
-      <h2>Who We Serve</h2>
-      <p class="subtitle">
-        We partner with changemakers of all kinds:
-      </p>
-    </div>
-
     <div class="bento-container">
-      <ul class="bento-grid bento-grid--three-col tile-grid">
+      <ul class="bento-grid bento-grid--three-col">
         <li class="bento-section">
-          Nonprofits & Community Groups
-        </li>
-        <li class="bento-section image-container">
-          <img
-            </li>
-        <li class="bento-section">
-          Artists
+          <h3>Establish a strong, welcoming digital presence</h3>
         </li>
         <li class="bento-section">
-          Entrepreneurs
+          <h3>Reach and engage their audience through thoughtful strategy</h3>
         </li>
         <li class="bento-section">
-          Educational Organizations
+          <h3>Navigate tech with confidence—no matter their experience level</h3>
         </li>
         <li class="bento-section">
-          Social Enterprises
-        </li>
-        <li class="bento-section">
-          Families, Youth, & Elders
+          <h3>Find the right tools that match their needs, values, and budget</h3>
         </li>
       </ul>
-      <div class="inline-cta">
-        <p>
-          We believe in building long-term relationships with the people and organizations we serve.
-        </p>
-        <div class="button-container">
-          <a href="/about" class="button button-alt">Learn More About Our Values</a>
-        </div>
-      </div>
     </div>
   </div>
 </section>
+
+<section class="bg-red">
+  <div class="container">
+    <div class="heading-container">
+      <h2>Stay Connected</h2>
+      <p>
+        Follow us on social media to learn about upcoming workshops, get tech tips, and share in our journey to make the digital world more accessible, intentional, and inclusive.
+      </p>
+      <p>@WeAllRize on Instagram, Facebook, and LinkedIn</p>
+    </div>
+    {% include social-links.html %}
+  </div>
+</section>
+
 
 <!-- Section - What We Do -->
 <section>
@@ -78,71 +67,75 @@ cta_url="/connect"
       <h2>What We Do</h2>
       <p class="subtitle">We offer support where you need it most—always guided by care, clarity, and community.</p>
     </div>
-    <div class="bento-container">
-      <div class="bento-grid bento-grid--feature reverse">
-        <div class="bento-section bento-image-wrapper">
-          <img
-            src="/assets/images/pages/home/navigate-digital.jpg"
-            alt="Community Partnerships"
-            class="bento-image" />
-        </div>
-        <div class="bento-section">
-          <h3>Navigate the Digital World
-          </h3>
-          <p class="bento-description">
-            We offer workshops and training for people at any digital skill level—from elders learning online safety to youth exploring career paths.
-          </p>
-          <a href="/services" class="button">Explore Our Services</a>
-        </div>
-      </div>
-      <div class="bento-grid bento-grid--feature">
-        <div class="bento-section">
-          <h3>Establish Your Digital Presence
-          </h3>
-          <p class="bento-description">
-            Your website and online presence are often the first way people connect with you. We help you build inclusive, easy-to-manage sites, storefronts, and campaigns that reflect your mission and values.
-          </p>
-          <a href="#" class="button">Learn More</a>
-        </div>
-        <div class="bento-section bento-image-wrapper">
-          <img
-            src="/assets/images/pages/home/digital-presence.jpg"
-            alt="Community Partnerships"
-            class="bento-image" />
-        </div>
-      </div>
-      <div class="bento-grid bento-grid--feature reverse">
-        <div class="bento-section bento-image-wrapper">
-          <img
-            src="/assets/images/pages/home/plan-purpose.jpg"
-            alt="Community Partnerships"
-            class="bento-image" />
-        </div>
-        <div class="bento-section">
-          <h3>Plan with Purpose
-          </h3>
-          <p class="bento-description">
-            Your message matters. We support you with marketing strategy and content planning that actually makes sense for your goals.
-          </p>
-          <a href="#" class="button">Learn More</a>
-        </div>
-      </div>
-      <div class="bento-grid bento-grid--feature">
-        <div class="bento-section">
-          <h3>Empower Your Team</h3>
-          <p class="bento-description">
-            The right tools can make internal communication, collaboration, and workflows smoother for your team. We guide you through setup, training, and long-term support.
-          </p>
-          <a href="#" class="button">Learn More</a>
-        </div>
-        <div class="bento-section bento-image-wrapper">
-          <img
-            src="/assets/images/pages/home/empower-your-team.jpg"
-            alt="Community Partnerships"
-            class="bento-image" />
-        </div>
-      </div>
 
+    <!-- Features -->
+    <div class="bento-container">
+      {% include feature.html
+      title="Build"
+      description="Create your digital home. Websites, apps, e-commerce, accessibility, SEO—we help you build a strong foundation online. You'll walk away with a site that not only looks good but also reflects your values and is easy to manage."
+      image="/assets/images/pages/home/build.jpg"
+      image_alt="Building digital presence"
+      button_text="Start Your Build"
+      button_url="/build"
+      reverse=true
+      %}
+
+      {% include feature.html
+      title="Learn"
+      description="Build skills that uplift and empower. Our workshops are designed for teams, individuals, and communities of all experience levels. We help people navigate digital spaces with safety, creativity, and confidence."
+      image="/assets/images/pages/home/learn.jpg"
+      image_alt="Learning and workshops"
+      button_text="Explore Workshops"
+      button_url="/learn"
+      %}
+
+      {% include feature.html
+      title="Grow"
+      description="Work smarter. Reach further. From marketing strategy to internal tools, we help you grow your impact through systems that reduce stress and support your team. Clear communication, better tools, and practical support—tailored to your mission."
+      image="/assets/images/pages/home/grow.jpg"
+      image_alt="Growing and scaling"
+      button_text="Let's Grow Together"
+      button_url="/grow"
+      reverse=true
+      %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-full-width">
+    <div class="bento-grid bento-grid--feature reverse">
+      <div class="bento-section">
+        <img
+          src="/assets/images/pages/build/work2.jpg"
+          alt="Community Partnerships"
+          class="bento-image" />
+      </div>
+      <div class="bento-section">
+        <div class="heading-container--sm">
+          <h3>We Work With</h3>
+        </div>
+        <ul class="bento-list bento-grid--two-col">
+          <li>
+            Nonprofits
+          </li>
+          <li>
+            Artists
+          </li>
+          <li>
+            Entrepreneurs
+          </li>
+          <li>
+            Educational Organizations
+          </li>
+          <li>
+            Social Enterprises
+          </li>
+          <li>
+            Families
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

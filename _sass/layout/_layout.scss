@@ -37,7 +37,14 @@ main {
 .container-full-width {
 	display: flex;
 	flex-flow: column;
-	padding: $spacing-xxl 0;
+
+	@container (min-width: #{$container-lg}) {
+		padding: $spacing-xxl 0;
+	}
+
+	.bento-grid .bento-image {
+		border-radius: 0;
+	}
 
 	> div {
 		flex: 1 1 50%;

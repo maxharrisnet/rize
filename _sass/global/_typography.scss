@@ -1,9 +1,9 @@
 @use 'variables' as *;
 
 body {
-	font-family: $font-family-sans-serif;
-	color: $color-white;
 	background-color: $color-black;
+	color: $color-white;
+	font-family: $font-family-sans-serif;
 }
 
 main {
@@ -35,8 +35,8 @@ main {
 
 	h3 {
 		font-family: $font-family-display;
-		font-weight: $font-weight-black;
-		font-size: $font-size-lg;
+		font-weight: $font-weight-bold;
+		font-size: $font-size-md;
 		line-height: $line-height-sm;
 		letter-spacing: $letter-spacing-none;
 		text-transform: uppercase;
@@ -55,8 +55,6 @@ main {
 
 	p {
 		font-weight: $font-weight-regular;
-		// font-size: $font-size-md;
-
 		letter-spacing: $letter-spacing-none;
 
 		@container (min-width: #{$container-lg}) {
@@ -179,7 +177,6 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	gap: $spacing-md;
-	padding: $spacing-xl;
 
 	@container (min-width: #{$breakpoint-lg}) {
 		gap: $spacing-lg;
