@@ -1,15 +1,11 @@
 // Variables
 @use '../global/variables' as *;
 
-$gap: 1rem;
-$border-radius: 1rem;
-$breakpoint-md: 768px;
-
 .bento-container {
 	display: grid;
 	gap: $spacing-xl;
 
-	@media (min-width: $breakpoint-md) {
+	@media (min-width: $breakpoint-lg) {
 		gap: $spacing-xxxl;
 		padding: 0 $spacing-xxl;
 	}
@@ -17,8 +13,8 @@ $breakpoint-md: 768px;
 
 .bento-grid {
 	display: grid;
-	gap: $gap;
-	border-radius: $border-radius;
+	gap: $spacing-lg;
+	border-radius: $border-radius-lg;
 	overflow: hidden;
 
 	&--one-col {
@@ -26,13 +22,13 @@ $breakpoint-md: 768px;
 	}
 
 	&--two-col {
-		@media (min-width: $breakpoint-md) {
+		@media (min-width: $breakpoint-lg) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 
 	&--three-col {
-		@media (min-width: $breakpoint-md) {
+		@media (min-width: $breakpoint-lg) {
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}
@@ -42,35 +38,38 @@ $breakpoint-md: 768px;
 		box-shadow: $drop-shadow;
 		color: $color-white;
 
-		@media (min-width: $breakpoint-md) {
+		@media (min-width: $breakpoint-lg) {
 			display: grid;
 			grid-template-columns: 3fr 2fr;
-			// align-items: stretch;
 		}
 
 		.bento-section,
 		.bento-image-wrapper {
-			@media (min-width: $breakpoint-md) {
+			@media (min-width: $breakpoint-lg) {
 				grid-column: auto;
 			}
 		}
 
 		.bento-image-wrapper {
-			order: 2;
+			@media (min-width: $breakpoint-lg) {
+				order: 2;
+			}
 		}
 
 		&.reverse {
 			.bento-image-wrapper {
-				order: -1;
+				@media (min-width: $breakpoint-lg) {
+					order: -1;
+				}
 			}
 
-			@media (min-width: $breakpoint-md) {
+			@media (min-width: $breakpoint-lg) {
 				grid-template-columns: 2fr 3fr;
 			}
 		}
 
 		.bento-image-wrapper {
-			@media (min-width: $breakpoint-md) {
+			@media (min-width: $breakpoint-lg) {
 				// Always 1/3 width
 				// No need for explicit width, grid handles it
 			}
@@ -85,7 +84,7 @@ $breakpoint-md: 768px;
 		padding: $spacing-sm;
 		gap: $spacing-sm;
 
-		@media (min-width: $breakpoint-md) {
+		@media (min-width: $breakpoint-lg) {
 			padding: $spacing-md;
 		}
 
@@ -113,13 +112,17 @@ $breakpoint-md: 768px;
 ul.bento-list {
 	display: grid;
 	gap: $spacing-md;
-	padding: $spacing-md $spacing-lg $spacing-xxl;
+	padding: 0 $spacing-sm $spacing-xl;
+
+	@media (min-width: $breakpoint-lg) {
+		padding: $spacing-md $spacing-lg $spacing-xxl;
+	}
 
 	li {
 		border: 3px solid;
 		border-radius: $border-radius-xl;
 		display: flex;
-		font-size: $font-size-md;
+		font-size: $font-size-body;
 		letter-spacing: $letter-spacing-loose;
 		line-height: $line-height-md;
 		padding: $spacing-sm $spacing-md;
@@ -129,7 +132,7 @@ ul.bento-list {
 		align-items: center;
 		text-align: center;
 
-		@media (min-width: $breakpoint-md) {
+		@media (min-width: $breakpoint-lg) {
 			font-size: $font-size-lg;
 			padding: $spacing-lg $spacing-xxl;
 		}

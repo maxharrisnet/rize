@@ -17,6 +17,7 @@ a.button,
 	text-transform: uppercase;
 	transition: all $transition;
 	cursor: pointer;
+	justify-self: center;
 
 	@container (min-width: #{$container-lg}) {
 		align-self: flex-start;

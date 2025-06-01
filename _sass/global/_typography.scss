@@ -55,13 +55,13 @@ main {
 
 	p {
 		font-weight: $font-weight-regular;
-		font-size: $font-size-md;
+		// font-size: $font-size-md;
 
-		line-height: $line-height-lg;
 		letter-spacing: $letter-spacing-none;
 
 		@container (min-width: #{$container-lg}) {
 			font-size: $font-size-lg;
+			line-height: $line-height-lg;
 		}
 	}
 
@@ -139,13 +139,13 @@ main {
 .heading-container {
 	display: flex;
 	flex-direction: column;
-	padding: $spacing-md 0 $spacing-lg;
+	padding: $spacing-md $spacing-md $spacing-lg;
 	gap: $spacing-sm;
+	text-align: center;
 
 	@container (min-width: #{$container-lg}) {
 		align-items: center;
 		justify-content: center;
-		text-align: center;
 		max-width: 960px;
 		justify-self: center;
 		padding: $spacing-xxl $spacing-xxl;
@@ -178,10 +178,11 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: $spacing-lg;
+	gap: $spacing-md;
 	padding: $spacing-xl;
 
 	@container (min-width: #{$breakpoint-lg}) {
+		gap: $spacing-lg;
 		padding: $spacing-xxxl $spacing-xxl;
 	}
 }
