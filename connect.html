@@ -34,7 +34,7 @@ image="/assets/images/pages/connect/connect.jpg"
       image_alt="Community Partnerships"
       button_text="Explore Our Services"
       button_url="/services"
-      reverse=true
+      feature_class="reverse bg-dark"
       %}
 
       {% include feature.html
@@ -53,7 +53,7 @@ image="/assets/images/pages/connect/connect.jpg"
       image_alt="Community Partnerships"
       button_text="Learn More"
       button_url="#"
-      reverse=true
+      feature_class="reverse bg-dark"
       %}
 
       {% include feature.html
@@ -69,18 +69,17 @@ image="/assets/images/pages/connect/connect.jpg"
 </section>
 
 <!-- Section Bio -->
-<section>
+<section class="bg-red">
   <div class="container">
-    <div class="bento-grid bento-grid--feature reverse">
-      <div class="bento-section bento-image-wrapper">
-        <img src="/assets/images/pages/connect/max-harris.jpg" alt="Max Harris, founder of Rize Digital" class="circle" />
-      </div>
-      <div class="bento-section">
-        <h2>Your Digital Partner</h2>
-        <p>
-          Max Harris is the founder of Rize Digital — a web developer, instructor, and community technologist based in Vancouver. With over a decade of experience in the tech industry, Max brings a deep commitment to culturally informed, accessible digital work. His passion lies in supporting nonprofits, entrepreneurs, and community organizations to build confidence with digital tools and create impact that lasts.
-        </p>
-      </div>
+    <div class="bento-container">
+      {% include feature.html
+      title="Your Digital Partner"
+      description="Max Harris is the founder of Rize Digital — a web developer, instructor, and community technologist based in Vancouver. With over a decade of experience in the tech industry, Max brings a deep commitment to culturally informed, accessible digital work. His passion lies in supporting nonprofits, entrepreneurs, and community organizations to build confidence with digital tools and create impact that lasts."
+      image="/assets/images/pages/connect/max-harris.jpg"
+      image_alt="Max Harris, founder of Rize Digital"
+      image_class="circle"
+      feature_class="bg-dark reverse"
+      %}
     </div>
   </div>
 </section>

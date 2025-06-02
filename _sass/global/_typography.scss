@@ -54,11 +54,11 @@ main {
 	}
 
 	p {
-		font-weight: $font-weight-regular;
+		font-weight: $font-weight-light;
 		letter-spacing: $letter-spacing-none;
 
 		@container (min-width: #{$container-lg}) {
-			font-size: $font-size-lg;
+			font-size: $font-size-md;
 			line-height: $line-height-lg;
 		}
 	}

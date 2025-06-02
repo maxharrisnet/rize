@@ -3,9 +3,10 @@
 
 .bento-container {
 	display: grid;
-	gap: $spacing-lg;
+	gap: $spacing-md;
 
 	@media (min-width: $breakpoint-lg) {
+		gap: $spacing-lg;
 		padding: 0 $spacing-xxl;
 	}
 }
@@ -18,7 +19,7 @@ ul.bento-grid {
 	overflow: hidden;
 
 	@media (min-width: $breakpoint-lg) {
-		gap: $spacing-lg;
+		// gap: $spacing-lg;
 	}
 
 	&--one-col {
@@ -88,6 +89,12 @@ ul.bento-grid {
 
 			@media (min-width: $breakpoint-lg) {
 				order: 2;
+			}
+		}
+
+		.text-container {
+			@media (min-width: $breakpoint-lg) {
+				max-width: 90%;
 			}
 		}
 
