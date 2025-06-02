@@ -1,0 +1,101 @@
+@use 'variables' as *;
+
+.form-container {
+	padding: $spacing-lg 0;
+
+	@container (min-width: #{$container-lg}) {
+		padding: spacing-xxl 0;
+	}
+
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-md;
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 0;
+
+		// Form field groups
+		.form-group {
+			display: flex;
+			flex-direction: column;
+			gap: $spacing-sm;
+		}
+
+		// Labels
+		label {
+			font-weight: $font-weight-bold;
+			color: var(--text-primary);
+			font-size: $font-size-body;
+			text-align: left;
+		}
+
+		// Input fields
+		input[type='text'],
+		input[type='email'],
+		input[type='tel'],
+		select,
+		textarea {
+			padding: $spacing-sm $spacing-md;
+			border: 1px solid $color-white;
+			border-radius: 0.5rem;
+			font-size: 1rem;
+			transition: all 0.2s ease;
+			background-color: $color-white;
+			color: $color-black;
+
+			&:focus {
+				outline: none;
+				border-color: var(--primary-color, #3b82f6);
+				// box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+				box-shadow: $drop-shadow-sm;
+			}
+
+			&::placeholder {
+				color: $color-black;
+			}
+		}
+
+		// Select specific styles
+		select {
+			appearance: none;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: right 1rem center;
+			background-size: 1.5em;
+			color: $color-black;
+			padding-right: $spacing-xl;
+		}
+
+		// Checkbox container
+		.checkbox-group {
+			display: flex;
+			align-items: center;
+			gap: $spacing-md;
+			// margin-top: 0.5rem;
+
+			input[type='checkbox'] {
+				width: 1.25rem;
+				height: 1.25rem;
+				border-radius: 0.25rem;
+				border: 1px solid var(--border-color, $color-white);
+				cursor: pointer;
+			}
+		}
+
+		// Submit button
+		button[type='submit'].button {
+			font-size: $font-size-body;
+			padding: $spacing-sm $spacing-md;
+		}
+
+		// Responsive layout
+		@container (min-width: #{$container-lg}) {
+			.form-row {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: $spacing-md;
+			}
+		}
+	}
+}

@@ -1,24 +1,26 @@
 @use '../global/variables' as *;
 
 .cta-section {
-	color: $color-white;
 	display: grid;
 	justify-content: center;
+	position: relative;
 
 	@container (min-width: #{$container-lg}) {
-		padding: $spacing-xl $spacing-lg;
+		padding: 250px $spacing-lg;
 	}
 
 	.cta-body {
 		background-color: $color-primary;
 		border-radius: $border-radius-lg;
 		box-shadow: $drop-shadow;
+		color: $color-white;
 		padding: $spacing-md;
-		// width: fit-content;
+		z-index: 10;
 
 		@container (min-width: #{$container-lg}) {
 			max-width: 960px;
 			padding: $spacing-xl $spacing-xxl;
+			// margin-top: 200px;
 		}
 
 		.heading-container {
@@ -44,6 +46,17 @@
 					padding: 0 $spacing-xxl;
 				}
 			}
+		}
+	}
+
+	.image-container {
+		height: 65%;
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-end;
+
+		video {
+			width: 100%;
 		}
 	}
 }

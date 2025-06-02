@@ -1,23 +1,19 @@
 @use '../global/variables' as *;
 
-main img {
+main img,
+main video {
 	filter: grayscale(100%);
 }
 
 .image-container {
-	position: relative;
+	position: absolute;
 	overflow: hidden;
+	height: 100%;
+	width: 100%;
 
 	img {
-		position: absolute;
+		// position: absolute;
 		object-fit: cover;
-	}
-
-	> div {
-		display: flex;
-		flex-flow: column;
-		justify-content: center;
-		z-index: 10;
 	}
 }
 
@@ -28,4 +24,3 @@ main img {
 	background-repeat: no-repeat;
 	background-position: center;
 }
-

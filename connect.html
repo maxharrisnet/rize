@@ -8,10 +8,16 @@ permalink: /connect/
 
 <!-- Hero -->
 {% include hero.html
-title="Connection is Where it All Begins"
-subtitle="Let’s explore how we can help you grow your impact through thoughtful digital support."
+title="Let’s Talk!"
+subtitle="If you’re doing good work in your community, we want to hear from you. Let’s explore how we can help you grow your impact through thoughtful digital support."
 image="/assets/images/pages/connect/connect.jpg"
 %}
+
+
+<section>
+  <div>###</div>
+  {% include contact-form.html %}
+</section>
 
 <section class="bg-red">
   <div class="container">
@@ -20,7 +26,7 @@ image="/assets/images/pages/connect/connect.jpg"
 </section>
 
 <!-- Section - Values -->
-<section>
+<section class="bg-light">
   <div class="container">
     <div class="heading-container">
       <h2>Our Values</h2>
@@ -44,6 +50,7 @@ image="/assets/images/pages/connect/connect.jpg"
       image_alt="Community Partnerships"
       button_text="Learn More"
       button_url="#"
+      feature_class="bg-dark"
       %}
 
       {% include feature.html
@@ -63,13 +70,14 @@ image="/assets/images/pages/connect/connect.jpg"
       image_alt="Community Partnerships"
       button_text="Learn More"
       button_url="#"
+      feature_class="bg-dark"
       %}
     </div>
   </div>
 </section>
 
 <!-- Section Bio -->
-<section class="bg-red">
+<section class="">
   <div class="container">
     <div class="bento-container">
       {% include feature.html

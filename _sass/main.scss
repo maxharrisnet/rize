@@ -1,9 +1,10 @@
 @use 'global/_reset';
 @use 'global/_variables';
 @use 'global/_mixins';
-@use 'global/accessibility';
+@use 'global/_accessibility';
 @use 'global/_color';
 @use 'global/_typography';
+@use 'global/_forms';
 @use 'global/_media';
 
 @use 'layout/_layout';
