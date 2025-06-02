@@ -19,7 +19,7 @@ footer {
 		@container (min-width: #{$container-lg}) {
 			flex-flow: row wrap;
 			justify-content: space-between;
-			padding: $spacing-xxxl $spacing-lg $spacing-xl;
+			padding: $spacing-lg $spacing-lg;
 		}
 
 		> div {
@@ -27,10 +27,10 @@ footer {
 			gap: $spacing-md;
 			flex-flow: column;
 			text-align: center;
-		}
 
-		@container (min-width: #{$container-lg}) {
-			flex-flow: row;
+			@container (min-width: #{$container-lg}) {
+				flex-flow: row;
+			}
 		}
 
 		.footer-logo {
@@ -75,7 +75,9 @@ footer {
 		}
 
 		.subfooter {
+			align-items: flex-end;
 			font-size: $font-size-xs;
+			justify-content: space-between;
 		}
 	}
 }

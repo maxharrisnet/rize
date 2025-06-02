@@ -10,12 +10,12 @@ Feature component for bento grid
 @param {string} icon - Emoji icon for the title (optional)
 {% endcomment %}
 
-<div class="bento-grid bento-grid--feature {% if include.reverse %}reverse{% endif %}">
+<div class="bento-grid bento-grid--feature {% if include.feature_class %}{{ include.feature_class }}{% endif %}">
   <div class="bento-section bento-image-wrapper">
     <img
       src="{{ include.image }}"
       alt="{{ include.image_alt }}"
-      class="bento-image" />
+      class="bento-image {{ include.image_class }}" />
   </div>
   <div class="bento-section text-container">
     <h3>{% if include.icon %}{{ include.icon }} {% endif %}{{ include.title }}</h3>

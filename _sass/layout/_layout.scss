@@ -23,7 +23,6 @@ main {
 	width: 100%;
 
 	@container (min-width: #{$container-lg}) {
-		flex-direction: row;
 		padding: $spacing-xxxl $spacing-xl;
 	}
 
@@ -42,8 +41,15 @@ main {
 		padding: $spacing-xxl 0;
 	}
 
-	.bento-grid .bento-image {
+	.bento-grid .bento-section {
+		
+		.bento-image {
 		border-radius: 0;
+
+		@media (min-width: $breakpoint-lg) {
+			border-radius: $border-radius-lg;
+		}
+		}
 	}
 
 	> div {
@@ -96,11 +102,6 @@ hr {
 		display: none;
 	}
 }
-
-// .column {
-// 	flex-flow: column;
-// 	align-items: center;
-// }
 
 .section-centered {
 	display: flex;

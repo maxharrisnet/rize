@@ -3,26 +3,26 @@
 button,
 a.button,
 .button a {
+	border-radius: $border-radius-lg;
+	border: 2px solid $color-white;
 	color: $color-white;
+	cursor: pointer;
 	display: flex;
 	font-family: $font-family-display;
 	font-weight: $font-weight-bold;
+	justify-content: center;
+	justify-self: center;
 	letter-spacing: $letter-spacing-tight;
 	line-height: $line-height-md;
-	justify-content: center;
-	text-align: center;
-	border-radius: $border-radius-lg;
-	border: 2px solid $color-white;
 	padding: $spacing-sm $spacing-md;
+	text-align: center;
 	text-transform: uppercase;
 	transition: all $transition;
-	cursor: pointer;
-	justify-self: center;
 
 	@container (min-width: #{$container-lg}) {
 		align-self: flex-start;
 		font-size: $font-size-md;
-		padding: $spacing-sm $spacing-xl;
+		padding: $spacing-base $spacing-xl;
 	}
 
 	&:hover {

@@ -29,16 +29,16 @@ main {
 		text-transform: uppercase;
 
 		@container (min-width: #{$container-lg}) {
-			font-size: $font-size-jumbo;
+			font-size: $font-size-xxxl;
 		}
 	}
 
 	h3 {
 		font-family: $font-family-display;
-		font-weight: $font-weight-bold;
+		font-weight: $font-weight-black;
 		font-size: $font-size-md;
 		line-height: $line-height-sm;
-		letter-spacing: $letter-spacing-none;
+		letter-spacing: $letter-spacing-tight;
 		text-transform: uppercase;
 
 		@container (min-width: #{$container-lg}) {
@@ -124,7 +124,7 @@ main {
 		line-height: $line-height-md;
 
 		@container (min-width: #{$container-lg}) {
-			font-size: $font-size-xl;
+			font-size: $font-size-lg;
 		}
 	}
 }
@@ -137,15 +137,14 @@ main {
 .heading-container {
 	display: flex;
 	flex-direction: column;
-	padding: $spacing-md $spacing-md $spacing-lg;
 	gap: $spacing-sm;
+	padding: $spacing-md $spacing-md $spacing-lg;
 	text-align: center;
 
 	@container (min-width: #{$container-lg}) {
 		align-items: center;
-		justify-content: center;
+		align-self: center;
 		max-width: 960px;
-		justify-self: center;
 		padding: $spacing-xxl $spacing-xxl;
 	}
 
@@ -168,7 +167,7 @@ main {
 	padding: $spacing-md;
 
 	@container (min-width: #{$container-lg}) {
-		padding: $spacing-lg;
+		padding: $spacing-lg 0;
 	}
 }
 

@@ -3,10 +3,9 @@
 
 .bento-container {
 	display: grid;
-	gap: $spacing-xl;
+	gap: $spacing-lg;
 
 	@media (min-width: $breakpoint-lg) {
-		gap: $spacing-xxxl;
 		padding: 0 $spacing-xxl;
 	}
 }
@@ -66,10 +65,10 @@ ul.bento-grid {
 	}
 
 	&--feature {
-		background-color: $color-black;
+		// background-color: $color-black;
 		box-shadow: $drop-shadow;
 		color: $color-white;
-		gap: $spacing-lg;
+		// gap: $spacing-lg;
 
 		@media (min-width: $breakpoint-lg) {
 			display: grid;
@@ -84,6 +83,9 @@ ul.bento-grid {
 		}
 
 		.bento-image-wrapper {
+			justify-content: center;
+			align-items: center;
+
 			@media (min-width: $breakpoint-lg) {
 				order: 2;
 			}
@@ -132,6 +134,19 @@ ul.bento-grid {
 		width: auto;
 		border-radius: $border-radius;
 		object-fit: cover;
+
+		&.circle {
+			border-radius: $border-radius-full;
+			overflow: hidden;
+			object-fit: cover;
+			height: 250px;
+			width: 250px;
+
+			@media (min-width: $breakpoint-lg) {
+				height: 400px;
+				width: 400px;
+			}
+		}
 	}
 }
 

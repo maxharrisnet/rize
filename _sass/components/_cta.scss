@@ -1,11 +1,8 @@
 @use '../global/variables' as *;
 
 .cta-section {
-	background-color: $color-black;
 	color: $color-white;
-	text-align: center;
 	display: grid;
-	align-items: center;
 	justify-content: center;
 
 	@container (min-width: #{$container-lg}) {
@@ -17,35 +14,36 @@
 		border-radius: $border-radius-lg;
 		box-shadow: $drop-shadow;
 		padding: $spacing-md;
-		width: fit-content;
+		// width: fit-content;
 
 		@container (min-width: #{$container-lg}) {
 			max-width: 960px;
-			padding: $spacing-xl;
+			padding: $spacing-xl $spacing-xxl;
 		}
 
 		.heading-container {
 			padding: $spacing-md 0;
 
+			@container (min-width: #{$container-lg}) {
+				padding: $spacing-lg;
+			}
+
 			h2 {
 				font-size: $font-size-lg;
 
 				@container (min-width: #{$container-lg}) {
-					font-size: $font-size-xxxl;
+					font-size: $font-size-xxl;
 					line-height: $line-height-sm;
 				}
 			}
 
 			p {
 				@container (min-width: #{$container-lg}) {
-					font-size: $font-size-body;
+					font-size: $font-size-md;
 					line-height: $line-height-md;
+					padding: 0 $spacing-xxl;
 				}
 			}
-		}
-
-		.button {
-			// display: inline-block;
 		}
 	}
 }

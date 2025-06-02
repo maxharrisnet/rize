@@ -1,0 +1,28 @@
+{% comment %}
+Bento Feature Component
+A reusable bento grid layout for featuring content with an image
+
+Parameters:
+- image_src: Path to the image
+- image_alt: Alt text for the image
+- image_class: Optional class for the image (default: 'bento-image')
+- title: Section title
+- paragraphs: Array of paragraph text
+- reverse: Boolean to reverse the layout (default: false)
+- bg_class: Optional background class (e.g., 'bg-dark', 'bg-red')
+{% endcomment %}
+
+<div class="bento-grid bento-grid--feature {% if include.reverse %}reverse{% endif %} {% if include.bg_class %}{{ include.bg_class }}{% endif %}">
+  <div class="bento-section bento-image-wrapper">
+    <img
+      src="{{ include.image_src }}"
+      alt="{{ include.image_alt }}"
+      class="{% if include.image_class %}{{ include.image_class }}{% else %}bento-image{% endif %}" />
+  </div>
+  <div class="bento-section text-container">
+    <h2>{{ include.title }}</h2>
+    {% for paragraph in include.paragraphs %}
+    <p>{{ paragraph }}</p>
+    {% endfor %}
+  </div>
+</div>

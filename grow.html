@@ -7,9 +7,9 @@ permalink: /grow/
 
 <!-- Hero -->
 {% include hero.html
-title="Empower your team, Grow Your Reach"
+title="Grow Your Reach"
 subtitle="Strengthen Your Systems & Lead With Confidence."
-image="/assets/images/pages/grow/grow2.jpg"
+image="/assets/images/pages/grow/hero-grow.jpg"
 cta_text="Get In Touch"
 cta_url="/connect"
 %}
@@ -17,13 +17,18 @@ cta_url="/connect"
 <!-- Section -->
 <section class="bg-red">
   <div class="container">
-    <div>
-      <p>
-        You want to reach more people and serve your community more effectively—but the tools and strategy to get there can feel overwhelming. We help you bridge that gap with systems and support that make sense for real teams and real goals.
-      </p>
-      <p>
-        We’ll help you organize your work, build capacity, and make digital outreach easier and more impactful.
-      </p>
+    <div class="bento-container">
+      {% include feature.html
+      title="Empower your Team!"
+      description="You want to reach more people and serve your community more effectively—but the tools and strategy to get there can feel overwhelming. We help you bridge that gap with systems and support that make sense for real teams and real goals."
+      image="/assets/images/pages/grow/grow2.jpg"
+      image_alt="Digital Strategy Planning"
+      image_class="circle"
+      button_text="Plan Your Outreach"
+      button_url="/services/strategy"
+      feature_class="bg-dark reverse"
+      %}
+
     </div>
   </div>
 </section>

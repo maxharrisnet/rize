@@ -11,7 +11,6 @@
       <p class="subtitle">{{ include.description }}</p>
       {% endif %}
 
-
       {% if include.social_links %}
       <div class="button-wrapper">
         {% include social-links.html %}
@@ -19,7 +18,7 @@
       {% endif %}
 
       {% if include.cta_url %}
-      <div class="button-wrapper">
+      <div class="button-container">
         <a href="{{ include.cta_url }}" class="button">{{ include.cta_text }}</a>
       </div>
       {% endif %}
