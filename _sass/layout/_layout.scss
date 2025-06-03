@@ -38,18 +38,21 @@ main {
 	flex-flow: column;
 
 	@container (min-width: #{$container-lg}) {
-		padding: $spacing-xxl 0;
+		padding: $spacing-xxxl 0;
 	}
 
 	.bento-grid .bento-section {
-		
 		.bento-image {
-		border-radius: 0;
+			border-radius: 0;
 
-		@media (min-width: $breakpoint-lg) {
-			border-radius: $border-radius-lg;
+			@media (min-width: $breakpoint-lg) {
+				border-radius: $border-radius-lg;
+			}
 		}
-		}
+	}
+
+	.container-sm {
+		max-width: $container-lg;
 	}
 
 	> div {

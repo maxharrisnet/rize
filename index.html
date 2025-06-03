@@ -54,7 +54,7 @@ cta_url="/connect"
           alt="Community Partnerships"
           class="bento-image" />
       </div>
-      <div class="bento-section">
+      <div class="bento-section bento-grid">
         <div class="heading-container--sm">
           <h3>About Rize Digital</h3>
         </div>
@@ -72,16 +72,18 @@ cta_url="/connect"
             <li>Building long-term relationships with care and accountability</li>
           </ul>
 
-          <p class="location">
-            Based in Vancouver, we serve clients across Canada.
-          </p>
-
-          <div class="land-acknowledgment">
-            <h4>Land Acknowledgment</h4>
-            <p>We are grateful to live and work on the unceded territories of the Musqueam, Squamish, and Tsleil-Waututh Nations.</p>
+          <div class="bento-grid bento-grid--feature reverse bg-dark">
+            <div class="bento-image-wrapper">
+              <img src="/assets/images/pages/home/land.jpg" class="bento-image" />
+            </div>
+            <div class="bento-section text-container">
+              <h4>Land Acknowledgment</h4>
+              <p class="location">
+                Based in Vancouver, we serve clients across Canada.
+              </p>
+              <p>We are grateful to live and work on the unceded territories of the Musqueam, Squamish, and Tsleil-Waututh Nations.</p>
+            </div>
           </div>
-
-          <a href="/connect" class="button">Connect With Us →</a>
         </div>
       </div>
     </div>
@@ -89,21 +91,22 @@ cta_url="/connect"
 </section>
 
 <section class="bg-red">
-  <div class="container">
-    <div class="heading-container">
-      <h2>Stay Connected</h2>
-      <p>
-        Follow us on social media to learn about upcoming workshops, get tech tips, and share in our journey to make the digital world more accessible, intentional, and inclusive.
-      </p>
-      <p>@WeAllRize on Instagram, Facebook, and LinkedIn</p>
+  <div class="container-sm bento-grid">
+    <div class="bento-section bg-dark">
+      <div class="heading-container">
+        <h2>Stay Connected</h2>
+        <p>
+          Follow us on social media to learn about upcoming workshops, get tech tips, and share in our journey.
+        </p>
+        <p>@WeAllRize on Instagram, Facebook, and LinkedIn</p>
+      </div>
+      {% include social-links.html %}
     </div>
-    {% include social-links.html %}
   </div>
 </section>
 
-
 <!-- Section - What We Do -->
-<section>
+<section class="bg-light">
   <div class="container column">
     <div class="heading-container">
       <h2>What We Do</h2>
@@ -129,6 +132,7 @@ cta_url="/connect"
       image_alt="Learning and workshops"
       button_text="Explore Workshops"
       button_url="/learn"
+      feature_class=" bg-dark"
       %}
 
       {% include feature.html
@@ -144,10 +148,10 @@ cta_url="/connect"
   </div>
 </section>
 
-<section>
+<section class="bg-light">
   <div class="container-full-width">
     <div class="bento-grid bento-grid--one-col">
-      <div class="bento-section bg-light">
+      <div class="bento-section ">
         <div class="heading-container">
           <h3>We Work With</h3>
         </div>

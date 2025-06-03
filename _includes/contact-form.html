@@ -11,14 +11,14 @@
         <div class="form-row">
           <!-- Name -->
           <div class="form-group">
-            <label for="name">Full Name</label>
+            <label for="name">Full Name *</label>
             <input type="text" name="name" id="name" required>
           </div>
 
 
           <!-- Organization -->
           <div class="form-group">
-            <label for="organization">Organization Name (optional)</label>
+            <label for="organization">Organization Name</label>
             <input type="text" name="organization" id="organization">
           </div>
         </div>
@@ -26,20 +26,20 @@
         <div class="form-row">
           <!-- Email -->
           <div class="form-group">
-            <label for="email">Email Address</label>
+            <label for="email">Email Address *</label>
             <input type="email" name="email" id="email" required>
           </div>
 
           <!-- Phone -->
           <div class="form-group">
-            <label for="phone">Phone Number (optional)</label>
+            <label for="phone">Phone Number</label>
             <input type="tel" name="phone" id="phone">
           </div>
         </div>
 
         <!-- Type of Inquiry -->
         <div class="form-group">
-          <label for="inquiry">Type of Inquiry</label>
+          <label for="inquiry">Type of Inquiry *</label>
           <select name="inquiry" id="inquiry" required>
             <option value="">Select one...</option>
             <option value="Build">Build (Website or App Project)</option>
@@ -52,14 +52,18 @@
 
         <!-- Message -->
         <div class="form-group">
-          <label for="message">Project or Message Description</label>
+          <label for="message">Project or Message Description *</label>
           <textarea name="message" id="message" rows="5" required></textarea>
         </div>
 
         <!-- Referral -->
         <div class="form-group">
-          <label for="referral">How did you hear about Rize Digital? (optional)</label>
+          <label for="referral">How did you hear about Rize Digital?</label>
           <input type="text" name="referral" id="referral">
+        </div>
+
+        <div class="form-group">
+          <span>* required</span>
         </div>
 
         <!-- Submit -->

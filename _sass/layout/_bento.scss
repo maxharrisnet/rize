@@ -14,12 +14,13 @@
 .bento-grid,
 ul.bento-grid {
 	display: grid;
-	padding: $spacing-lg 0;
+	padding: $spacing-md;
 	border-radius: $border-radius-lg;
 	overflow: hidden;
 
 	@media (min-width: $breakpoint-lg) {
-		// gap: $spacing-lg;
+		gap: $spacing-md;
+		padding: $spacing-lg;
 	}
 
 	&--one-col {
@@ -66,10 +67,8 @@ ul.bento-grid {
 	}
 
 	&--feature {
-		// background-color: $color-black;
 		box-shadow: $drop-shadow;
 		color: $color-white;
-		// gap: $spacing-lg;
 
 		@media (min-width: $breakpoint-lg) {
 			display: grid;
@@ -167,18 +166,18 @@ ul.bento-list {
 	}
 
 	li {
-		border: 2px solid;
-		border-radius: $border-radius-xl;
-		display: flex;
-		font-size: $font-size-body;
-		letter-spacing: $letter-spacing-tight;
-		line-height: $line-height-md;
-		padding: $spacing-sm $spacing-md;
-		text-transform: uppercase;
-		font-weight: $font-weight-black;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
+		// border: 2px solid;
+		// border-radius: $border-radius-xl;
+		// display: flex;
+		// font-size: $font-size-body;
+		// letter-spacing: $letter-spacing-tight;
+		// line-height: $line-height-md;
+		// padding: $spacing-sm $spacing-md;
+		// text-transform: uppercase;
+		// font-weight: $font-weight-black;
+		// justify-content: center;
+		// align-items: center;
+		// text-align: center;
 
 		@media (min-width: $breakpoint-lg) {
 			font-size: $font-size-lg;

@@ -6,7 +6,7 @@
 	position: relative;
 
 	@container (min-width: #{$container-lg}) {
-		padding: 250px $spacing-lg;
+		padding: 250px $spacing-lg 0;
 	}
 
 	.cta-body {
@@ -18,9 +18,8 @@
 		z-index: 10;
 
 		@container (min-width: #{$container-lg}) {
-			max-width: 960px;
+			max-width: $container-lg;
 			padding: $spacing-xl $spacing-xxl;
-			// margin-top: 200px;
 		}
 
 		.heading-container {
@@ -50,10 +49,16 @@
 	}
 
 	.image-container {
-		height: 65%;
+		// height: 60%;
+		height: 200px;
 		display: flex;
 		flex-flow: column;
-		justify-content: flex-end;
+		justify-content: center;
+
+		@container (min-width: #{$container-lg}) {
+			height: 60%;
+			min-height: 400px;
+		}
 
 		video {
 			width: 100%;
@@ -82,7 +87,7 @@
 	align-items: center;
 	gap: $spacing-lg;
 	margin: 0 auto;
-	max-width: 960px;
+	max-width: $container-lg;
 	padding: $spacing-xxl;
 
 	p {
