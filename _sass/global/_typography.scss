@@ -57,6 +57,7 @@ main {
 	}
 
 	p {
+		font-size: $font-size-body;
 		font-weight: $font-weight-light;
 		letter-spacing: $letter-spacing-none;
 
@@ -144,7 +145,7 @@ main {
 	}
 
 	.subtitle {
-		font-size: $font-size-md;
+		font-size: $font-size-body;
 		font-weight: $font-weight-light;
 		line-height: $line-height-md;
 
@@ -163,14 +164,14 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: $spacing-sm;
-	padding: $spacing-md $spacing-md $spacing-lg;
-	text-align: center;
+	padding: $spacing-md 0 $spacing-lg;
 
 	@container (min-width: #{$container-lg}) {
 		align-items: center;
 		align-self: center;
 		max-width: $container-lg;
 		padding: $spacing-xxl $spacing-xxl;
+		text-align: center;
 	}
 
 	h3 {
@@ -196,7 +197,8 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: $spacing-md;
+	padding: 0 $spacing-sm;
+	gap: $spacing-sm;
 
 	@container (min-width: #{$breakpoint-lg}) {
 		gap: $spacing-lg;

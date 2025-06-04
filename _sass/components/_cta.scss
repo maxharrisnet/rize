@@ -4,6 +4,7 @@
 	display: grid;
 	justify-content: center;
 	position: relative;
+	padding: $spacing-xxl $spacing-lg;
 
 	@container (min-width: #{$container-lg}) {
 		padding: 250px $spacing-lg 0;

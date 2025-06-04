@@ -69,6 +69,8 @@ ul.bento-grid {
 	&--feature {
 		box-shadow: $drop-shadow;
 		color: $color-white;
+		// gap: $spacing-md;
+		padding: 0;
 
 		@media (min-width: $breakpoint-lg) {
 			display: grid;
@@ -92,6 +94,8 @@ ul.bento-grid {
 		}
 
 		.text-container {
+			padding: $spacing-md 0;
+
 			@media (min-width: $breakpoint-lg) {
 				max-width: 90%;
 			}
@@ -130,6 +134,7 @@ ul.bento-grid {
 
 				.bento-image {
 					border-radius: 0;
+					max-height: 300px;
 				}
 			}
 		}

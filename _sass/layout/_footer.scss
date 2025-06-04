@@ -75,9 +75,13 @@ footer {
 		}
 
 		.subfooter {
-			align-items: flex-end;
+			align-items: center;
 			font-size: $font-size-xs;
 			justify-content: space-between;
+
+			@container (min-width: #{$container-lg}) {
+				align-items: flex-end;
+			}
 		}
 	}
 }
