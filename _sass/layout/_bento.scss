@@ -91,6 +91,14 @@ ul.bento-grid {
 			@media (min-width: $breakpoint-lg) {
 				order: 2;
 			}
+
+			img {
+				max-height: 300px;
+
+				@media (min-width: $breakpoint-lg) {
+					max-height: 100%;
+				}
+			}
 		}
 
 		.text-container {
