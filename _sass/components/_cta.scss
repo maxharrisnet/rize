@@ -32,6 +32,8 @@
 
 			h2 {
 				font-size: $font-size-lg;
+				padding: 0;
+				text-align: center;
 
 				@container (min-width: #{$container-lg}) {
 					font-size: $font-size-xxl;
@@ -40,6 +42,9 @@
 			}
 
 			p {
+				font-size: $font-size-sm;
+				text-align: center;
+
 				@container (min-width: #{$container-lg}) {
 					font-size: $font-size-md;
 					line-height: $line-height-md;

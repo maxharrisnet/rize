@@ -79,7 +79,7 @@ main {
 	ul {
 		display: flex;
 		flex-flow: column;
-		gap: $spacing-md;
+		gap: $spacing-lg;
 		list-style: none;
 		padding: 0;
 		margin: 0;
@@ -90,17 +90,16 @@ main {
 
 		li {
 			border: 2px solid;
-			border-radius: $border-radius-xl;
+			border-radius: $border-radius;
 			display: flex;
 			font-size: $font-size-body;
+			font-weight: $font-weight-regular;
 			letter-spacing: $letter-spacing-tight;
 			line-height: $line-height-md;
-			padding: $spacing-sm $spacing-md;
-			// text-transform: uppercase;
-			font-weight: $font-weight-black;
-			// justify-content: center;
+			padding: $spacing-sm $spacing-lg;
+			justify-content: center;
 			align-items: center;
-			// text-align: center;
+			text-align: center;
 		}
 	}
 

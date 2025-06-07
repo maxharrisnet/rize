@@ -8,7 +8,7 @@ header {
 	position: fixed;
 	background-color: $color-white;
 	box-shadow: $drop-shadow-sm;
-	height: $header-height;
+	// height: $header-height;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -24,7 +24,8 @@ header {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		padding: $spacing-md;
+		padding: $spacing-sm;
+		gap: $spacing-sm;
 
 		@container (min-width: #{$container-lg}) {
 			padding: $spacing-md $spacing-xl;
@@ -47,6 +48,11 @@ header {
 		.logo-mobile {
 			@container (min-width: #{$container-lg}) {
 				display: none;
+			}
+
+			img {
+				height: 30px;
+				margin-top: 5px;
 			}
 		}
 
@@ -74,7 +80,7 @@ header {
 					color: $color-black;
 					font-family: $font-family-display;
 					font-size: $font-size-sm;
-					font-weight: $font-weight-bold;
+					font-weight: $font-weight-regular;
 					text-decoration: none;
 					text-transform: uppercase;
 
