@@ -69,11 +69,11 @@ ul.bento-grid {
 	&--feature {
 		box-shadow: $drop-shadow;
 		color: $color-white;
-		// gap: $spacing-md;
-		padding: 0;
+		// padding: 0;
 
 		@media (min-width: $breakpoint-lg) {
 			display: grid;
+			gap: $spacing-md;
 			grid-template-columns: 3fr 2fr;
 		}
 
@@ -101,11 +101,12 @@ ul.bento-grid {
 			}
 		}
 
-		.text-container {
-			padding: $spacing-md 0;
+		.bento-section.text-container {
+			padding: $spacing-lg $spacing-sm;
 
 			@media (min-width: $breakpoint-lg) {
 				max-width: 90%;
+				padding: $spacing-xl;
 			}
 		}
 
