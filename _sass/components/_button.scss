@@ -21,7 +21,7 @@ a.button,
 
 	@container (min-width: #{$container-lg}) {
 		align-self: flex-start;
-		font-size: $font-size-md;
+		// font-size: $font-size-md;
 		padding: $spacing-base $spacing-xl;
 	}
 
