@@ -19,7 +19,7 @@ ul.bento-grid {
 	overflow: hidden;
 
 	@media (min-width: $breakpoint-lg) {
-		gap: $spacing-md;
+		// gap: $spacing-md;
 		padding: $spacing-lg;
 	}
 
@@ -69,11 +69,11 @@ ul.bento-grid {
 	&--feature {
 		box-shadow: $drop-shadow;
 		color: $color-white;
-		// padding: 0;
+		padding: 0;
 
 		@media (min-width: $breakpoint-lg) {
 			display: grid;
-			gap: $spacing-md;
+			// gap: $spacing-md;
 			grid-template-columns: 3fr 2fr;
 		}
 
@@ -102,7 +102,8 @@ ul.bento-grid {
 		}
 
 		.bento-section.text-container {
-			padding: $spacing-lg $spacing-sm;
+			padding: $spacing-md $spacing-md;
+			gap: $spacing-sm;
 
 			@media (min-width: $breakpoint-lg) {
 				max-width: 90%;
@@ -136,7 +137,8 @@ ul.bento-grid {
 		}
 
 		&.bento-image-wrapper {
-			border-radius: 0;
+			padding: $spacing-md;
+			// border-radius: 0;
 
 			&.flush {
 				padding: 0;
@@ -159,12 +161,12 @@ ul.bento-grid {
 			border-radius: $border-radius-full;
 			overflow: hidden;
 			object-fit: cover;
-			height: 250px;
-			width: 250px;
+			height: 200px;
+			width: 200px;
 
 			@media (min-width: $breakpoint-lg) {
-				height: 400px;
-				width: 400px;
+				height: 320px;
+				width: 320px;
 			}
 		}
 	}
