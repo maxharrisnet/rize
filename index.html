@@ -13,41 +13,24 @@ cta_url="/connect"
 %}
 
 <!-- Section -  -->
-<section class="bg-red">
-  <div class="container column">
-    <div class="heading-container">
-      <h2>Welcome to Rize Digital!</h2>
-      <h3>Tech that gets it</h3>
-      <p class="subtitle">
-        We're a digital support studio rooted in community and culture. From websites to workshops to strategy, we help you navigate tech with confidence, clarity, and purpose. We don't do generic—we build digital spaces that reflect who you are and where you're going. </p>
-      <div class="button-container">
-        <a class="button" href="#features">Learn More About </a>
-      </div>
-    </div>
-  </div>
-</section>
+{% include section-centered.html
+bg_class="bg-red"
+heading="Welcome to Rize Digital!"
+subheading="Tech that gets it"
+paragraphs="We're a digital support studio rooted in community and culture. From websites to workshops to strategy, we help you navigate tech with confidence, clarity, and purpose. We don't do generic—we build digital spaces that reflect who you are and where you're going."
+is_list=false
+cta_text="Learn More About"
+cta_url="#features"
+%}
 
 <!-- Section- Features -->
-<section class="bg-light">
-  <div class="container column">
-    <div class="bento-container">
-      <ul class="">
-        <li class="bento-section">
-          <p>Establish a strong, welcoming digital presence</p>
-        </li>
-        <li class="bento-section">
-          <p>Reach and engage their audience through thoughtful strategy</p>
-        </li>
-        <li class="bento-section">
-          <p>Navigate tech with confidence—no matter their experience level</p>
-        </li>
-        <li class="bento-section">
-          <p>Find the right tools that match their needs, values, and budget</p>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
+{% include section-centered.html
+bg_class="bg-light"
+heading="What We Offer"
+subheading="Build Your Digital Home"
+is_list=true
+paragraphs="Establish a strong, welcoming digital presence|Reach and engage their audience through thoughtful strategy|Navigate tech with confidence—no matter their experience level|Find the right tools that match their needs, values, and budget"
+%}
 
 <section>
   <div class="container-full-width">
@@ -84,11 +67,6 @@ cta_url="/connect"
 <!-- Section - Features  -->
 <section class="bg-light">
   <div class="container column">
-    {% include heading.html
-    heading="What We Offer"
-    subheading="Build Your Digital Home"
-    %}
-
     <div class="bento-container">
       {% include feature.html
       title="Build"
