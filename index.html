@@ -6,25 +6,28 @@ title: Rize Digital
 <!-- Hero -->
 {% include hero.html
 title="Together, We Rize"
-subtitle="We help community-driven organizations and changemakers use technology to thrive—through websites, workshops, strategy, and systems that work for real people."
+subtitle="Helping community leaders, nonprofits, and creatives use technology with confidence and clarity."
 image="/assets/images/pages/home/hero-home1.jpg"
-cta_text="Get In Touch"
+cta_text="start Your Project"
 cta_url="/connect"
 %}
 
-
-<!-- Section - Our Value -->
+<!-- Section -  -->
 <section class="bg-red">
   <div class="container column">
     <div class="heading-container">
       <h2>Welcome to Rize Digital!</h2>
+      <h3>Tech that gets it</h3>
       <p class="subtitle">
-        We're here to make the digital side of that work easier, more effective, and more empowering. We help nonprofits, grassroots organizations, educators, and entrepreneurs:
-      </p>
+        We're a digital support studio rooted in community and culture. From websites to workshops to strategy, we help you navigate tech with confidence, clarity, and purpose. We don't do generic—we build digital spaces that reflect who you are and where you're going. </p>
+      <div class="button-container">
+        <a class="button" href="#features">Learn More About </a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Section- Features -->
 <section class="bg-light">
   <div class="container column">
     <div class="bento-container">
@@ -45,6 +48,7 @@ cta_url="/connect"
     </div>
   </div>
 </section>
+
 <section>
   <div class="container-full-width">
     <div class="bento-grid bento-grid--feature reverse">
@@ -77,15 +81,14 @@ cta_url="/connect"
   </div>
 </section>
 
-<!-- Section - What We Do -->
+<!-- Section - Features  -->
 <section class="bg-light">
   <div class="container column">
-    <div class="heading-container">
-      <h2>What We Do</h2>
-      <p class="subtitle">We offer support where you need it most—always guided by care, clarity, and community.</p>
-    </div>
+    {% include heading.html
+    heading="What We Offer"
+    subheading="Build Your Digital Home"
+    %}
 
-    <!-- Features -->
     <div class="bento-container">
       {% include feature.html
       title="Build"
