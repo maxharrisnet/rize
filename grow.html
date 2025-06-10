@@ -36,9 +36,9 @@ cta_url="/connect"
 <!-- Section - What We Help You Do -->
 <section>
   <div class="container">
-    <div class="heading-container">
-      <h2>What We Help You Do</h2>
-    </div>
+    {% include heading.html
+    heading="What We Help You Do"
+    %}
     <div class="bento-container">
       {% include feature.html
       title="Marketing Strategy"
@@ -77,7 +77,7 @@ cta_url="/connect"
 <!-- CTA Section -->
 {% include cta.html
 title="Reach further & work smarter"
-text="We help you strengthen your digital strategy and set up internal systems that make your work smoother, more organized, and more effective. Let’s grow your impact from the inside out."
+text="We help you strengthen your digital strategy and set up internal systems that make your work smoother, more organized, and more effective. Let's grow your impact from the inside out."
 button_text="Plan Your Growth"
 link="/connect?type=build"
 %}

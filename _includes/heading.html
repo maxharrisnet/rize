@@ -5,9 +5,10 @@ Heading component
 @param {string} cta_text - Text for the CTA button (optional)
 @param {string} cta_url - URL for the CTA button (optional)
 @param {string} class - Additional classes for the container (optional)
+@param {boolean} small - Whether to use the small variant (optional)
 {% endcomment %}
 
-<div class="heading-container {% if include.class %}{{ include.class }}{% endif %}">
+<div class="heading-container {% if include.small %}--sm{% endif %} {% if include.class %}{{ include.class }}{% endif %}">
   <h2>{{ include.heading }}</h2>
   {% if include.subheading %}
   <p class="subtitle">{{ include.subheading }}</p>
