@@ -85,6 +85,7 @@ main {
 		margin: 0;
 
 		@container (min-width: #{$container-lg}) {
+			flex-flow: row wrap;
 			max-width: $container-lg;
 		}
 
@@ -100,12 +101,11 @@ main {
 			justify-content: center;
 			align-items: center;
 			text-align: center;
-		}
-	}
 
-	li {
-		margin: 0;
-		padding: 0;
+			@container (min-width: #{$container-lg}) {
+				flex: 1 0 48%;
+			}
+		}
 	}
 
 	details {
