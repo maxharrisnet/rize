@@ -89,12 +89,12 @@ main {
 		}
 
 		li {
+			align-items: center;
 			border: 3px solid;
 			border-radius: $border-radius-lg;
 			display: flex;
 			font-size: $font-size-body;
 			font-weight: $font-weight-regular;
-			align-items: center;
 			letter-spacing: $letter-spacing-none;
 			line-height: $line-height-md;
 			padding: $spacing-sm $spacing-lg;
@@ -180,6 +180,13 @@ main {
 
 		@container (min-width: #{$container-lg}) {
 			padding: $spacing-md 0;
+		}
+	}
+
+	ul {
+		li {
+			background-color: $color-black;
+			color: $color-white;
 		}
 	}
 }
