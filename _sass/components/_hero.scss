@@ -12,7 +12,7 @@
 		position: relative;
 
 		@container (min-width: #{$breakpoint-lg}) {
-		background-color: $color-black;
+			background-color: $color-black;
 			min-height: 80vh;
 			grid-template-columns: 2fr 2fr;
 		}
@@ -32,8 +32,12 @@
 			@container (min-width: #{$breakpoint-lg}) {
 				border-radius: 0;
 				margin: 0;
-				padding: $spacing-xxxl $spacing-xxl;
+				padding: $spacing-xxxl $spacing-xxxl;
 				text-align: left;
+			}
+
+			.subtitle {
+				padding-left: 0;
 			}
 		}
 

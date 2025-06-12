@@ -47,9 +47,6 @@ ul.bento-grid {
 		}
 
 		.bento-section {
-			background-color: $color-black;
-			color: $color-white;
-			text-align: center;
 			padding: $spacing-lg $spacing-md;
 			display: flex;
 			align-items: center;
@@ -108,6 +105,21 @@ ul.bento-grid {
 			@media (min-width: $breakpoint-lg) {
 				max-width: 90%;
 				padding: $spacing-xl;
+			}
+
+			h3 {
+				@media (min-width: $breakpoint-lg) {
+					font-size: $font-size-xxl;
+				}
+			}
+
+			ul {
+				gap: $spacing-sm;
+				padding: $spacing-sm 0;
+
+				@media (min-width: $breakpoint-lg) {
+					gap: $spacing-md;
+				}
 			}
 		}
 

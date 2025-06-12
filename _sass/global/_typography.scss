@@ -89,17 +89,15 @@ main {
 		}
 
 		li {
-			border: 2px solid;
-			border-radius: $border-radius;
+			border: 3px solid;
+			border-radius: $border-radius-lg;
 			display: flex;
 			font-size: $font-size-body;
 			font-weight: $font-weight-regular;
-			letter-spacing: $letter-spacing-tight;
+			align-items: center;
+			letter-spacing: $letter-spacing-none;
 			line-height: $line-height-md;
 			padding: $spacing-sm $spacing-lg;
-			justify-content: center;
-			align-items: center;
-			text-align: center;
 		}
 	}
 
@@ -175,6 +173,14 @@ main {
 		max-width: $container-lg;
 		padding: 0 $spacing-xl;
 		text-align: center;
+	}
+
+	h2 {
+		padding: $spacing-sm 0;
+
+		@container (min-width: #{$container-lg}) {
+			padding: $spacing-md 0;
+		}
 	}
 }
 
