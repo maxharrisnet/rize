@@ -16,26 +16,11 @@ A centered section with heading and optional CTA
     {% include heading.html
     heading=include.heading
     subheading=include.subheading
+    paragraphs=include.paragraphs
+    is_list=include.is_list
     cta_text=include.cta_text
     cta_url=include.cta_url
     class=include.class
     %}
-
-    {% if include.paragraphs %}
-    {% assign paragraphs = include.paragraphs | split: "|" %}
-    {% if include.is_list %}
-    <ul class="bento-grid">
-      {% for item in paragraphs %}
-      <li class="bento-section">
-        <p>{{ item | strip }}</p>
-      </li>
-      {% endfor %}
-    </ul>
-    {% else %}
-    {% for paragraph in paragraphs %}
-    <p class="subtitle">{{ paragraph | strip }}</p>
-    {% endfor %}
-    {% endif %}
-    {% endif %}
   </div>
 </section>

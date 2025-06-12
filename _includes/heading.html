@@ -4,15 +4,35 @@ Heading component
 @param {string} subheading - The subheading text (optional)
 @param {string} cta_text - Text for the CTA button (optional)
 @param {string} cta_url - URL for the CTA button (optional)
+@param {string} paragraphs - String of paragraphs separated by | (optional)
+@param {boolean} is_list - Whether the paragraphs should be rendered as a list (optional)
 @param {string} class - Additional classes for the container (optional)
 @param {boolean} small - Whether to use the small variant (optional)
 {% endcomment %}
 
 <div class="heading-container {% if include.small %}--sm{% endif %} {% if include.class %}{{ include.class }}{% endif %}">
+
   <h2>{{ include.heading }}</h2>
   {% if include.subheading %}
   <p class="subtitle">{{ include.subheading }}</p>
   {% endif %}
+  {% if include.paragraphs %}
+  {% assign paragraphs = include.paragraphs | split: "|" %}
+  {% if include.is_list %}
+  <ul class="bento-grid">
+    {% for item in paragraphs %}
+    <li class="bento-section">
+      <p>{{ item | strip }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  {% for paragraph in paragraphs %}
+  <p class="subtitle">{{ paragraph | strip }}</p>
+  {% endfor %}
+  {% endif %}
+  {% endif %}
+
   {% if include.cta_text and include.cta_url %}
   <div class="button-container">
     <a href="{{ include.cta_url }}" class="button">{{ include.cta_text }}</a>
