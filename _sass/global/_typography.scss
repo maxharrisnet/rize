@@ -147,9 +147,11 @@ main {
 		font-size: $font-size-body;
 		font-weight: $font-weight-light;
 		line-height: $line-height-md;
+		max-width: $container-sm;
 
 		@container (min-width: #{$container-lg}) {
 			font-size: $font-size-lg;
+			// max-width: $container-lg;
 		}
 	}
 }

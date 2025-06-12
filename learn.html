@@ -5,24 +5,31 @@ title: "Digital Workshops & Training | Learn with Rize Digital"
 description: "Hands-on digital workshops for individuals, teams, and communities—covering web, AI, e-commerce, and safety. Online and in-person."
 keywords: [digital workshops, nonprofit training, ai workshop, digital literacy, web skills, community education, tech for good]
 og_title: "Learn Digital Skills That Uplift Your Work"
-og_description: "Book a workshop or create one with us. We offer training that meets you where you’re at—culturally aware and skill-building focused."
+og_description: "Book a workshop or create one with us. We offer training that meets you where you're at—culturally aware and skill-building focused."
 og_image: /assets/images/og-learn.jpg
 ---
 
 <!-- Hero -->
 {% include hero.html
-title="Digital Skills for Work & Life"
-subtitle="Lead With Confidence.Workshops and training that help communities build digital confidence. Whether you're a small business, a nonprofit team, or a family learning together, we teach the skills that make technology feel approachable, useful, and empowering."
+title="Level up with us"
+subtitle="Workshops and training for teams, orgs, and everyday people who want to grow digital confidence and skills."
 image="/assets/images/pages/learn/learn3.jpg"
-cta_text="Get In Touch"
+cta_text="Book a Session"
 cta_url="/contact"
+%}
+
+{% include section-centered.html
+bg_class="bg-red"
+heading="Learn at Your Level"
+paragraphs="Whether you're new to tech or looking to grow your skills, our workshops meet you where you are. We create safe, engaging learning spaces for communities, organizations, and individuals who want to do more with digital tools."
+is_list=false
 %}
 
 <section class="bg-red">
   <div class="container">
     {% include heading.html
     heading="How We Teach"
-    subheading="Our workshops are designed for real people — not tech insiders. We use clear language, relevant examples, and culturally informed teaching to meet learners where they're at. Sessions are available in-person or virtually, for individuals, small groups, and entire organizations."
+    subheading="Whether you're new to tech or looking to grow your skills, our workshops meet you where you are. We create safe, engaging learning spaces for communities, organizations, and individuals who want to do more with digital tools."
     class="column"
     %}
   </div>
@@ -32,7 +39,7 @@ cta_url="/contact"
 <section>
   <div class="container">
     {% include heading.html
-    heading="What We Offer"
+    heading="Workshop Offerings"
     %}
     <div class="bento-container">
       {% include feature.html
@@ -45,8 +52,8 @@ cta_url="/contact"
       %}
 
       {% include feature.html
-      title="Community Education"
-      description="Make digital spaces safer, more understandable, and more inclusive. We help families and elders navigate the online world with confidence, teach youth how to critically engage with social media and online content, and promote digital wellness and safety in community contexts."
+      title="Digital Safety for Families"
+      description="Support elders and youth in staying safe, balanced, and informed online."
       image="/assets/images/pages/learn/learn2.jpg"
       image_alt="Community Education Workshop"
       button_text="Book a Community Workshop"
@@ -66,42 +73,17 @@ cta_url="/contact"
   </div>
 </section>
 
-<section>
-  <div class="container-full-width">
-    <div class="bento-grid bento-grid--two-col reverse">
-      <div class="bento-section">
-        <img
-          src="/assets/images/pages/learn/workshops.jpg"
-          alt="Community Partnerships"
-          class="bento-image" />
-      </div>
-      <div class="bento-section  bg-red">
-        <div class="heading-container--sm">
-          <h3>Workshops</h3>
-        </div>
-        <ul class="bento-list">
-          <li>
-            <span>Online Safety</span>
-          </li>
-          <li>
-            <span>Artificial Intelligence</span>
-          </li>
-          <li>
-            <span>E-commerce</span>
-          </li>
-          <li>
-            <span>Digital Marketing</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+{% include section-centered.html
+bg_class="bg-red"
+heading="Customized for Your Community"
+paragraphs="Every organization is different. That's why we tailor each workshop to fit your audience, goals, and values. Whether you're a grassroots collective, a nonprofit team, or a group of elders and youth, we adapt our content and delivery to meet your needs."
+is_list=false
+%}
 
 <!-- CTA Section -->
 {% include cta.html
-title="Grow your digital confidence"
-text="We offer workshops and training that meet you where you are—whether you're just getting started or expanding your skills. For individuals, teams, or entire communities, we'll help you navigate tech with clarity and care."
-button_text="Book a Workshop or Session"
+title="Ready to learn something new?"
+text="We'll guide you through it—with clarity, care, and no judgment."
+button_text="Book a Workshop"
 link="/contact?type=build"
 %}
