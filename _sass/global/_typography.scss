@@ -35,14 +35,14 @@ main {
 
 	h3 {
 		font-family: $font-family-display;
-		font-weight: $font-weight-black;
+		font-weight: $font-weight-bold;
 		font-size: $font-size-md;
 		line-height: $line-height-sm;
 		letter-spacing: $letter-spacing-tight;
 		text-transform: uppercase;
 
 		@container (min-width: #{$container-lg}) {
-			font-size: $font-size-xxl;
+			font-size: $font-size-lg;
 		}
 	}
 
@@ -152,8 +152,8 @@ main {
 		@container (min-width: #{$container-lg}) {
 			font-size: $font-size-lg;
 			max-width: $container-md;
-			padding-left: $spacing-xl;
-			padding-right: $spacing-xl;
+			padding-left: $spacing-lg;
+			padding-right: $spacing-lg;
 		}
 	}
 }
@@ -173,17 +173,8 @@ main {
 		align-items: center;
 		align-self: center;
 		max-width: $container-lg;
-		padding: $spacing-xxl $spacing-xxl;
+		padding: 0 $spacing-xl;
 		text-align: center;
-	}
-
-	h3 {
-		font-size: $font-size-xl;
-		line-height: $line-height-sm;
-		letter-spacing: $letter-spacing-tight;
-		text-transform: uppercase;
-		text-align: center;
-		justify-self: center;
 	}
 }
 
