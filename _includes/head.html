@@ -1,0 +1,17 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page.description }}">
+  <meta name="keywords" content="Rize Digital, technology, community, uplift">
+  <meta name="author" content="Rize Digital">
+
+  <title>{{page.title}}</title>
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+
+  {% if page.jsonld %}
+  <script type="application/ld+json">
+    {{ page.jsonld | strip_newlines | replace: '=>', ':' }}
+  </script>
+  {% endif %}
+</head>
