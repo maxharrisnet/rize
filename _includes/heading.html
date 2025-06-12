@@ -15,21 +15,23 @@ Heading component
   {% if include.subheading %}
   <p class="subtitle">{{ include.subheading }}</p>
   {% endif %}
+
   {% if include.paragraphs %}
   {% assign paragraphs = include.paragraphs | split: "|" %}
-  {% if include.is_list %}
+  {% for paragraph in paragraphs %}
+  <p class="subtitle">{{ paragraph | strip }}</p>
+  {% endfor %}
+  {% endif %}
+
+  {% if include.list %}
+  {% for item in list %}
   <ul class="bento-grid">
-    {% for item in paragraphs %}
+    {% for item in list %}
     <li class="bento-section">
       <p>{{ item | strip }}</p>
     </li>
     {% endfor %}
   </ul>
-  {% else %}
-  {% for paragraph in paragraphs %}
-  <p class="subtitle">{{ paragraph | strip }}</p>
-  {% endfor %}
-  {% endif %}
   {% endif %}
 
   {% if include.cta_text and include.cta_url %}
