@@ -25,7 +25,7 @@ main {
 		font-weight: $font-weight-black;
 		font-size: $font-size-xl;
 		line-height: $line-height-sm;
-		letter-spacing: $letter-spacing-none;
+		letter-spacing: $letter-spacing-loose;
 		text-transform: uppercase;
 
 		@container (min-width: #{$container-lg}) {
@@ -151,7 +151,9 @@ main {
 
 		@container (min-width: #{$container-lg}) {
 			font-size: $font-size-lg;
-			// max-width: $container-lg;
+			max-width: $container-md;
+			padding-left: $spacing-xl;
+			padding-right: $spacing-xl;
 		}
 	}
 }
