@@ -97,13 +97,9 @@ main {
 			font-weight: $font-weight-regular;
 			letter-spacing: $letter-spacing-none;
 			line-height: $line-height-md;
+			margin: 0;
 			padding: $spacing-sm $spacing-lg;
 		}
-	}
-
-	li {
-		margin: 0;
-		padding: 0;
 	}
 
 	details {
@@ -186,6 +182,7 @@ main {
 	ul {
 		li {
 			background-color: $color-black;
+			border-color: $color-black;
 			color: $color-white;
 		}
 	}
