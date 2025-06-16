@@ -21,11 +21,11 @@
 			background-color: $color-black;
 			box-shadow: $drop-shadow;
 			border-radius: $border-radius-lg;
-			position: relative;
 			margin-top: -10vh;
 			margin-left: $spacing-sm;
 			margin-right: $spacing-sm;
-			padding: $spacing-xl $spacing-lg;
+			padding: $spacing-xl $spacing-md;
+			position: relative;
 			text-align: center;
 			z-index: 2;
 
