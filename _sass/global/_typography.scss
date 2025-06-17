@@ -86,6 +86,7 @@ main {
 		padding: 0;
 
 		@container (min-width: #{$container-lg}) {
+			flex-flow: row wrap;
 			max-width: $container-lg;
 		}
 

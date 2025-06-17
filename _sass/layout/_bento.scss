@@ -98,7 +98,7 @@ ul.bento-grid {
 		}
 
 		.bento-section.text-container {
-			padding: $spacing-md $spacing-md;
+			padding: 0 $spacing-md $spacing-md;
 			gap: $spacing-sm;
 
 			@media (min-width: $breakpoint-lg) {

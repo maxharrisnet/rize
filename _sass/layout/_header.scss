@@ -84,6 +84,10 @@ header {
 					text-decoration: none;
 					text-transform: uppercase;
 
+					&.active {
+						color: $color-primary;
+					}
+
 					@container (min-width: #{$container-lg}) {
 						letter-spacing: $letter-spacing-tight;
 					}
