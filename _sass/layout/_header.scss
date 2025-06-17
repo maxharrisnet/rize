@@ -85,7 +85,7 @@ header {
 					text-transform: uppercase;
 
 					&.active {
-						color: $color-primary;
+						color: $color-primary-bright;
 					}
 
 					@container (min-width: #{$container-lg}) {

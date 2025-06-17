@@ -1,14 +1,21 @@
 @use 'variables' as *;
 .form-section {
-	padding: $spacing-xl $spacing-md;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	padding: $spacing-lg $spacing-md;
+	position: relative;
 
 	@container (min-width: #{$container-lg}) {
-		padding: 0;
+		align-items: center;
+		padding: $spacing-xxl $spacing-xl;
 	}
 
 	.cta-body {
 		@container (min-width: #{$container-lg}) {
 			margin-top: -100px;
+			padding: $spacing-xxl $spacing-xl;
+			z-index: 10;
 		}
 	}
 }
@@ -18,7 +25,7 @@
 	padding: $spacing-lg 0;
 
 	@container (min-width: #{$container-lg}) {
-		padding: spacing-xxl 0;
+		padding: $spacing-xxl 0;
 	}
 
 	.contact-form {
