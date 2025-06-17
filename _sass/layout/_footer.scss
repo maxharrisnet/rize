@@ -11,15 +11,18 @@ footer {
 	}
 
 	.footer-container {
+		align-items: center;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		padding: $spacing-md;
 		gap: $spacing-lg;
 
 		@container (min-width: #{$container-lg}) {
-			flex-flow: row wrap;
-			justify-content: space-between;
-			padding: $spacing-lg $spacing-lg;
+			// flex-flow: row wrap;
+			// justify-content: space-between;
+			gap: $spacing-xxl;
+			padding: $spacing-xxl $spacing-lg $spacing-lg;
 		}
 
 		> div {

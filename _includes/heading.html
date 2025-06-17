@@ -29,7 +29,7 @@ Heading component
 
   {% if include.list %}
   {% assign list_items = include.list | split: "|" %}
-  <ul class="bento-grid bento-grid--three-col">
+  <ul class="bento-grid bento-grid--two-col">
     {% for item in list_items %}
     <li class="bento-item">
       <span>{{ item | strip }}</span>

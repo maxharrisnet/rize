@@ -1,6 +1,8 @@
 <footer>
   <div class="footer-container">
-    <img src="/assets/images/logo/rize-logo-wo.svg" alt="Rize Digital logo" class="logo" />
+    <div>
+      <img src="/assets/images/logo/rize-logo-outlined.svg" alt="Rize Digital logo" class="logo" />
+    </div>
     <div>
       <div class="social-media">
         {% include social-links.html class="footer-social" %}
@@ -8,7 +10,7 @@
     </div>
     <div class="subfooter">
       <span class="">
-        &copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.
+        &copy; {{ site.time | date: '%Y' }} {{ site.title }}
       </span>
       <p class="text-center">
         <a href="{{ site.url }}/privacy-policy.html">Privacy Policy</a> |

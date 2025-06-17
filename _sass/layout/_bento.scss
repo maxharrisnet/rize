@@ -115,11 +115,12 @@ ul.bento-grid {
 				}
 			}
 
-			ul {
+			ul.bento-grid {
 				// gap: $spacing-sm;
 				padding: $spacing-sm 0;
 
 				@media (min-width: $breakpoint-lg) {
+					padding: $spacing-sm 0;
 					gap: $spacing-md;
 				}
 			}
