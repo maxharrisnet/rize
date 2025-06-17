@@ -10,7 +10,7 @@ Heading component
 @param {boolean} small - Whether to use the small variant (optional)
 {% endcomment %}
 
-<div class="heading-container {% if include.small %}--sm{% endif %}{% if include.class %}{{ include.class }}{% endif %}">
+<div class="heading-container{% if include.small %}--sm{% endif %}{% if include.class %}{{ include.class }}{% endif %}">
 
   {% if include.heading %}
   <h2>{{ include.heading }}</h2>

@@ -26,13 +26,6 @@ image="/assets/images/pages/connect/connect.jpg"
   </div>
 </section>
 
-{% include section-centered.html
-bg_class="bg-dark"
-heading="Our Mission"
-paragraphs="Rize Digital exists to bridge gaps in access, build digital confidence, and support people doing good work in their communities. We believe technology should be inclusive, approachable, and aligned with your values."
-cta_text="Explore AI Together"
-cta_url="/connect"
-%}
 
 <!-- Section - Values -->
 <section class="bg-light">
@@ -85,7 +78,7 @@ cta_url="/connect"
 </section>
 
 <!-- Section Bio -->
-<section class="bg-light">
+<section class="bg-red">
   <div class="container">
     <div class="bento-container">
       {% include feature.html
@@ -94,11 +87,20 @@ cta_url="/connect"
       image="/assets/images/pages/connect/max-harris.jpg"
       image_alt="Max Harris, founder of Rize Digital"
       image_class="circle"
-      feature_class="bg-dark reverse"
+      feature_class="bg-dark"
       %}
     </div>
   </div>
 </section>
+
+
+{% include section-centered.html
+bg_class="bg-dark"
+heading="Our Mission"
+paragraphs="Rize Digital exists to bridge gaps in access, build digital confidence, and support people doing good work in their communities. We believe technology should be inclusive, approachable, and aligned with your values."
+cta_text="Explore AI Together"
+cta_url="/connect"
+%}
 
 <!-- CTA Section -->
 {% include cta.html

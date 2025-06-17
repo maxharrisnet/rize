@@ -101,7 +101,7 @@ ul.bento-grid {
 
 			@media (min-width: $breakpoint-lg) {
 				max-width: 90%;
-				padding: $spacing-xl;
+				padding: $spacing-xl $spacing-xxl;
 			}
 
 			h3 {
@@ -174,8 +174,9 @@ ul.bento-grid {
 			width: 200px;
 
 			@media (min-width: $breakpoint-lg) {
-				height: 320px;
-				width: 320px;
+				margin: $spacing-xl 0;
+				height: 460px;
+				width: 460px;
 			}
 		}
 	}
