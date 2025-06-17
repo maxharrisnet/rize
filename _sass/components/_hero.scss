@@ -12,7 +12,7 @@
 		position: relative;
 
 		@container (min-width: #{$breakpoint-lg}) {
-		background-color: $color-black;
+			background-color: $color-black;
 			min-height: 80vh;
 			grid-template-columns: 2fr 2fr;
 		}
@@ -21,19 +21,23 @@
 			background-color: $color-black;
 			box-shadow: $drop-shadow;
 			border-radius: $border-radius-lg;
-			position: relative;
 			margin-top: -10vh;
 			margin-left: $spacing-sm;
 			margin-right: $spacing-sm;
-			padding: $spacing-xl $spacing-lg;
+			padding: $spacing-xl $spacing-md;
+			position: relative;
 			text-align: center;
 			z-index: 2;
 
 			@container (min-width: #{$breakpoint-lg}) {
 				border-radius: 0;
 				margin: 0;
-				padding: $spacing-xxxl $spacing-xxl;
+				padding: $spacing-xxxl $spacing-xxxl;
 				text-align: left;
+			}
+
+			.subtitle {
+				padding-left: 0;
 			}
 		}
 

@@ -24,25 +24,26 @@ main {
 		font-family: $font-family-display;
 		font-weight: $font-weight-black;
 		font-size: $font-size-xl;
-		line-height: $line-height-sm;
-		letter-spacing: $letter-spacing-none;
+		line-height: $line-height-xs;
+		letter-spacing: $letter-spacing-loose;
 		text-transform: uppercase;
 
 		@container (min-width: #{$container-lg}) {
 			font-size: $font-size-xxxl;
+			line-height: $line-height-sm;
 		}
 	}
 
 	h3 {
 		font-family: $font-family-display;
-		font-weight: $font-weight-black;
-		font-size: $font-size-md;
+		font-weight: $font-weight-bold;
+		font-size: $font-size-sm;
 		line-height: $line-height-sm;
 		letter-spacing: $letter-spacing-tight;
 		text-transform: uppercase;
 
 		@container (min-width: #{$container-lg}) {
-			font-size: $font-size-xxl;
+			font-size: $font-size-lg;
 		}
 	}
 
@@ -58,7 +59,7 @@ main {
 
 	p {
 		font-size: $font-size-body;
-		font-weight: $font-weight-light;
+		font-weight: $font-weight-regular;
 		letter-spacing: $letter-spacing-none;
 
 		@container (min-width: #{$container-lg}) {
@@ -81,8 +82,8 @@ main {
 		flex-flow: column;
 		gap: $spacing-lg;
 		list-style: none;
-		padding: 0;
 		margin: 0;
+		padding: 0;
 
 		@container (min-width: #{$container-lg}) {
 			flex-flow: row wrap;
@@ -90,20 +91,19 @@ main {
 		}
 
 		li {
+			align-items: center;
 			border: 2px solid;
-			border-radius: $border-radius;
+			border-radius: $border-radius-lg;
 			display: flex;
 			font-size: $font-size-body;
 			font-weight: $font-weight-regular;
-			letter-spacing: $letter-spacing-tight;
-			line-height: $line-height-md;
+			letter-spacing: $letter-spacing-none;
+			line-height: $line-height-sm;
+			margin: 0;
 			padding: $spacing-sm $spacing-lg;
-			justify-content: center;
-			align-items: center;
-			text-align: center;
 
 			@container (min-width: #{$container-lg}) {
-				flex: 1 0 48%;
+				line-height: $line-height-md;
 			}
 		}
 	}
@@ -145,11 +145,14 @@ main {
 
 	.subtitle {
 		font-size: $font-size-body;
-		font-weight: $font-weight-light;
 		line-height: $line-height-md;
+		max-width: $container-sm;
 
 		@container (min-width: #{$container-lg}) {
 			font-size: $font-size-lg;
+			max-width: $container-md;
+			padding-left: $spacing-lg;
+			padding-right: $spacing-lg;
 		}
 	}
 }
@@ -163,23 +166,30 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: $spacing-sm;
-	padding: $spacing-md 0 $spacing-lg;
+	padding: $spacing-md 0 $spacing-sm;
 
 	@container (min-width: #{$container-lg}) {
 		align-items: center;
 		align-self: center;
 		max-width: $container-lg;
-		padding: $spacing-xxl $spacing-xxl;
+		padding: 0 $spacing-xl;
 		text-align: center;
 	}
 
-	h3 {
-		font-size: $font-size-xl;
-		line-height: $line-height-sm;
-		letter-spacing: $letter-spacing-tight;
-		text-transform: uppercase;
-		text-align: center;
-		justify-self: center;
+	h2 {
+		// padding: $spacing-sm 0;
+
+		@container (min-width: #{$container-lg}) {
+			padding: $spacing-md 0;
+		}
+	}
+
+	ul {
+		li {
+			background-color: $color-black;
+			border-color: $color-black;
+			color: $color-white;
+		}
 	}
 }
 

@@ -47,9 +47,6 @@ ul.bento-grid {
 		}
 
 		.bento-section {
-			background-color: $color-black;
-			color: $color-white;
-			text-align: center;
 			padding: $spacing-lg $spacing-md;
 			display: flex;
 			align-items: center;
@@ -68,12 +65,11 @@ ul.bento-grid {
 
 	&--feature {
 		box-shadow: $drop-shadow;
-		color: $color-white;
+		// color: $color-white;
 		padding: 0;
 
 		@media (min-width: $breakpoint-lg) {
 			display: grid;
-			// gap: $spacing-md;
 			grid-template-columns: 3fr 2fr;
 		}
 
@@ -109,6 +105,24 @@ ul.bento-grid {
 				max-width: 90%;
 				padding: $spacing-xl;
 			}
+
+			h3 {
+				font-size: $font-size-lg;
+				font-weight: $font-weight-black;
+
+				@media (min-width: $breakpoint-lg) {
+					font-size: $font-size-xxl;
+				}
+			}
+
+			ul {
+				// gap: $spacing-sm;
+				padding: $spacing-sm 0;
+
+				@media (min-width: $breakpoint-lg) {
+					gap: $spacing-md;
+				}
+			}
 		}
 
 		&.reverse {
@@ -137,8 +151,8 @@ ul.bento-grid {
 		}
 
 		&.bento-image-wrapper {
-			padding: $spacing-md;
-			// border-radius: 0;
+			// padding: $spacing-md;
+			border-radius: 0;
 
 			&.flush {
 				padding: 0;

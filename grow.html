@@ -1,83 +1,96 @@
 ---
 layout: default
-title: Grow
-hero-title: Grow
 permalink: /grow/
+title: "Digital Strategy & Tools | Grow with Rize Digital"
+description: "Marketing, systems, and tech support to help your team work smarter and reach more people—designed for nonprofits, collectives, and mission-led teams."
+keywords: [nonprofit tech, marketing strategy, digital fundraising, slack training, project management tools, tech coaching]
+og_title: "Grow Your Digital Impact with Systems That Work"
+og_description: "From email campaigns to internal tools, we help you implement tech that supports your mission—not distracts from it."
+og_image: /assets/images/og-grow.jpg
 ---
 
 <!-- Hero -->
 {% include hero.html
-title="Grow Your Reach"
-subtitle="Strengthen Your Systems & Lead With Confidence."
+title="Grow With Intention"
+subtitle="We help teams work smarter, reach wider, and build systems that support their mission and their people."
 image="/assets/images/pages/grow/hero-grow.jpg"
-cta_text="Get In Touch"
+cta_text="Let’s Grow"
 cta_url="/connect"
 %}
 
+{% include section-centered.html
+bg_class="bg-red"
+heading="Work Smarter, Reach Further"
+paragraphs="Whether you're a nonprofit, collective, or small team—your time and energy matter. We help you implement the tools and strategies that make your work easier and more impactful."
+%}
 
-<!-- Section -->
-<section class="bg-red">
-  <div class="container">
-    <div class="bento-container">
-      {% include feature.html
-      title="Empower your Team!"
-      description="You want to reach more people and serve your community more effectively—but the tools and strategy to get there can feel overwhelming. We help you bridge that gap with systems and support that make sense for real teams and real goals."
-      image="/assets/images/pages/grow/grow2.jpg"
-      image_alt="Digital Strategy Planning"
-      image_class="circle"
-      button_text="Plan Your Outreach"
-      button_url="/services/strategy"
-      feature_class="bg-dark reverse"
-      %}
-    </div>
-  </div>
-</section>
 
 <!-- Section - What We Help You Do -->
 <section>
   <div class="container">
-    <div class="heading-container">
-      <h2>What We Help You Do</h2>
-    </div>
+    {% include heading.html
+    heading="Tools & Strategy"
+    %}
     <div class="bento-container">
       {% include feature.html
-      title="Marketing Strategy"
-      description="Reach the right people and share your message clearly. We help you grow your digital presence in a way that feels aligned with your values and capacity. From email marketing and newsletters to social media planning, SEO, and story-driven digital marketing."
+      title="Internal Tools That Work For You"
+      description="Set up and optimize tools your team will actually use."
+      list="Slack, Microsoft Teams, Google Workspace|Project management: Asana, Trello, Jira|Onboarding, documentation, staff training, and more"
       image="/assets/images/pages/grow/strategy1.jpg"
       image_alt="Digital Strategy Planning"
-      button_text="Plan Your Outreach"
+      button_text="Equip Your Team"
       button_url="/services/strategy"
       feature_class="reverse bg-dark"
       %}
 
       {% include feature.html
-      title="Digital Transformation"
-      description="Technology should support your work—not add to your stress. We help you find and implement digital tools that support communication, organization, and collaboration. Whether it's Google Workspace, Microsoft 365, Slack, or project management tools like Notion, Trello, and Asana."
+      title="Strategy to Grow Your Reach"
+      description="Build an outreach strategy that aligns with your mission and audience."
+      list="Email marketing, content planning, SEO|Local visibility (Google Business, maps, directories)|Social media that tells your story"
       image="/assets/images/pages/grow/setup.jpg"
       image_alt="Digital Tools Setup"
-      button_text="Streamline Your Tools"
-      button_url="/services/tools"
+      button_text="Plan Your Outreach"
+      button_url="/connect"
       %}
 
       {% include feature.html
-      title="Training & Support"
-      description="We provide onboarding, training, and documentation to ensure your team feels confident and supported. From staff onboarding and documentation to one-on-one or team training sessions and ongoing tech coaching for long-term confidence."
+      title="Grow Your Reach"
+      description="Build an outreach strategy that aligns with your mission and audience."
+      list="Email marketing, content planning, SEO|Local visibility (Google Business, maps, directories)|Social media that tells your story"
       image="/assets/images/pages/grow/team-support.jpg"
       image_alt="Team Support and Training"
-      button_text="Empower Your Team"
-      button_url="/services/support"
+      button_text="Plan Your Outreach"
+      button_url="/connect"
       feature_class="reverse bg-dark"
+      %}
 
+      {% include feature.html
+      title="Fundraising Strategy & Tools"
+      description="We help nonprofits use digital tools to build trust, tell powerful stories, and strengthen relationships with funders and supporters."
+      list="Website and landing pages for funders or campaigns|Email outreach tools (Mailchimp, ConvertKit, Klaviyo)|CRM and donor management support"
+      image="/assets/images/pages/grow/grow2.jpg"
+      image_alt="Team Support and Training"
+      button_text="Talk Fundraising"
+      button_url="/connect"
+      feature_class="bg-dark"
       %}
     </div>
   </div>
 </section>
 
+{% include section-centered.html
+bg_class="bg-red"
+heading="Curious About AI?"
+paragraphs="We'll help you navigate this fast-moving space and explore how AI tools and workflows can support your organization—ethically, creatively, and in ways that align with your goals."
+list="Identify use cases that save time and boost engagement|Learn how to use AI responsibly with your team|Explore opportunities for innovation and capacity building"
+cta_text="Explore AI Together"
+cta_url="/connect"
+%}
 
 <!-- CTA Section -->
 {% include cta.html
-title="Reach further & work smarter"
-text="We help you strengthen your digital strategy and set up internal systems that make your work smoother, more organized, and more effective. Let’s grow your impact from the inside out."
-button_text="Plan Your Growth"
+title="Level up your systems"
+text="Let’s make your tools and strategy feel less overwhelming—and more aligned with your goals."
+button_text="Grow With Us"
 link="/connect?type=build"
 %}

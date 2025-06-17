@@ -1,0 +1,46 @@
+{% comment %}
+Heading component
+@param {string} heading - The main heading text
+@param {string} subheading - The subheading text (optional)
+@param {string} cta_text - Text for the CTA button (optional)
+@param {string} cta_url - URL for the CTA button (optional)
+@param {string} paragraphs - String of paragraphs separated by | (optional)
+@param {string} list - String of list items separated by | (optional)
+@param {string} class - Additional classes for the container (optional)
+@param {boolean} small - Whether to use the small variant (optional)
+{% endcomment %}
+
+<div class="heading-container {% if include.small %}--sm{% endif %}{% if include.class %}{{ include.class }}{% endif %}">
+
+  {% if include.heading %}
+  <h2>{{ include.heading }}</h2>
+  {% endif %}
+
+  {% if include.subheading %}
+  <h3>{{ include.subheading }}</h3>
+  {% endif %}
+
+  {% if include.paragraphs %}
+  {% assign paragraphs = include.paragraphs | split: "|" %}
+  {% for paragraph in paragraphs %}
+  <p class="subtitle">{{ paragraph | strip }}</p>
+  {% endfor %}
+  {% endif %}
+
+  {% if include.list %}
+  {% assign list_items = include.list | split: "|" %}
+  <ul class="bento-grid bento-grid--three-col">
+    {% for item in list_items %}
+    <li class="bento-item">
+      <span>{{ item | strip }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if include.cta_text and include.cta_url %}
+  <div class="button-container">
+    <a href="{{ include.cta_url }}" class="button">{{ include.cta_text }}</a>
+  </div>
+  {% endif %}
+</div>

@@ -1,13 +1,20 @@
 @use 'variables' as *;
-.cta-section.form-section {
-	padding: 0;
+.form-section {
+	padding: $spacing-xl $spacing-md;
+
+	@container (min-width: #{$container-lg}) {
+		padding: 0;
+	}
 
 	.cta-body {
-		margin-top: -100px;
+		@container (min-width: #{$container-lg}) {
+			margin-top: -100px;
+		}
 	}
 }
 
 .form-container {
+	background-color: $color-primary;
 	padding: $spacing-lg 0;
 
 	@container (min-width: #{$container-lg}) {

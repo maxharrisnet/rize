@@ -1,15 +1,18 @@
 ---
 layout: default
-title: Rize
-hero-title: Who We Are
-hero-subtitle: This is our story
 permalink: /connect/
+title: "Contact Rize Digital | Book a Project or Workshop"
+description: "Reach out to Rize Digital to book a session, start a project, or explore collaboration. We’re here to support your work and build together."
+keywords: [contact rize digital, book workshop, connect, website quote, nonprofit tech support, vancouver tech consultant]
+og_title: "Let’s Work Together — Connect with Rize Digital"
+og_description: "Have a project idea or question? Contact us to get started."
+og_image: /assets/images/og-connect.jpg
 ---
 
 <!-- Hero -->
 {% include hero.html
-title="Let’s Talk!"
-subtitle="If you’re doing good work in your community, we want to hear from you. Let’s explore how we can help you grow your impact through thoughtful digital support."
+title="Let's Start Something"
+subtitle="Have a project in mind or want to explore how we can work together? We’re here to listen, support, and help you take the next steps."
 image="/assets/images/pages/connect/connect.jpg"
 %}
 
@@ -23,13 +26,20 @@ image="/assets/images/pages/connect/connect.jpg"
   </div>
 </section>
 
+{% include section-centered.html
+bg_class="bg-red"
+heading="Our Mission"
+paragraphs="Rize Digital exists to bridge gaps in access, build digital confidence, and support people doing good work in their communities. We believe technology should be inclusive, approachable, and aligned with your values."
+cta_text="Explore AI Together"
+cta_url="/connect"
+%}
+
 <!-- Section - Values -->
 <section class="bg-light">
   <div class="container">
-    <div class="heading-container">
-      <h2>Our Values</h2>
-      <!-- <p class="subtitle">We offer support where you need it most—always guided by care, clarity, and community.</p> -->
-    </div>
+    {% include heading.html
+    heading="Our Values"
+    %}
     <div class="bento-container">
       {% include feature.html
       title="Community Rooted"
@@ -110,7 +120,7 @@ image="/assets/images/pages/connect/connect.jpg"
 
 <!-- CTA Section -->
 {% include cta.html
-title="Let's start with a conversation"
+title="Start a conversation"
 text="Have a project in mind? Curious how we might work together? Tell us what you're thinking — we'll follow up with next steps, resources, or a consultation."
 button_text="Start a Conversation"
 link="/connect?type=build"

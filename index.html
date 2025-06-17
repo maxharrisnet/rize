@@ -1,50 +1,41 @@
 ---
 layout: default
-title: Rize Digital
+title: "Rize Digital | Community-Focused Tech for Web, Strategy & Workshops"
+description: "Rize Digital helps nonprofits, creatives, and entrepreneurs build websites, systems, and skills to thrive in today’s digital world."
+keywords: [rize digital, web development, community tech, vancouver, nonprofit digital, digital equity, workshops]
+og_title: "Rize Digital – Uplifting Communities Through Tech"
+og_description: "Explore how we build websites, teach digital skills, and support changemakers with strategy and care."
+og_image: /assets/images/og-home.jpg
 ---
+
 
 <!-- Hero -->
 {% include hero.html
 title="Together, We Rize"
-subtitle="We help community-driven organizations and changemakers use technology to thrive—through websites, workshops, strategy, and systems that work for real people."
+subtitle="Helping community leaders, nonprofits, and creatives use technology with confidence and clarity."
 image="/assets/images/pages/home/hero-home1.jpg"
-cta_text="Get In Touch"
+cta_text="start Your Project"
 cta_url="/connect"
 %}
 
+<!-- Section -  -->
+{% include section-centered.html
+bg_class="bg-red"
+heading="Welcome to Rize Digital!"
+subheading="Tech that gets it"
+paragraphs="We're a digital support studio rooted in community and culture. From websites to workshops to strategy, we help you navigate tech with confidence, clarity, and purpose. We don't do generic—we build digital spaces that reflect who you are and where you're going."
+cta_text="Learn More"
+cta_url="#features"
+%}
 
-<!-- Section - Our Value -->
-<section class="bg-red">
-  <div class="container column">
-    <div class="heading-container">
-      <h2>Welcome to Rize Digital!</h2>
-      <p class="subtitle">
-        We're here to make the digital side of that work easier, more effective, and more empowering. We help nonprofits, grassroots organizations, educators, and entrepreneurs:
-      </p>
-    </div>
-  </div>
-</section>
+<!-- Section- Features -->
+{% include section-centered.html
+bg_class="bg-light"
+heading="What We Offer"
+subheading="Build Your Digital Home"
+paragraphs="Establish a strong, welcoming digital presence|Reach and engage their audience through thoughtful strategy|Navigate tech with confidence—no matter their experience level|Find the right tools that match their needs, values, and budget"
+%}
 
-<section class="bg-light">
-  <div class="container column">
-    <div class="bento-container">
-      <ul class="">
-        <li class="bento-section">
-          <p>Establish a strong, welcoming digital presence</p>
-        </li>
-        <li class="bento-section">
-          <p>Reach and engage their audience through thoughtful strategy</p>
-        </li>
-        <li class="bento-section">
-          <p>Navigate tech with confidence—no matter their experience level</p>
-        </li>
-        <li class="bento-section">
-          <p>Find the right tools that match their needs, values, and budget</p>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
 <section>
   <div class="container-full-width">
     <div class="bento-grid bento-grid--feature reverse">
@@ -55,9 +46,10 @@ cta_url="/connect"
           class="bento-image" />
       </div>
       <div class="bento-section bento-grid">
-        <div class="heading-container--sm">
-          <h3>Our Mission</h3>
-        </div>
+        {% include heading.html
+        heading="Our Mission"
+        small=true
+        %}
         <div class="about-content">
           <p class="intro">
             Rize Digital is a community-first consultancy that helps organizations use technology with confidence and clarity. We believe in digital tools that are accessible, culturally informed, and grounded in real needs—not trends.
@@ -77,15 +69,9 @@ cta_url="/connect"
   </div>
 </section>
 
-<!-- Section - What We Do -->
+<!-- Section - Features  -->
 <section class="bg-light">
   <div class="container column">
-    <div class="heading-container">
-      <h2>What We Do</h2>
-      <p class="subtitle">We offer support where you need it most—always guided by care, clarity, and community.</p>
-    </div>
-
-    <!-- Features -->
     <div class="bento-container">
       {% include feature.html
       title="Build"

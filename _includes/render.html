@@ -1,0 +1,76 @@
+{% comment %}
+Render template for documenting available components and their parameters
+{% endcomment %}
+
+<!-- Hero Component -->
+{% comment %}
+Hero component
+@param {string} title - The main heading text
+@param {string} subtitle - The subheading text (optional)
+@param {string} description - Additional description text (optional)
+@param {string} image - Path to the hero image
+@param {string} cta_text - Text for the CTA button (optional)
+@param {string} cta_url - URL for the CTA button (optional)
+@param {boolean} social_links - Whether to show social links (optional)
+{% endcomment %}
+
+<!-- Section Centered Component -->
+{% comment %}
+Section Centered component
+A centered section with heading and optional CTA
+@param {string} bg_class - Background class (e.g., 'bg-red', 'bg-light')
+@param {string} heading - The main heading text
+@param {string} subheading - The subheading text (optional)
+@param {array} paragraphs - Array of paragraphs or list items to display (optional)
+@param {boolean} list - Whether the paragraphs should be rendered as a list (optional)
+@param {string} cta_text - Text for the CTA button (optional)
+@param {string} cta_url - URL for the CTA button (optional)
+@param {string} class - Additional classes for the container (optional)
+{% endcomment %}
+
+<!-- Feature Component -->
+{% comment %}
+Feature component for bento grid
+@param {string} title - The title of the feature
+@param {string} description - The description text
+@param {string} image - The image path
+@param {string} image_alt - Alt text for the image
+@param {string} button_text - Text for the CTA button
+@param {string} button_url - URL for the CTA button
+@param {boolean} reverse - Whether to reverse the layout (optional)
+@param {string} icon - Emoji icon for the title (optional)
+@param {string} feature_class - Additional classes for the feature (optional)
+@param {string} image_class - Additional classes for the image (optional)
+{% endcomment %}
+
+<!-- CTA Component -->
+{% comment %}
+CTA component
+@param {string} title - The CTA heading text
+@param {string} text - The CTA description text
+@param {string} button_text - Text for the CTA button
+@param {string} link - URL for the CTA button
+{% endcomment %}
+
+<!-- Text Image Component -->
+{% comment %}
+Text and image layout component
+@param {string} title - The section title
+@param {string} image - The image path
+@param {string} image_alt - Alt text for the image
+@param {array} paragraphs - Array of paragraphs to display
+@param {string} class - Additional classes for the container (optional)
+{% endcomment %}
+
+<!-- Social Links Component -->
+{% comment %}
+Social media links component
+@param {string} class - Additional classes for the container (optional)
+@param {boolean} show_handles - Whether to show the @ handles (optional)
+{% endcomment %}
+
+<!-- Service List Component -->
+{% comment %}
+Service list component for feature sections
+@param {array} services - Array of service items to display
+{% endcomment %}
