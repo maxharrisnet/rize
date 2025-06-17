@@ -6,7 +6,7 @@
 	gap: $spacing-md;
 
 	@media (min-width: $breakpoint-lg) {
-		gap: $spacing-lg;
+		gap: $spacing-xxl;
 		padding: 0 $spacing-xxl;
 	}
 }
@@ -19,7 +19,6 @@ ul.bento-grid {
 	overflow: hidden;
 
 	@media (min-width: $breakpoint-lg) {
-		// gap: $spacing-md;
 		padding: $spacing-lg;
 	}
 
@@ -65,7 +64,6 @@ ul.bento-grid {
 
 	&--feature {
 		box-shadow: $drop-shadow;
-		// color: $color-white;
 		padding: 0;
 
 		@media (min-width: $breakpoint-lg) {
@@ -116,11 +114,10 @@ ul.bento-grid {
 			}
 
 			ul.bento-grid {
-				// gap: $spacing-sm;
 				padding: $spacing-sm 0;
 
 				@media (min-width: $breakpoint-lg) {
-					padding: $spacing-sm 0;
+					padding: $spacing-sm $spacing-xxxl $spacing-sm 0;
 					gap: $spacing-md;
 				}
 			}
@@ -140,11 +137,9 @@ ul.bento-grid {
 	}
 
 	.bento-section {
-		// border-radius: $border-radius;
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
-		// padding: $spacing-sm;
 		gap: $spacing-sm;
 
 		@media (min-width: $breakpoint-lg) {
@@ -152,7 +147,6 @@ ul.bento-grid {
 		}
 
 		&.bento-image-wrapper {
-			// padding: $spacing-md;
 			border-radius: 0;
 
 			&.flush {
@@ -197,19 +191,6 @@ ul.bento-list {
 	}
 
 	li {
-		// border: 2px solid;
-		// border-radius: $border-radius-xl;
-		// display: flex;
-		// font-size: $font-size-body;
-		// letter-spacing: $letter-spacing-tight;
-		// line-height: $line-height-md;
-		// padding: $spacing-sm $spacing-md;
-		// text-transform: uppercase;
-		// font-weight: $font-weight-black;
-		// justify-content: center;
-		// align-items: center;
-		// text-align: center;
-
 		@media (min-width: $breakpoint-lg) {
 			font-size: $font-size-lg;
 			padding: $spacing-lg $spacing-xxl;

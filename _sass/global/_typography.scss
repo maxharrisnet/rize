@@ -177,8 +177,6 @@ main {
 	}
 
 	h2 {
-		// padding: $spacing-sm 0;
-
 		@container (min-width: #{$container-lg}) {
 			padding: $spacing-md 0;
 		}
@@ -189,6 +187,18 @@ main {
 			background-color: $color-white;
 			border-color: $color-white;
 			color: $color-black;
+			font-size: $font-size-md;
+			padding: $spacing-xl;
+		}
+	}
+}
+
+.bg-light .heading-container {
+	ul {
+		li {
+			background-color: $color-black;
+			border-color: $color-black;
+			color: $color-white;
 		}
 	}
 }

@@ -4,6 +4,11 @@
 	background-color: $color-primary;
 }
 
+section.bg-red {
+	// border-bottom: 15px solid $color-black;
+	// border-top: 10px solid $color-black;
+}
+
 .bg-green {
 	background-color: $color-secondary;
 }
@@ -11,6 +16,11 @@
 .bg-dark {
 	background-color: $color-black;
 	color: $color-white;
+}
+
+section.bg-dark {
+	// border-bottom: 10px solid $color-primary;
+	border-top: 15px solid $color-primary;
 }
 
 .bg-light {

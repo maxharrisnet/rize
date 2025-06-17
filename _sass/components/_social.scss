@@ -23,11 +23,13 @@
 	.social-icon {
 		width: $icon-size;
 		height: $icon-size;
-		transition: transform $transition-fast;
-		fill: currentColor;
+		transition: transform $transition-fast, fill $transition-fast;
+		fill: $color-primary-bright;
 		color: currentColor;
 
 		&:hover {
+			color: $color-primary;
+			fill: $color-primary;
 			transform: scale(1.1);
 		}
 	}
