@@ -81,6 +81,7 @@ ul.bento-grid {
 		.bento-image-wrapper {
 			justify-content: center;
 			align-items: center;
+			padding: $spacing-lg;
 
 			@media (min-width: $breakpoint-lg) {
 				order: 2;
@@ -185,13 +186,15 @@ ul.bento-grid {
 ul.bento-list {
 	display: grid;
 	gap: $spacing-md;
-	padding: 0 $spacing-md $spacing-xxl;
+	padding: $spacing-lg 0;
 
 	@media (min-width: $breakpoint-lg) {
 		padding: $spacing-md $spacing-lg $spacing-xxl;
 	}
 
 	li {
+		text-align: center;
+		
 		@media (min-width: $breakpoint-lg) {
 			font-size: $font-size-lg;
 			padding: $spacing-lg $spacing-xxl;
