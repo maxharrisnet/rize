@@ -2,9 +2,9 @@
 layout: default
 permalink: /connect/
 title: "Contact Rize Digital | Book a Project or Workshop"
-description: "Reach out to Rize Digital to book a session, start a project, or explore collaboration. We’re here to support your work and build together."
+description: "Reach out to Rize Digital to book a session, start a project, or explore collaboration. We're here to support your work and build together."
 keywords: [contact rize digital, book workshop, connect, website quote, nonprofit tech support, vancouver tech consultant]
-og_title: "Let’s Work Together — Connect with Rize Digital"
+og_title: "Let's Work Together — Connect with Rize Digital"
 og_description: "Have a project idea or question? Contact us to get started."
 og_image: /assets/images/og-connect.jpg
 ---
@@ -12,20 +12,23 @@ og_image: /assets/images/og-connect.jpg
 <!-- Hero -->
 {% include hero.html
 title="Let's Start Something"
-subtitle="Have a project in mind or want to explore how we can work together? We’re here to listen, support, and help you take the next steps."
+subtitle="Have a project in mind or want to explore how we can work together? We're here to listen, support, and help you take the next steps."
 image="/assets/images/pages/connect/connect.jpg"
 %}
 
 <section class="form-section">
+  <div class="bg-red ">
+    <div class="text-container">
+      <h2>Let's Build Something Real</h2>
+
+      <p>Whether you're ready to start a project, have an idea to explore, or just want to ask a few questions—we'd love to hear from you. We're here to support you with clarity, care, and solutions that fit your goals and values.</p>
+
+      <h3>Follow along, say hello, or reach out anytime</h3>
+      {% include social-links.html %}
+    </div>
+  </div>
   {% include contact-form.html %}
 </section>
-
-<section class="bg-red">
-  <div class="container">
-    {% include social-links.html %}
-  </div>
-</section>
-
 
 <!-- Section - Values -->
 <section class="bg-light">
@@ -80,6 +83,7 @@ image="/assets/images/pages/connect/connect.jpg"
 <!-- Section Bio -->
 <section class="bg-red">
   <div class="container">
+
     <div class="bento-container">
       {% include feature.html
       title="Your Digital Partner"

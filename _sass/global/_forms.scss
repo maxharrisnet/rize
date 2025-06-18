@@ -2,124 +2,128 @@
 .form-section {
 	display: flex;
 	flex-flow: column;
+	gap: $spacing-xl;
 	justify-content: center;
 	padding: $spacing-lg $spacing-md;
 	position: relative;
 
 	@container (min-width: #{$container-lg}) {
-		align-items: center;
-		padding: $spacing-xxl $spacing-xl;
-	}
-
-	.cta-body {
-		@container (min-width: #{$container-lg}) {
-			margin-top: -100px;
-			padding: $spacing-xxl $spacing-xl;
-			z-index: 10;
-		}
-
-		.button-container {
-			justify-content: center;
-		}
-	}
-}
-
-.form-container {
-	background-color: $color-primary;
-	padding: $spacing-lg 0;
-
-	@container (min-width: #{$container-lg}) {
-		padding: $spacing-xxl 0;
-	}
-
-	.contact-form {
-		display: flex;
-		flex-direction: column;
-		gap: $spacing-sm;
-		max-width: $container-lg;
-		margin: 0 auto;
+		flex-flow: row;
 		padding: 0;
+	}
 
-		// Form field groups
-		.form-group {
+	.form-container {
+		padding: $spacing-lg 0;
+
+		@container (min-width: #{$container-lg}) {
+			padding: $spacing-xxl $spacing-xl;
+			flex: 1 0 48%;
+		}
+
+		.cta-body {
+			background-color: $color-primary;
+
+			@container (min-width: #{$container-lg}) {
+				// margin-top: -400px;
+				padding: $spacing-xxl $spacing-xl;
+				position: relative;
+				z-index: 10;
+			}
+
+			.button-container {
+				justify-content: center;
+			}
+		}
+
+		.contact-form {
 			display: flex;
 			flex-direction: column;
-			gap: $spacing-xs;
-		}
+			gap: $spacing-sm;
+			max-width: $container-lg;
+			margin: 0 auto;
+			padding: 0;
 
-		// Labels
-		label {
-			font-weight: $font-weight-regular;
-			color: var(--text-primary);
-			font-size: $font-size-sm;
-			text-align: left;
-		}
-
-		// Input fields
-		input[type='text'],
-		input[type='email'],
-		input[type='tel'],
-		select,
-		textarea {
-			// padding: $spacing-sm $spacing-md;
-			border: 1px solid $color-white;
-			border-radius: $border-radius-sm;
-			font-size: $font-size-sm;
-			transition: all $transition-fast;
-			background-color: $color-white;
-			color: $color-black;
-
-			&:focus {
-				outline: none;
-				border-color: $color-secondary;
-				box-shadow: $drop-shadow-sm;
+			// Form field groups
+			.form-group {
+				display: flex;
+				flex-direction: column;
+				gap: $spacing-xs;
 			}
 
-			&::placeholder {
-				color: $color-black;
+			// Labels
+			label {
+				font-weight: $font-weight-regular;
+				color: var(--text-primary);
+				font-size: $font-size-sm;
+				text-align: left;
 			}
-		}
 
-		// Select specific styles
-		select {
-			appearance: none;
-			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-			background-repeat: no-repeat;
-			background-position: right 1rem center;
-			background-size: 1.5em;
-			color: $color-black;
-			padding-left: $spacing-sm;
-			padding-right: $spacing-lg;
-		}
-
-		// Checkbox container
-		.checkbox-group {
-			display: flex;
-			align-items: center;
-			gap: $spacing-md;
-			// margin-top: 0.5rem;
-
-			input[type='checkbox'] {
-				width: 1.25rem;
-				height: 1.25rem;
-				border-radius: $border-radius-sm;
+			// Input fields
+			input[type='text'],
+			input[type='email'],
+			input[type='tel'],
+			select,
+			textarea {
+				// padding: $spacing-sm $spacing-md;
 				border: 1px solid $color-white;
-				cursor: pointer;
+				border-radius: $border-radius-sm;
+				font-size: $font-size-sm;
+				transition: all $transition-fast;
+				background-color: $color-white;
+				color: $color-black;
+
+				&:focus {
+					outline: none;
+					border-color: $color-secondary;
+					box-shadow: $drop-shadow-sm;
+				}
+
+				&::placeholder {
+					color: $color-black;
+				}
 			}
-		}
 
-		// Submit button
-		button[type='submit'].button {
-			font-size: $font-size-body;
-			padding: $spacing-sm $spacing-md;
-		}
+			// Select specific styles
+			select {
+				appearance: none;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+				background-repeat: no-repeat;
+				background-position: right 1rem center;
+				background-size: 1.5em;
+				color: $color-black;
+				padding-left: $spacing-sm;
+				padding-right: $spacing-lg;
+			}
 
-		// Responsive layout
-		@container (min-width: #{$container-lg}) {
-			.form-row {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
+			// Checkbox container
+			.checkbox-group {
+				display: flex;
+				align-items: center;
 				gap: $spacing-md;
+				// margin-top: 0.5rem;
+
+				input[type='checkbox'] {
+					width: 1.25rem;
+					height: 1.25rem;
+					border-radius: $border-radius-sm;
+					border: 1px solid $color-white;
+					cursor: pointer;
+				}
+			}
+
+			// Submit button
+			button[type='submit'].button {
+				font-size: $font-size-body;
+				padding: $spacing-sm $spacing-md;
+			}
+
+			// Responsive layout
+			@container (min-width: #{$container-lg}) {
+				.form-row {
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					gap: $spacing-md;
+				}
 			}
 		}
 	}

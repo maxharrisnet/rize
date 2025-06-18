@@ -1,71 +1,73 @@
-<div class="form-container bento-grid cta-body">
-  <div class="form-wrapper">
-    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-      <input type="hidden" name="access_key" value="your-web3forms-access-key-here" />
+<div class="form-container">
+  <div class="bento-grid cta-body">
+    <div class="form-wrapper">
+      <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <input type="hidden" name="access_key" value="your-web3forms-access-key-here" />
 
-      <input type="hidden" name="redirect" value="https://rizedigital.ca/thank-you" />
+        <input type="hidden" name="redirect" value="https://rizedigital.ca/thank-you" />
 
-      <div class="form-row">
-        <!-- Name -->
-        <div class="form-group">
-          <label for="name">Full Name *</label>
-          <input type="text" name="name" id="name" required>
+        <div class="form-row">
+          <!-- Name -->
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" name="name" id="name" required>
+          </div>
+
+          <!-- Organization -->
+          <div class="form-group">
+            <label for="organization">Organization Name</label>
+            <input type="text" name="organization" id="organization">
+          </div>
         </div>
 
-        <!-- Organization -->
-        <div class="form-group">
-          <label for="organization">Organization Name</label>
-          <input type="text" name="organization" id="organization">
+        <div class="form-row">
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" name="email" id="email" required>
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" name="phone" id="phone">
+          </div>
         </div>
-      </div>
 
-      <div class="form-row">
-        <!-- Email -->
+        <!-- Type of Inquiry -->
         <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" name="email" id="email" required>
+          <label for="inquiry">Type of Inquiry *</label>
+          <select name="inquiry" id="inquiry" required>
+            <option value="">Select one...</option>
+            <option value="Build">Build (Website or App Project)</option>
+            <option value="Learn">Learn (Workshop or Training)</option>
+            <option value="Grow">Grow (Strategy or Internal Tools)</option>
+            <option value="Partnership">Partnership or Collaboration</option>
+            <option value="General">General Question</option>
+          </select>
         </div>
 
-        <!-- Phone -->
+        <!-- Message -->
         <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" name="phone" id="phone">
+          <label for="message">Project or Message Description *</label>
+          <textarea name="message" id="message" rows="5" required></textarea>
         </div>
-      </div>
 
-      <!-- Type of Inquiry -->
-      <div class="form-group">
-        <label for="inquiry">Type of Inquiry *</label>
-        <select name="inquiry" id="inquiry" required>
-          <option value="">Select one...</option>
-          <option value="Build">Build (Website or App Project)</option>
-          <option value="Learn">Learn (Workshop or Training)</option>
-          <option value="Grow">Grow (Strategy or Internal Tools)</option>
-          <option value="Partnership">Partnership or Collaboration</option>
-          <option value="General">General Question</option>
-        </select>
-      </div>
+        <!-- Referral -->
+        <div class="form-group">
+          <label for="referral">How did you hear about Rize Digital?</label>
+          <input type="text" name="referral" id="referral">
+        </div>
 
-      <!-- Message -->
-      <div class="form-group">
-        <label for="message">Project or Message Description *</label>
-        <textarea name="message" id="message" rows="5" required></textarea>
-      </div>
+        <div class="form-group">
+          <span>* required</span>
+        </div>
 
-      <!-- Referral -->
-      <div class="form-group">
-        <label for="referral">How did you hear about Rize Digital?</label>
-        <input type="text" name="referral" id="referral">
-      </div>
-
-      <div class="form-group">
-        <span>* required</span>
-      </div>
-
-      <!-- Submit -->
-      <div class="button-container">
-        <button type="submit" class="button">Send Message</button>
-      </div>
-    </form>
+        <!-- Submit -->
+        <div class="button-container">
+          <button type="submit" class="button">Send Message</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
