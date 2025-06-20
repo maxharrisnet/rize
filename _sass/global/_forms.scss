@@ -2,6 +2,7 @@
 .form-section {
 	display: flex;
 	flex-flow: column;
+	font-weight: $font-weight-bold;
 	gap: $spacing-xl;
 	justify-content: center;
 	padding: $spacing-lg $spacing-md;
@@ -20,11 +21,18 @@
 			flex: 1 0 48%;
 		}
 
+		.heading-container--sm {
+			padding: 0 0 $spacing-md;
+			text-align: center;
+		}
+
 		.cta-body {
-			background-color: $color-primary;
+			background-color: $color-white;
+			border: 2px solid $color-black;
+			color: $color-black;
 
 			@container (min-width: #{$container-lg}) {
-				// margin-top: -400px;
+			margin-top: -300px;
 				padding: $spacing-xxl $spacing-xl;
 				position: relative;
 				z-index: 10;
@@ -43,16 +51,14 @@
 			margin: 0 auto;
 			padding: 0;
 
-			// Form field groups
 			.form-group {
 				display: flex;
 				flex-direction: column;
+				padding: $spacing-sm 0;
 				gap: $spacing-xs;
 			}
 
-			// Labels
 			label {
-				font-weight: $font-weight-regular;
 				color: var(--text-primary);
 				font-size: $font-size-sm;
 				text-align: left;
@@ -64,8 +70,8 @@
 			input[type='tel'],
 			select,
 			textarea {
-				// padding: $spacing-sm $spacing-md;
-				border: 1px solid $color-white;
+				padding: $spacing-sm $spacing-md;
+				border: 2px solid $color-black;
 				border-radius: $border-radius-sm;
 				font-size: $font-size-sm;
 				transition: all $transition-fast;
@@ -100,7 +106,6 @@
 				display: flex;
 				align-items: center;
 				gap: $spacing-md;
-				// margin-top: 0.5rem;
 
 				input[type='checkbox'] {
 					width: 1.25rem;

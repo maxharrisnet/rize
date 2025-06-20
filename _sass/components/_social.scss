@@ -1,11 +1,10 @@
 @use '../global/variables' as *;
 
 .social-links {
-	display: flex;
-	gap: $spacing-md;
 	align-items: center;
+	display: flex;
 	flex: 1;
-	justify-content: center;
+	gap: $spacing-md;
 
 	.social-link {
 		display: flex;
