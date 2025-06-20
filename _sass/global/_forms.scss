@@ -28,11 +28,11 @@
 
 		.cta-body {
 			background-color: $color-white;
-			border: 2px solid $color-black;
+			box-shadow: $drop-shadow;
 			color: $color-black;
 
 			@container (min-width: #{$container-lg}) {
-			margin-top: -300px;
+				margin-top: -300px;
 				padding: $spacing-xxl $spacing-xl;
 				position: relative;
 				z-index: 10;

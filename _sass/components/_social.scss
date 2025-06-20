@@ -1,40 +1,57 @@
 @use '../global/variables' as *;
 
-.social-links {
-	align-items: center;
+.social-links-container {
+	border-radius: $border-radius-lg;
+	box-shadow: $drop-shadow;
+	background-color: $color-black;
 	display: flex;
-	flex: 1;
-	gap: $spacing-md;
+	flex-flow: column;
+	gap: $spacing-lg;
+	justify-content: center;
+	align-items: center;
+	padding: $spacing-xl;
 
-	.social-link {
-		display: flex;
+	.social-links {
 		align-items: center;
-		gap: $spacing-xs;
-		color: $color-white;
-		text-decoration: none;
-		transition: color $transition-fast;
+		display: flex;
+		flex: 1;
+		gap: $spacing-md;
+		justify-content: center;
 
-		&:hover {
-			color: $color-primary;
+		@container (min-width: #{$container-lg}) {
+			justify-content: flex-start;
 		}
-	}
 
-	.social-icon {
-		width: $icon-size;
-		height: $icon-size;
-		transition: transform $transition-fast, fill $transition-fast;
-		fill: $color-primary-bright;
-		color: currentColor;
+		.social-link {
+			display: flex;
+			align-items: center;
+			gap: $spacing-xs;
+			color: $color-white;
+			text-decoration: none;
+			transition: color $transition-fast;
 
-		&:hover {
-			color: $color-primary;
-			fill: $color-primary;
-			transform: scale(1.1);
+			&:hover {
+				color: $color-primary;
+			}
 		}
-	}
 
-	.social-handle {
-		font-size: $font-size-sm;
-		font-weight: $font-weight-regular;
+		.social-icon {
+			width: $icon-size;
+			height: $icon-size;
+			transition: transform $transition-fast, fill $transition-fast;
+			fill: $color-primary-bright;
+			color: currentColor;
+
+			&:hover {
+				color: $color-primary;
+				fill: $color-primary;
+				transform: scale(1.1);
+			}
+		}
+
+		.social-handle {
+			font-size: $font-size-sm;
+			font-weight: $font-weight-regular;
+		}
 	}
 }
