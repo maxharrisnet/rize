@@ -1,24 +1,32 @@
 @use 'variables' as *;
 .form-section {
-	display: flex;
-	flex-flow: column;
+	display: grid;
 	font-weight: $font-weight-bold;
 	gap: $spacing-xl;
 	justify-content: center;
 	padding: $spacing-lg $spacing-md;
 	position: relative;
 
+	// Mobile: single column
+	grid-template-columns: 1fr;
+
 	@container (min-width: #{$container-lg}) {
-		flex-flow: row;
+		// Desktop: two columns
+		grid-template-columns: 1fr 1fr;
 		padding: 0;
 	}
 
 	.form-container {
 		padding: $spacing-lg 0;
 
+		// Default order (mobile)
+		grid-row: 1;
+
 		@container (min-width: #{$container-lg}) {
 			padding: $spacing-xxl $spacing-xl;
-			flex: 1 0 48%;
+			// Place in second column on desktop
+			grid-column: 2;
+			grid-row: 1;
 		}
 
 		.heading-container--sm {
@@ -130,6 +138,18 @@
 					gap: $spacing-md;
 				}
 			}
+		}
+	}
+
+	// If you have another section (e.g., .info-container)
+	.info-container {
+		// Default order (mobile)
+		grid-row: 2;
+
+		@container (min-width: #{$container-lg}) {
+			// Place in first column on desktop
+			grid-column: 1;
+			grid-row: 1;
 		}
 	}
 }
