@@ -10,48 +10,48 @@
 	justify-content: center;
 	align-items: center;
 	padding: $spacing-xl;
+}
 
-	.social-links {
-		align-items: center;
+.social-links {
+	align-items: center;
+	display: flex;
+	flex: 1;
+	gap: $spacing-md;
+	justify-content: center;
+
+	@container (min-width: #{$container-lg}) {
+		justify-content: flex-start;
+	}
+
+	.social-link {
 		display: flex;
-		flex: 1;
-		gap: $spacing-md;
-		justify-content: center;
+		align-items: center;
+		gap: $spacing-xs;
+		color: $color-white;
+		text-decoration: none;
+		transition: color $transition-fast;
 
-		@container (min-width: #{$container-lg}) {
-			justify-content: flex-start;
+		&:hover {
+			color: $color-primary;
 		}
+	}
 
-		.social-link {
-			display: flex;
-			align-items: center;
-			gap: $spacing-xs;
-			color: $color-white;
-			text-decoration: none;
-			transition: color $transition-fast;
+	.social-icon {
+		width: $icon-size;
+		height: $icon-size;
+		transition: transform $transition-fast, fill $transition-fast;
+		fill: $color-primary-bright;
+		color: currentColor;
 
-			&:hover {
-				color: $color-primary;
-			}
+		&:hover {
+			color: $color-primary;
+			fill: $color-primary;
+			transform: scale(1.1);
 		}
+	}
 
-		.social-icon {
-			width: $icon-size;
-			height: $icon-size;
-			transition: transform $transition-fast, fill $transition-fast;
-			fill: $color-primary-bright;
-			color: currentColor;
-
-			&:hover {
-				color: $color-primary;
-				fill: $color-primary;
-				transform: scale(1.1);
-			}
-		}
-
-		.social-handle {
-			font-size: $font-size-sm;
-			font-weight: $font-weight-regular;
-		}
+	.social-handle {
+		font-size: $font-size-sm;
+		font-weight: $font-weight-regular;
 	}
 }
