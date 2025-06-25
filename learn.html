@@ -30,40 +30,55 @@ cta_url="/contact"
 <section class="bg-light">
   <div class="container">
     {% include heading.html
-    heading="Workshops for Organizations & Teams"
+    heading="Workshops"
     paragraphs="Equip your team with practical knowledge to use digital tools with confidence. From improving workflows with tools like Slack and Google Workspace to managing your website and building an engaged community through accessible, values-based social media."
     %}
-  </div>
-  <div class="container">
     <div class="bento-container">
-      {% include feature.html
-      title="Workshops for Organizations & Teams"
-      description="Equip your team with practical knowledge to use digital tools with confidence. From improving workflows with tools like Slack and Google Workspace to managing your website and building an engaged community through accessible, values-based social media."
-      image="/assets/images/pages/learn/workshops.jpg"
-      image_alt="Team Workshop Session"
-      button_text="Book a Team Session"
-      button_url="/contact?type=team"
-      feature_class="bg-dark"
-      %}
+
 
       {% include feature.html
       title="Digital Safety for Families"
       description="Support elders and youth in staying safe, balanced, and informed online."
-      image="/assets/images/pages/learn/learn2.jpg"
+      image="/assets/images/pages/learn/family1.jpg"
       image_alt="Community Education Workshop"
-      button_text="Book a Community Workshop"
+      button_text="Book Digital Safety Workshop"
       button_url="/contact?type=community"
       feature_class="reverse bg-dark"
+      list="Avoid scams, protect privacy, and spot misinformation|Tools and habits for healthy digital life at home|Create a safety plan for the fam"
       %}
 
       {% include feature.html
-      title="Tech Careers & Skills Training"
-      description="Support individuals looking to explore or grow into digital careers. Learn web development basics like HTML, CSS, and JavaScript, discover career paths in tech and creative fields, and get guidance on resumes, portfolios, and project-based learning."
+      title="Build Your Digital Presence"
+      description="A hands-on workshop that helps you build and manage your own site, step-by-step."
+      image="/assets/images/pages/learn/learn2.jpg"
+      image_alt="Team Workshop Session"
+      button_text="Book Digital Presence Workshop"
+      button_url="/contact?type=team"
+      feature_class="bg-dark"
+      list="Get familiar with web builders and CMS platforms|Learn to use AI tools for content creation|Set up your site and understand how to maintain it|Work at your skill level with guidance and support"
+      %}
+
+
+      {% include feature.html
+      title="E-Commerce Success"
+      description="Get your store online and manage it with confidence."
+      image="/assets/images/pages/learn/e-commerce1.jpg"
+      image_alt="Team Workshop Session"
+      button_text="Book E-Commerce Workshop"
+      button_url="/contact?type=team"
+      feature_class="bg-dark reverse"
+      list="Learn how to set up and manage a Shopify store|Add products, organize collections, and customize the experience|Understand customer journey, checkout, and fulfillment tools|Explore best practices for building trust and boosting sales"
+      %}
+
+      {% include feature.html
+      title="Exploring Careers in Tech"
+      description="Inspire the next generation with pathways into today’s digital landscape."
       image="/assets/images/pages/learn/career.jpg"
       image_alt="Tech Skills Training"
-      button_text="Start a Career-Focused Session"
+      button_text="Book Career Workshop"
       button_url="/contact?type=career"
       feature_class="bg-dark"
+      list="Explore emerging tech roles including AI, data, and automation|Discover creative and non-traditional tech careers|Learn essential skills like web dev, design, and content strategy|Practice using modern tools like no-code builders and AI assistant"
       %}
     </div>
   </div>
@@ -71,13 +86,13 @@ cta_url="/contact"
 
 {% include section-centered.html
 bg_class="bg-dark"
-heading="Customized for Your Community"
+heading="Customized for Community"
 paragraphs="Every organization is different. That's why we tailor each workshop to fit your audience, goals, and values. Whether you're a grassroots collective, a nonprofit team, or a group of elders and youth, we adapt our content and delivery to meet your needs."
 %}
 
 <!-- CTA Section -->
 {% include cta.html
-title="Ready to learn something new?"
+title="Learn with us"
 text="We'll guide you through it—with clarity, care, and no judgment."
 button_text="Book a Workshop"
 link="/contact?type=build"

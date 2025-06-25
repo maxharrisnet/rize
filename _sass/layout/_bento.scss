@@ -118,7 +118,7 @@ ul.bento-grid {
 				padding: $spacing-sm 0;
 
 				@media (min-width: $breakpoint-lg) {
-					padding: $spacing-sm $spacing-xxxl $spacing-sm 0;
+					padding: $spacing-sm $spacing-xxl $spacing-sm 0;
 					gap: $spacing-md;
 				}
 			}
@@ -194,7 +194,7 @@ ul.bento-list {
 
 	li {
 		text-align: center;
-		
+
 		@media (min-width: $breakpoint-lg) {
 			font-size: $font-size-lg;
 			padding: $spacing-lg $spacing-xxl;
