@@ -194,6 +194,7 @@ ul.bento-list {
 
 	li {
 		font-weight: $font-weight-medium;
+		justify-content: center;
 		text-align: center;
 
 		@media (min-width: $breakpoint-lg) {

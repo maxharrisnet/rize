@@ -213,7 +213,7 @@ main {
 
 .heading-container--sm {
 	justify-content: center;
-	padding: $spacing-md;
+	padding: $spacing-md 0;
 
 	@container (min-width: #{$container-lg}) {
 		padding: $spacing-lg 0;
