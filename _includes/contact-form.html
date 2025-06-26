@@ -74,3 +74,25 @@
     </div>
   </div>
 </div>
+
+<script>
+  (function () {
+    function getParam(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+    const inquiryParam = getParam('inquiry');
+    if (inquiryParam) {
+      const select = document.getElementById('inquiry');
+      if (select) {
+        // Try to match case-insensitively
+        for (const option of select.options) {
+          if (option.value.toLowerCase() === inquiryParam.toLowerCase()) {
+            select.value = option.value;
+            break;
+          }
+        }
+      }
+    }
+  })();
+</script>
