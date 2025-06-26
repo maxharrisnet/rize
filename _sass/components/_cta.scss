@@ -15,10 +15,12 @@
 		border-radius: $border-radius-lg;
 		box-shadow: $drop-shadow;
 		color: $color-white;
+		margin-top: 100px;
 		padding: $spacing-md;
 		z-index: 10;
 
 		@container (min-width: #{$container-lg}) {
+			margin-top: $spacing-xxxl;
 			max-width: $container-lg;
 			padding: $spacing-xl $spacing-xxl;
 		}
@@ -54,15 +56,13 @@
 	}
 
 	.image-container {
-		height: 70%;
 		height: 200px;
 		display: flex;
 		flex-flow: column;
 		justify-content: center;
 
 		@container (min-width: #{$container-lg}) {
-			height: 60%;
-			min-height: 400px;
+			height: 500px;
 		}
 
 		video {
