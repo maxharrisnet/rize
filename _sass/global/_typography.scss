@@ -173,7 +173,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: $spacing-sm;
-	padding: $spacing-md 0 $spacing-sm;
+	padding: $spacing-md 0 $spacing-lg;
 
 	@container (min-width: #{$container-lg}) {
 		align-items: center;

@@ -4,14 +4,11 @@
 	font-weight: $font-weight-bold;
 	gap: $spacing-xl;
 	justify-content: center;
-	padding: $spacing-lg $spacing-md;
+	padding: $spacing-xl $spacing-md;
 	position: relative;
-
-	// Mobile: single column
 	grid-template-columns: 1fr;
 
 	@container (min-width: #{$container-lg}) {
-		// Desktop: two columns
 		grid-template-columns: 1fr 1fr;
 		padding: 0;
 	}
@@ -19,12 +16,10 @@
 	.form-container {
 		padding: $spacing-lg 0;
 
-		// Default order (mobile)
 		grid-row: 1;
 
 		@container (min-width: #{$container-lg}) {
 			padding: $spacing-xxl $spacing-xl;
-			// Place in second column on desktop
 			grid-column: 2;
 			grid-row: 1;
 		}
