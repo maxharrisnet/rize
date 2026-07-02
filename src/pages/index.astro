@@ -1,6 +1,169 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Button from '../components/Button.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import AudiencePicker from '../components/AudiencePicker.astro';
+import ProgramCard from '../components/ProgramCard.astro';
+import Steps from '../components/Steps.astro';
+import CTASection from '../components/CTASection.astro';
+
+const audiencePaths = [
+  {
+    heading: 'I represent a community organization, nonprofit, or social service agency.',
+    body: 'We partner with organizations like yours to bring funded workshops and courses to the communities you serve — often at little or no cost. Let us show you how it works.',
+    ctaLabel: 'Explore Funded Partnerships',
+    ctaHref: '/funded-partnerships',
+    accent: 'red' as const,
+  },
+  {
+    heading: 'I am an entrepreneur, freelancer, or small business owner.',
+    body: 'We offer workshops, courses, websites, and automation services designed for people building something. Whether you are just getting started or ready to scale, we can help you use technology to do more of what matters.',
+    ctaLabel: 'See Programs and Services for Entrepreneurs',
+    ctaHref: '/services',
+    accent: 'blue' as const,
+  },
+  {
+    heading: 'I am an individual looking to build my skills or get support.',
+    body: 'Our workshops and courses are open to everyone, and we offer one-on-one teaching and tutoring for people who want personalized support. Accommodating all skill levels.',
+    ctaLabel: 'See Our Programs',
+    ctaHref: '/learn',
+    accent: 'sun' as const,
+  },
+];
+
+const steps = [
+  {
+    title: 'Reach out',
+    body: 'Tell us who you are, who your community is, and what you are hoping to achieve. A short conversation is all it takes to get started.',
+  },
+  {
+    title: 'We design together',
+    body: 'We work with you to identify the right program, confirm the format, and — where applicable — identify funding sources that can cover the cost.',
+  },
+  {
+    title: 'We show up and deliver',
+    body: 'We handle the curriculum, the facilitation, and the materials. Your community shows up and leaves with real skills and real confidence.',
+  },
+  {
+    title: 'You keep the momentum',
+    body: 'Every program comes with resources participants can reference independently. For organizations, we are available for follow-up support, ongoing training, or next-step programs.',
+  },
+];
 ---
-<BaseLayout title="Rize Skill Training" description="Technology training for Vancouver and the Greater Vancouver area.">
-  <section class="mx-auto max-w-6xl px-4 py-20"><h1 class="text-5xl text-brand-red">Home placeholder</h1></section>
+<BaseLayout
+  title="Rize Skill Training | Technology Workshops, Courses &amp; Services in Vancouver"
+  description="Practical, accessible technology workshops, courses, and services for people, community organizations, and entrepreneurs across Vancouver and the Greater Vancouver area."
+>
+  <Hero title="The technology is here.<br />Let's make it work for you.">
+    <Fragment slot="lead">
+      <p>Rize Skill Training offers workshops, courses, and services that help people, organizations, and entrepreneurs in Vancouver and the surrounding area build real confidence with technology — and put it to work for the things that matter most to them.</p>
+    </Fragment>
+    <Fragment slot="actions">
+      <Button href="/learn">Explore Our Programs</Button>
+      <Button href="/funded-partnerships" variant="secondary">Partner With Us</Button>
+    </Fragment>
+  </Hero>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <SectionHeading title="Not sure where to start?">
+      <p>Rize serves a few different audiences, and the right path depends on who you are and what you need. Pick the one that fits best.</p>
+    </SectionHeading>
+    <AudiencePicker paths={audiencePaths} />
+  </section>
+
+  <section class="bg-stone-100">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <SectionHeading title="Technology for the people.">
+        <p>Technology has the power to change lives, expand reach, and open doors. But that power only lands when people feel confident using it — when it fits the way they already work and the goals they are already chasing.</p>
+        <p>Rize Skill Training exists to make that happen. We bring practical, accessible technology education to individuals and organizations across Vancouver and the Greater Vancouver area — with a focus on the communities, entrepreneurs, and creatives who have the most to gain and have historically had the least support in getting there.</p>
+        <p>We are technology guides, not technology salespeople. We help people find the tools that actually fit their work, build the skills to use them well, and free up more time for the impact only they can make. The tech is not the thing. Making our communities stronger is the thing.</p>
+      </SectionHeading>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <SectionHeading title="What we offer.">
+      <p>Our programs run across two tracks and are available as workshops, multi-session courses, and one-on-one teaching. Every program is built around real outcomes — things you can do, build, or launch when you leave.</p>
+    </SectionHeading>
+    <div class="grid gap-6 md:grid-cols-2">
+      <ProgramCard
+        track="community"
+        title="Digital Confidence"
+        hook="Everyday technology skills for people who want to feel more in control online."
+        audience="For seniors, newcomers, and anyone ready to get more comfortable with the technology they use every day."
+      />
+      <ProgramCard
+        track="community"
+        title="Stay Safe Online"
+        hook="Protect yourself from scams, phishing, and AI-powered threats."
+        audience="For community members, seniors, and anyone who wants to feel safer and more in control of their digital life."
+      />
+      <ProgramCard
+        track="career"
+        title="Future-Proof Your Career"
+        hook="Get hired, stay competitive, and build a professional presence that works for you — using AI and modern tools."
+        audience="For job seekers, career changers, newcomers entering the Canadian workforce, and anyone ready to take their next step."
+      />
+      <ProgramCard
+        track="career"
+        title="AI and Modern Workflows"
+        hook="Spend more time on the work only you can do. Let technology handle the rest."
+        audience="For entrepreneurs, nonprofit staff, creatives, and small business owners ready to build smarter, faster workflows."
+      />
+    </div>
+    <p class="mt-10 text-lg text-stone-700 max-w-2xl">All programs are available through funded community partnerships and on a public schedule. Every program can be tailored to specific groups, industries, and skill levels.</p>
+    <div class="mt-6 flex flex-wrap gap-4">
+      <Button href="/learn">See All Programs</Button>
+      <Button href="/funded-partnerships" variant="secondary">Bring a Program to Your Organization</Button>
+    </div>
+  </section>
+
+  <section class="bg-stone-100">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <SectionHeading title="Funded partnerships — bringing programs to your community at little or no cost.">
+        <p>Provincial and federal programs are actively funding digital skills and AI upskilling training for specific communities right now. We help you identify the funding that applies to your organization, handle the program design and facilitation, and deliver a workshop or course your community genuinely benefits from — often at little or no cost to you.</p>
+        <p>We work with community organizations, nonprofits, Indigenous-led groups, Black community organizations, libraries, employment centers, and social service agencies across Vancouver and the surrounding area.</p>
+        <p>You bring the community. We bring the program, the facilitation, and the funding strategy.</p>
+      </SectionHeading>
+      <Button href="/funded-partnerships">Explore Funded Partnerships</Button>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <SectionHeading title="How working with us works.">
+      <p>Simple and low-friction from the first conversation to the last session.</p>
+    </SectionHeading>
+    <Steps steps={steps} />
+    <div class="mt-10">
+      <Button href="/contact">Get in Touch</Button>
+    </div>
+  </section>
+
+  <section class="bg-stone-100">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <SectionHeading title="We also build websites and workflows.">
+        <p>Beyond training, we build websites, automation systems, and digital marketing solutions for community organizations, nonprofits, small businesses, and entrepreneurs in Vancouver — professional results, accessible process, clear pricing.</p>
+      </SectionHeading>
+      <a href="/services" class="font-semibold text-brand-red hover:text-ink">See Our Services &rarr;</a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <SectionHeading title="Built in East Vancouver. Rooted in community.">
+      <p>Rize Skill Training was founded by an AI specialist and educator with over 20 years of experience — and a deep personal commitment to the communities of East Vancouver and the Greater Vancouver area.</p>
+      <p>We are grateful to live and work on the unceded territories of the Musqueam, Squamish, and Tsleil-Waututh Nations.</p>
+    </SectionHeading>
+    <a href="/about" class="font-semibold text-brand-red hover:text-ink">Our Story &rarr;</a>
+  </section>
+
+  <CTASection title="Ready to get started?">
+    <Fragment slot="body">
+      <p>Whether you want to bring a program to your community, register for an upcoming session, or explore our services — we would love to hear from you.</p>
+      <p class="mt-4"><a href="mailto:holler@weallrize.ca" class="underline hover:no-underline">holler@weallrize.ca</a></p>
+    </Fragment>
+    <Fragment slot="actions">
+      <Button href="/contact">Get in Touch</Button>
+    </Fragment>
+  </CTASection>
 </BaseLayout>
