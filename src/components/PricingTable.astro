@@ -15,11 +15,14 @@ const ring = accent === 'red' ? 'border-brand-red' : 'border-brand-blue';
   ))}
 </div>
 {addOns && (
-  <ul class="mt-8 grid gap-2 sm:grid-cols-2">
-    {addOns.map((a) => (
-      <li class="flex justify-between rounded-xl bg-stone-100 px-4 py-3">
-        <span>{a.name}</span><span class="font-semibold">{a.price}</span>
-      </li>
-    ))}
-  </ul>
+  <div class="mt-8">
+    <h3 class="text-2xl mb-4">Add-ons</h3>
+    <ul class="grid gap-2 sm:grid-cols-2">
+      {addOns.map((a) => (
+        <li class="flex justify-between rounded-xl bg-stone-100 px-4 py-3">
+          <span>{a.name}</span><span class="font-semibold">{a.price}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
 )}
