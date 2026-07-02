@@ -1,0 +1,37 @@
+---
+import { navLinks, contactLink } from '../data/nav';
+const path = Astro.url.pathname;
+const isActive = (href: string) => href === '/' ? path === '/' : path.startsWith(href);
+---
+<header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-stone-200">
+  <div class="mx-auto max-w-6xl px-4 flex items-center justify-between h-16">
+    <a href="/" class="flex items-center">
+      <img src="/assets/images/logo/rize-logo.svg" alt="Rize Skill Training" class="h-8" />
+    </a>
+    <nav class="hidden md:flex items-center gap-6">
+      {navLinks.map((l) => (
+        <a href={l.href} class:list={["font-medium hover:text-brand-red", isActive(l.href) && "text-brand-red"]}>{l.name}</a>
+      ))}
+      <a href={contactLink.href} class="rounded-pill bg-brand-red text-white px-5 py-2 font-semibold hover:bg-ink transition-colors">{contactLink.name}</a>
+    </nav>
+    <button id="nav-toggle" class="md:hidden p-2" aria-label="Open menu" aria-expanded="false">
+      <span class="block w-6 h-0.5 bg-ink mb-1.5"></span>
+      <span class="block w-6 h-0.5 bg-ink mb-1.5"></span>
+      <span class="block w-6 h-0.5 bg-ink"></span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200 bg-paper px-4 py-4 flex-col gap-3">
+    {[...navLinks, contactLink].map((l) => (
+      <a href={l.href} class="block py-2 font-medium">{l.name}</a>
+    ))}
+  </div>
+</header>
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!open));
+    menu?.classList.toggle('flex');
+  });
+</script>
