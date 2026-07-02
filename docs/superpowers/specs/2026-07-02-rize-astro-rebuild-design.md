@@ -65,7 +65,8 @@ Track/audience color assignment:
 ## Technical architecture
 
 - **Astro** static output (`output: 'static'`), TypeScript, Tailwind CSS v4 (Vite plugin).
-- **Vercel** deployment (`@astrojs/vercel` static adapter or plain static — static preferred).
+- **Vercel** deployment as a plain static build — Vercel auto-detects Astro and serves
+  `dist/`; no adapter needed. `vercel.json` only if custom redirects/headers become necessary.
 - **Content Collections** (`src/content/`):
   - `workshops` — drives the Learn page Workshops section and future per-workshop detail pages.
   - `courses` — drives the Learn page Courses section and future per-course detail pages.
