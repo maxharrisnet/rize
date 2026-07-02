@@ -45,10 +45,10 @@ contrast minimum — the audience includes seniors and newcomers).
 | `white` | `#FFFFFF` | Card surfaces |
 
 Track/audience color assignment:
-- Program **Track 1: Community and Everyday Life** → `brand-blue`
-- Program **Track 2: Career, Work, and Growth** → `brand-red`
-- Services **For Organizations** → `brand-blue`
-- Services **For Businesses** → `brand-red`
+- Program **Track 1: Community and Everyday Life** → `brand-red`
+- Program **Track 2: Career, Work, and Growth** → `brand-blue`
+- Services **For Organizations** → `brand-red`
+- Services **For Businesses** → `brand-blue`
 
 ### Typography
 
@@ -194,8 +194,8 @@ Home · Learn · Services · About · Contact (Contact styled as a button, per c
   (digital literacy workshops Vancouver, online safety East Vancouver, AI training
   Vancouver, technology training nonprofits Vancouver, WordPress website nonprofit
   Vancouver, etc.).
-- Logo: reuse existing Rize lettermark/logo SVGs from `assets/images/logo/` unless a new
-  mark is provided.
+- Logo: reuse existing Rize lettermark/logo SVGs from `assets/images/logo/` for now; a new
+  mark will be swapped in later (build so the logo is a single easily-replaceable asset).
 
 ## Tone rules (applied to all copy)
 
