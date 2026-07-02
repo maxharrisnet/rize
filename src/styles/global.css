@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/inter';
+
+@theme {
+  --color-brand-red: #E23B2B;
+  --color-brand-sun: #FFB23E;
+  --color-brand-blue: #2F5E8A;
+  --color-paper: #FBF7F2;
+  --color-ink: #1B1B1F;
+
+  --color-stone-100: #F2EFE9;
+  --color-stone-200: #E4E0D8;
+  --color-stone-300: #CFC9BE;
+  --color-stone-500: #8A8378;
+  --color-stone-700: #55504A;
+
+  --font-display: 'Space Grotesk Variable', system-ui, sans-serif;
+  --font-body: 'Inter Variable', system-ui, sans-serif;
+
+  --radius-pill: 9999px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+}
