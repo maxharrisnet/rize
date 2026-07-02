@@ -4,3 +4,8 @@ _site
 .jekyll-metadata
 vendor
 *.DS_Store
+node_modules/
+dist/
+.astro/
+.DS_Store
+.vercel/
