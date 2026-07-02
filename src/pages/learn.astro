@@ -1,0 +1,93 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Button from '../components/Button.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import AnchorNav from '../components/AnchorNav.astro';
+import WorkshopCard from '../components/WorkshopCard.astro';
+import CourseCard from '../components/CourseCard.astro';
+
+const workshops = (await getCollection('workshops')).sort((a, b) => a.data.order - b.data.order);
+const courses = (await getCollection('courses')).sort((a, b) => a.data.order - b.data.order);
+const communityWorkshops = workshops.filter((w) => w.data.track === 'community');
+const careerWorkshops = workshops.filter((w) => w.data.track === 'career');
+---
+<BaseLayout
+  title="Workshops & Courses | Digital Skills & AI Training in Vancouver"
+  description="Technology workshops and multi-session courses built around real outcomes — digital confidence, online safety, AI workflows, and more. Vancouver and area."
+>
+  <Hero title="Programs built around<br />real outcomes.">
+    <Fragment slot="lead">
+      <p>Workshops and courses for people ready to build real skills with technology — and use those skills to do more of what they care about. Delivered in Vancouver and the surrounding area. Accommodating all skill levels.</p>
+    </Fragment>
+  </Hero>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <SectionHeading title="How our programs work." />
+    <h3 class="text-xl mt-6">Workshops</h3>
+    <p class="mt-2 text-stone-700">Single sessions or short series running 90 minutes to half a day. Practical and focused, designed to deliver immediately useful skills. Available through community partnerships and on a public schedule.</p>
+
+    <h3 class="text-xl mt-6">Courses</h3>
+    <p class="mt-2 text-stone-700">Multi-session programs running 4 to 6 hours total, designed to build something functional by the end — a workflow, a digital presence, a grant-writing system, a marketing strategy. Delivered through organizational partnerships.</p>
+
+    <h3 class="text-xl mt-6">Delivery options</h3>
+    <ul class="mt-2 list-disc pl-5 text-stone-700">
+      <li>Partnership delivery — we come to your organization, your space, your community</li>
+      <li>Public schedule — open sessions anyone can register for</li>
+      <li>Custom engagements — tailored programs for specific groups, industries, or cohorts</li>
+    </ul>
+
+    <h3 class="text-xl mt-6">Funded partnerships</h3>
+    <p class="mt-2 text-stone-700">Provincial and federal funding is available for many of these programs right now — particularly for digital skills and AI upskilling for specific communities. We will help you identify what applies and work through the process alongside you.</p>
+
+    <div class="mt-6">
+      <Button href="/funded-partnerships">Explore Funded Partnerships</Button>
+    </div>
+  </section>
+
+  <AnchorNav anchors={[{ label: 'Workshops', href: '#workshops' }, { label: 'Courses', href: '#courses' }, { label: 'Looking for Something Else?', href: '#more' }]} />
+
+  <section id="workshops" class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <SectionHeading title="Workshops." />
+
+    <h3 class="text-2xl font-display mt-8 mb-4">Track 1: Community and Everyday Life</h3>
+    <div class="grid gap-6">
+      {communityWorkshops.map((w) => <WorkshopCard workshop={w.data} />)}
+    </div>
+
+    <h3 class="text-2xl font-display mt-8 mb-4">Track 2: Career, Work, and Growth</h3>
+    <div class="grid gap-6">
+      {careerWorkshops.map((w) => <WorkshopCard workshop={w.data} />)}
+    </div>
+  </section>
+
+  <section id="courses" class="bg-stone-100">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <SectionHeading title="Courses.">
+        <p>Multi-session programs for organizations and individuals ready to go deeper and come away with something they can actually use. Courses run 4 to 6 hours across multiple sessions and are designed to deploy a functional system, workflow, or strategy by the end.</p>
+        <p>Every course is delivered in partnership with an organization that brings the audience and the space. We work closely with your internal team throughout — not just presenting, but building alongside you so the skills and systems stay with your organization long after the course ends.</p>
+        <p>Before each course, we offer a free or low-cost introductory session — 30 to 90 minutes — covering the key topics and helping participants arrive ready. Recordings are made available for participants and repurposed as educational content.</p>
+      </SectionHeading>
+
+      <Button href="/contact">Talk to Us About a Course</Button>
+
+      <div class="grid gap-6 mt-8">
+        {courses.map((c) => <CourseCard course={c.data} />)}
+      </div>
+
+      <p class="mt-10 italic text-stone-700">Additional course tracks in development. Contact us to discuss a custom course for your community or sector.</p>
+    </div>
+  </section>
+
+  <section id="more" class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <SectionHeading title="Looking for something else?">
+      <p>If these workshops and courses are not quite the right fit, there is more. We offer one-on-one tutoring and mentorship for individuals who want personalized support, small group instruction for specific topics, and team training for organizations with particular needs. We can also go deeper on more technical topics — development, systems, and tools — for people who are ready for that level.</p>
+      <p>More workshops are in development across additional topics and industries. If you have something specific in mind, reach out. The answer is probably yes.</p>
+    </SectionHeading>
+    <div class="flex flex-wrap items-center gap-6">
+      <Button href="/contact">Get in Touch</Button>
+      <a href="mailto:holler@weallrize.ca" class="font-semibold text-brand-red hover:text-ink">holler@weallrize.ca</a>
+    </div>
+  </section>
+</BaseLayout>
