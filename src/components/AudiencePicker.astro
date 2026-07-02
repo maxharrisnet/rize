@@ -1,0 +1,18 @@
+---
+interface Path { heading: string; body: string; ctaLabel: string; ctaHref: string; accent: 'red' | 'blue' | 'sun'; }
+interface Props { paths: Path[]; }
+const { paths } = Astro.props;
+const bar = { red: 'bg-brand-red', blue: 'bg-brand-blue', sun: 'bg-brand-sun' };
+---
+<div class="grid gap-6 md:grid-cols-3">
+  {paths.map((p) => (
+    <div class="flex flex-col rounded-2xl bg-white border border-stone-200 overflow-hidden">
+      <span class:list={["h-2", bar[p.accent]]}></span>
+      <div class="flex flex-col flex-1 p-6">
+        <h3 class="text-xl">{p.heading}</h3>
+        <p class="mt-3 text-stone-700 flex-1">{p.body}</p>
+        <a href={p.ctaHref} class="mt-6 font-semibold text-brand-red hover:text-ink">{p.ctaLabel} &rarr;</a>
+      </div>
+    </div>
+  ))}
+</div>
