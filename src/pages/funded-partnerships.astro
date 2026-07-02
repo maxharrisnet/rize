@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Button from '../components/Button.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import Steps from '../components/Steps.astro';
+import CTASection from '../components/CTASection.astro';
+
+const steps = [
+  {
+    title: 'Reach out',
+    body: 'Tell us who you are, who your community is, and what you are hoping to achieve. A short conversation is all it takes to get started.',
+  },
+  {
+    title: 'We design together',
+    body: 'We work with you to identify the right program, confirm the format, and — where applicable — identify funding sources that can cover the cost.',
+  },
+  {
+    title: 'We show up and deliver',
+    body: 'We handle the curriculum, the facilitation, and the materials. Your community shows up and leaves with real skills and real confidence.',
+  },
+  {
+    title: 'You keep the momentum',
+    body: 'Every program comes with resources participants can reference independently. For organizations, we are available for follow-up support, ongoing training, or next-step programs.',
+  },
+];
+---
+<BaseLayout
+  title="Funded Partnerships | Technology Training for Nonprofits in Vancouver"
+  description="Provincial and federal funding is available now for digital skills and AI upskilling. We help Vancouver community organizations bring funded workshops and courses to the people they serve."
+>
+  <Hero title="Bring funded programs<br />to your community.">
+    <Fragment slot="lead">
+      <p>Provincial and federal programs are actively funding digital skills and AI upskilling training for specific communities right now. We help you identify the funding that applies to your organization, handle the program design and facilitation, and deliver a workshop or course your community genuinely benefits from — often at little or no cost to you.</p>
+    </Fragment>
+    <Fragment slot="actions">
+      <Button href="/contact">Get in Touch</Button>
+    </Fragment>
+  </Hero>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <SectionHeading title="How funded partnerships work.">
+      <p>We work with community organizations, nonprofits, Indigenous-led groups, Black community organizations, libraries, employment centers, and social service agencies across Vancouver and the surrounding area.</p>
+      <p>You bring the community. We bring the program, the facilitation, and the funding strategy.</p>
+    </SectionHeading>
+  </section>
+
+  <section class="bg-stone-100">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <SectionHeading title="Who we work with.">
+        <ul class="grid gap-3 sm:grid-cols-2 list-disc pl-5 text-lg text-stone-700">
+          <li>Community organizations</li>
+          <li>Nonprofits</li>
+          <li>Indigenous-led groups</li>
+          <li>Black community organizations</li>
+          <li>Libraries</li>
+          <li>Employment centers</li>
+          <li>Social service agencies</li>
+        </ul>
+      </SectionHeading>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <SectionHeading title="Grant writing assistance.">
+      <p>We help organizations identify the provincial and federal funding available for digital skills training and AI upskilling — and assist with the application process. This service is often what makes a funded partnership possible in the first place.</p>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>Funding source identification for your organization type and community</li>
+        <li>Application support and co-writing</li>
+        <li>Program design documentation for grant submissions</li>
+        <li>Reporting templates for funded programs</li>
+      </ul>
+    </SectionHeading>
+  </section>
+
+  <section class="bg-stone-100">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <SectionHeading title="How working with us works.">
+        <p>Simple and low-friction from the first conversation to the last session.</p>
+      </SectionHeading>
+      <Steps steps={steps} />
+    </div>
+  </section>
+
+  <CTASection title="Let's bring a program to your community.">
+    <Fragment slot="body">
+      <p>Tell us about your community and we'll help you find the funding and the program to match.</p>
+      <p class="mt-4"><a href="mailto:holler@weallrize.ca" class="underline hover:no-underline">holler@weallrize.ca</a></p>
+    </Fragment>
+    <Fragment slot="actions">
+      <Button href="/contact">Get in Touch</Button>
+    </Fragment>
+  </CTASection>
+</BaseLayout>
