@@ -1,27 +1,34 @@
 ---
+import { Icon } from 'astro-icon/components';
 import type { CollectionEntry } from 'astro:content';
 interface Props { workshop: CollectionEntry<'workshops'>['data']; }
 const { workshop } = Astro.props;
-const accent = workshop.track === 'community' ? 'border-brand-red' : 'border-brand-blue';
+const isCommunity = workshop.track === 'community';
+const accentText = isCommunity ? 'text-brand-red' : 'text-brand-blue';
+const chip = isCommunity ? 'bg-brand-red' : 'bg-brand-blue';
+const icon = isCommunity ? 'ph:hand-heart-bold' : 'ph:rocket-launch-bold';
 ---
-<article class:list={["rounded-2xl border-l-4 bg-white shadow-sm p-6 md:p-8", accent]}>
-  <h3 class="text-2xl">{workshop.title}</h3>
-  <p class="mt-2 font-semibold text-brand-red">{workshop.tagline}</p>
-  <p class="mt-4 text-stone-700">{workshop.summary}</p>
+<article class="h-full rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+  <span class:list={["inline-flex h-12 w-12 items-center justify-center rounded-full text-white text-2xl", chip]}>
+    <Icon name={icon} />
+  </span>
+  <h3 class="text-h3 mt-4">{workshop.title}</h3>
+  <p class:list={["mt-2 text-body-lg font-bold", accentText]}>{workshop.tagline}</p>
+  <p class="mt-4 text-body text-body-muted">{workshop.summary}</p>
   <div class="mt-6 grid gap-6 md:grid-cols-2">
     <div>
-      <h4 class="font-display text-sm uppercase tracking-wide text-stone-500">Who this is for</h4>
-      <ul class="mt-2 space-y-1 text-stone-700 list-disc pl-5">
+      <h4 class="text-eyebrow font-bold text-ink">Who this is for</h4>
+      <ul class="mt-2 list-disc space-y-1 pl-5 text-body text-body-muted">
         {workshop.whoFor.map((i) => <li>{i}</li>)}
       </ul>
     </div>
     <div>
-      <h4 class="font-display text-sm uppercase tracking-wide text-stone-500">What you will walk away with</h4>
-      <ul class="mt-2 space-y-1 text-stone-700 list-disc pl-5">
+      <h4 class="text-eyebrow font-bold text-ink">What you will walk away with</h4>
+      <ul class="mt-2 list-disc space-y-1 pl-5 text-body text-body-muted">
         {workshop.outcomes.map((i) => <li>{i}</li>)}
       </ul>
     </div>
   </div>
-  <p class="mt-6 text-sm text-stone-500">{workshop.skillLevel}<br />{workshop.format}</p>
-  <a href="/contact?inquiry=Learn" class="mt-6 inline-block font-semibold text-brand-red hover:text-ink">{workshop.requestCtaLabel} &rarr;</a>
+  <p class="mt-6 text-body text-meta-muted">{workshop.skillLevel}<br />{workshop.format}</p>
+  <a href="/contact?inquiry=Learn" class="mt-6 inline-block font-bold uppercase tracking-[0.08em] text-brand-red">{workshop.requestCtaLabel} &rarr;</a>
 </article>
