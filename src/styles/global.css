@@ -1,38 +1,57 @@
 @import 'tailwindcss';
-@import '@fontsource-variable/space-grotesk';
-@import '@fontsource-variable/inter';
+@import '@fontsource-variable/rubik';
 
 @theme {
   --color-brand-red: #BE2A1A;
-  --color-brand-sun: #FFB23E;
-  --color-brand-blue: #2F5E8A;
-  --color-paper: #FBF7F2;
-  --color-ink: #1B1B1F;
+  --color-brand-blue: #2C63A8;
+  --color-brand-gold: #F2C14E;
+  --color-cream: #FBF2E6;
+  --color-ink: #1A1712;
+  --color-blush: #F6D9D2;
+  --color-body-muted: #3D332B;
+  --color-meta-muted: #6B5D4C;
 
+  --color-paper: #FBF2E6;
+  --color-brand-sun: #F2C14E;
   --color-stone-100: #F2EFE9;
   --color-stone-200: #E4E0D8;
   --color-stone-300: #CFC9BE;
   --color-stone-500: #8A8378;
   --color-stone-700: #55504A;
 
-  --font-display: 'Space Grotesk Variable', system-ui, sans-serif;
-  --font-body: 'Inter Variable', system-ui, sans-serif;
+  --font-sans: 'Rubik Variable', system-ui, sans-serif;
+  --font-display: 'Rubik Variable', system-ui, sans-serif;
+  --font-body: 'Rubik Variable', system-ui, sans-serif;
 
   --radius-pill: 9999px;
+
+  --text-display: clamp(2.75rem, 1.3rem + 6.6vw, 7rem);
+  --text-h1: clamp(2.25rem, 1.4rem + 4vw, 3.5rem);
+  --text-h2: clamp(1.9rem, 1.2rem + 3vw, 3.25rem);
+  --text-h3: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
+  --text-body-lg: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
+  --text-body: clamp(1.125rem, 1.08rem + 0.2vw, 1.25rem);
+  --text-eyebrow: 1.125rem;
+  --text-meta: 1.125rem;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: var(--color-paper);
+    background-color: var(--color-cream);
     color: var(--color-ink);
-    font-family: var(--font-body);
+    font-family: var(--font-sans);
+  }
+  body {
+    font-size: var(--text-body);
+    font-weight: 400;
+    line-height: 1.6;
   }
   h1, h2, h3, h4 {
-    font-family: var(--font-display);
-    font-weight: 700;
-    line-height: 1.05;
+    font-weight: 900;
+    line-height: 0.95;
     letter-spacing: -0.02em;
+    text-transform: uppercase;
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
