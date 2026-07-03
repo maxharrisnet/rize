@@ -54,3 +54,10 @@
     *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
   }
 }
+
+@utility container-wide {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1800px;
+  padding-inline: clamp(1.25rem, 4vw, 6rem);
+}
