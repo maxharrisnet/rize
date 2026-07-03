@@ -26,20 +26,20 @@ const careerWorkshops = workshops.filter((w) => w.data.track === 'career');
   <section class="mx-auto max-w-6xl px-4 py-16 md:py-24">
     <SectionHeading title="How our programs work." />
     <h3 class="text-xl mt-6">Workshops</h3>
-    <p class="mt-2 text-stone-700">Single sessions or short series running 90 minutes to half a day. Practical and focused, designed to deliver immediately useful skills. Available through community partnerships and on a public schedule.</p>
+    <p class="mt-2 text-body-muted">Single sessions or short series running 90 minutes to half a day. Practical and focused, designed to deliver immediately useful skills. Available through community partnerships and on a public schedule.</p>
 
     <h3 class="text-xl mt-6">Courses</h3>
-    <p class="mt-2 text-stone-700">Multi-session programs running 4 to 6 hours total, designed to build something functional by the end — a workflow, a digital presence, a grant-writing system, a marketing strategy. Delivered through organizational partnerships.</p>
+    <p class="mt-2 text-body-muted">Multi-session programs running 4 to 6 hours total, designed to build something functional by the end — a workflow, a digital presence, a grant-writing system, a marketing strategy. Delivered through organizational partnerships.</p>
 
     <h3 class="text-xl mt-6">Delivery options</h3>
-    <ul class="mt-2 list-disc pl-5 text-stone-700">
+    <ul class="mt-2 list-disc pl-5 text-body-muted">
       <li>Partnership delivery — we come to your organization, your space, your community</li>
       <li>Public schedule — open sessions anyone can register for</li>
       <li>Custom engagements — tailored programs for specific groups, industries, or cohorts</li>
     </ul>
 
     <h3 class="text-xl mt-6">Funded partnerships</h3>
-    <p class="mt-2 text-stone-700">Provincial and federal funding is available for many of these programs right now — particularly for digital skills and AI upskilling for specific communities. We will help you identify what applies and work through the process alongside you.</p>
+    <p class="mt-2 text-body-muted">Provincial and federal funding is available for many of these programs right now — particularly for digital skills and AI upskilling for specific communities. We will help you identify what applies and work through the process alongside you.</p>
 
     <div class="mt-6">
       <Button href="/funded-partnerships">Explore Funded Partnerships</Button>
@@ -62,7 +62,7 @@ const careerWorkshops = workshops.filter((w) => w.data.track === 'career');
     </div>
   </section>
 
-  <section id="courses" class="bg-stone-100">
+  <section id="courses">
     <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
       <SectionHeading title="Courses.">
         <p>Multi-session programs for organizations and individuals ready to go deeper and come away with something they can actually use. Courses run 4 to 6 hours across multiple sessions and are designed to deploy a functional system, workflow, or strategy by the end.</p>
@@ -76,7 +76,7 @@ const careerWorkshops = workshops.filter((w) => w.data.track === 'career');
         {courses.map((c) => <CourseCard course={c.data} />)}
       </div>
 
-      <p class="mt-10 italic text-stone-700">Additional course tracks in development. Contact us to discuss a custom course for your community or sector.</p>
+      <p class="mt-10 italic text-body-muted">Additional course tracks in development. Contact us to discuss a custom course for your community or sector.</p>
     </div>
   </section>
 
