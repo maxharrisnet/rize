@@ -1,13 +1,17 @@
 ---
+import { Icon } from 'astro-icon/components';
 interface Props { track: 'community' | 'career'; title: string; hook: string; audience: string; }
 const { track, title, hook, audience } = Astro.props;
-const accent = track === 'community' ? 'bg-brand-red' : 'bg-brand-blue';
+const isCommunity = track === 'community';
+const bg = isCommunity ? 'bg-brand-red' : 'bg-brand-blue';
+const chipText = isCommunity ? 'text-brand-red' : 'text-brand-blue';
+const icon = isCommunity ? 'ph:hand-heart-bold' : 'ph:rocket-launch-bold';
 ---
-<div class="rounded-2xl bg-white border border-stone-200 p-6">
-  <span class:list={["inline-block rounded-pill px-3 py-1 text-xs font-semibold text-white", accent]}>
-    {track === 'community' ? 'Community & Everyday Life' : 'Career, Work & Growth'}
+<div class:list={["h-full rounded-[14px] border-2 border-ink p-6 text-white", bg]}>
+  <span class:list={["inline-flex h-12 w-12 items-center justify-center rounded-full bg-white text-2xl", chipText]}>
+    <Icon name={icon} />
   </span>
-  <h3 class="text-2xl mt-4">{title}</h3>
-  <p class="mt-3 text-stone-700">{hook}</p>
-  <p class="mt-3 text-sm text-stone-500">{audience}</p>
+  <h3 class="text-h3 mt-4">{title}</h3>
+  <p class="mt-3 text-body">{hook}</p>
+  <p class="mt-3 text-body">{audience}</p>
 </div>
