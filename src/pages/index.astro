@@ -7,6 +7,8 @@ import AudiencePicker from '../components/AudiencePicker.astro';
 import ProgramCard from '../components/ProgramCard.astro';
 import Steps from '../components/Steps.astro';
 import CTASection from '../components/CTASection.astro';
+import Tape from '../components/Tape.astro';
+import Badge from '../components/Badge.astro';
 
 const audiencePaths = [
   {
@@ -119,6 +121,8 @@ const steps = [
     </div>
   </section>
 
+  <Tape text="Let's get ready · Together we rise" />
+
   <section class="bg-stone-100">
     <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
       <SectionHeading title="Funded partnerships — bringing programs to your community at little or no cost.">
@@ -126,7 +130,10 @@ const steps = [
         <p>We work with community organizations, nonprofits, Indigenous-led groups, Black community organizations, libraries, employment centers, and social service agencies across Vancouver and the surrounding area.</p>
         <p>You bring the community. We bring the program, the facilitation, and the funding strategy.</p>
       </SectionHeading>
-      <Button href="/funded-partnerships">Explore Funded Partnerships</Button>
+      <div class="mt-6 flex items-center gap-6 flex-wrap">
+        <Button href="/funded-partnerships">Explore Funded Partnerships</Button>
+        <Badge label="Get ready" />
+      </div>
     </div>
   </section>
 
