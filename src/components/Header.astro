@@ -4,7 +4,7 @@ const path = Astro.url.pathname;
 const isActive = (href: string) => href === '/' ? path === '/' : path.startsWith(href);
 ---
 <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur border-b border-stone-200">
-  <div class="mx-auto max-w-6xl px-4 flex items-center justify-between h-16">
+  <div class="container-wide flex items-center justify-between h-16">
     <a href="/" class="flex items-center">
       <img src="/assets/images/logo/rize-logo.svg" alt="Rize Skill Training" width="161" height="54" class="h-8 w-auto" />
     </a>
