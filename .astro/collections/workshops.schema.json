@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "track": {
+      "type": "string",
+      "enum": [
+        "community",
+        "career"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "whoFor": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outcomes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "skillLevel": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string"
+    },
+    "requestCtaLabel": {
+      "default": "Request This Workshop",
+      "type": "string"
+    },
+    "order": {
+      "type": "number"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "track",
+    "title",
+    "tagline",
+    "summary",
+    "whoFor",
+    "outcomes",
+    "skillLevel",
+    "format",
+    "order"
+  ]
+}
