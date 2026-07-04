@@ -10,7 +10,6 @@ import IconList from '../components/IconList.astro';
 import Steps from '../components/Steps.astro';
 
 const chipMap = { red: 'bg-brand-red text-white', blue: 'bg-brand-blue text-white', gold: 'bg-brand-gold text-ink' };
-const listAccent = { red: 'text-brand-red', blue: 'text-brand-blue', gold: 'text-ink' };
 
 const howSteps = [
   { title: 'Discovery call', body: '20 minutes, free, no commitment.' },
@@ -170,7 +169,7 @@ const bizAddOns = [
               </div>
               <p class="mt-4 text-body-lg text-body-muted">{s.desc}</p>
             </div>
-            <div><IconList items={s.features} icon="ph:check-bold" accent={listAccent[s.accent]} /></div>
+            <div><IconList items={s.features} /></div>
           </div>
         </div>
       ))}
@@ -197,7 +196,7 @@ const bizAddOns = [
               </div>
               <p class="mt-4 text-body-lg text-body-muted">{s.desc}</p>
             </div>
-            <div><IconList items={s.features} icon="ph:check-bold" accent={listAccent[s.accent]} /></div>
+            <div><IconList items={s.features} /></div>
           </div>
         </div>
       ))}
@@ -219,14 +218,14 @@ const bizAddOns = [
           <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-blue text-white text-3xl"><Icon name="ph:plugs-connected-bold" /></span>
           <h3 class="text-h3">What we connect</h3>
         </div>
-        <div class="mt-5"><IconList items={connect} icon="ph:plug-bold" accent="text-brand-blue" /></div>
+        <div class="mt-5"><IconList items={connect} /></div>
       </div>
       <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
         <div class="flex items-center gap-4">
           <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-3xl"><Icon name="ph:sparkle-bold" /></span>
           <h3 class="text-h3">What this looks like in practice</h3>
         </div>
-        <div class="mt-5"><IconList items={inPractice} icon="ph:arrow-right-bold" accent="text-brand-red" /></div>
+        <div class="mt-5"><IconList items={inPractice} /></div>
       </div>
     </div>
     <p class="mt-8 text-body text-body-muted">Automations are scoped, priced, and delivered on a project basis.</p>

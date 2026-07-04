@@ -1,12 +1,11 @@
 ---
-import { Icon } from 'astro-icon/components';
-interface Props { items: string[]; icon?: string; accent?: string; }
-const { items, icon = 'ph:check-bold', accent = 'text-brand-red' } = Astro.props;
+interface Props { items: string[]; }
+const { items } = Astro.props;
 ---
 <ul class="space-y-3">
   {items.map((item) => (
-    <li class="flex gap-3">
-      <span class:list={["mt-1 shrink-0 text-xl", accent]}><Icon name={icon} /></span>
+    <li class="flex items-start gap-3">
+      <span class="mt-2 h-3 w-3 shrink-0 rounded-full bg-brand-red"></span>
       <span class="text-body text-body-muted">{item}</span>
     </li>
   ))}
