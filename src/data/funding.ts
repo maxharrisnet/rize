@@ -22,9 +22,9 @@ export const fundingGroups: FundingGroup[] = [
     accent: 'blue',
   },
   {
-    title: 'Black-led organizations',
-    body: 'Dedicated capacity-building funding helps Black-led and Black-serving organizations grow their programs and their reach.',
-    icon: 'ph:buildings-bold',
+    title: 'Job seekers and workforce',
+    body: 'Youth and employment programs fund the digital and AI skills that help people find and keep good work.',
+    icon: 'ph:briefcase-bold',
     accent: 'gold',
   },
   {
@@ -34,9 +34,9 @@ export const fundingGroups: FundingGroup[] = [
     accent: 'red',
   },
   {
-    title: 'Job seekers and workforce',
-    body: 'Youth and employment programs fund the digital and AI skills that help people find and keep good work.',
-    icon: 'ph:briefcase-bold',
+    title: 'Black-led organizations',
+    body: 'Dedicated capacity-building funding helps Black-led and Black-serving organizations grow their programs and their reach.',
+    icon: 'ph:buildings-bold',
     accent: 'blue',
   },
   {
