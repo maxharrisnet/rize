@@ -92,6 +92,13 @@ const orgTypes = [
   'Employment centers',
   'Social service agencies',
 ];
+
+const grantHelp = [
+  { text: 'Funding source identification for your organization type and community', icon: 'ph:magnifying-glass-bold', accent: 'red' as const },
+  { text: 'Application support and co-writing', icon: 'ph:note-pencil-bold', accent: 'blue' as const },
+  { text: 'Program design documentation for grant submissions', icon: 'ph:file-text-bold', accent: 'gold' as const },
+  { text: 'Reporting templates for funded programs', icon: 'ph:clipboard-text-bold', accent: 'red' as const },
+];
 ---
 <BaseLayout
   title="Funded Partnerships | Technology Training for Nonprofits in Vancouver"
@@ -162,12 +169,16 @@ const orgTypes = [
     <SectionHeading title="Grant writing assistance.">
       <p>We help organizations identify the provincial and federal funding available for digital skills training and AI upskilling — and assist with the application process. This service is often what makes a funded partnership possible in the first place.</p>
     </SectionHeading>
-    <ul class="grid gap-3 sm:grid-cols-2 list-disc pl-5 text-body text-body-muted">
-      <li>Funding source identification for your organization type and community</li>
-      <li>Application support and co-writing</li>
-      <li>Program design documentation for grant submissions</li>
-      <li>Reporting templates for funded programs</li>
-    </ul>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {grantHelp.map((h) => (
+        <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
+          <span class:list={["inline-flex h-12 w-12 items-center justify-center rounded-full text-2xl", chipClass[h.accent]]}>
+            <Icon name={h.icon} />
+          </span>
+          <p class="mt-4 text-body-lg font-bold text-ink">{h.text}</p>
+        </div>
+      ))}
+    </div>
   </section>
 
   <section class="container-wide py-16 md:py-24">
