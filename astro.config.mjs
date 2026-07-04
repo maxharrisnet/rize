@@ -7,6 +7,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://weallrize.ca',
   output: 'static',
+  redirects: {
+    '/services': '/systems',
+  },
   integrations: [sitemap(), icon()],
   vite: {
     plugins: [tailwindcss()],

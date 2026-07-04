@@ -9,7 +9,7 @@ import PricingTable from '../components/PricingTable.astro';
 import IconList from '../components/IconList.astro';
 import Steps from '../components/Steps.astro';
 
-const chipMap = { red: 'bg-brand-red text-white', blue: 'bg-brand-blue text-white', gold: 'bg-brand-gold text-ink' };
+const chipMap: Record<string, string> = { red: 'bg-brand-red text-white', blue: 'bg-brand-blue text-white', gold: 'bg-brand-gold text-ink' };
 
 const transformPackages = [
   {

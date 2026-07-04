@@ -4,7 +4,7 @@
 Update this as the business and website evolve. Copy, offerings, and design decisions should
 ladder up to what's here.
 
-_Last updated: 2026-07 (initial capture)._
+_Last updated: 2026-07-03 (packaging and naming decisions recorded)._
 
 ---
 
@@ -74,11 +74,25 @@ We don't just build sites; we build **systems that make organizations run better
 - **Robust, owned systems** — reliable, maintainable, and built for the client to own, not to keep
   them dependent on us.
 
-## Direction: transformative packages (to develop)
+## Direction: transformative packages — decisions (2026-07-03)
 
-We want to move the offering from à-la-carte services toward **outcome-oriented "transformation"
-packages** that bundle build + AI + automation + integration into a clear before/after story
-(more efficient, new opportunities, high impact). Open questions below.
+We are moving the offering toward **outcome-oriented transformation packages**. Decided:
+
+- **Packaging model: packages lead, categories stay.** 2–3 named, outcome-oriented packages
+  headline the offering page — each bundles site + automation + AI + integrations + training and
+  carries a before/after story. The existing service categories remain below as detail for buyers
+  who already know what they want. Website pricing tiers (Starter/Standard/Growth) stay attached
+  to the website category, not the packages.
+- **Naming: the offering is called "SYSTEMS"** (nav label and page identity), replacing
+  "Services." Emphasizes robust, owned systems over one-off sites. Pairs with LEARN.
+- **Proof: illustrative before/after scenarios.** Until we have real case studies, use vivid,
+  honest "what this looks like" vignettes (e.g., a nonprofit coordinator's week before and after
+  automation), clearly framed as examples — never fake testimonials. Swap in real case studies as
+  projects complete.
+- **Scope: sitewide narrative in one pass.** The technology-gap story and value-prop copy roll
+  out across Home, Systems, Learn, About, and Partnerships together, so the message is consistent
+  everywhere — including the Learning pages, where closing the technology gap is an explicit
+  throughline.
 
 ## Messaging & voice (for the website)
 
@@ -90,11 +104,18 @@ packages** that bundle build + AI + automation + integration into a clear before
   "empower/leverage/solutions," people-first.
 - The **technology gap** message should show up on the Learning pages, not just Services.
 
+### Shipped 2026-07-03 (see `docs/superpowers/specs/2026-07-03-systems-transformation-packages-design.md`)
+
+- **Three packages, live on `/systems`:** OWN YOUR WEBSITE (site the team manages independently),
+  GET YOUR TIME BACK (automation + integrations), REACH MORE PEOPLE (chatbot + outreach + AI
+  visibility). Each with promise, audience, inclusions, and an illustrative vignette.
+- **Package pricing display:** no listed price — every package starts with a free discovery call.
+  Website tiers (Starter/Standard/Growth) keep listed prices under the website category.
+- **URL:** `/services` renamed to `/systems` with a redirect.
+
 ## Open questions / to develop
 
-- **Packaging model:** named transformation packages vs. tiered "systems" bundles vs. keep categories
-  with stronger value-prop framing. How do these relate to the existing website Pricing
-  (Starter/Standard/Growth)?
-- **Naming:** is "Services" the right label, or something like "Build & Automate" / "Systems"?
-- **Learn ↔ Build relationship:** how unified should the transformation story be across both arms?
-- **Proof:** case studies / before-after examples to make transformation concrete (none yet).
+- **Proof pipeline:** which early projects become the first real case studies to replace the
+  illustrative vignettes.
+- **Package pricing numbers:** whether to eventually publish "from $X" ranges on packages once a
+  few have been delivered and scoped in the real world.
