@@ -22,7 +22,8 @@ Full design reference: [`docs/design-system.md`](docs/design-system.md). Read it
 - Muted text colors are fixed: body = `#3D332B`, meta/caption = `#6B5D4C`. Don't invent lighter grays.
 
 ### Sizing — accessible & responsive
-- **No user-facing text below 18px (1.125rem).** Ever.
+- **No user-facing text below 18px (1.125rem)** for body, headings, cards, and buttons. (Sole
+  exception: the secondary in-page `AnchorNav` runs at 16px — it is a compact utility nav.)
 - Size type with the `clamp()` scale tokens in `global.css`. **Never raw `vw`** (breaks zoom /
   WCAG 1.4.4) and never hardcoded px for type — always the rem-based `clamp()` tokens.
 
