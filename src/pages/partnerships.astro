@@ -120,7 +120,7 @@ const grantHelp = [
     <div class="grid gap-6 md:grid-cols-3">
       {model.map((m) => (
         <div class:list={["h-full rounded-[14px] border-2 border-ink p-6", m.bg, m.text]}>
-          <span class:list={["inline-flex h-12 w-12 items-center justify-center rounded-full text-2xl", m.chip]}>
+          <span class:list={["flex h-14 w-14 items-center justify-center rounded-full text-3xl", m.chip]}>
             <Icon name={m.icon} />
           </span>
           <h3 class="text-h3 mt-4">{m.title}</h3>
@@ -137,7 +137,7 @@ const grantHelp = [
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {fundingGroups.map((g) => (
         <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
-          <span class:list={["inline-flex h-12 w-12 items-center justify-center rounded-full text-2xl", chipClass[g.accent]]}>
+          <span class:list={["flex h-14 w-14 items-center justify-center rounded-full text-3xl", chipClass[g.accent]]}>
             <Icon name={g.icon} />
           </span>
           <h3 class="text-h3 mt-4">{g.title}</h3>
@@ -155,7 +155,7 @@ const grantHelp = [
     <div class="grid gap-6 md:grid-cols-2">
       {team.map((t) => (
         <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
-          <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue text-white text-2xl">
+          <span class="flex h-14 w-14 items-center justify-center rounded-full bg-brand-blue text-white text-3xl">
             <Icon name={t.icon} />
           </span>
           <h3 class="text-h3 mt-4">{t.title}</h3>
@@ -172,7 +172,7 @@ const grantHelp = [
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
       {grantHelp.map((h) => (
         <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
-          <span class:list={["inline-flex h-12 w-12 items-center justify-center rounded-full text-2xl", chipClass[h.accent]]}>
+          <span class:list={["flex h-14 w-14 items-center justify-center rounded-full text-3xl", chipClass[h.accent]]}>
             <Icon name={h.icon} />
           </span>
           <p class="mt-4 text-body-lg font-bold text-ink">{h.text}</p>
@@ -193,7 +193,7 @@ const grantHelp = [
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
       {orgTypes.map((o) => (
         <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
-          <span class:list={["inline-flex h-12 w-12 items-center justify-center rounded-full text-2xl", chipClass[o.accent]]}>
+          <span class:list={["flex h-14 w-14 items-center justify-center rounded-full text-3xl", chipClass[o.accent]]}>
             <Icon name={o.icon} />
           </span>
           <p class="mt-4 text-body-lg font-bold text-ink">{o.label}</p>
