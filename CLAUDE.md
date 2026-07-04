@@ -5,6 +5,8 @@ TypeScript, content collections for workshops/courses, deploys to Vercel. Requir
 **Node ≥ 22.12** — run `nvm use` (`.nvmrc` pins 22) before `npm` commands.
 
 Full design reference: [`docs/design-system.md`](docs/design-system.md). Read it before any UI work.
+Business strategy & positioning (source of truth): [`docs/strategy.md`](docs/strategy.md). Read before
+major copy or offering work; keep it updated as strategy evolves.
 
 ## Design system rules (non-negotiable)
 
