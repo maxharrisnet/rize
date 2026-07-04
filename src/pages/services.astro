@@ -1,10 +1,112 @@
 ---
+import { Icon } from 'astro-icon/components';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Button from '../components/Button.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import AnchorNav from '../components/AnchorNav.astro';
 import PricingTable from '../components/PricingTable.astro';
+import IconList from '../components/IconList.astro';
+import Steps from '../components/Steps.astro';
+
+const chipMap = { red: 'bg-brand-red text-white', blue: 'bg-brand-blue text-white', gold: 'bg-brand-gold text-ink' };
+const listAccent = { red: 'text-brand-red', blue: 'text-brand-blue', gold: 'text-ink' };
+
+const howSteps = [
+  { title: 'Discovery call', body: '20 minutes, free, no commitment.' },
+  { title: 'Proposal', body: 'Clear scope, clear price, plain language.' },
+  { title: 'Build and deliver', body: 'We do the work and keep you informed throughout.' },
+  { title: 'Handoff and training', body: 'We walk your team through everything so you can own it.' },
+];
+
+const orgServices = [
+  {
+    title: 'Community and Nonprofit Websites', icon: 'ph:globe-bold', accent: 'red',
+    desc: 'A website that tells your story, showcases your programs, connects people to your mission, and makes it easy to donate, register, or get involved. Built on WordPress so your team can update content without a developer.',
+    features: [
+      'Donation integration — Canada Helps, Stripe, PayPal — including recurring giving',
+      'Event listings and program pages with past and upcoming date handling',
+      'Volunteer management and contact forms',
+      'Email newsletter signup and donor communication tools',
+      'Accessible design (WCAG 2.1) and mobile-first build',
+    ],
+  },
+  {
+    title: 'Events and Programming Sites', icon: 'ph:ticket-bold', accent: 'blue',
+    desc: 'For organizations running regular events, workshops, or community programming. A site that sells tickets, builds your audience, drives attendance, and keeps your community informed.',
+    features: [
+      'Event listings with ticket integration — Eventbrite, Ticket Tailor',
+      'Program and registration pages',
+      'Sponsor recognition and gallery sections',
+      'Email and social media integration',
+    ],
+  },
+  {
+    title: 'Grant Writing Assistance', icon: 'ph:file-text-bold', accent: 'gold',
+    desc: 'We help you identify the provincial and federal funding available for digital skills training and AI upskilling — and assist with the application process. Often what makes a funded partnership possible.',
+    features: [
+      'Funding source identification for your organization type and community',
+      'Application support and co-writing',
+      'Program design documentation for grant submissions',
+      'Reporting templates for funded programs',
+    ],
+  },
+];
+
+const bizServices = [
+  {
+    title: 'Booking and Appointment Sites', icon: 'ph:calendar-check-bold', accent: 'red',
+    desc: 'For service providers who want clients to book online — saving hours of back-and-forth every week and keeping your calendar full without manual coordination.',
+    features: [
+      'Online booking — Calendly, Acuity, Square Appointments',
+      'Service listings and pricing pages',
+      'Client intake forms and automated confirmation emails',
+      'Team pages and availability management',
+    ],
+  },
+  {
+    title: 'Local Business Sites', icon: 'ph:map-pin-bold', accent: 'blue',
+    desc: 'For brick-and-mortar businesses and local service providers who want to be found, trusted, and contacted by people in their neighborhood. Strong local and AI search means you show up when it matters.',
+    features: [
+      'Google Maps and Google Business Profile setup and optimization',
+      'Local SEO and AI search optimization — Google, maps, and AI answers',
+      'Hours, location, and click-to-call setup',
+      'Menu, service listings, and photo galleries',
+    ],
+  },
+  {
+    title: 'Creative Portfolio Sites', icon: 'ph:palette-bold', accent: 'gold',
+    desc: 'For musicians, photographers, videographers, designers, and other creative professionals who need a home for their work that makes an impression and gets them hired or booked.',
+    features: [
+      'Gallery and portfolio display',
+      'Music and video embeds — Spotify, SoundCloud, Vimeo, YouTube',
+      'Press kit and media download pages',
+      'Booking and contact integration',
+    ],
+  },
+];
+
+const connect = [
+  'CRM systems — HubSpot, Mailchimp — to your website, email, and lead capture',
+  'Booking and scheduling tools to your calendar and client communications',
+  'Donation and payment platforms to your website and donor follow-up',
+  'Social media and email marketing to your content workflow',
+  'Internal tools — Slack, Microsoft Teams — to your task and project management',
+  'AI tools — Claude, ChatGPT — to your content creation and research workflows',
+  "Google Workspace and Microsoft 365 to your team's daily operations",
+];
+const inPractice = [
+  'A contact form submission automatically creates a CRM entry, sends a welcome email, and notifies your team in Slack',
+  'A new event on your site automatically posts to social media and emails your list',
+  'A grant application draft is generated from a template and routed for review — without anyone touching a file manually',
+  'A donation triggers a thank-you email, updates your donor database, and creates a follow-up task',
+];
+
+const growth = [
+  { title: 'Digital Marketing Strategy', icon: 'ph:megaphone-bold', accent: 'red', desc: 'A clear, realistic plan for growing your presence across the channels that matter most — social media, email, content, and search. Built around what your team can actually maintain.' },
+  { title: 'Local Search and AI Visibility', icon: 'ph:magnifying-glass-bold', accent: 'blue', desc: 'Making sure your organization shows up when people nearby search for what you offer — on Google, on maps, and in AI-generated answers. We optimize your profile, local presence, and content so your community finds you first.' },
+  { title: 'Community Engagement', icon: 'ph:users-three-bold', accent: 'gold', desc: 'Tools and strategies for building genuine relationships with the people you serve — social media management, email list building, event promotion, and feedback systems that actually listen.' },
+];
 
 const orgTiers = [
   { name: 'Starter', price: 'from $750', detail: 'Up to 5 pages.' },
@@ -31,7 +133,7 @@ const bizAddOns = [
 >
   <Hero title="Services that make<br />your organization stronger.">
     <Fragment slot="lead">
-      <p>Beyond training, we build websites, automation systems, and digital marketing solutions for community organizations, nonprofits, small businesses, and entrepreneurs across Vancouver and the surrounding area. Professional results, accessible process, clear pricing.</p>
+      <p>Beyond training, we build websites, automation systems, and digital marketing for community organizations, nonprofits, small businesses, and entrepreneurs across Vancouver and the surrounding area. Professional results, accessible process, clear pricing.</p>
     </Fragment>
     <Fragment slot="actions">
       <Button href="/contact">Book a Free Discovery Call</Button>
@@ -47,178 +149,100 @@ const bizAddOns = [
 
   <section class="container-wide py-16 md:py-24">
     <SectionHeading title="How it works.">
-      <p>Every service engagement starts with a free 20-minute discovery call. We learn about your organization, your goals, and your current setup — and give you an honest picture of what would actually help and what it would cost.</p>
+      <p>Every engagement starts with a free 20-minute discovery call. We learn about your organization, your goals, and your current setup — and give you an honest picture of what would actually help and what it would cost.</p>
     </SectionHeading>
-    <ul class="list-disc pl-5 text-body-muted space-y-1">
-      <li>Discovery call — 20 minutes, free, no commitment</li>
-      <li>Proposal — clear scope, clear price, plain language</li>
-      <li>Build and deliver — we do the work and keep you informed throughout</li>
-      <li>Handoff and training — we walk your team through everything so you can own it</li>
-    </ul>
-    <div class="mt-6">
-      <Button href="/contact">Book a Free Discovery Call</Button>
-    </div>
+    <Steps steps={howSteps} />
+    <div class="mt-10"><Button href="/contact">Book a Free Discovery Call</Button></div>
   </section>
 
-  <section id="organizations">
-    <div class="container-wide py-16 md:py-24">
-      <SectionHeading title="For Organizations.">
-        <p>Nonprofit organizations, charities, community groups, and social service agencies have specific needs — donation systems, event management, volunteer coordination, and a presence that communicates mission and builds trust. We build websites and systems designed around those needs, with training included so your team can manage everything independently.</p>
-        <p>We also offer grant writing assistance as part of our funded partnership model — helping organizations identify and apply for the funding that can cover the cost of digital skills training, technology setup, and more.</p>
-      </SectionHeading>
-
-      <div class="mt-8">
-        <h3 class="text-2xl">Community and Nonprofit Websites</h3>
-        <p class="mt-2 text-body-muted">A website that tells your story, showcases your programs, connects people to your mission, and makes it easy to donate, register, or get involved. Built on WordPress so your team can update content without needing a developer.</p>
-        <ul class="mt-3 list-disc pl-5 text-body-muted space-y-1">
-          <li>Donation integration — Canada Helps, Stripe, PayPal — including recurring giving</li>
-          <li>Event listings and program pages with past and upcoming date handling</li>
-          <li>Volunteer management and contact forms</li>
-          <li>Email newsletter signup and donor communication tools</li>
-          <li>Accessible design (WCAG 2.1) and mobile-first build</li>
-        </ul>
-      </div>
-
-      <div class="mt-8">
-        <h3 class="text-2xl">Events and Programming Sites</h3>
-        <p class="mt-2 text-body-muted">For organizations running regular events, workshops, or community programming. A site that sells tickets, builds your audience, drives attendance, and keeps your community informed.</p>
-        <ul class="mt-3 list-disc pl-5 text-body-muted space-y-1">
-          <li>Event listings with ticket integration — Eventbrite, Ticket Tailor</li>
-          <li>Program and registration pages</li>
-          <li>Sponsor recognition and gallery sections</li>
-          <li>Email and social media integration</li>
-        </ul>
-      </div>
-
-      <div class="mt-8">
-        <h3 class="text-2xl">Grant Writing Assistance</h3>
-        <p class="mt-2 text-body-muted">We help organizations identify the provincial and federal funding available for digital skills training and AI upskilling — and assist with the application process. This service is often what makes a funded partnership possible in the first place.</p>
-        <ul class="mt-3 list-disc pl-5 text-body-muted space-y-1">
-          <li>Funding source identification for your organization type and community</li>
-          <li>Application support and co-writing</li>
-          <li>Program design documentation for grant submissions</li>
-          <li>Reporting templates for funded programs</li>
-        </ul>
-      </div>
-
-      <h3 class="text-2xl mt-10">Pricing</h3>
-      <p class="text-meta-muted italic">All projects start with a discovery call. Pricing based on scope, complexity, and timeline.</p>
-      <div class="mt-6">
-        <PricingTable tiers={orgTiers} accent="red" />
-      </div>
-
-      <div class="mt-8">
-        <Button href="/contact">Book a Discovery Call</Button>
-      </div>
+  <section id="organizations" class="container-wide py-16 md:py-24">
+    <SectionHeading title="For Organizations.">
+      <p>Nonprofits, charities, community groups, and social service agencies have specific needs — donation systems, event management, volunteer coordination, and a presence that communicates mission and builds trust. We build websites and systems designed around those needs, with training included so your team can manage everything independently.</p>
+    </SectionHeading>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {orgServices.map((s) => (
+        <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+          <div class="flex items-center gap-4">
+            <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipMap[s.accent]]}><Icon name={s.icon} /></span>
+            <h3 class="text-h3">{s.title}</h3>
+          </div>
+          <p class="mt-4 text-body text-body-muted">{s.desc}</p>
+          <div class="mt-5"><IconList items={s.features} icon="ph:check-bold" accent={listAccent[s.accent]} /></div>
+        </div>
+      ))}
     </div>
+
+    <h3 class="text-h3 mt-14">Pricing</h3>
+    <p class="mt-2 text-body text-meta-muted">All projects start with a discovery call. Pricing is based on scope, complexity, and timeline.</p>
+    <div class="mt-6"><PricingTable tiers={orgTiers} accent="red" /></div>
+    <div class="mt-8"><Button href="/contact">Book a Discovery Call</Button></div>
   </section>
 
   <section id="businesses" class="container-wide py-16 md:py-24">
     <SectionHeading title="For Businesses.">
       <p>Small businesses, independent service providers, and entrepreneurs need websites that bring the right people to them — and systems that keep operations running without constant manual effort. We build both, with a focus on local search visibility and integrations that actually reduce your workload.</p>
     </SectionHeading>
-
-    <div class="mt-8">
-      <h3 class="text-2xl">Booking and Appointment Sites</h3>
-      <p class="mt-2 text-body-muted">For service providers who want clients to book time with them online — saving hours of back-and-forth every week and keeping your calendar full without manual coordination.</p>
-      <ul class="mt-3 list-disc pl-5 text-body-muted space-y-1">
-        <li>Online booking — Calendly, Acuity, Square Appointments</li>
-        <li>Service listings and pricing pages</li>
-        <li>Client intake forms and automated confirmation emails</li>
-        <li>Team pages and availability management</li>
-      </ul>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {bizServices.map((s) => (
+        <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+          <div class="flex items-center gap-4">
+            <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipMap[s.accent]]}><Icon name={s.icon} /></span>
+            <h3 class="text-h3">{s.title}</h3>
+          </div>
+          <p class="mt-4 text-body text-body-muted">{s.desc}</p>
+          <div class="mt-5"><IconList items={s.features} icon="ph:check-bold" accent={listAccent[s.accent]} /></div>
+        </div>
+      ))}
     </div>
 
-    <div class="mt-8">
-      <h3 class="text-2xl">Local Business Sites</h3>
-      <p class="mt-2 text-body-muted">For brick-and-mortar businesses and local service providers who want to be found, trusted, and contacted by people in their neighborhood. Strong local search and AI visibility means you show up when and where it matters.</p>
-      <ul class="mt-3 list-disc pl-5 text-body-muted space-y-1">
-        <li>Google Maps and Google Business Profile setup and optimization</li>
-        <li>Local SEO and AI search optimization — showing up in Google, maps, and AI-generated answers</li>
-        <li>Hours, location, and click-to-call setup</li>
-        <li>Menu, service listings, and photo galleries</li>
-      </ul>
-    </div>
-
-    <div class="mt-8">
-      <h3 class="text-2xl">Creative Portfolio Sites</h3>
-      <p class="mt-2 text-body-muted">For musicians, photographers, videographers, designers, and other creative professionals who need a home for their work that makes an impression and gets them hired or booked.</p>
-      <ul class="mt-3 list-disc pl-5 text-body-muted space-y-1">
-        <li>Gallery and portfolio display</li>
-        <li>Music and video embeds — Spotify, SoundCloud, Vimeo, YouTube</li>
-        <li>Press kit and media download pages</li>
-        <li>Booking and contact integration</li>
-      </ul>
-    </div>
-
-    <h3 class="text-2xl mt-10">Pricing</h3>
-    <p class="text-meta-muted italic">All projects start with a discovery call. Pricing based on scope, complexity, and timeline.</p>
-    <div class="mt-6">
-      <PricingTable tiers={bizTiers} addOns={bizAddOns} accent="blue" />
-    </div>
-
-    <div class="mt-8">
-      <Button href="/contact">Book a Discovery Call</Button>
-    </div>
+    <h3 class="text-h3 mt-14">Pricing</h3>
+    <p class="mt-2 text-body text-meta-muted">All projects start with a discovery call. Pricing is based on scope, complexity, and timeline.</p>
+    <div class="mt-6"><PricingTable tiers={bizTiers} addOns={bizAddOns} accent="blue" /></div>
+    <div class="mt-8"><Button href="/contact">Book a Discovery Call</Button></div>
   </section>
 
-  <section id="automations">
-    <div class="container-wide py-16 md:py-24">
-      <SectionHeading title="Integrations and Automations.">
-        <p>The biggest opportunity most organizations are missing is connecting the tools they already use so that information flows automatically, tasks happen without manual triggers, and their team spends more time on the work that matters.</p>
-        <p>We assess what you have, identify where the friction is, and build workflows that handle the repetitive work. Using tools like n8n, Zapier, Claude AI, and Slack, we create integrations that are reliable, maintainable, and built for your team to own — not dependent on us indefinitely.</p>
-      </SectionHeading>
-
-      <h3 class="text-2xl mt-8">What we connect</h3>
-      <ul class="mt-3 list-disc pl-5 text-body-muted space-y-1">
-        <li>CRM systems — HubSpot, Mailchimp — to your website, email, and lead capture</li>
-        <li>Booking and scheduling tools to your calendar and client communications</li>
-        <li>Donation and payment platforms to your website and donor follow-up</li>
-        <li>Social media and email marketing to your content workflow</li>
-        <li>Internal tools — Slack, Microsoft Teams — to your task and project management</li>
-        <li>AI tools — Claude, ChatGPT — to your content creation and research workflows</li>
-        <li>Google Workspace and Microsoft 365 to your team's daily operations</li>
-      </ul>
-
-      <h3 class="text-2xl mt-8">What this looks like in practice</h3>
-      <ul class="mt-3 list-disc pl-5 text-body-muted space-y-1">
-        <li>A contact form submission automatically creates a CRM entry, sends a welcome email, and notifies your team in Slack</li>
-        <li>A new event on your site automatically posts to social media and emails your list</li>
-        <li>A grant application draft is generated from a template and routed for review — without anyone touching a file manually</li>
-        <li>A donation triggers a thank-you email, updates your donor database, and creates a follow-up task</li>
-      </ul>
-
-      <p class="mt-6 text-body-muted">Automations are scoped, priced, and delivered on a project basis.</p>
-
-      <div class="mt-6">
-        <Button href="/contact">Book a Discovery Call</Button>
+  <section id="automations" class="container-wide py-16 md:py-24">
+    <SectionHeading title="Integrations and Automations.">
+      <p>The biggest opportunity most organizations are missing is connecting the tools they already use — so information flows automatically, tasks happen without manual triggers, and your team spends more time on the work that matters. Using tools like n8n, Zapier, Claude AI, and Slack, we build integrations that are reliable, maintainable, and yours to own.</p>
+    </SectionHeading>
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+        <div class="flex items-center gap-4">
+          <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-blue text-white text-3xl"><Icon name="ph:plugs-connected-bold" /></span>
+          <h3 class="text-h3">What we connect</h3>
+        </div>
+        <div class="mt-5"><IconList items={connect} icon="ph:plug-bold" accent="text-brand-blue" /></div>
+      </div>
+      <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+        <div class="flex items-center gap-4">
+          <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-3xl"><Icon name="ph:sparkle-bold" /></span>
+          <h3 class="text-h3">What this looks like in practice</h3>
+        </div>
+        <div class="mt-5"><IconList items={inPractice} icon="ph:arrow-right-bold" accent="text-brand-red" /></div>
       </div>
     </div>
+    <p class="mt-8 text-body text-body-muted">Automations are scoped, priced, and delivered on a project basis.</p>
+    <div class="mt-6"><Button href="/contact">Book a Discovery Call</Button></div>
   </section>
 
   <section id="growth" class="container-wide py-16 md:py-24">
     <SectionHeading title="Growth and Outreach.">
       <p>Reaching more of the people you exist to serve takes more than a good website. It takes a consistent presence, the right messages in the right places, and systems that make it sustainable for your team.</p>
     </SectionHeading>
-
-    <div class="mt-8">
-      <h3 class="text-2xl">Digital Marketing Strategy</h3>
-      <p class="mt-2 text-body-muted">A clear, realistic plan for growing your presence across the channels that matter most — social media, email, content, and search. Focused on sustainable results, built around what your team can actually maintain.</p>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {growth.map((s) => (
+        <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+          <div class="flex items-center gap-4">
+            <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipMap[s.accent]]}><Icon name={s.icon} /></span>
+            <h3 class="text-h3">{s.title}</h3>
+          </div>
+          <p class="mt-4 text-body text-body-muted">{s.desc}</p>
+        </div>
+      ))}
     </div>
-
-    <div class="mt-8">
-      <h3 class="text-2xl">Local Search and AI Visibility</h3>
-      <p class="mt-2 text-body-muted">Making sure your organization shows up when people nearby are searching for what you offer — on Google, on maps, and increasingly in AI-generated answers. We optimize your Google Business Profile, local search presence, and site content so that your community finds you first.</p>
-    </div>
-
-    <div class="mt-8">
-      <h3 class="text-2xl">Community Engagement</h3>
-      <p class="mt-2 text-body-muted">Tools and strategies for building genuine relationships with the people you serve — social media management, email list building, event promotion, and community feedback systems that go beyond broadcasting and actually listen.</p>
-    </div>
-
-    <div class="mt-8 flex flex-wrap items-center gap-6">
+    <div class="mt-10 flex flex-wrap items-center gap-6">
       <Button href="/contact">Book a Discovery Call</Button>
-      <a href="mailto:holler@weallrize.ca" class="font-semibold text-brand-red hover:text-ink">holler@weallrize.ca</a>
+      <a href="mailto:holler@weallrize.ca" class="font-bold text-brand-red hover:text-ink">holler@weallrize.ca</a>
     </div>
   </section>
 </BaseLayout>
