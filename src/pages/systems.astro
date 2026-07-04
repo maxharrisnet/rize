@@ -11,6 +11,54 @@ import Steps from '../components/Steps.astro';
 
 const chipMap = { red: 'bg-brand-red text-white', blue: 'bg-brand-blue text-white', gold: 'bg-brand-gold text-ink' };
 
+const transformPackages = [
+  {
+    name: 'Own Your Website',
+    icon: 'ph:key-bold',
+    accent: 'red',
+    promise: 'A professional site your team updates without calling a developer.',
+    audience: 'For organizations and businesses that want a real web presence — and full control of it.',
+    includes: [
+      'A WordPress site designed around your goals, your community, and your voice',
+      'Accessible (WCAG 2.1), mobile-first, and built to be found in local and AI search',
+      'Hands-on training for your team — editing pages, posting updates, adding events',
+      'Full ownership and documentation — your site, your accounts, your keys',
+    ],
+    vignette:
+      'A neighborhood arts nonprofit used to email their web person — and wait — for every event listing and board update. Now the program manager posts events in minutes, the team edits pages themselves, and the site finally keeps up with the work.',
+  },
+  {
+    name: 'Get Your Time Back',
+    icon: 'ph:clock-countdown-bold',
+    accent: 'blue',
+    promise: 'The repetitive work that eats your week, set up to run itself.',
+    audience: 'For teams losing hours to follow-up emails, triple-posted updates, and copying information between tools.',
+    includes: [
+      'A working session to map where the hours actually go',
+      'Automation for the repeat work — follow-ups, reminders, posting, data entry',
+      'Integrations that connect Slack, HubSpot, Google Workspace, and the tools you already use',
+      'Documentation and training so your team owns and adjusts every workflow',
+    ],
+    vignette:
+      'A program coordinator’s Monday used to go to copying weekend registrations into a spreadsheet, posting the same update to three platforms, and answering the same five questions by email. Now registrations file themselves, one update posts everywhere, the website answers the questions — and Monday belongs to the participants.',
+  },
+  {
+    name: 'Reach More People',
+    icon: 'ph:broadcast-bold',
+    accent: 'gold',
+    promise: 'Bigger reach with the same team.',
+    audience: 'For organizations and businesses ready to grow their audience without growing their workload.',
+    includes: [
+      'A website chatbot that answers common questions around the clock — in your voice, with your information',
+      'Email and social outreach that sounds like you and goes out on schedule',
+      'Local search and AI visibility — Google, maps, and AI-generated answers',
+      'Feedback, signup, and follow-up systems that help you listen and respond without the busywork',
+    ],
+    vignette:
+      'A family-run studio was answering the same booking questions at 10pm and posting to social media “when there was time” — which meant rarely. Now the chatbot answers instantly, classes are promoted every week without anyone logging in, and new students keep finding them.',
+  },
+];
+
 const howSteps = [
   { title: 'Discovery call', body: '20 minutes, free, no commitment.' },
   { title: 'Proposal', body: 'Clear scope, clear price, plain language.' },
@@ -168,12 +216,12 @@ const addOns = [
 ];
 ---
 <BaseLayout
-  title="Website & Automation Services | Rize Skill Training Vancouver"
-  description="Websites, automation systems, and digital marketing for community organizations, nonprofits, small businesses, and entrepreneurs in Vancouver. Clear pricing."
+  title="Websites, AI & Automation Systems | Rize Skill Training Vancouver"
+  description="Transformation packages for community organizations, nonprofits, small businesses, and entrepreneurs in Vancouver — websites you own, automation that gives you your time back, and outreach systems that grow your reach."
 >
-  <Hero title="Services that make<br />your organization stronger.">
+  <Hero title="Less busywork.<br />More of your best work.">
     <Fragment slot="lead">
-      <p>Beyond training, we build websites, automation systems, and digital marketing for community organizations, nonprofits, small businesses, and entrepreneurs across Vancouver and the surrounding area. Professional results, accessible process, clear pricing.</p>
+      <p>There is a gap between what technology makes possible and what busy teams have time to figure out — and it is widest for nonprofits, small businesses, and the communities doing the most with the least. We close it: websites you own, AI put to practical use, and automation that hands your hours back. Built for organizations and businesses across Vancouver and the surrounding area.</p>
     </Fragment>
     <Fragment slot="actions">
       <Button href="/contact">Book a Free Discovery Call</Button>
@@ -181,11 +229,39 @@ const addOns = [
   </Hero>
 
   <AnchorNav anchors={[
+    { label: 'Packages', href: '#packages' },
     { label: 'Websites', href: '#organizations' },
     { label: 'Website Pricing', href: '#pricing' },
     { label: 'Integrations and Automations', href: '#automations' },
     { label: 'Growth and Outreach', href: '#growth' },
   ]} />
+
+  <section id="packages" class="container-wide py-16 md:py-24">
+    <SectionHeading title="Start with the change you need.">
+      <p>Most teams do not need more technology. They need the right technology, connected, doing the boring parts on its own. Each package below bundles the build, the practical AI, the integrations, and the training into one clear outcome — and every one is delivered so your team owns it, not so you stay dependent on us.</p>
+      <p>The short stories in each package are examples of what these systems look like in practice. And because no two organizations start from the same place, packages are scoped and priced after a free discovery call — in plain language, with no surprises.</p>
+    </SectionHeading>
+    <div class="grid gap-6">
+      {transformPackages.map((p) => (
+        <div class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-10">
+          <div class="flex items-center gap-4">
+            <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipMap[p.accent]]}><Icon name={p.icon} /></span>
+            <h3 class="text-h3">{p.name}</h3>
+          </div>
+          <p class="mt-4 text-body-lg font-bold text-ink">{p.promise}</p>
+          <p class="mt-2 text-body text-body-muted">{p.audience}</p>
+          <div class="mt-6 grid gap-8 md:grid-cols-2 md:items-start">
+            <IconList items={p.includes} />
+            <div class="rounded-[14px] border-2 border-ink bg-blush p-6">
+              <p class="text-body font-bold uppercase tracking-[0.04em] text-ink">What this looks like</p>
+              <p class="mt-3 text-body text-ink">{p.vignette}</p>
+            </div>
+          </div>
+          <div class="mt-8"><Button href="/contact">Book a Free Discovery Call</Button></div>
+        </div>
+      ))}
+    </div>
+  </section>
 
   <section class="container-wide py-16 md:py-24">
     <SectionHeading title="How it works.">
