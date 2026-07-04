@@ -1,0 +1,78 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CTASection from '../../components/CTASection.astro';
+import Button from '../../components/Button.astro';
+import IconList from '../../components/IconList.astro';
+
+export async function getStaticPaths() {
+  const courses = await getCollection('courses');
+  return courses.map((c) => ({ params: { slug: c.id }, props: { course: c } }));
+}
+
+const { course } = Astro.props;
+const { data } = course;
+const hasBody = Boolean(course.body && course.body.trim().length > 0);
+const { Content } = await render(course);
+---
+<BaseLayout title={`${data.title} | Rize Skill Training Course`} description={data.tagline}>
+  <Hero title={data.title}>
+    <Fragment slot="lead">
+      <span class="inline-block rounded-pill bg-brand-gold px-4 py-1 text-body font-bold uppercase tracking-[0.08em] text-ink">Multi-session course</span>
+      <p class="mt-5">{data.tagline}</p>
+    </Fragment>
+    <Fragment slot="actions">
+      <Button href="/contact?inquiry=Learn">Talk to us about this course</Button>
+      <a href="/learn#courses" class="self-center font-bold uppercase tracking-[0.08em] text-stone-300 hover:text-brand-gold">&larr; All courses</a>
+    </Fragment>
+  </Hero>
+
+  <section class="container-wide py-16 md:py-24">
+    <SectionHeading title="Topics covered">
+      <p>Delivered across multiple sessions, this course is built to leave your community with something they can actually use.</p>
+    </SectionHeading>
+    <div class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+      <IconList items={data.topics} />
+    </div>
+  </section>
+
+  <section class="container-wide py-16 md:py-24">
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
+        <div class="flex items-center gap-4">
+          <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-3xl"><Icon name="ph:users-three-bold" /></span>
+          <h3 class="text-h3">Who this course is for</h3>
+        </div>
+        <div class="mt-5"><IconList items={data.whoFor} /></div>
+      </div>
+      <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
+        <div class="flex items-center gap-4">
+          <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-blue text-white text-3xl"><Icon name="ph:sparkle-bold" /></span>
+          <h3 class="text-h3">What you'll walk away with</h3>
+        </div>
+        <div class="mt-5"><IconList items={data.outcomes} /></div>
+      </div>
+    </div>
+  </section>
+
+  {hasBody && (
+    <section class="container-wide py-16 md:py-24">
+      <SectionHeading title="What we'll cover" />
+      <div class="prose-rize"><Content /></div>
+    </section>
+  )}
+
+  <CTASection title="Ready to bring this course to your organization?">
+    <Fragment slot="body">
+      <p>Courses are delivered in partnership. Talk to us about running this one, or explore how funded partnerships can cover the cost.</p>
+      <p class="mt-4"><a href="mailto:holler@weallrize.ca" class="underline hover:no-underline">holler@weallrize.ca</a></p>
+    </Fragment>
+    <Fragment slot="actions">
+      <Button href="/contact?inquiry=Learn">Talk to us about this course</Button>
+      <Button href="/partnerships" variant="secondary">Explore Funded Partnerships</Button>
+    </Fragment>
+  </CTASection>
+</BaseLayout>

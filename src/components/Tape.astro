@@ -1,0 +1,21 @@
+---
+interface Props { text: string; accent?: 'gold' | 'red' | 'ink'; }
+const { text, accent = 'gold' } = Astro.props;
+const cls = { gold: 'bg-brand-gold text-ink', red: 'bg-brand-red text-white', ink: 'bg-ink text-white' }[accent];
+const items = Array.from({ length: 6 }, () => text);
+---
+<div class:list={["my-10 -rotate-2 overflow-hidden border-y-2 border-ink", cls]}>
+  <div class="tape-track flex w-max whitespace-nowrap py-3">
+    <span class="tape-group flex shrink-0">
+      {items.map((t) => <span class="px-6 text-lg font-black uppercase tracking-wide">{t} &bull;</span>)}
+    </span>
+    <span class="tape-group flex shrink-0" aria-hidden="true">
+      {items.map((t) => <span class="px-6 text-lg font-black uppercase tracking-wide">{t} &bull;</span>)}
+    </span>
+  </div>
+</div>
+<style>
+  .tape-track { animation: tape 24s linear infinite; }
+  @keyframes tape { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .tape-track { animation: none; } }
+</style>

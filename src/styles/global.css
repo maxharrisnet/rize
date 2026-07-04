@@ -1,0 +1,107 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/rubik';
+
+@theme {
+  --color-brand-red: #BE2A1A;
+  --color-brand-blue: #2C63A8;
+  --color-brand-gold: #F2C14E;
+  --color-cream: #FBF2E6;
+  --color-ink: #1A1712;
+  --color-blush: #F6D9D2;
+  --color-body-muted: #3D332B;
+  --color-meta-muted: #6B5D4C;
+
+  --color-stone-200: #E4E0D8;
+  --color-stone-300: #CFC9BE;
+  --color-stone-700: #55504A;
+
+  --font-sans: 'Rubik Variable', system-ui, sans-serif;
+  --font-display: 'Rubik Variable', system-ui, sans-serif;
+  --font-body: 'Rubik Variable', system-ui, sans-serif;
+
+  --radius-pill: 9999px;
+
+  --text-display: clamp(2.75rem, 1.3rem + 6.6vw, 7rem);
+  --text-h1: clamp(2.25rem, 1.4rem + 4vw, 3.5rem);
+  --text-h2: clamp(1.9rem, 1.2rem + 3vw, 3.25rem);
+  --text-h3: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
+  --text-body-lg: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
+  --text-body: clamp(1.125rem, 1.08rem + 0.2vw, 1.25rem);
+  --text-eyebrow: 1.125rem;
+  --text-meta: 1.125rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+  body {
+    font-size: var(--text-body);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+}
+
+@utility container-wide {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1800px;
+  padding-inline: clamp(1.25rem, 4vw, 6rem);
+}
+
+.prose-rize {
+  max-width: 70ch;
+}
+.prose-rize h2 {
+  font-size: var(--text-h3);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+.prose-rize h3 {
+  font-size: var(--text-body-lg);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.prose-rize p {
+  font-size: var(--text-body);
+  color: var(--color-body-muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.prose-rize ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.prose-rize ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.prose-rize li {
+  font-size: var(--text-body);
+  color: var(--color-body-muted);
+  margin-bottom: 0.25rem;
+}
+.prose-rize a {
+  color: var(--color-brand-red);
+  text-decoration: underline;
+  font-weight: 700;
+}
+.prose-rize strong {
+  font-weight: 700;
+  color: var(--color-ink);
+}

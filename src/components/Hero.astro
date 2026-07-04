@@ -1,0 +1,11 @@
+---
+interface Props { title: string; }
+const { title } = Astro.props;
+---
+<section class="bg-ink text-cream">
+  <div class="container-wide py-24 md:py-32">
+    <h1 class="text-display" set:html={title}></h1>
+    <div class="mt-8 text-body-lg text-stone-300 max-w-2xl"><slot name="lead" /></div>
+    <div class="mt-10 flex flex-wrap gap-4"><slot name="actions" /></div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+<BaseLayout
+  title="Contact Rize Skill Training | Vancouver Technology Training"
+  description="Bring a program to your community, register for a session, or explore our services. Get in touch with Rize Skill Training in Vancouver."
+>
+  <Hero title="Let's talk.">
+    <Fragment slot="lead">
+      <p>Whether you want to bring a program to your community, register for an upcoming session, or explore our services — we would love to hear from you.</p>
+    </Fragment>
+  </Hero>
+
+  <section class="container-wide py-16 md:py-24 grid gap-12 md:grid-cols-2">
+    <div>
+      <h2 class="text-3xl">Get in touch</h2>
+      <p class="mt-4 text-lg text-body-muted">Tell us who you are, who your community is, and what you are hoping to achieve. A short conversation is all it takes to get started.</p>
+      <p class="mt-6"><a href="mailto:holler@weallrize.ca" class="text-brand-red font-semibold text-lg">holler@weallrize.ca</a></p>
+    </div>
+    <div>
+      <ContactForm />
+    </div>
+  </section>
+</BaseLayout>

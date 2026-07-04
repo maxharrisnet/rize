@@ -1,0 +1,19 @@
+---
+import { Icon } from 'astro-icon/components';
+interface Props { track: 'community' | 'career'; title: string; hook: string; audience: string; }
+const { track, title, hook, audience } = Astro.props;
+const isCommunity = track === 'community';
+const bg = isCommunity ? 'bg-brand-red' : 'bg-brand-blue';
+const chipText = isCommunity ? 'text-brand-red' : 'text-brand-blue';
+const icon = isCommunity ? 'ph:hand-heart-bold' : 'ph:rocket-launch-bold';
+---
+<div class:list={["h-full rounded-[14px] border-2 border-ink p-6 text-white", bg]}>
+  <div class="flex items-center gap-4">
+    <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-3xl", chipText]}>
+      <Icon name={icon} />
+    </span>
+    <h3 class="text-h3">{title}</h3>
+  </div>
+  <p class="mt-4 text-body">{hook}</p>
+  <p class="mt-3 text-body">{audience}</p>
+</div>

@@ -1,0 +1,26 @@
+---
+import { Icon } from 'astro-icon/components';
+interface Path { heading: string; body: string; ctaLabel: string; ctaHref: string; accent: 'red' | 'blue' | 'sun'; }
+interface Props { paths: Path[]; }
+const { paths } = Astro.props;
+const bar = { red: 'bg-brand-red', blue: 'bg-brand-blue', sun: 'bg-brand-gold' };
+const chip = { red: 'bg-brand-red text-white', blue: 'bg-brand-blue text-white', sun: 'bg-brand-gold text-ink' };
+const icons = { red: 'ph:buildings-bold', blue: 'ph:briefcase-bold', sun: 'ph:user-bold' };
+---
+<div class="grid gap-6 md:grid-cols-3">
+  {paths.map((p) => (
+    <div class="flex flex-col overflow-hidden rounded-[14px] border-2 border-ink bg-white">
+      <span class:list={["h-2", bar[p.accent]]}></span>
+      <div class="flex flex-1 flex-col p-6">
+        <div class="flex items-start gap-4">
+          <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chip[p.accent]]}>
+            <Icon name={icons[p.accent]} />
+          </span>
+          <h3 class="text-body-lg font-black normal-case tracking-normal">{p.heading}</h3>
+        </div>
+        <p class="mt-4 flex-1 text-body text-body-muted">{p.body}</p>
+        <a href={p.ctaHref} class="mt-6 font-bold uppercase tracking-[0.08em] text-brand-red">{p.ctaLabel} &rarr;</a>
+      </div>
+    </div>
+  ))}
+</div>

@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Button from '../components/Button.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import CTASection from '../components/CTASection.astro';
+
+const values = [
+  {
+    title: 'People first.',
+    body: 'Technology is a means, not an end. Every program we build starts with the people in the room — their goals, their comfort level, and what success looks like for them specifically.',
+  },
+  {
+    title: 'Community rooted.',
+    body: 'We work through partnerships because community organizations already have the trust. Our job is to bring something genuinely useful into those spaces and leave people more capable than when we arrived.',
+  },
+  {
+    title: 'Honest about technology.',
+    body: 'We do not hype tools or amplify fear. We help people build a grounded, realistic relationship with technology — including AI — so they can make informed decisions about what to use and what to skip.',
+  },
+  {
+    title: 'Everyone included.',
+    body: 'Plain language, flexible formats, welcoming environments, and programs that accommodate all skill levels. Showing up is the only requirement.',
+  },
+  {
+    title: 'More time for what matters.',
+    body: 'When we help someone automate a task or build a workflow, we are not just saving them time. We are giving them the capacity to reach more people, create more, and have more impact. That is what the saved time is for.',
+  },
+];
+---
+<BaseLayout
+  title="About Rize Skill Training | Technology Education Rooted in East Vancouver"
+  description="Founded by an AI specialist and educator with 20+ years of experience, Rize Skill Training brings accessible technology education to communities across Vancouver."
+>
+  <Hero title="Built in East Vancouver.<br />Built for community.">
+    <Fragment slot="lead">
+      <p>Rize Skill Training is a Vancouver-based organization helping individuals, entrepreneurs, and community organizations use technology to do more of what they care about — with more confidence, more creativity, and more impact.</p>
+    </Fragment>
+  </Hero>
+
+  <section class="container-wide py-16 md:py-24">
+    <SectionHeading title="Our story.">
+      <p>Technology has always been personal here. Growing up shaped by music, community, and the belief that creativity and self-expression are tools for change — the connection between technology and people has never been abstract. It has always been about what people can do when they have the right tools in their hands.</p>
+      <p>Rize Skill Training was founded by Max Harris — an AI specialist, educator, and East Vancouver local with roots in the music and arts communities that make this city what it is. Max spent over 20 years building digital systems for technology companies across North America, from early-stage startups to enterprise SaaS teams. Along the way, teaching became just as central to the work as building — and the most meaningful work was always with the people who had the most to gain and the least access to support.</p>
+      <p>Living and working in East Vancouver, embedded in a family with deep Indigenous community ties, and connected to the music, arts, and advocacy work that runs through this neighborhood — that context shapes everything about how Rize operates. We know these communities. We are part of them.</p>
+      <p>Rize exists because the tools reshaping the world of work should be accessible to everyone. Seniors, newcomers, artists, entrepreneurs, nonprofit staff, and community leaders all deserve to feel capable and confident with technology — on their own terms, at their own pace, in service of the things that matter most to them.</p>
+    </SectionHeading>
+  </section>
+
+  <section>
+    <div class="container-wide py-16 md:py-24">
+      <SectionHeading title="What we believe.">
+        <p>Digital skills are the infrastructure of modern life. When communities have access to those skills, they can communicate more effectively, reach more people, access more resources, and create more of what they want to see in the world.</p>
+        <p>The people who stand to benefit most from technology — community leaders, artists, care workers, small business owners, seniors, job seekers — deserve programs built specifically for them. Programs that meet them where they are, respect their time and intelligence, and leave them more capable than when they arrived.</p>
+        <p>Technology serves people. People do not serve technology. That is the principle behind everything we build and every program we deliver.</p>
+      </SectionHeading>
+    </div>
+  </section>
+
+  <section class="container-wide py-16 md:py-24">
+    <SectionHeading title="Who we work with.">
+      <p>Our programs are built for people and organizations across Vancouver and the Greater Vancouver area who are ready to do more with technology — whatever their starting point.</p>
+    </SectionHeading>
+    <ul class="grid gap-3 sm:grid-cols-2 mt-4 list-disc pl-5 text-lg text-body-muted">
+      <li>Seniors building confidence with everyday technology</li>
+      <li>Youth building digital, creative, and career skills for what comes next</li>
+      <li>Newcomers to Canada establishing their digital presence and navigating online services</li>
+      <li>Indigenous communities and Indigenous-led organizations</li>
+      <li>Black communities and Black-led community organizations</li>
+      <li>Job seekers and career changers ready to compete in a market shaped by AI</li>
+      <li>Entrepreneurs and small business owners building smarter workflows</li>
+      <li>Nonprofit and community organization staff who want to do more with what they have</li>
+      <li>Artists, musicians, filmmakers, and creatives ready to grow their reach and fund their work</li>
+    </ul>
+    <p class="mt-6 text-lg text-body-muted max-w-2xl">We also partner with the organizations that serve these communities — bringing funded programs directly into the spaces where people already feel safe and supported.</p>
+  </section>
+
+  <section>
+    <div class="container-wide py-16 md:py-24">
+      <SectionHeading title="How we work." />
+      <div class="grid gap-6 md:grid-cols-2 mt-4">
+        {values.map((value) => (
+          <div class="rounded-2xl bg-white border border-stone-200 p-6">
+            <h3 class="text-xl">{value.title}</h3>
+            <p class="mt-2 text-body-muted">{value.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-ink text-cream">
+    <div class="mx-auto max-w-3xl px-4 py-16 text-lg">
+      <p>Rize Skill Training operates on the unceded territories of the Musqueam, Squamish, and Tsleil-Waututh Nations. We are committed to building programs that serve Indigenous communities and to the ongoing work of reconciliation in digital education.</p>
+    </div>
+  </section>
+
+  <CTASection title="Want to work together?">
+    <Fragment slot="body">
+      <p><a href="mailto:holler@weallrize.ca" class="underline hover:no-underline">holler@weallrize.ca</a></p>
+    </Fragment>
+    <Fragment slot="actions">
+      <Button href="/partnerships">Explore Funded Partnerships</Button>
+      <Button href="/learn" variant="secondary">See Our Programs</Button>
+    </Fragment>
+  </CTASection>
+</BaseLayout>

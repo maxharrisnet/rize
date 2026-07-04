@@ -1,0 +1,61 @@
+---
+interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary' | 'ghost';
+  hoverText?: string;
+}
+const { href, variant = 'primary', hoverText } = Astro.props;
+const label = (await Astro.slots.render('default')).trim();
+const hover = hoverText ?? label;
+---
+<a href={href} class:list={["btn", `btn--${variant}`]}>
+  <span class="btn__sizer" set:html={label}></span>
+  <span class="btn__plane btn__plane--a"></span>
+  <span class="btn__plane btn__plane--b"></span>
+  <span class="btn__state btn__state--a" set:html={label}></span>
+  <span class="btn__state btn__state--b" set:html={hover}></span>
+</a>
+<style>
+  .btn {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid var(--color-ink);
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .btn__sizer { display: block; padding: 14px 30px; white-space: nowrap; visibility: hidden; }
+  .btn__plane { position: absolute; inset: 0; z-index: 0; transition: transform 0.36s cubic-bezier(0.5, 0.12, 0.46, 0.88); }
+  .btn__plane--b { transform: translateY(101%); }
+  .btn__state {
+    position: absolute; inset: 0; z-index: 1;
+    display: flex; align-items: center; justify-content: center;
+    white-space: nowrap;
+    transition: transform 0.36s cubic-bezier(0.5, 0.12, 0.46, 0.88);
+  }
+  .btn__state--b { transform: translateY(101%); }
+  .btn:hover .btn__plane--a, .btn:focus-visible .btn__plane--a,
+  .btn:hover .btn__state--a, .btn:focus-visible .btn__state--a { transform: translateY(-101%); }
+  .btn:hover .btn__plane--b, .btn:focus-visible .btn__plane--b,
+  .btn:hover .btn__state--b, .btn:focus-visible .btn__state--b { transform: translateY(0); }
+
+  .btn--primary .btn__plane--a { background: var(--color-brand-red); }
+  .btn--primary .btn__state--a { color: #fff; }
+  .btn--primary .btn__plane--b { background: var(--color-ink); }
+  .btn--primary .btn__state--b { color: #fff; }
+
+  .btn--secondary .btn__plane--a { background: var(--color-brand-gold); }
+  .btn--secondary .btn__state--a { color: var(--color-ink); }
+  .btn--secondary .btn__plane--b { background: var(--color-ink); }
+  .btn--secondary .btn__state--b { color: #fff; }
+
+  .btn--ghost { background: transparent; }
+  .btn--ghost .btn__state--a { color: var(--color-ink); }
+  .btn--ghost .btn__plane--b { background: var(--color-ink); }
+  .btn--ghost .btn__state--b { color: #fff; }
+</style>
