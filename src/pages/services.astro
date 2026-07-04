@@ -117,17 +117,48 @@ const growth = [
   { title: 'Community Engagement', icon: 'ph:users-three-bold', accent: 'gold', desc: 'Tools and strategies for building genuine relationships with the people you serve — social media management, email list building, event promotion, and feedback systems that actually listen.' },
 ];
 
-const orgTiers = [
-  { name: 'Starter', price: 'from $750', detail: 'Up to 5 pages.' },
-  { name: 'Standard', price: 'from $1,500', detail: 'Up to 10 pages, events or blog section, email integration.' },
-  { name: 'Growth', price: 'from $2,500', detail: 'Up to 20 pages, donation system, custom content types, team training.' },
+const packages = [
+  {
+    name: 'Starter',
+    price: 'from $750',
+    description: 'A clean, professional presence that gets you found and trusted — fast.',
+    features: [
+      'Up to 5 pages, mobile-first and accessible (WCAG 2.1)',
+      'Contact form and email newsletter signup',
+      'Local SEO and Google Business Profile setup',
+      'Built on WordPress so your team can edit content',
+    ],
+    fit: 'New organizations, solo founders, and anyone launching their first real site.',
+  },
+  {
+    name: 'Standard',
+    price: 'from $1,500',
+    description: 'Room to grow — events, a blog or booking, and the integrations that save you time.',
+    features: [
+      'Up to 10 pages',
+      'Blog, events, or online booking section',
+      'Email marketing and CRM integration',
+      'Donation or payment setup — Canada Helps, Stripe, PayPal',
+      'Enhanced local and AI search visibility',
+    ],
+    fit: 'Established groups running programs, events, or a steady flow of clients.',
+    featured: true,
+  },
+  {
+    name: 'Growth',
+    price: 'from $2,500',
+    description: 'A tailored site with automations and training so your team fully owns it.',
+    features: [
+      'Up to 20 pages with custom content types',
+      'Donation systems, memberships, or e-commerce',
+      'Workflow automations that reduce manual work',
+      'Team training and documentation',
+      'Priority support through launch',
+    ],
+    fit: 'Organizations and businesses ready to invest in a system, not just a site.',
+  },
 ];
-const bizTiers = [
-  { name: 'Starter', price: 'from $750', detail: 'Up to 5 pages.' },
-  { name: 'Standard', price: 'from $1,500', detail: 'Up to 10 pages, blog or booking integration, CRM setup.' },
-  { name: 'Growth', price: 'from $2,500', detail: 'Up to 20 pages, custom features, automations, team training.' },
-];
-const bizAddOns = [
+const addOns = [
   { name: 'AI-assisted copywriting (up to 5 pages)', price: '$300' },
   { name: 'Brand identity (logo, colors, fonts, usage guide)', price: '$400' },
   { name: 'Bilingual site (English + French or other)', price: 'from $500' },
@@ -152,6 +183,7 @@ const bizAddOns = [
   <AnchorNav anchors={[
     { label: 'For Organizations', href: '#organizations' },
     { label: 'For Businesses and Entrepreneurs', href: '#businesses' },
+    { label: 'Website Pricing', href: '#pricing' },
     { label: 'Integrations and Automations', href: '#automations' },
     { label: 'Growth and Outreach', href: '#growth' },
   ]} />
@@ -185,10 +217,10 @@ const bizAddOns = [
       ))}
     </div>
 
-    <h3 class="text-h3 mt-14">Pricing</h3>
-    <p class="mt-2 text-body text-meta-muted">All projects start with a discovery call. Pricing is based on scope, complexity, and timeline.</p>
-    <div class="mt-6"><PricingTable tiers={orgTiers} accent="red" /></div>
-    <div class="mt-8"><Button href="/contact">Book a Discovery Call</Button></div>
+    <div class="mt-10 flex flex-wrap items-center gap-4">
+      <Button href="/contact">Book a Discovery Call</Button>
+      <Button href="#pricing" variant="secondary">See Website Pricing</Button>
+    </div>
   </section>
 
   <section id="businesses" class="container-wide py-16 md:py-24">
@@ -212,10 +244,18 @@ const bizAddOns = [
       ))}
     </div>
 
-    <h3 class="text-h3 mt-14">Pricing</h3>
-    <p class="mt-2 text-body text-meta-muted">All projects start with a discovery call. Pricing is based on scope, complexity, and timeline.</p>
-    <div class="mt-6"><PricingTable tiers={bizTiers} addOns={bizAddOns} accent="blue" /></div>
-    <div class="mt-8"><Button href="/contact">Book a Discovery Call</Button></div>
+    <div class="mt-10 flex flex-wrap items-center gap-4">
+      <Button href="/contact">Book a Discovery Call</Button>
+      <Button href="#pricing" variant="secondary">See Website Pricing</Button>
+    </div>
+  </section>
+
+  <section id="pricing" class="container-wide py-16 md:py-24">
+    <SectionHeading title="Website pricing.">
+      <p>One clear set of website packages for organizations and businesses alike. Every project starts with a free discovery call — final pricing depends on scope, complexity, and timeline, and these are the starting point.</p>
+    </SectionHeading>
+    <PricingTable tiers={packages} addOns={addOns} />
+    <div class="mt-10"><Button href="/contact">Book a Free Discovery Call</Button></div>
   </section>
 
   <section id="automations" class="container-wide py-16 md:py-24">

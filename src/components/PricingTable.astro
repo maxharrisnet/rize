@@ -1,25 +1,30 @@
 ---
-interface Tier { name: string; price: string; detail: string; }
+import IconList from './IconList.astro';
+interface Tier { name: string; price: string; description: string; features: string[]; fit: string; featured?: boolean; }
 interface AddOn { name: string; price: string; }
-interface Props { tiers: Tier[]; addOns?: AddOn[]; accent?: 'red' | 'blue'; }
-const { tiers, addOns, accent = 'red' } = Astro.props;
-const ring = accent === 'red' ? 'border-brand-red' : 'border-brand-blue';
+interface Props { tiers: Tier[]; addOns?: AddOn[]; }
+const { tiers, addOns } = Astro.props;
 ---
 <div class="grid gap-6 md:grid-cols-3">
   {tiers.map((t) => (
-    <div class:list={["rounded-[14px] border-2 bg-white p-6", ring]}>
-      <h4 class="text-h3">{t.name}</h4>
-      <p class="mt-2 text-h3 font-black">{t.price}</p>
-      <p class="mt-3 text-body text-body-muted">{t.detail}</p>
+    <div class:list={["flex h-full flex-col rounded-[14px] border-2 bg-white p-6 md:p-8", t.featured ? "border-brand-red" : "border-ink"]}>
+      {t.featured && <span class="mb-4 inline-block w-fit rounded-pill bg-brand-red px-4 py-1 text-eyebrow font-bold uppercase tracking-[0.04em] text-white">Most popular</span>}
+      <h3 class="text-h3">{t.name}</h3>
+      <p class="mt-2 font-display text-4xl font-black">{t.price}</p>
+      <p class="mt-3 text-body text-body-muted">{t.description}</p>
+      <div class="mt-5 flex-1"><IconList items={t.features} /></div>
+      <p class="mt-6 border-t-2 border-ink pt-4 text-body">
+        <span class="font-bold uppercase tracking-[0.04em] text-brand-red">Best fit</span><br />{t.fit}
+      </p>
     </div>
   ))}
 </div>
 {addOns && (
-  <div class="mt-8">
+  <div class="mt-10">
     <h3 class="text-h3 mb-4">Add-ons</h3>
-    <ul class="grid gap-2 sm:grid-cols-2">
+    <ul class="grid gap-3 sm:grid-cols-2">
       {addOns.map((a) => (
-        <li class="flex justify-between rounded-[10px] border-2 border-ink bg-white px-4 py-3">
+        <li class="flex items-center justify-between rounded-[10px] border-2 border-ink bg-white px-5 py-3">
           <span class="text-body">{a.name}</span><span class="text-body font-bold">{a.price}</span>
         </li>
       ))}
