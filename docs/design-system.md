@@ -47,7 +47,7 @@ Line-heights: display/h1/h2 ≈ 0.9–1.0; body ≈ 1.6. Letter-spacing tightens
 | `body-muted` | `#3D332B` | Body copy on cream (11.1:1 — AAA) |
 | `meta-muted` | `#6B5D4C` | Muted meta/caption on cream (~4.7:1 — AA). **Never lighter than this.** |
 
-Track / audience mapping: Community & Organizations → red; Career & Businesses → blue.
+Track / audience mapping: Community & Organizations → red; Career, Businesses & Entrepreneurs → blue.
 
 ## Contrast — audited pairings (WCAG 2.1)
 
