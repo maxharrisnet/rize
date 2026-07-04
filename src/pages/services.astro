@@ -159,15 +159,19 @@ const bizAddOns = [
     <SectionHeading title="For Organizations.">
       <p>Nonprofits, charities, community groups, and social service agencies have specific needs — donation systems, event management, volunteer coordination, and a presence that communicates mission and builds trust. We build websites and systems designed around those needs, with training included so your team can manage everything independently.</p>
     </SectionHeading>
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-6">
       {orgServices.map((s) => (
-        <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
-          <div class="flex items-center gap-4">
-            <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipMap[s.accent]]}><Icon name={s.icon} /></span>
-            <h3 class="text-h3">{s.title}</h3>
+        <div class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-10">
+          <div class="grid gap-8 md:grid-cols-2 md:items-start">
+            <div>
+              <div class="flex items-center gap-4">
+                <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipMap[s.accent]]}><Icon name={s.icon} /></span>
+                <h3 class="text-h3">{s.title}</h3>
+              </div>
+              <p class="mt-4 text-body-lg text-body-muted">{s.desc}</p>
+            </div>
+            <div><IconList items={s.features} icon="ph:check-bold" accent={listAccent[s.accent]} /></div>
           </div>
-          <p class="mt-4 text-body text-body-muted">{s.desc}</p>
-          <div class="mt-5"><IconList items={s.features} icon="ph:check-bold" accent={listAccent[s.accent]} /></div>
         </div>
       ))}
     </div>
@@ -182,15 +186,19 @@ const bizAddOns = [
     <SectionHeading title="For Businesses.">
       <p>Small businesses, independent service providers, and entrepreneurs need websites that bring the right people to them — and systems that keep operations running without constant manual effort. We build both, with a focus on local search visibility and integrations that actually reduce your workload.</p>
     </SectionHeading>
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-6">
       {bizServices.map((s) => (
-        <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
-          <div class="flex items-center gap-4">
-            <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipMap[s.accent]]}><Icon name={s.icon} /></span>
-            <h3 class="text-h3">{s.title}</h3>
+        <div class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-10">
+          <div class="grid gap-8 md:grid-cols-2 md:items-start">
+            <div>
+              <div class="flex items-center gap-4">
+                <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipMap[s.accent]]}><Icon name={s.icon} /></span>
+                <h3 class="text-h3">{s.title}</h3>
+              </div>
+              <p class="mt-4 text-body-lg text-body-muted">{s.desc}</p>
+            </div>
+            <div><IconList items={s.features} icon="ph:check-bold" accent={listAccent[s.accent]} /></div>
           </div>
-          <p class="mt-4 text-body text-body-muted">{s.desc}</p>
-          <div class="mt-5"><IconList items={s.features} icon="ph:check-bold" accent={listAccent[s.accent]} /></div>
         </div>
       ))}
     </div>
