@@ -9,11 +9,13 @@ const chip = isCommunity ? 'bg-brand-red' : 'bg-brand-blue';
 const icon = isCommunity ? 'ph:hand-heart-bold' : 'ph:rocket-launch-bold';
 ---
 <article class="h-full rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
-  <span class:list={["flex h-14 w-14 items-center justify-center rounded-full text-white text-3xl", chip]}>
-    <Icon name={icon} />
-  </span>
-  <h3 class="text-h3 mt-4">{workshop.title}</h3>
-  <p class:list={["mt-2 text-body-lg font-bold", accentText]}>{workshop.tagline}</p>
+  <div class="flex items-center gap-4">
+    <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-white text-3xl", chip]}>
+      <Icon name={icon} />
+    </span>
+    <h3 class="text-h3">{workshop.title}</h3>
+  </div>
+  <p class:list={["mt-3 text-body-lg font-bold", accentText]}>{workshop.tagline}</p>
   <p class="mt-4 text-body text-body-muted">{workshop.summary}</p>
   <div class="mt-6 grid gap-6 md:grid-cols-2">
     <div>
