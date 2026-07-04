@@ -1,8 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
 import type { CollectionEntry } from 'astro:content';
-interface Props { course: CollectionEntry<'courses'>['data']; }
-const { course } = Astro.props;
+interface Props { course: CollectionEntry<'courses'>['data']; slug: string; }
+const { course, slug } = Astro.props;
 ---
 <article class="h-full rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
   <div class="flex items-center gap-4">
@@ -26,4 +26,5 @@ const { course } = Astro.props;
       <ul class="mt-2 list-disc space-y-1 pl-5 text-body text-body-muted">{course.outcomes.map((i) => <li>{i}</li>)}</ul>
     </div>
   </div>
+  <a href={`/courses/${slug}`} class="mt-6 inline-block font-bold uppercase tracking-[0.08em] text-brand-red">See course details &rarr;</a>
 </article>
