@@ -73,7 +73,7 @@ const careerWorkshops = workshops.filter((w) => w.data.track === 'career');
       <Button href="/contact">Talk to Us About a Course</Button>
 
       <div class="grid gap-6 mt-8">
-        {courses.map((c) => <CourseCard course={c.data} />)}
+        {courses.map((c) => <CourseCard course={c.data} slug={c.id} />)}
       </div>
 
       <p class="mt-10 italic text-body-muted">Additional course tracks in development. Contact us to discuss a custom course for your community or sector.</p>
