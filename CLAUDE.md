@@ -33,7 +33,7 @@ Full design reference: [`docs/design-system.md`](docs/design-system.md). Read it
 ### Color & surfaces
 - Tokens: `brand-red #BE2A1A`, `brand-blue #2C63A8`, `brand-gold #F2C14E`, `cream #FBF2E6`,
   `ink #1A1712`, `blush #F6D9D2`. Use tokens, never ad-hoc hex.
-- Track/audience: Community & Organizations → red; Career & Businesses → blue.
+- Track/audience: Community & Organizations → red; Career, Businesses & Entrepreneurs → blue.
 - Bento blocks/cards: 2px `ink` outline, 14px radius. Buttons: 12px. Pills/chips: full-round.
 - No hard offset "neo-brutalist" shadows — the ink outline carries structure.
 
