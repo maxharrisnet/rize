@@ -4,33 +4,20 @@ import type { CollectionEntry } from 'astro:content';
 interface Props { workshop: CollectionEntry<'workshops'>['data']; slug: string; }
 const { workshop, slug } = Astro.props;
 const isCommunity = workshop.track === 'community';
-const accentText = isCommunity ? 'text-brand-red' : 'text-brand-blue';
-const chip = isCommunity ? 'bg-brand-red' : 'bg-brand-blue';
+const bg = isCommunity ? 'bg-brand-red' : 'bg-brand-blue';
+const chipText = isCommunity ? 'text-brand-red' : 'text-brand-blue';
 const icon = isCommunity ? 'ph:hand-heart-bold' : 'ph:rocket-launch-bold';
 ---
-<article class="h-full rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+<a
+  href={`/workshops/${slug}`}
+  class:list={["group flex h-full flex-col rounded-[14px] border-2 border-ink p-6 text-white transition-transform hover:-translate-y-1 md:p-8", bg]}
+>
   <div class="flex items-center gap-4">
-    <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-white text-3xl", chip]}>
+    <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-3xl", chipText]}>
       <Icon name={icon} />
     </span>
     <h3 class="text-h3">{workshop.title}</h3>
   </div>
-  <p class:list={["mt-3 text-body-lg font-bold", accentText]}>{workshop.tagline}</p>
-  <p class="mt-4 text-body text-body-muted">{workshop.summary}</p>
-  <div class="mt-6 grid gap-6 md:grid-cols-2">
-    <div>
-      <h4 class="text-eyebrow font-bold text-ink">Who this is for</h4>
-      <ul class="mt-2 list-disc space-y-1 pl-5 text-body text-body-muted">
-        {workshop.whoFor.map((i) => <li>{i}</li>)}
-      </ul>
-    </div>
-    <div>
-      <h4 class="text-eyebrow font-bold text-ink">What you will walk away with</h4>
-      <ul class="mt-2 list-disc space-y-1 pl-5 text-body text-body-muted">
-        {workshop.outcomes.map((i) => <li>{i}</li>)}
-      </ul>
-    </div>
-  </div>
-  <p class="mt-6 text-body text-meta-muted">{workshop.skillLevel}<br />{workshop.format}</p>
-  <a href={`/workshops/${slug}`} class="mt-6 inline-block font-bold uppercase tracking-[0.08em] text-brand-red">See workshop details &rarr;</a>
-</article>
+  <p class="mt-4 flex-1 text-body-lg">{workshop.tagline}</p>
+  <span class="mt-6 font-bold uppercase tracking-[0.08em] group-hover:underline">See workshop details &rarr;</span>
+</a>

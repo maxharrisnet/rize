@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Button from '../components/Button.astro';
@@ -12,6 +13,12 @@ const workshops = (await getCollection('workshops')).sort((a, b) => a.data.order
 const courses = (await getCollection('courses')).sort((a, b) => a.data.order - b.data.order);
 const communityWorkshops = workshops.filter((w) => w.data.track === 'community');
 const careerWorkshops = workshops.filter((w) => w.data.track === 'career');
+
+const delivery = [
+  { title: 'Partnership delivery', body: 'We come to your organization, your space, your community.', icon: 'ph:handshake-bold', chip: 'bg-brand-red text-white' },
+  { title: 'Public schedule', body: 'Open sessions anyone can register for.', icon: 'ph:calendar-dots-bold', chip: 'bg-brand-blue text-white' },
+  { title: 'Custom engagements', body: 'Tailored programs for specific groups, industries, or cohorts.', icon: 'ph:sliders-horizontal-bold', chip: 'bg-brand-gold text-ink' },
+];
 ---
 <BaseLayout
   title="Workshops & Courses | Digital Skills & AI Training in Vancouver"
@@ -25,24 +32,42 @@ const careerWorkshops = workshops.filter((w) => w.data.track === 'career');
 
   <section class="container-wide py-16 md:py-24">
     <SectionHeading title="How our programs work." />
-    <h3 class="text-xl mt-6">Workshops</h3>
-    <p class="mt-2 text-body-muted">Single sessions or short series running 90 minutes to half a day. Practical and focused, designed to deliver immediately useful skills. Available through community partnerships and on a public schedule.</p>
 
-    <h3 class="text-xl mt-6">Courses</h3>
-    <p class="mt-2 text-body-muted">Multi-session programs running 4 to 6 hours total, designed to build something functional by the end — a workflow, a digital presence, a grant-writing system, a marketing strategy. Delivered through organizational partnerships.</p>
+    <div class="grid gap-6 md:grid-cols-2">
+      <a href="#workshops" class="flex h-full flex-col rounded-[14px] border-2 border-ink bg-ink p-8 text-cream transition-transform hover:-translate-y-1 md:p-10">
+        <span class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-brand-gold text-ink text-4xl"><Icon name="ph:chalkboard-teacher-bold" /></span>
+        <h3 class="mt-6 text-h2">Workshops</h3>
+        <p class="mt-3 flex-1 text-body-lg">Single sessions or short series, designed to deliver immediately useful skills.</p>
+        <p class="mt-4 text-body font-bold text-brand-gold">90 min–half day &middot; single or series &middot; in-person or online</p>
+        <span class="mt-6 font-bold uppercase tracking-[0.08em]">See workshops &darr;</span>
+      </a>
+      <a href="#courses" class="flex h-full flex-col rounded-[14px] border-2 border-ink bg-brand-gold p-8 text-ink transition-transform hover:-translate-y-1 md:p-10">
+        <span class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-ink text-brand-gold text-4xl"><Icon name="ph:graduation-cap-bold" /></span>
+        <h3 class="mt-6 text-h2">Courses</h3>
+        <p class="mt-3 flex-1 text-body-lg">Multi-session programs that build something functional by the end.</p>
+        <p class="mt-4 text-body font-bold">4–6 hours &middot; multi-session &middot; delivered in partnership</p>
+        <span class="mt-6 font-bold uppercase tracking-[0.08em]">See courses &darr;</span>
+      </a>
+    </div>
 
-    <h3 class="text-xl mt-6">Delivery options</h3>
-    <ul class="mt-2 list-disc pl-5 text-body-muted">
-      <li>Partnership delivery — we come to your organization, your space, your community</li>
-      <li>Public schedule — open sessions anyone can register for</li>
-      <li>Custom engagements — tailored programs for specific groups, industries, or cohorts</li>
-    </ul>
+    <div class="mt-6 grid gap-6 md:grid-cols-3">
+      {delivery.map((d) => (
+        <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
+          <div class="flex items-center gap-4">
+            <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", d.chip]}><Icon name={d.icon} /></span>
+            <h3 class="text-h3">{d.title}</h3>
+          </div>
+          <p class="mt-4 text-body text-body-muted">{d.body}</p>
+        </div>
+      ))}
+    </div>
 
-    <h3 class="text-xl mt-6">Funded partnerships</h3>
-    <p class="mt-2 text-body-muted">Provincial and federal funding is available for many of these programs right now — particularly for digital skills and AI upskilling for specific communities. We will help you identify what applies and work through the process alongside you.</p>
-
-    <div class="mt-6">
-      <Button href="/partnerships">Explore Funded Partnerships</Button>
+    <div class="mt-6 rounded-[14px] border-2 border-ink bg-blush p-8 md:flex md:items-center md:justify-between md:gap-8">
+      <div class="max-w-2xl">
+        <h3 class="text-h3">Funding is available right now.</h3>
+        <p class="mt-3 text-body text-body-muted">Provincial and federal funding covers many of these programs — especially digital skills and AI upskilling for specific communities. We help you identify what applies and work through it alongside you.</p>
+      </div>
+      <div class="mt-6 shrink-0 md:mt-0"><Button href="/partnerships">Explore Funded Partnerships</Button></div>
     </div>
   </section>
 
@@ -51,43 +76,37 @@ const careerWorkshops = workshops.filter((w) => w.data.track === 'career');
   <section id="workshops" class="container-wide py-16 md:py-24">
     <SectionHeading title="Workshops." />
 
-    <h3 class="text-2xl font-display mt-8 mb-4">Track 1: Community and Everyday Life</h3>
-    <div class="grid gap-6">
+    <h3 class="text-h3 mt-8 mb-6">Track 1 &middot; Community and Everyday Life</h3>
+    <div class="grid gap-6 md:grid-cols-2">
       {communityWorkshops.map((w) => <WorkshopCard workshop={w.data} slug={w.id} />)}
     </div>
 
-    <h3 class="text-2xl font-display mt-8 mb-4">Track 2: Career, Work, and Growth</h3>
-    <div class="grid gap-6">
+    <h3 class="text-h3 mt-12 mb-6">Track 2 &middot; Career, Work, and Growth</h3>
+    <div class="grid gap-6 md:grid-cols-2">
       {careerWorkshops.map((w) => <WorkshopCard workshop={w.data} slug={w.id} />)}
     </div>
   </section>
 
-  <section id="courses">
-    <div class="container-wide py-16 md:py-24">
-      <SectionHeading title="Courses.">
-        <p>Multi-session programs for organizations and individuals ready to go deeper and come away with something they can actually use. Courses run 4 to 6 hours across multiple sessions and are designed to deploy a functional system, workflow, or strategy by the end.</p>
-        <p>Every course is delivered in partnership with an organization that brings the audience and the space. We work closely with your internal team throughout — not just presenting, but building alongside you so the skills and systems stay with your organization long after the course ends.</p>
-        <p>Before each course, we offer a free or low-cost introductory session — 30 to 90 minutes — covering the key topics and helping participants arrive ready. Recordings are made available for participants and repurposed as educational content.</p>
-      </SectionHeading>
+  <section id="courses" class="container-wide py-16 md:py-24">
+    <SectionHeading title="Courses.">
+      <p>Multi-session programs for organizations and individuals ready to go deeper and come away with something they can actually use. Every course is delivered in partnership — we build alongside your team so the skills and systems stay with your organization long after it ends.</p>
+    </SectionHeading>
 
-      <Button href="/contact">Talk to Us About a Course</Button>
-
-      <div class="grid gap-6 mt-8">
-        {courses.map((c) => <CourseCard course={c.data} slug={c.id} />)}
-      </div>
-
-      <p class="mt-10 italic text-body-muted">Additional course tracks in development. Contact us to discuss a custom course for your community or sector.</p>
+    <div class="grid gap-6 md:grid-cols-3">
+      {courses.map((c) => <CourseCard course={c.data} slug={c.id} />)}
     </div>
+
+    <p class="mt-8 text-body text-body-muted">Additional course tracks are in development. <a href="/contact" class="font-bold text-brand-red hover:text-ink">Talk to us about a custom course</a> for your community or sector.</p>
   </section>
 
   <section id="more" class="container-wide py-16 md:py-24">
     <SectionHeading title="Looking for something else?">
-      <p>If these workshops and courses are not quite the right fit, there is more. We offer one-on-one tutoring and mentorship for individuals who want personalized support, small group instruction for specific topics, and team training for organizations with particular needs. We can also go deeper on more technical topics — development, systems, and tools — for people who are ready for that level.</p>
+      <p>If these are not quite the right fit, there is more — one-on-one tutoring and mentorship, small group instruction, team training, and deeper technical topics for people ready for that level.</p>
       <p>More workshops are in development across additional topics and industries. If you have something specific in mind, reach out. The answer is probably yes.</p>
     </SectionHeading>
     <div class="flex flex-wrap items-center gap-6">
       <Button href="/contact">Get in Touch</Button>
-      <a href="mailto:holler@weallrize.ca" class="font-semibold text-brand-red hover:text-ink">holler@weallrize.ca</a>
+      <a href="mailto:holler@weallrize.ca" class="font-bold text-brand-red hover:text-ink">holler@weallrize.ca</a>
     </div>
   </section>
 </BaseLayout>
