@@ -10,9 +10,9 @@ const isActive = (href: string) => href === '/' ? path === '/' : path.startsWith
     </a>
     <nav class="hidden md:flex items-center gap-6">
       {navLinks.map((l) => (
-        <a href={l.href} class:list={["font-medium hover:text-brand-red", isActive(l.href) && "text-brand-red"]}>{l.name}</a>
+        <a href={l.href} class:list={["font-bold uppercase tracking-[0.06em] hover:text-brand-red", isActive(l.href) && "text-brand-red"]}>{l.name}</a>
       ))}
-      <a href={contactLink.href} class="rounded-pill bg-brand-red text-white px-5 py-2 font-semibold hover:bg-ink transition-colors">{contactLink.name}</a>
+      <a href={contactLink.href} class="rounded-pill bg-brand-red text-white px-5 py-2 font-bold uppercase tracking-[0.06em] hover:bg-ink transition-colors">{contactLink.name}</a>
     </nav>
     <button id="nav-toggle" class="md:hidden p-2" aria-label="Open menu" aria-expanded="false">
       <span class="block w-6 h-0.5 bg-ink mb-1.5"></span>
@@ -22,7 +22,7 @@ const isActive = (href: string) => href === '/' ? path === '/' : path.startsWith
   </div>
   <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200 bg-cream px-4 py-4 flex-col gap-3">
     {[...navLinks, contactLink].map((l) => (
-      <a href={l.href} class="block py-2 font-medium">{l.name}</a>
+      <a href={l.href} class="block py-2 font-bold uppercase tracking-[0.06em]">{l.name}</a>
     ))}
   </div>
 </header>
