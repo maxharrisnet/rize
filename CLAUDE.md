@@ -28,7 +28,7 @@ Full design reference: [`docs/design-system.md`](docs/design-system.md). Read it
 
 ### Type & casing
 - **Rubik** only, weights **400 / 700 / 900**. Headings = 900; buttons/eyebrows/card titles/meta = 700; body = 400.
-- **All titles and buttons are ALL CAPS.** Body copy stays sentence case.
+- **All titles, buttons, and navigation are ALL CAPS.** Body copy stays sentence case.
 
 ### Color & surfaces
 - Tokens: `brand-red #BE2A1A`, `brand-blue #2C63A8`, `brand-gold #F2C14E`, `cream #FBF2E6`,
