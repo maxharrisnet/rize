@@ -83,14 +83,14 @@ const chipClass = {
   gold: 'bg-brand-gold text-ink',
 };
 
-const orgTypes = [
-  'Community organizations',
-  'Nonprofits and charities',
-  'Indigenous-led groups',
-  'Black community organizations',
-  'Libraries',
-  'Employment centers',
-  'Social service agencies',
+const orgTypes: { label: string; icon: string; accent: 'red' | 'blue' | 'gold' }[] = [
+  { label: 'Community organizations', icon: 'ph:users-three-bold', accent: 'red' },
+  { label: 'Nonprofits and charities', icon: 'ph:hand-heart-bold', accent: 'blue' },
+  { label: 'Indigenous-led groups', icon: 'ph:handshake-bold', accent: 'gold' },
+  { label: 'Black community organizations', icon: 'ph:buildings-bold', accent: 'red' },
+  { label: 'Libraries', icon: 'ph:books-bold', accent: 'blue' },
+  { label: 'Employment centers', icon: 'ph:briefcase-bold', accent: 'gold' },
+  { label: 'Social service agencies', icon: 'ph:lifebuoy-bold', accent: 'red' },
 ];
 
 const grantHelp = [
@@ -189,11 +189,17 @@ const grantHelp = [
   </section>
 
   <section class="container-wide py-16 md:py-24">
-    <SectionHeading title="Who we work with.">
-      <ul class="grid gap-3 sm:grid-cols-2 list-disc pl-5 text-body text-body-muted">
-        {orgTypes.map((o) => <li>{o}</li>)}
-      </ul>
-    </SectionHeading>
+    <SectionHeading title="Who we work with." />
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {orgTypes.map((o) => (
+        <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
+          <span class:list={["inline-flex h-12 w-12 items-center justify-center rounded-full text-2xl", chipClass[o.accent]]}>
+            <Icon name={o.icon} />
+          </span>
+          <p class="mt-4 text-body-lg font-bold text-ink">{o.label}</p>
+        </div>
+      ))}
+    </div>
   </section>
 
   <CTASection title="Let's find the funding for your community.">

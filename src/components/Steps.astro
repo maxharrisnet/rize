@@ -3,7 +3,7 @@ interface Step { title: string; body: string; }
 interface Props { steps: Step[]; }
 const { steps } = Astro.props;
 ---
-<ol class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+<ol class="grid gap-6 md:grid-cols-2">
   {steps.map((s, i) => (
     <li class="rounded-[14px] border-2 border-ink bg-white p-6">
       <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-gold text-ink font-black text-xl">{i + 1}</span>
