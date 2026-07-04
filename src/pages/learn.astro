@@ -53,12 +53,12 @@ const careerWorkshops = workshops.filter((w) => w.data.track === 'career');
 
     <h3 class="text-2xl font-display mt-8 mb-4">Track 1: Community and Everyday Life</h3>
     <div class="grid gap-6">
-      {communityWorkshops.map((w) => <WorkshopCard workshop={w.data} />)}
+      {communityWorkshops.map((w) => <WorkshopCard workshop={w.data} slug={w.id} />)}
     </div>
 
     <h3 class="text-2xl font-display mt-8 mb-4">Track 2: Career, Work, and Growth</h3>
     <div class="grid gap-6">
-      {careerWorkshops.map((w) => <WorkshopCard workshop={w.data} />)}
+      {careerWorkshops.map((w) => <WorkshopCard workshop={w.data} slug={w.id} />)}
     </div>
   </section>
 

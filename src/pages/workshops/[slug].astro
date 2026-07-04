@@ -1,0 +1,94 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CTASection from '../../components/CTASection.astro';
+import Button from '../../components/Button.astro';
+
+export async function getStaticPaths() {
+  const workshops = await getCollection('workshops');
+  return workshops.map((w) => ({ params: { slug: w.id }, props: { workshop: w } }));
+}
+
+const { workshop } = Astro.props;
+const { data } = workshop;
+const isCommunity = data.track === 'community';
+const trackLabel = isCommunity ? 'Community & Everyday Life' : 'Career, Work & Growth';
+const trackBg = isCommunity ? 'bg-brand-red' : 'bg-brand-blue';
+const hasBody = Boolean(workshop.body && workshop.body.trim().length > 0);
+const { Content } = await render(workshop);
+---
+<BaseLayout title={`${data.title} | Rize Skill Training Workshop`} description={data.tagline}>
+  <Hero title={data.title}>
+    <Fragment slot="lead">
+      <span class:list={["inline-block rounded-pill px-4 py-1 text-body font-bold uppercase tracking-[0.08em] text-white", trackBg]}>{trackLabel}</span>
+      <p class="mt-5">{data.tagline}</p>
+    </Fragment>
+    <Fragment slot="actions">
+      <Button href="/contact?inquiry=Learn">{data.requestCtaLabel}</Button>
+      <a href="/learn#workshops" class="self-center font-bold uppercase tracking-[0.08em] text-stone-300 hover:text-brand-gold">&larr; All workshops</a>
+    </Fragment>
+  </Hero>
+
+  <section class="container-wide py-16 md:py-24">
+    <SectionHeading title="About this workshop">
+      <p>{data.summary}</p>
+    </SectionHeading>
+  </section>
+
+  <section class="container-wide py-16 md:py-24">
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
+        <div class="flex items-center gap-4">
+          <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-3xl"><Icon name="ph:users-three-bold" /></span>
+          <h3 class="text-h3">Who this is for</h3>
+        </div>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-body text-body-muted">
+          {data.whoFor.map((i) => <li>{i}</li>)}
+        </ul>
+      </div>
+      <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
+        <div class="flex items-center gap-4">
+          <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-blue text-white text-3xl"><Icon name="ph:sparkle-bold" /></span>
+          <h3 class="text-h3">What you'll walk away with</h3>
+        </div>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-body text-body-muted">
+          {data.outcomes.map((i) => <li>{i}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-wide py-16 md:py-24">
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="rounded-[14px] border-2 border-ink bg-white p-6">
+        <h3 class="text-eyebrow font-bold uppercase tracking-[0.08em] text-brand-red">Skill level</h3>
+        <p class="mt-2 text-body-lg">{data.skillLevel}</p>
+      </div>
+      <div class="rounded-[14px] border-2 border-ink bg-white p-6">
+        <h3 class="text-eyebrow font-bold uppercase tracking-[0.08em] text-brand-red">Format</h3>
+        <p class="mt-2 text-body-lg">{data.format}</p>
+      </div>
+    </div>
+  </section>
+
+  {hasBody && (
+    <section class="container-wide py-16 md:py-24">
+      <SectionHeading title="What we'll cover" />
+      <div class="prose-rize"><Content /></div>
+    </section>
+  )}
+
+  <CTASection title="Ready to bring this to your community?">
+    <Fragment slot="body">
+      <p>Request this workshop for your group, or explore how funded partnerships can cover the cost.</p>
+      <p class="mt-4"><a href="mailto:holler@weallrize.ca" class="underline hover:no-underline">holler@weallrize.ca</a></p>
+    </Fragment>
+    <Fragment slot="actions">
+      <Button href="/contact?inquiry=Learn">{data.requestCtaLabel}</Button>
+      <Button href="/partnerships" variant="secondary">Explore Funded Partnerships</Button>
+    </Fragment>
+  </CTASection>
+</BaseLayout>

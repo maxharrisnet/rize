@@ -1,8 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
 import type { CollectionEntry } from 'astro:content';
-interface Props { workshop: CollectionEntry<'workshops'>['data']; }
-const { workshop } = Astro.props;
+interface Props { workshop: CollectionEntry<'workshops'>['data']; slug: string; }
+const { workshop, slug } = Astro.props;
 const isCommunity = workshop.track === 'community';
 const accentText = isCommunity ? 'text-brand-red' : 'text-brand-blue';
 const chip = isCommunity ? 'bg-brand-red' : 'bg-brand-blue';
@@ -32,5 +32,5 @@ const icon = isCommunity ? 'ph:hand-heart-bold' : 'ph:rocket-launch-bold';
     </div>
   </div>
   <p class="mt-6 text-body text-meta-muted">{workshop.skillLevel}<br />{workshop.format}</p>
-  <a href="/contact?inquiry=Learn" class="mt-6 inline-block font-bold uppercase tracking-[0.08em] text-brand-red">{workshop.requestCtaLabel} &rarr;</a>
+  <a href={`/workshops/${slug}`} class="mt-6 inline-block font-bold uppercase tracking-[0.08em] text-brand-red">See workshop details &rarr;</a>
 </article>
