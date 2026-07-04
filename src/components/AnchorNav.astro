@@ -4,7 +4,7 @@ interface Props { anchors: Anchor[]; }
 const { anchors } = Astro.props;
 ---
 <nav class="sticky top-16 z-40 bg-cream/95 backdrop-blur border-y border-stone-200">
-  <div class="container-wide flex gap-6 overflow-x-auto py-3 text-body font-bold uppercase tracking-[0.06em]">
+  <div class="container-wide flex gap-6 overflow-x-auto py-3 text-body font-bold uppercase tracking-[0.02em]">
     {anchors.map((a) => <a href={a.href} class="whitespace-nowrap hover:text-brand-red">{a.label}</a>)}
   </div>
 </nav>
