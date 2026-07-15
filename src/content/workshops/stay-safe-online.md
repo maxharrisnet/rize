@@ -1,22 +1,22 @@
 ---
-track: community
+path: everyday-life
 title: Stay Safe Online
-tagline: Protect yourself from scams, phishing, and the new wave of AI-powered threats.
+tagline: Protect yourself from scams, phishing, and the growing wave of digital threats.
 summary: >-
-  Online scams have become more convincing and harder to spot — especially as AI
-  tools are increasingly used to create them. This workshop gives people the
-  knowledge and practical tools to recognize threats, protect their accounts, and
-  make confident decisions online.
+  This workshop gives participants practical ways to recognize suspicious
+  activity, protect their accounts, and make safer decisions online. It is
+  especially useful for groups looking for plain-language guidance that builds
+  confidence instead of fear.
 whoFor:
-  - Seniors who want to protect themselves from phone and online scams
-  - Social media users concerned about privacy and account security
-  - Community members who want to recognize and respond to suspicious messages
-  - Anyone who wants to feel more confident and in control of their digital safety
+  - Seniors protecting themselves from phone and online scams
+  - Families and community members building safer digital habits
+  - Organizations supporting participants with privacy and security concerns
+  - General audiences who want more control over their digital safety
 outcomes:
-  - The ability to identify scams and phishing attempts with confidence
-  - Practical steps to secure accounts and protect personal information
-  - An understanding of how AI is being used in online threats — and how to respond
+  - Better recognition of scams, phishing, and suspicious messages
+  - Practical steps for protecting personal information and online accounts
+  - A clearer understanding of newer digital and AI-related threats
 skillLevel: Accommodating all levels.
-format: 90 minutes to half-day. In-person or online.
+format: 90 minutes to half-day. In person or online.
 order: 2
 ---

@@ -1,21 +1,22 @@
 ---
-track: community
+path: everyday-life
 title: Digital Confidence
-tagline: Everyday technology skills for people who want to feel more in control online.
+tagline: Everyday technology skills for people who want to feel more comfortable and capable online.
 summary: >-
   Most technology training assumes people already know the basics. This workshop
-  starts from the beginning and builds real confidence with the tools people use
-  every day — at a pace that works for everyone in the room.
+  starts from where people are and builds confidence with the tools they use
+  most often — email, browsers, smartphones, video calling, online accounts,
+  and more.
 whoFor:
-  - Seniors ready to get more comfortable with smartphones, email, and video calling
-  - Newcomers to Canada navigating digital services and online accounts
-  - People returning to the workforce and building their digital presence
-  - Community members ready to engage more fully with technology in daily life
+  - Seniors building comfort with everyday devices and online tools
+  - Newcomers navigating digital services and online accounts
+  - Community members returning to digital basics after time away
+  - Organizations supporting participants with mixed experience levels
 outcomes:
-  - Confidence using email, smartphones, browsers, and video calling tools
-  - The ability to manage online accounts safely and independently
-  - A foundation for continued learning at your own pace
+  - Greater confidence using email, browsers, smartphones, and video calling
+  - More independence managing online accounts and common digital tasks
+  - A stronger foundation for continued learning at a comfortable pace
 skillLevel: Accommodating all levels, including complete beginners.
-format: 90 minutes to half-day. In-person or online. Single session or multi-week series.
+format: 90 minutes to half-day. In person or online. Single session or short series.
 order: 1
 ---

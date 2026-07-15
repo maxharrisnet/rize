@@ -1,20 +1,31 @@
 ---
 import { Icon } from 'astro-icon/components';
-interface Path { heading: string; body: string; ctaLabel: string; ctaHref: string; accent: 'red' | 'blue' | 'sun'; }
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+interface Path { heading: string; body: string; ctaLabel: string; ctaHref: string; accent: 'red' | 'ink'; icon: string; image?: ImageMetadata; imageAlt?: string; }
 interface Props { paths: Path[]; }
 const { paths } = Astro.props;
-const bar = { red: 'bg-brand-red', blue: 'bg-brand-blue', sun: 'bg-brand-gold' };
-const chip = { red: 'bg-brand-red text-white', blue: 'bg-brand-blue text-white', sun: 'bg-brand-gold text-ink' };
-const icons = { red: 'ph:buildings-bold', blue: 'ph:briefcase-bold', sun: 'ph:user-bold' };
+const bar = { red: 'bg-brand-red', ink: 'bg-ink' };
+const chip = { red: 'bg-brand-red text-white', ink: 'bg-ink text-cream' };
 ---
 <div class="grid gap-6 md:grid-cols-3">
   {paths.map((p) => (
     <div class="flex flex-col overflow-hidden rounded-[14px] border-2 border-ink bg-white">
       <span class:list={["h-2", bar[p.accent]]}></span>
+      {p.image && (
+        <Image
+          src={p.image}
+          alt={p.imageAlt ?? ''}
+          widths={[480, 800, 1200]}
+          sizes="(min-width: 768px) 33vw, 100vw"
+          class="aspect-[3/2] w-full border-b-2 border-ink object-cover"
+          loading="lazy"
+        />
+      )}
       <div class="flex flex-1 flex-col p-6">
         <div class="flex items-start gap-4">
           <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chip[p.accent]]}>
-            <Icon name={icons[p.accent]} />
+            <Icon name={p.icon} />
           </span>
           <h3 class="text-body-lg font-black normal-case tracking-normal">{p.heading}</h3>
         </div>

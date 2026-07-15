@@ -1,26 +1,22 @@
 ---
-track: career
+path: career
 title: AI and Modern Workflows
-tagline: Spend more time on the work only you can do. Let technology handle the rest.
+tagline: Spend more time on the work only you can do. Let technology support more of the repetitive work around it.
 summary: >-
-  Entrepreneurs, community organizations, and creatives are stretched thin. The
-  meaningful work — the outreach, the creativity, the relationship-building —
-  gets crowded out by admin, coordination, and repetitive tasks. This workshop
-  shows you how to use AI and modern tools to reclaim that capacity. The goal is
-  to use technology to expand what you can do, who you can reach, and the impact
-  you can have.
+  This workshop introduces practical ways to use AI and modern tools for
+  writing, planning, research, and productivity. The focus is on helping people
+  understand what is useful, what is worth learning, and where these tools can
+  support higher-value human work.
 whoFor:
-  - Entrepreneurs and small business owners building more efficient operations
-  - Nonprofit and community organization staff who want to reach more people with the same team
-  - Creatives who want to spend more time creating and less time on administration
-  - Anyone curious about AI and ready to put it to practical use
+  - Workers adapting to new digital expectations on the job
+  - Nonprofit and community staff building practical digital fluency
+  - Entrepreneurs and independent professionals improving day-to-day workflows
+  - Participants curious about putting AI to practical use
 outcomes:
-  - A practical understanding of the AI landscape and which tools are worth your time
-  - Hands-on experience with tools including Claude, ChatGPT, Gemini, and NotebookLM
-  - An introduction to workflow automation using tools like n8n and Slack
-  - Prompt engineering basics you can apply immediately to real work
-  - A clear picture of where technology can expand your reach and impact most
+  - A clearer view of the current AI landscape and where it is useful
+  - Hands-on exposure to practical tools and workflow examples
+  - More confidence using AI for research, writing, planning, and productivity
 skillLevel: Accommodating all levels. Curiosity is the only prerequisite.
-format: Half-day. In-person or online. Can be tailored to specific industries or organization types.
+format: Half-day. In person or online.
 order: 4
 ---

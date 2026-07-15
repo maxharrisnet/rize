@@ -1,15 +1,18 @@
 ---
+path: creative-work
 title: "Creative Work, Amplified"
 tagline: >-
-  For artists, musicians, filmmakers, designers, writers, and other creative
-  professionals ready to grow their audience, fund their work, and build a
-  sustainable practice using modern tools.
+  For creative professionals ready to grow their audience, support releases
+  more effectively, and build a more sustainable system around their work.
+summary: >-
+  This course can be tailored around content, launches, grant writing, audience
+  development, monetization, or creative business habits depending on the
+  group.
 whoFor:
-  - Musicians releasing albums, EPs, or building a touring presence
-  - Filmmakers and video producers developing and distributing projects
-  - Visual artists and designers building an online presence and client base
-  - Writers and journalists developing platforms and monetizing their work
-  - Multidisciplinary creatives managing multiple projects and revenue streams
+  - Musicians, writers, filmmakers, and visual artists
+  - Creative professionals preparing a launch or growth phase
+  - Arts organizations supporting cohorts of creatives
+  - Multidisciplinary creatives building a more sustainable practice
 topics:
   - Building a creative digital presence — website, portfolio, social media, streaming
   - Marketing your work — audience building, email lists, content strategy
@@ -18,9 +21,8 @@ topics:
   - Project launch workflows — album release, film premiere, exhibition, book launch
   - Managing your creative business — invoicing, scheduling, client communication
 outcomes:
-  - A launch-ready digital presence for your work
-  - A monetization strategy tailored to your creative practice
-  - A completed grant application or a reusable grant writing template
-  - A project launch playbook you can apply to every future release
+  - A clearer system for audience growth and promotion
+  - Stronger planning around releases, launches, or opportunities
+  - More practical structure around the business side of creative work
 order: 3
 ---

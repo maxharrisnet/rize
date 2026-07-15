@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Button from '../components/Button.astro';
@@ -9,6 +10,18 @@ import Steps from '../components/Steps.astro';
 import CTASection from '../components/CTASection.astro';
 import Tape from '../components/Tape.astro';
 import Badge from '../components/Badge.astro';
+import Photo from '../components/Photo.astro';
+import workshopFacilitator from '../assets/images/workshop-facilitator.jpg';
+import handsTogether from '../assets/images/hands-together.jpg';
+import seniorsCouplePhone from '../assets/images/seniors-couple-phone.jpg';
+import collaboratingLaptop from '../assets/images/collaborating-laptop.jpg';
+import volunteersFoodBank from '../assets/images/volunteers-food-bank.jpg';
+import shopOwners from '../assets/images/shop-owners.jpg';
+import vancouverAerial from '../assets/images/vancouver-aerial.jpg';
+import nonprofitTeam from '../assets/images/nonprofit-team.jpg';
+import cafeOwnersLaptop from '../assets/images/cafe-owners-laptop.jpg';
+import learningAtHome from '../assets/images/learning-at-home.jpg';
+import handsKeyboard from '../assets/images/hands-keyboard.jpg';
 
 const audiencePaths = [
   {
@@ -17,20 +30,29 @@ const audiencePaths = [
     ctaLabel: 'Explore Funded Partnerships',
     ctaHref: '/partnerships',
     accent: 'red' as const,
+    icon: 'ph:buildings-bold',
+    image: nonprofitTeam,
+    imageAlt: 'Three nonprofit staff members reviewing program documents together at a shared desk',
   },
   {
     heading: 'I am an entrepreneur, freelancer, or small business owner.',
     body: 'We offer workshops, courses, and systems — websites you own, practical AI, and automation that gives you your time back — designed for people building something. Whether you are just getting started or ready to scale, we can help you use technology to do more of what matters.',
     ctaLabel: 'See Programs and Systems for Entrepreneurs',
     ctaHref: '/systems',
-    accent: 'blue' as const,
+    accent: 'ink' as const,
+    icon: 'ph:briefcase-bold',
+    image: cafeOwnersLaptop,
+    imageAlt: 'Two café owners in aprons smiling at something on a laptop behind the counter',
   },
   {
     heading: 'I am an individual looking to build my skills or get support.',
     body: 'Our workshops and courses are open to everyone, and we offer one-on-one teaching and tutoring for people who want personalized support. Accommodating all skill levels.',
     ctaLabel: 'See Our Programs',
     ctaHref: '/learn',
-    accent: 'sun' as const,
+    accent: 'red' as const,
+    icon: 'ph:user-bold',
+    image: learningAtHome,
+    imageAlt: 'A young person wearing headphones working intently at a laptop at home',
   },
 ];
 
@@ -59,13 +81,39 @@ const steps = [
 >
   <Hero title="The technology is here.<br />Let's make it work for you.">
     <Fragment slot="lead">
-      <p>Rize Skill Training offers workshops, courses, and services that help people, organizations, and entrepreneurs in Vancouver and the surrounding area build real confidence with technology — and put it to work for the things that matter most to them.</p>
+      <p>Rize Skill Training offers workshops, courses, and systems that help people, organizations, and entrepreneurs across Vancouver build real confidence with technology — and put it to work for what matters most.</p>
     </Fragment>
     <Fragment slot="actions">
       <Button href="/learn">Explore Our Programs</Button>
       <Button href="/partnerships" variant="secondary">Partner With Us</Button>
     </Fragment>
   </Hero>
+
+  <section class="container-wide pt-10 md:pt-14" aria-label="Rize in the community">
+    <div class="grid gap-6 sm:grid-cols-3">
+      <Photo
+        src={workshopFacilitator}
+        alt="A Rize facilitator leading a technology workshop for a room of participants"
+        class="aspect-[4/3]"
+        sizes="(min-width: 640px) 33vw, 100vw"
+        loading="eager"
+      />
+      <Photo
+        src={handsTogether}
+        alt="A diverse group of people in colorful sweaters stacking their hands together"
+        class="aspect-[4/3]"
+        sizes="(min-width: 640px) 33vw, 100vw"
+        loading="eager"
+      />
+      <Photo
+        src={seniorsCouplePhone}
+        alt="A senior couple outdoors smiling at a smartphone together"
+        class="aspect-[4/3]"
+        sizes="(min-width: 640px) 33vw, 100vw"
+        loading="eager"
+      />
+    </div>
+  </section>
 
   <section class="container-wide py-16 md:py-24">
     <SectionHeading title="Not sure where to start?">
@@ -78,28 +126,58 @@ const steps = [
     <div class="container-wide py-16 md:py-24">
       <SectionHeading title="Technology for the people.">
         <p>Technology has the power to change lives, expand reach, and open doors. But that power only lands when people feel confident using it — when it fits the way they already work and the goals they are already chasing.</p>
-        <p>There is a technology gap — the distance between what today's tools make possible and what people actually have the time, support, and confidence to use. It is widest for nonprofits, small businesses, and the communities who have historically had the least access. Closing that gap is our whole business.</p>
         <p>Rize Skill Training brings practical, accessible technology education and hands-on builds to individuals and organizations across Vancouver and the Greater Vancouver area — with a focus on the communities, entrepreneurs, and creatives who have the most to gain and have historically had the least support in getting there.</p>
-        <p>We are technology guides, not technology salespeople. We filter through the noise to help you figure out which tools and skills you actually need for your work — and which to skip. Then we help you build the confidence, and the systems, that free up your hours for the impact only you can make. The tech is not the thing. Making our communities stronger is the thing.</p>
       </SectionHeading>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-[14px] border-2 border-ink bg-ink p-6 text-cream md:col-span-2 md:p-8">
+          <div class="flex items-center gap-4">
+            <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-3xl"><Icon name="ph:arrows-left-right-bold" /></span>
+            <h3 class="text-h3">The technology gap</h3>
+          </div>
+          <p class="mt-4 text-body-lg">There is a technology gap — the distance between what today's tools make possible and what people actually have the time, support, and confidence to use. It is widest for nonprofits, small businesses, and the communities who have historically had the least access. Closing that gap is our whole business.</p>
+        </div>
+        <div class="relative md:h-full">
+          <Photo
+            src={collaboratingLaptop}
+            alt="Two young colleagues working through a problem together at a laptop"
+            class="aspect-[4/3] md:absolute md:inset-0 md:h-full md:aspect-auto"
+            sizes="(min-width: 768px) 33vw, 100vw"
+          />
+        </div>
+        <div class="relative md:h-full">
+          <Photo
+            src={handsKeyboard}
+            alt="Hands with silver rings typing on a laptop keyboard, seen from above"
+            class="aspect-[4/3] md:absolute md:inset-0 md:h-full md:aspect-auto"
+            sizes="(min-width: 768px) 33vw, 100vw"
+          />
+        </div>
+        <div class="rounded-[14px] border-2 border-ink bg-white p-6 md:col-span-2 md:p-8">
+          <div class="flex items-center gap-4">
+            <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-3xl"><Icon name="ph:compass-bold" /></span>
+            <h3 class="text-h3">Guides, not salespeople</h3>
+          </div>
+          <p class="mt-4 text-body-lg text-body-muted">We are technology guides, not technology salespeople. We filter through the noise to help you figure out which tools and skills you actually need for your work — and which to skip. Then we help you build the confidence, and the systems, that free up your hours for the impact only you can make. The tech is not the thing. Making our communities stronger is the thing.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="container-wide py-16 md:py-24">
     <SectionHeading title="What we offer.">
-      <p>Our programs run across two tracks and are available as workshops, multi-session courses, and one-on-one teaching. Every program is built around real outcomes — things you can do, build, or launch when you leave.</p>
+      <p>Our programs run across four learning paths — Everyday Life, Career, Entrepreneurship, and Creative Work — and are available as workshops, multi-session courses, and one-on-one teaching. Every program is built around real outcomes — things you can do, build, or launch when you leave.</p>
     </SectionHeading>
     <div class="grid gap-6 md:grid-cols-2">
       <ProgramCard
         track="community"
         title="Digital Confidence"
-        hook="Everyday technology skills for people who want to feel more in control online."
+        hook="Everyday technology skills for people who want to feel more comfortable and capable online."
         audience="For seniors, newcomers, and anyone ready to get more comfortable with the technology they use every day."
       />
       <ProgramCard
         track="community"
         title="Stay Safe Online"
-        hook="Protect yourself from scams, phishing, and AI-powered threats."
+        hook="Protect yourself from scams, phishing, and the growing wave of digital threats."
         audience="For community members, seniors, and anyone who wants to feel safer and more in control of their digital life."
       />
       <ProgramCard
@@ -111,7 +189,7 @@ const steps = [
       <ProgramCard
         track="career"
         title="AI and Modern Workflows"
-        hook="Spend more time on the work only you can do. Let technology handle the rest."
+        hook="Spend more time on the work only you can do. Let technology support more of the repetitive work around it."
         audience="For entrepreneurs, nonprofit staff, creatives, and small business owners ready to build smarter, faster workflows."
       />
     </div>
@@ -125,16 +203,23 @@ const steps = [
   <Tape text="Let's get ready · Together we rise" />
 
   <section>
-    <div class="container-wide py-16 md:py-24">
-      <SectionHeading title="Funded partnerships — bringing programs to your community at little or no cost.">
-        <p>Provincial and federal programs are actively funding digital skills and AI upskilling training for specific communities right now. We help you identify the funding that applies to your organization, handle the program design and facilitation, and deliver a workshop or course your community genuinely benefits from — often at little or no cost to you.</p>
-        <p>We work with community organizations, nonprofits, Indigenous-led groups, Black community organizations, libraries, employment centers, and social service agencies across Vancouver and the surrounding area.</p>
-        <p>You bring the community. We bring the program, the facilitation, and the funding strategy.</p>
-      </SectionHeading>
-      <div class="mt-6 flex items-center gap-6 flex-wrap">
-        <Button href="/partnerships">Explore Funded Partnerships</Button>
-        <Badge label="Get ready" />
+    <div class="container-wide grid gap-10 py-16 md:grid-cols-2 md:items-center md:py-24">
+      <div>
+        <SectionHeading title="Funded partnerships — bringing programs to your community at little or no cost.">
+          <p>Provincial and federal programs are actively funding digital skills and AI upskilling training for specific communities right now. We help you identify the funding that applies to your organization, handle the program design and facilitation, and deliver a workshop or course your community genuinely benefits from — often at little or no cost to you.</p>
+          <p>We work with community organizations, nonprofits, Indigenous-led groups, Black community organizations, libraries, employment centers, and social service agencies across Vancouver and the surrounding area.</p>
+          <p>You bring the community. We bring the program, the facilitation, and the funding strategy.</p>
+        </SectionHeading>
+        <div class="mt-6 flex items-center gap-6 flex-wrap">
+          <Button href="/partnerships">Explore Funded Partnerships</Button>
+          <Badge label="Get ready" />
+        </div>
       </div>
+      <Photo
+        src={volunteersFoodBank}
+        alt="Volunteers at a community food bank smiling while carrying boxes of donations"
+        class="aspect-[4/5] max-md:aspect-[4/3]"
+      />
     </div>
   </section>
 
@@ -149,21 +234,35 @@ const steps = [
   </section>
 
   <section>
-    <div class="container-wide py-16 md:py-24">
-      <SectionHeading title="We build systems, not just sites.">
-        <p>Beyond training, we build the systems that make organizations run better — websites your team owns and updates independently, AI put to practical use, and automation that takes the repetitive work off your plate. Connected to the tools you already use, like Slack and HubSpot, and delivered with training so it all stays yours.</p>
-        <p>Picture the version of your week where registrations file themselves, one update posts everywhere, and the website answers the common questions. That is the work we do for community organizations, nonprofits, small businesses, and entrepreneurs in Vancouver.</p>
-      </SectionHeading>
-      <a href="/systems" class="font-semibold text-brand-red hover:text-ink">See Our Systems &rarr;</a>
+    <div class="container-wide grid gap-10 py-16 md:grid-cols-2 md:items-center md:py-24">
+      <Photo
+        src={shopOwners}
+        alt="Two smiling small business owners in aprons standing in their shop"
+        class="aspect-[4/3] max-md:order-last"
+      />
+      <div>
+        <SectionHeading title="We build systems, not just sites.">
+          <p>Beyond training, we build the systems that make organizations run better — websites your team owns and updates independently, AI put to practical use, and automation that takes the repetitive work off your plate. Connected to the tools you already use, like Slack and HubSpot, and delivered with training so it all stays yours.</p>
+          <p>Picture the version of your week where registrations file themselves, one update posts everywhere, and the website answers the common questions. That is the work we do for community organizations, nonprofits, small businesses, and entrepreneurs in Vancouver.</p>
+        </SectionHeading>
+        <a href="/systems" class="font-semibold text-ink underline decoration-brand-red decoration-2 underline-offset-4 hover:decoration-ink">See Our Systems &rarr;</a>
+      </div>
     </div>
   </section>
 
-  <section class="container-wide py-16 md:py-24">
-    <SectionHeading title="Built in East Vancouver. Rooted in community.">
-      <p>Rize Skill Training was founded by an AI specialist and educator with over 20 years of experience — and a deep personal commitment to the communities of East Vancouver and the Greater Vancouver area.</p>
-      <p>We are grateful to live and work on the unceded territories of the Musqueam, Squamish, and Tsleil-Waututh Nations.</p>
-    </SectionHeading>
-    <a href="/about" class="font-semibold text-brand-red hover:text-ink">Our Story &rarr;</a>
+  <section class="container-wide grid gap-10 py-16 md:grid-cols-2 md:items-center md:py-24">
+    <div>
+      <SectionHeading title="Built in East Vancouver. Rooted in community.">
+        <p>Rize Skill Training was founded by an AI specialist and educator with over 20 years of experience — and a deep personal commitment to the communities of East Vancouver and the Greater Vancouver area.</p>
+        <p>We are grateful to live and work on the unceded territories of the Musqueam, Squamish, and Tsleil-Waututh Nations.</p>
+      </SectionHeading>
+      <a href="/about" class="font-semibold text-ink underline decoration-brand-red decoration-2 underline-offset-4 hover:decoration-ink">Our Story &rarr;</a>
+    </div>
+    <Photo
+      src={vancouverAerial}
+      alt="Aerial view of downtown Vancouver, the harbour, and the mountains beyond"
+      class="aspect-[4/3]"
+    />
   </section>
 
   <CTASection title="Ready to get started?">

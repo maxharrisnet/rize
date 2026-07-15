@@ -5,12 +5,10 @@ const isActive = (href: string) => href === '/' ? path === '/' : path.startsWith
 ---
 <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur border-b border-stone-200">
   <div class="container-wide flex items-center justify-between h-16">
-    <a href="/" class="flex items-center">
-      <img src="/assets/images/logo/rize-logo.svg" alt="Rize Skill Training" width="161" height="54" class="h-8 w-auto" />
-    </a>
+    <a href="/" class="text-xl font-black uppercase tracking-[0.02em] text-ink decoration-brand-red decoration-[3px] underline-offset-8 hover:underline">Rize Skill Training</a>
     <nav class="hidden md:flex items-center gap-6">
       {navLinks.map((l) => (
-        <a href={l.href} class:list={["font-bold uppercase tracking-[0.02em] hover:text-brand-red", isActive(l.href) && "text-brand-red"]}>{l.name}</a>
+        <a href={l.href} class:list={["font-bold uppercase tracking-[0.02em] decoration-brand-red decoration-[3px] underline-offset-8 hover:underline", isActive(l.href) && "underline"]}>{l.name}</a>
       ))}
       <a href={contactLink.href} class="rounded-pill bg-brand-red text-white px-5 py-2 font-bold uppercase tracking-[0.02em] hover:bg-ink transition-colors">{contactLink.name}</a>
     </nav>

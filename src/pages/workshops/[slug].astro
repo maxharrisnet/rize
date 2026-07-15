@@ -15,16 +15,21 @@ export async function getStaticPaths() {
 
 const { workshop } = Astro.props;
 const { data } = workshop;
-const isCommunity = data.track === 'community';
-const trackLabel = isCommunity ? 'Community & Everyday Life' : 'Career, Work & Growth';
-const trackBg = isCommunity ? 'bg-brand-red' : 'bg-brand-blue';
+const pathMeta = {
+  'everyday-life': { label: 'Everyday Life', pill: 'bg-brand-red text-white' },
+  'career': { label: 'Career', pill: 'bg-brand-blue text-white' },
+  'entrepreneurship': { label: 'Entrepreneurship', pill: 'bg-brand-blue text-white' },
+  'creative-work': { label: 'Creative Work', pill: 'bg-brand-gold text-ink' },
+} as const;
+const trackLabel = pathMeta[data.path].label;
+const trackPill = pathMeta[data.path].pill;
 const hasBody = Boolean(workshop.body && workshop.body.trim().length > 0);
 const { Content } = await render(workshop);
 ---
 <BaseLayout title={`${data.title} | Rize Skill Training Workshop`} description={data.tagline}>
   <Hero title={data.title}>
     <Fragment slot="lead">
-      <span class:list={["inline-block rounded-pill px-4 py-1 text-body font-bold uppercase tracking-[0.08em] text-white", trackBg]}>{trackLabel}</span>
+      <span class:list={["inline-block rounded-pill px-4 py-1 text-body font-bold uppercase tracking-[0.08em]", trackPill]}>{trackLabel}</span>
       <p class="mt-5">{data.tagline}</p>
     </Fragment>
     <Fragment slot="actions">
@@ -50,7 +55,7 @@ const { Content } = await render(workshop);
       </div>
       <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
         <div class="flex items-center gap-4">
-          <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-blue text-white text-3xl"><Icon name="ph:sparkle-bold" /></span>
+          <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-ink text-cream text-3xl"><Icon name="ph:sparkle-bold" /></span>
           <h3 class="text-h3">What you'll walk away with</h3>
         </div>
         <div class="mt-5"><IconList items={data.outcomes} /></div>

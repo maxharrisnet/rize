@@ -3,8 +3,8 @@ import { Icon } from 'astro-icon/components';
 interface Props { track: 'community' | 'career'; title: string; hook: string; audience: string; }
 const { track, title, hook, audience } = Astro.props;
 const isCommunity = track === 'community';
-const bg = isCommunity ? 'bg-brand-red' : 'bg-brand-blue';
-const chipText = isCommunity ? 'text-brand-red' : 'text-brand-blue';
+const bg = isCommunity ? 'bg-brand-red' : 'bg-ink';
+const chipText = 'text-brand-red';
 const icon = isCommunity ? 'ph:hand-heart-bold' : 'ph:rocket-launch-bold';
 ---
 <div class:list={["h-full rounded-[14px] border-2 border-ink p-6 text-white", bg]}>

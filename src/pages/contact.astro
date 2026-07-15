@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ContactForm from '../components/ContactForm.astro';
+import Photo from '../components/Photo.astro';
+import contactCall from '../assets/images/contact-call.jpg';
 ---
 <BaseLayout
   title="Contact Rize Skill Training | Vancouver Technology Training"
@@ -17,7 +19,13 @@ import ContactForm from '../components/ContactForm.astro';
     <div>
       <h2 class="text-3xl">Get in touch</h2>
       <p class="mt-4 text-lg text-body-muted">Tell us who you are, who your community is, and what you are hoping to achieve. A short conversation is all it takes to get started.</p>
-      <p class="mt-6"><a href="mailto:holler@weallrize.ca" class="text-brand-red font-semibold text-lg">holler@weallrize.ca</a></p>
+      <p class="mt-6"><a href="mailto:holler@weallrize.ca" class="text-ink font-semibold text-lg underline decoration-brand-red decoration-2 underline-offset-4 hover:decoration-ink">holler@weallrize.ca</a></p>
+      <Photo
+        src={contactCall}
+        alt="A woman smiling on a phone call at her desk"
+        class="mt-10 aspect-[4/3]"
+        loading="eager"
+      />
     </div>
     <div>
       <ContactForm />

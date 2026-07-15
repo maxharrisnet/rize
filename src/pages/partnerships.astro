@@ -7,31 +7,28 @@ import SectionHeading from '../components/SectionHeading.astro';
 import Steps from '../components/Steps.astro';
 import CTASection from '../components/CTASection.astro';
 import { fundingGroups } from '../data/funding';
+import Photo from '../components/Photo.astro';
+import communityPlanning from '../assets/images/community-planning.jpg';
+import grantPlanning from '../assets/images/grant-planning.jpg';
 
 const model = [
   {
     title: 'You bring the community',
     body: 'The people, the space, and the trust you have already built.',
     icon: 'ph:users-three-bold',
-    bg: 'bg-brand-red',
-    text: 'text-white',
-    chip: 'bg-white text-brand-red',
+    chip: 'bg-brand-red text-white',
   },
   {
     title: 'We bring the program',
     body: 'Curriculum, facilitation, and materials, delivered by us alongside your team.',
     icon: 'ph:chalkboard-teacher-bold',
-    bg: 'bg-brand-blue',
-    text: 'text-white',
-    chip: 'bg-white text-brand-blue',
+    chip: 'bg-brand-red text-white',
   },
   {
     title: 'We bring the funding strategy',
     body: 'We identify the grants that apply to your organization and help you apply.',
     icon: 'ph:hand-coins-bold',
-    bg: 'bg-brand-gold',
-    text: 'text-ink',
-    chip: 'bg-ink text-brand-gold',
+    chip: 'bg-brand-red text-white',
   },
 ];
 
@@ -79,25 +76,23 @@ const steps = [
 
 const chipClass = {
   red: 'bg-brand-red text-white',
-  blue: 'bg-brand-blue text-white',
-  gold: 'bg-brand-gold text-ink',
+  ink: 'bg-ink text-cream',
 };
 
-const orgTypes: { label: string; icon: string; accent: 'red' | 'blue' | 'gold' }[] = [
+const orgTypes: { label: string; icon: string; accent: 'red' | 'ink' }[] = [
   { label: 'Community organizations', icon: 'ph:users-three-bold', accent: 'red' },
-  { label: 'Nonprofits and charities', icon: 'ph:hand-heart-bold', accent: 'blue' },
-  { label: 'Indigenous-led groups', icon: 'ph:handshake-bold', accent: 'gold' },
-  { label: 'Black community organizations', icon: 'ph:buildings-bold', accent: 'red' },
-  { label: 'Libraries', icon: 'ph:books-bold', accent: 'blue' },
-  { label: 'Employment centers', icon: 'ph:briefcase-bold', accent: 'gold' },
-  { label: 'Social service agencies', icon: 'ph:lifebuoy-bold', accent: 'red' },
+  { label: 'Nonprofits and charities', icon: 'ph:hand-heart-bold', accent: 'ink' },
+  { label: 'Indigenous-led groups', icon: 'ph:handshake-bold', accent: 'red' },
+  { label: 'Black community organizations', icon: 'ph:buildings-bold', accent: 'ink' },
+  { label: 'Employment centers', icon: 'ph:briefcase-bold', accent: 'red' },
+  { label: 'Social service agencies', icon: 'ph:lifebuoy-bold', accent: 'ink' },
 ];
 
 const grantHelp = [
   { text: 'Funding source identification for your organization type and community', icon: 'ph:magnifying-glass-bold', accent: 'red' as const },
-  { text: 'Application support and co-writing', icon: 'ph:note-pencil-bold', accent: 'blue' as const },
-  { text: 'Program design documentation for grant submissions', icon: 'ph:file-text-bold', accent: 'gold' as const },
-  { text: 'Reporting templates for funded programs', icon: 'ph:clipboard-text-bold', accent: 'red' as const },
+  { text: 'Application support and co-writing', icon: 'ph:note-pencil-bold', accent: 'ink' as const },
+  { text: 'Program design documentation for grant submissions', icon: 'ph:file-text-bold', accent: 'red' as const },
+  { text: 'Reporting templates for funded programs', icon: 'ph:clipboard-text-bold', accent: 'ink' as const },
 ];
 ---
 <BaseLayout
@@ -106,8 +101,7 @@ const grantHelp = [
 >
   <Hero title="Bring funded programs<br />to your community.">
     <Fragment slot="lead">
-      <p>Provincial, federal, and corporate programs are actively funding digital-skills and AI training right now. We help you find the funding that fits, handle the application, and deliver a workshop or course your community genuinely benefits from — often at little or no cost to you.</p>
-      <p>This is how the technology gap closes: inside trusted spaces, with programs shaped around the people in the room — seniors, newcomers, Indigenous communities, Black communities, job seekers, and creatives.</p>
+      <p>Provincial, federal, and corporate programs are funding digital-skills and AI training right now. We help you find the funding that fits, handle the application, and deliver a program your community genuinely benefits from — often at little or no cost.</p>
     </Fragment>
     <Fragment slot="actions">
       <Button href="/contact">Get in Touch</Button>
@@ -120,7 +114,7 @@ const grantHelp = [
     </SectionHeading>
     <div class="grid gap-6 md:grid-cols-3">
       {model.map((m) => (
-        <div class:list={["h-full rounded-[14px] border-2 border-ink p-6", m.bg, m.text]}>
+        <div class="h-full rounded-[14px] border-2 border-ink bg-ink p-6 text-cream">
           <div class="flex items-center gap-4">
             <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", m.chip]}>
               <Icon name={m.icon} />
@@ -150,18 +144,25 @@ const grantHelp = [
         </div>
       ))}
     </div>
-    <p class="mt-8 max-w-3xl text-body-lg font-bold text-brand-red">Programs change constantly. We track what is currently open and match it to your community — you do not have to keep up with it yourself.</p>
+    <p class="mt-8 max-w-3xl text-body-lg font-bold text-ink">Programs change constantly. We track what is currently open and match it to your community — you do not have to keep up with it yourself.</p>
   </section>
 
   <section class="container-wide py-16 md:py-24">
-    <SectionHeading title="Built around your team and your community.">
-      <p>We do not arrive with a fixed curriculum and hope it lands. We work alongside your staff — including the people who know your community best — so every session fits the people in the room.</p>
-    </SectionHeading>
+    <div class="mb-10 grid gap-10 md:grid-cols-2 md:items-center">
+      <SectionHeading title="Built around your team and your community.">
+        <p>We do not arrive with a fixed curriculum and hope it lands. We work alongside your staff — including the people who know your community best — so every session fits the people in the room.</p>
+      </SectionHeading>
+      <Photo
+        src={communityPlanning}
+        alt="A community group gathered around a table, planning a program together on paper"
+        class="aspect-[4/3]"
+      />
+    </div>
     <div class="grid gap-6 md:grid-cols-2">
-      {team.map((t) => (
+      {team.map((t, i) => (
         <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
           <div class="flex items-center gap-4">
-            <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-blue text-white text-3xl">
+            <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", i % 2 === 0 ? chipClass.red : chipClass.ink]}>
               <Icon name={t.icon} />
             </span>
             <h3 class="text-h3">{t.title}</h3>
@@ -173,9 +174,16 @@ const grantHelp = [
   </section>
 
   <section class="container-wide py-16 md:py-24">
-    <SectionHeading title="Grant writing assistance.">
-      <p>We help organizations identify the provincial and federal funding available for digital skills training and AI upskilling — and assist with the application process. This service is often what makes a funded partnership possible in the first place.</p>
-    </SectionHeading>
+    <div class="mb-10 grid gap-10 md:grid-cols-2 md:items-center">
+      <SectionHeading title="Grant writing assistance.">
+        <p>We help organizations identify the provincial and federal funding available for digital skills training and AI upskilling — and assist with the application process. This service is often what makes a funded partnership possible in the first place.</p>
+      </SectionHeading>
+      <Photo
+        src={grantPlanning}
+        alt="Two colleagues reviewing documents and a laptop together at a work table"
+        class="aspect-[4/3]"
+      />
+    </div>
     <div class="grid gap-6 md:grid-cols-2">
       {grantHelp.map((h) => (
         <div class="flex h-full items-center gap-4 rounded-[14px] border-2 border-ink bg-white p-6">

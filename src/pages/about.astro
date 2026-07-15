@@ -1,31 +1,63 @@
 ---
+import { Icon } from 'astro-icon/components';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Button from '../components/Button.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import CTASection from '../components/CTASection.astro';
+import Photo from '../components/Photo.astro';
+import eastVanJump from '../assets/images/east-van-jump.jpg';
+import seniorsLearningLaptop from '../assets/images/seniors-learning-laptop.jpg';
+import youthRobotics from '../assets/images/youth-robotics.jpg';
+import volunteersMealPrep from '../assets/images/volunteers-meal-prep.jpg';
+import artistStudio from '../assets/images/artist-studio.jpg';
+import cedarBoughs from '../assets/images/cedar-boughs.jpg';
+
+const chipMap: Record<string, string> = { red: 'bg-brand-red text-white', ink: 'bg-ink text-cream' };
 
 const values = [
   {
     title: 'People first.',
     body: 'Technology is a means, not an end. Every program we build starts with the people in the room — their goals, their comfort level, and what success looks like for them specifically.',
+    icon: 'ph:heart-bold',
+    accent: 'red',
   },
   {
     title: 'Community rooted.',
     body: 'We work through partnerships because community organizations already have the trust. Our job is to bring something genuinely useful into those spaces and leave people more capable than when we arrived.',
+    icon: 'ph:users-three-bold',
+    accent: 'ink',
   },
   {
     title: 'Honest about technology.',
     body: 'We do not hype tools or amplify fear. We help people build a grounded, realistic relationship with technology — including AI — so they can make informed decisions about what to use and what to skip.',
+    icon: 'ph:scales-bold',
+    accent: 'red',
   },
   {
     title: 'Everyone included.',
     body: 'Plain language, flexible formats, welcoming environments, and programs that accommodate all skill levels. Showing up is the only requirement.',
+    icon: 'ph:hand-waving-bold',
+    accent: 'ink',
   },
   {
     title: 'More time for what matters.',
     body: 'When we help someone automate a task or build a workflow, we are not just saving them time. We are giving them the capacity to reach more people, create more, and have more impact. That is what the saved time is for.',
+    icon: 'ph:clock-countdown-bold',
+    accent: 'red',
   },
+];
+
+const audiences: { label: string; icon: string; accent: 'red' | 'ink' }[] = [
+  { label: 'Seniors building confidence with everyday technology', icon: 'ph:device-mobile-bold', accent: 'red' },
+  { label: 'Youth building digital, creative, and career skills for what comes next', icon: 'ph:rocket-launch-bold', accent: 'ink' },
+  { label: 'Newcomers to Canada establishing their digital presence and navigating online services', icon: 'ph:globe-hemisphere-west-bold', accent: 'red' },
+  { label: 'Indigenous communities and Indigenous-led organizations', icon: 'ph:handshake-bold', accent: 'ink' },
+  { label: 'Black communities and Black-led community organizations', icon: 'ph:buildings-bold', accent: 'red' },
+  { label: 'Job seekers and career changers ready to compete in a market shaped by AI', icon: 'ph:briefcase-bold', accent: 'ink' },
+  { label: 'Entrepreneurs and small business owners building smarter workflows', icon: 'ph:storefront-bold', accent: 'red' },
+  { label: 'Nonprofit and community organization staff who want to do more with what they have', icon: 'ph:hand-heart-bold', accent: 'ink' },
+  { label: 'Artists, musicians, filmmakers, and creatives ready to grow their reach and fund their work', icon: 'ph:palette-bold', accent: 'red' },
 ];
 ---
 <BaseLayout
@@ -38,23 +70,45 @@ const values = [
     </Fragment>
   </Hero>
 
-  <section class="container-wide py-16 md:py-24">
+  <section class="container-wide grid gap-10 py-16 md:grid-cols-2 md:items-center md:py-24">
     <SectionHeading title="Our story.">
       <p>Technology has always been personal here. Growing up shaped by music, community, and the belief that creativity and self-expression are tools for change — the connection between technology and people has never been abstract. It has always been about what people can do when they have the right tools in their hands.</p>
       <p>Rize Skill Training was founded by Max Harris — an AI specialist, educator, and East Vancouver local with roots in the music and arts communities that make this city what it is. Max spent over 20 years building digital systems for technology companies across North America, from early-stage startups to enterprise SaaS teams. Along the way, teaching became just as central to the work as building — and the most meaningful work was always with the people who had the most to gain and the least access to support.</p>
       <p>Living and working in East Vancouver, embedded in a family with deep Indigenous community ties, and connected to the music, arts, and advocacy work that runs through this neighborhood — that context shapes everything about how Rize operates. We know these communities. We are part of them.</p>
       <p>Rize exists because the tools reshaping the world of work should be accessible to everyone. Seniors, newcomers, artists, entrepreneurs, nonprofit staff, and community leaders all deserve to feel capable and confident with technology — on their own terms, at their own pace, in service of the things that matter most to them.</p>
     </SectionHeading>
+    <Photo
+      src={eastVanJump}
+      alt="A person in high-top sneakers jumping over a rain puddle with a city skyline behind them"
+      class="aspect-[3/4] max-md:aspect-[4/3]"
+    />
   </section>
 
   <section>
     <div class="container-wide py-16 md:py-24">
       <SectionHeading title="What we believe.">
         <p>Digital skills are the infrastructure of modern life. When communities have access to those skills, they can communicate more effectively, reach more people, access more resources, and create more of what they want to see in the world.</p>
-        <p>We call the distance between what technology makes possible and what people can actually use the technology gap — and it is widest for the people with the least support: nonprofits, small businesses, seniors, newcomers, Indigenous communities, Black communities, and creatives. Technology should be for everyone. Everything Rize does, from workshops to websites to automation, exists to close that gap.</p>
-        <p>The people who stand to benefit most from technology — community leaders, artists, care workers, small business owners, seniors, job seekers — deserve programs built specifically for them. Programs that meet them where they are, respect their time and intelligence, and leave them more capable than when they arrived.</p>
-        <p>Technology serves people. People do not serve technology. That is the principle behind everything we build and every program we deliver.</p>
       </SectionHeading>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="rounded-[14px] border-2 border-ink bg-ink p-6 text-cream md:p-8">
+          <div class="flex items-center gap-4">
+            <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-3xl"><Icon name="ph:arrows-left-right-bold" /></span>
+            <h3 class="text-h3">The technology gap</h3>
+          </div>
+          <p class="mt-4 text-body-lg">We call the distance between what technology makes possible and what people can actually use the technology gap — and it is widest for the people with the least support: nonprofits, small businesses, seniors, newcomers, Indigenous communities, Black communities, and creatives. Technology should be for everyone. Everything Rize does, from workshops to websites to automation, exists to close that gap.</p>
+        </div>
+        <div class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+          <div class="flex items-center gap-4">
+            <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-3xl"><Icon name="ph:steps-bold" /></span>
+            <h3 class="text-h3">Built for the people in the room</h3>
+          </div>
+          <p class="mt-4 text-body-lg text-body-muted">The people who stand to benefit most from technology — community leaders, artists, care workers, small business owners, seniors, job seekers — deserve programs built specifically for them. Programs that meet them where they are, respect their time and intelligence, and leave them more capable than when they arrived.</p>
+        </div>
+        <div class="rounded-[14px] border-2 border-ink bg-brand-red p-6 text-white md:col-span-2 md:p-8">
+          <p class="text-h3 max-w-3xl">Technology serves people. People do not serve technology.</p>
+          <p class="mt-3 text-body-lg">That is the principle behind everything we build and every program we deliver.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -62,37 +116,84 @@ const values = [
     <SectionHeading title="Who we work with.">
       <p>Our programs are built for people and organizations across Vancouver and the Greater Vancouver area who are ready to do more with technology — whatever their starting point.</p>
     </SectionHeading>
-    <ul class="grid gap-3 sm:grid-cols-2 mt-4 list-disc pl-5 text-lg text-body-muted">
-      <li>Seniors building confidence with everyday technology</li>
-      <li>Youth building digital, creative, and career skills for what comes next</li>
-      <li>Newcomers to Canada establishing their digital presence and navigating online services</li>
-      <li>Indigenous communities and Indigenous-led organizations</li>
-      <li>Black communities and Black-led community organizations</li>
-      <li>Job seekers and career changers ready to compete in a market shaped by AI</li>
-      <li>Entrepreneurs and small business owners building smarter workflows</li>
-      <li>Nonprofit and community organization staff who want to do more with what they have</li>
-      <li>Artists, musicians, filmmakers, and creatives ready to grow their reach and fund their work</li>
-    </ul>
-    <p class="mt-6 text-lg text-body-muted max-w-2xl">We also partner with the organizations that serve these communities — bringing funded programs directly into the spaces where people already feel safe and supported.</p>
+    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+      {audiences.slice(0, 2).map((a) => (
+        <div class="flex items-start gap-4 rounded-[14px] border-2 border-ink bg-white p-6">
+          <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipMap[a.accent]]}><Icon name={a.icon} /></span>
+          <p class="text-body font-bold">{a.label}</p>
+        </div>
+      ))}
+      <Photo
+        src={seniorsLearningLaptop}
+        alt="Two senior men working together at a laptop in a computer class"
+        class="h-full aspect-[3/2] md:aspect-auto"
+        sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+      />
+      <div class="flex items-start gap-4 rounded-[14px] border-2 border-ink bg-white p-6">
+        <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipMap[audiences[2].accent]]}><Icon name={audiences[2].icon} /></span>
+        <p class="text-body font-bold">{audiences[2].label}</p>
+      </div>
+      <Photo
+        src={youthRobotics}
+        alt="Three teenagers building a robotics project together at a workbench"
+        class="h-full aspect-[3/2] md:aspect-auto"
+        sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+      />
+      <div class="flex items-start gap-4 rounded-[14px] border-2 border-ink bg-white p-6">
+        <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipMap[audiences[3].accent]]}><Icon name={audiences[3].icon} /></span>
+        <p class="text-body font-bold">{audiences[3].label}</p>
+      </div>
+      <Photo
+        src={volunteersMealPrep}
+        alt="Community volunteers packing food hampers together"
+        class="h-full aspect-[3/2] md:aspect-auto"
+        sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+      />
+      {audiences.slice(4).map((a) => (
+        <div class="flex items-start gap-4 rounded-[14px] border-2 border-ink bg-white p-6">
+          <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipMap[a.accent]]}><Icon name={a.icon} /></span>
+          <p class="text-body font-bold">{a.label}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-8 text-lg text-body-muted max-w-2xl">We also partner with the organizations that serve these communities — bringing funded programs directly into the spaces where people already feel safe and supported.</p>
   </section>
 
   <section>
     <div class="container-wide py-16 md:py-24">
       <SectionHeading title="How we work." />
-      <div class="grid gap-6 md:grid-cols-2 mt-4">
+      <div class="grid gap-6 md:grid-cols-2">
         {values.map((value) => (
-          <div class="rounded-2xl bg-white border border-stone-200 p-6">
-            <h3 class="text-xl">{value.title}</h3>
-            <p class="mt-2 text-body-muted">{value.body}</p>
+          <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+            <div class="flex items-center gap-4">
+              <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipMap[value.accent]]}><Icon name={value.icon} /></span>
+              <h3 class="text-h3">{value.title}</h3>
+            </div>
+            <p class="mt-4 text-body text-body-muted">{value.body}</p>
           </div>
         ))}
+        <div class="relative md:h-full">
+          <Photo
+            src={artistStudio}
+            alt="An artist holding a paintbrush and phone in front of a work in progress"
+            class="aspect-[3/2] md:absolute md:inset-0 md:h-full md:aspect-auto"
+            sizes="(min-width: 768px) 50vw, 100vw"
+          />
+        </div>
       </div>
     </div>
   </section>
 
   <section class="bg-ink text-cream">
-    <div class="mx-auto max-w-3xl px-4 py-16 text-lg">
-      <p>Rize Skill Training operates on the unceded territories of the Musqueam, Squamish, and Tsleil-Waututh Nations. We are committed to building programs that serve Indigenous communities and to the ongoing work of reconciliation in digital education.</p>
+    <div class="container-wide grid gap-10 py-16 md:grid-cols-[1fr_auto] md:items-center">
+      <p class="max-w-3xl text-lg">Rize Skill Training operates on the unceded territories of the Musqueam, Squamish, and Tsleil-Waututh Nations. We are committed to building programs that serve Indigenous communities and to the ongoing work of reconciliation in digital education.</p>
+      <Photo
+        src={cedarBoughs}
+        alt="Western red cedar boughs in deep green"
+        class="aspect-[3/2] w-full md:w-72"
+        sizes="(min-width: 768px) 288px, 100vw"
+        widths={[320, 640, 960]}
+      />
     </div>
   </section>
 

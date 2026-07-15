@@ -1,0 +1,67 @@
+---
+import { Icon } from 'astro-icon/components';
+import Button from './Button.astro';
+import IconList from './IconList.astro';
+
+interface Props {
+  kind?: 'workshop' | 'course';
+  title: string;
+  tagline: string;
+  summary: string;
+  whoFor: string[];
+  outcomes: string[];
+  format?: string;
+  href: string;
+  ctaLabel: string;
+  accent?: 'red' | 'blue' | 'gold';
+}
+const { kind = 'workshop', title, tagline, summary, whoFor, outcomes, format, href, ctaLabel, accent = 'red' } = Astro.props;
+const isCourse = kind === 'course';
+const workshopBadge = {
+  red: 'bg-brand-red text-white',
+  blue: 'bg-brand-blue text-white',
+  gold: 'bg-brand-gold text-ink',
+}[accent];
+const badge = isCourse ? 'bg-brand-gold text-ink' : workshopBadge;
+---
+<details class:list={["drawer overflow-hidden rounded-[14px] border-2 border-ink", isCourse ? "bg-ink text-cream" : "bg-white"]}>
+  <summary class:list={["flex cursor-pointer items-center gap-4 p-6 md:gap-6", isCourse ? "md:p-10" : "md:p-8"]}>
+    <span class="min-w-0 flex-1">
+      <span class:list={["inline-block rounded-pill px-4 py-1 text-meta font-bold uppercase tracking-[0.04em]", badge]}>{isCourse ? 'Course' : 'Workshop'}</span>
+      <h4 class:list={["mt-4", isCourse ? "text-h2" : "text-h3"]}>{title}</h4>
+      <p class:list={["mt-3", isCourse ? "text-body-lg text-stone-300" : "text-body text-body-muted"]}>{tagline}</p>
+    </span>
+    <span class:list={["drawer-marker flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 text-2xl", isCourse ? "border-cream text-cream" : "border-ink"]} aria-hidden="true">
+      <Icon name="ph:plus-bold" />
+    </span>
+  </summary>
+  <div class:list={["drawer-body px-6 pb-6", isCourse ? "md:px-10 md:pb-10" : "md:px-8 md:pb-8"]}>
+    <p class:list={["max-w-3xl", isCourse ? "text-body-lg" : "text-body text-body-muted"]}>{summary}</p>
+    <div class="mt-6 grid gap-6 lg:grid-cols-2">
+      <div class="rounded-[14px] bg-cream p-6">
+        <h5 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-ink">Good fit for</h5>
+        <div class="mt-4"><IconList items={whoFor} /></div>
+      </div>
+      <div class="rounded-[14px] bg-cream p-6">
+        <h5 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-ink">Outcomes</h5>
+        <div class="mt-4"><IconList items={outcomes} /></div>
+      </div>
+    </div>
+    <div class="mt-6 flex flex-wrap items-center justify-between gap-6">
+      <Button href={href} variant={isCourse ? 'secondary' : 'primary'}>{ctaLabel}</Button>
+      {format && <p class:list={["text-meta font-bold uppercase tracking-[0.04em]", isCourse ? "text-stone-300" : "text-meta-muted"]}>{format}</p>}
+    </div>
+  </div>
+</details>
+<style>
+  summary { list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary:focus-visible { outline: 3px solid var(--color-brand-blue); outline-offset: -3px; }
+  .drawer-marker :global(svg) { transition: transform 0.3s ease; }
+  details[open] .drawer-marker :global(svg) { transform: rotate(45deg); }
+  details[open] .drawer-body { animation: drawer-in 0.3s ease both; }
+  @keyframes drawer-in {
+    from { opacity: 0; transform: translateY(-0.5rem); }
+    to { opacity: 1; transform: none; }
+  }
+</style>

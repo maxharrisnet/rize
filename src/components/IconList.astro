@@ -1,12 +1,12 @@
 ---
-interface Props { items: string[]; }
-const { items } = Astro.props;
+interface Props { items: string[]; onDark?: boolean; }
+const { items, onDark = false } = Astro.props;
 ---
 <ul class="space-y-3">
   {items.map((item) => (
     <li class="flex items-start gap-3">
       <span class="mt-2 h-3 w-3 shrink-0 rounded-full bg-brand-red"></span>
-      <span class="text-body text-body-muted">{item}</span>
+      <span class:list={["text-body", onDark ? "text-cream" : "text-body-muted"]}>{item}</span>
     </li>
   ))}
 </ul>

@@ -2,9 +2,9 @@
 interface Props { title: string; }
 const { title } = Astro.props;
 ---
-<section class="bg-ink text-cream">
-  <div class="container-wide py-20 text-center">
-    <h2 class="text-h2 mb-6 text-brand-gold">{title}</h2>
+<section class="container-wide py-16 md:py-24">
+  <div class="rounded-[14px] border-2 border-ink bg-ink px-6 py-16 text-center text-cream md:px-12 md:py-20">
+    <h2 class="text-h2 mb-6 text-white">{title}</h2>
     <div class="text-body-lg max-w-2xl mx-auto mb-8"><slot name="body" /></div>
     <div class="flex flex-wrap gap-4 justify-center"><slot name="actions" /></div>
   </div>

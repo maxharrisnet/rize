@@ -64,13 +64,14 @@ Verified with the audit in this repo's history:
 | white on brand-blue | 6.07 | AA |
 | ink on brand-gold | 10.6 | AAA |
 | white on ink | 17.9 | AAA |
-| brand-red on cream (eyebrow/link) | 5.36 | AA |
+| brand-red on white | 5.94 | AA |
 | brand-blue on cream | 5.48 | AA |
 | ink on blush | 13.4 | AAA |
 
 ### Forbidden pairings
 - **White text on `brand-gold`** — gold is light; always use `ink` on gold.
-- **`brand-red` text on `blush` at body size** (only 4.46:1). Red on blush is allowed **only** for large headings/eyebrows (passes the 3:1 large bar). Body text on blush must be `ink`.
+- **`brand-red` text on `blush` or `cream` at any size** — designer preference: red text lives **only on white** backgrounds. On blush/cream, use `ink` text; red may appear as a graphic accent instead (underline `decoration-brand-red`, IconList dots, Badge ring, chips/icons).
+- **`blush` as a card/section background — retired** (designer preference, July 2026). Use `white` for feature blocks and banners, `cream` for inset/secondary cards on white or beside white cards.
 - Any muted text lighter than `meta-muted #6B5D4C` on cream.
 
 ## Surfaces, radius, outlines
