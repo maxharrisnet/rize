@@ -5,7 +5,6 @@ import Hero from '../components/Hero.astro';
 import Button from '../components/Button.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import AudiencePicker from '../components/AudiencePicker.astro';
-import ProgramCard from '../components/ProgramCard.astro';
 import Steps from '../components/Steps.astro';
 import CTASection from '../components/CTASection.astro';
 import Tape from '../components/Tape.astro';
@@ -26,9 +25,9 @@ import handsKeyboard from '../assets/images/hands-keyboard.jpg';
 const audiencePaths = [
   {
     heading: 'I represent a community organization, nonprofit, or social service agency.',
-    body: 'We partner with organizations like yours to bring funded workshops and courses to the communities you serve — often at little or no cost. Let us show you how it works.',
-    ctaLabel: 'Explore Funded Partnerships',
-    ctaHref: '/partnerships',
+    body: 'We partner with organizations like yours to bring funded workshops and courses to the communities you serve — often at little or no cost.',
+    ctaLabel: 'Explore Community',
+    ctaHref: '/learn#community',
     accent: 'red' as const,
     icon: 'ph:buildings-bold',
     image: nonprofitTeam,
@@ -36,8 +35,8 @@ const audiencePaths = [
   },
   {
     heading: 'I am an entrepreneur, freelancer, or small business owner.',
-    body: 'We offer workshops, courses, and systems — websites you own, practical AI, and automation that gives you your time back — designed for people building something. Whether you are just getting started or ready to scale, we can help you use technology to do more of what matters.',
-    ctaLabel: 'See Programs and Systems for Entrepreneurs',
+    body: 'We offer workshops, courses, websites, and automation services designed for people building something. Whether you are just getting started or ready to scale, we can help you use technology to do more of what matters.',
+    ctaLabel: 'Explore Services',
     ctaHref: '/services',
     accent: 'ink' as const,
     icon: 'ph:briefcase-bold',
@@ -46,8 +45,8 @@ const audiencePaths = [
   },
   {
     heading: 'I am an individual looking to build my skills or get support.',
-    body: 'Our workshops and courses are open to everyone, and we offer one-on-one teaching and tutoring for people who want personalized support. Accommodating all skill levels.',
-    ctaLabel: 'See Our Programs',
+    body: 'Our workshops and courses are open to everyone, and we offer one-on-one teaching and tutoring for people who want personalized support.',
+    ctaLabel: 'Explore Learning',
     ctaHref: '/learn',
     accent: 'red' as const,
     icon: 'ph:user-bold',
@@ -81,11 +80,11 @@ const steps = [
 >
   <Hero title="The technology is here.<br />Let's make it work for you.">
     <Fragment slot="lead">
-      <p>Rize Skill Training offers workshops, courses, and systems that help people, organizations, and entrepreneurs across Vancouver build real confidence with technology — and put it to work for what matters most.</p>
+      <p>Rize Skill Training offers workshops, courses, and services that help people, organizations, and entrepreneurs in Vancouver and the surrounding area build real confidence with technology — and put it to work for the things that matter most to them.</p>
     </Fragment>
     <Fragment slot="actions">
-      <Button href="/learn">Explore Our Programs</Button>
-      <Button href="/partnerships" variant="secondary">Partner With Us</Button>
+      <Button href="#start-here">Start Here</Button>
+      <Button href="/partnerships" variant="secondary">Talk About a Partnership</Button>
     </Fragment>
   </Hero>
 
@@ -115,9 +114,9 @@ const steps = [
     </div>
   </section>
 
-  <section class="container-wide py-16 md:py-24">
-    <SectionHeading title="Not sure where to start?">
-      <p>Rize serves a few different audiences, and the right path depends on who you are and what you need. Pick the one that fits best.</p>
+  <section id="start-here" class="container-wide scroll-mt-24 py-16 md:py-24">
+    <SectionHeading title="Start here.">
+      <p>Not sure where to start? Pick the path that fits you best.</p>
     </SectionHeading>
     <AudiencePicker paths={audiencePaths} />
   </section>
@@ -165,38 +164,27 @@ const steps = [
 
   <section class="container-wide py-16 md:py-24">
     <SectionHeading title="What we offer.">
-      <p>Our programs run across four learning paths — Everyday Life, Career, Entrepreneurship, and Creative Work — and are available as workshops, multi-session courses, and one-on-one teaching. Every program is built around real outcomes — things you can do, build, or launch when you leave.</p>
+      <p>Three connected ways to work with Rize — learning, implementation, and partnership. Most engagements combine more than one.</p>
     </SectionHeading>
-    <div class="grid gap-6 md:grid-cols-2">
-      <ProgramCard
-        track="community"
-        title="Digital Confidence"
-        hook="Everyday technology skills for people who want to feel more comfortable and capable online."
-        audience="For seniors, newcomers, and anyone ready to get more comfortable with the technology they use every day."
-      />
-      <ProgramCard
-        track="community"
-        title="Stay Safe Online"
-        hook="Protect yourself from scams, phishing, and the growing wave of digital threats."
-        audience="For community members, seniors, and anyone who wants to feel safer and more in control of their digital life."
-      />
-      <ProgramCard
-        track="career"
-        title="Future-Proof Your Career"
-        hook="Get hired, stay competitive, and build a professional presence that works for you — using AI and modern tools."
-        audience="For job seekers, career changers, newcomers entering the Canadian workforce, and anyone ready to take their next step."
-      />
-      <ProgramCard
-        track="career"
-        title="AI and Modern Workflows"
-        hook="Spend more time on the work only you can do. Let technology support more of the repetitive work around it."
-        audience="For entrepreneurs, nonprofit staff, creatives, and small business owners ready to build smarter, faster workflows."
-      />
-    </div>
-    <p class="mt-10 text-lg text-body-muted max-w-2xl">All programs are available through funded community partnerships and on a public schedule. Every program can be tailored to specific groups, industries, and skill levels.</p>
-    <div class="mt-6 flex flex-wrap gap-4">
-      <Button href="/learn">See All Programs</Button>
-      <Button href="/partnerships" variant="secondary">Bring a Program to Your Organization</Button>
+    <div class="grid gap-6 md:grid-cols-3">
+      <a href="/learn" class="group flex h-full flex-col rounded-[14px] border-2 border-ink bg-white p-6 transition-transform hover:-translate-y-1 md:p-8">
+        <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-3xl"><Icon name="ph:graduation-cap-bold" /></span>
+        <h3 class="mt-5 text-h3">Learning</h3>
+        <p class="mt-3 flex-1 text-body text-body-muted">Workshops and courses across community, career, and creative learning paths.</p>
+        <span class="mt-6 font-bold uppercase tracking-[0.08em] text-brand-red group-hover:text-ink">Explore Learning &rarr;</span>
+      </a>
+      <a href="/services" class="group flex h-full flex-col rounded-[14px] border-2 border-ink bg-white p-6 transition-transform hover:-translate-y-1 md:p-8">
+        <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-ink text-cream text-3xl"><Icon name="ph:squares-four-bold" /></span>
+        <h3 class="mt-5 text-h3">Services</h3>
+        <p class="mt-3 flex-1 text-body text-body-muted">Websites, internal systems, automation, and grant support for organizations and businesses.</p>
+        <span class="mt-6 font-bold uppercase tracking-[0.08em] text-brand-red group-hover:text-ink">Explore Services &rarr;</span>
+      </a>
+      <a href="/partnerships" class="group flex h-full flex-col rounded-[14px] border-2 border-ink bg-white p-6 transition-transform hover:-translate-y-1 md:p-8">
+        <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-3xl"><Icon name="ph:handshake-bold" /></span>
+        <h3 class="mt-5 text-h3">Partnerships</h3>
+        <p class="mt-3 flex-1 text-body text-body-muted">Funded and collaborative delivery with community organizations and trusted partners.</p>
+        <span class="mt-6 font-bold uppercase tracking-[0.08em] text-brand-red group-hover:text-ink">Explore Partnerships &rarr;</span>
+      </a>
     </div>
   </section>
 
@@ -267,7 +255,7 @@ const steps = [
 
   <CTASection title="Ready to get started?">
     <Fragment slot="body">
-      <p>Whether you want to bring a program to your community, register for an upcoming session, or explore the systems we build — we would love to hear from you.</p>
+      <p>Whether you want to bring a program to your community, register for an upcoming session, or explore our services — we would love to hear from you.</p>
       <p class="mt-4"><a href="mailto:holler@weallrize.ca" class="underline hover:no-underline">holler@weallrize.ca</a></p>
     </Fragment>
     <Fragment slot="actions">
