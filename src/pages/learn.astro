@@ -1,183 +1,232 @@
 ---
 import { getCollection } from 'astro:content';
-import { Icon } from 'astro-icon/components';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Button from '../components/Button.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import PathNav from '../components/PathNav.astro';
-import CTASection from '../components/CTASection.astro';
-import ProgramDrawer from '../components/ProgramDrawer.astro';
+import AnchorNav from '../components/AnchorNav.astro';
+import IconList from '../components/IconList.astro';
 import Photo from '../components/Photo.astro';
 import workshopParticipants from '../assets/images/workshop-participants.jpg';
-import courseComputerLab from '../assets/images/course-computer-lab.jpg';
 
-const workshops = (await getCollection('workshops')).sort((a, b) => a.data.order - b.data.order);
-const courses = (await getCollection('courses')).sort((a, b) => a.data.order - b.data.order);
+const workshops = await getCollection('workshops');
+const courses = await getCollection('courses');
 
-type Accent = 'red' | 'blue' | 'gold';
-const paths: { id: 'everyday-life' | 'career' | 'entrepreneurship' | 'creative-work'; title: string; accent: Accent; description: string }[] = [
-  {
-    id: 'everyday-life',
-    title: 'Everyday Life',
-    accent: 'red',
-    description: 'Programs in this path help people use everyday technology with more confidence, more safety, and more independence.',
-  },
-  {
-    id: 'career',
-    title: 'Career',
-    accent: 'blue',
-    description: 'Programs in this path help people strengthen their professional presence, improve job readiness, and use modern tools more effectively at work.',
-  },
-  {
-    id: 'entrepreneurship',
-    title: 'Entrepreneurship',
-    accent: 'blue',
-    description: 'Programs in this path are for people building a business, freelance practice, solo operation, or independent service.',
-  },
-  {
-    id: 'creative-work',
-    title: 'Creative Work',
-    accent: 'gold',
-    description: 'Programs in this path are designed for artists, musicians, writers, filmmakers, designers, and other creative professionals building audience, releasing work, and developing a more sustainable practice.',
-  },
-];
+type Entry = {
+  kind: 'workshop' | 'course';
+  href: string;
+  title: string;
+  tagline: string;
+  summary: string;
+  whoFor: string[];
+  outcomes: string[];
+  topics?: string[];
+  format?: string;
+};
 
-const pathNavItems = paths.map((p) => ({
-  label: p.title,
-  href: `#${p.id}`,
-  count: workshops.filter((w) => w.data.path === p.id).length + courses.filter((c) => c.data.path === p.id).length,
-}));
+const bySlug = new Map<string, Entry>();
+for (const w of workshops) {
+  bySlug.set(w.id, {
+    kind: 'workshop', href: `/workshops/${w.id}`,
+    title: w.data.title, tagline: w.data.tagline, summary: w.data.summary,
+    whoFor: w.data.whoFor, outcomes: w.data.outcomes, format: w.data.format,
+  });
+}
+for (const c of courses) {
+  bySlug.set(c.id, {
+    kind: 'course', href: `/courses/${c.id}`,
+    title: c.data.title, tagline: c.data.tagline, summary: c.data.summary,
+    whoFor: c.data.whoFor, outcomes: c.data.outcomes, topics: c.data.topics,
+  });
+}
+const pick = (slugs: string[]) => slugs.map((s) => bySlug.get(s)).filter(Boolean) as Entry[];
+
+const community = pick(['digital-confidence', 'stay-safe-online', 'organizations-that-move-people']);
+const career = pick(['future-proof-your-career']);
+const creative = pick(['creative-work-amplified']);
 ---
 <BaseLayout
-  title="Workshops & Courses | Digital Skills & AI Training in Vancouver"
-  description="Workshops and courses across four learning paths — Everyday Life, Career, Entrepreneurship, and Creative Work. Delivered in Vancouver and the Greater Vancouver area."
+  title="Learning | Workshops & Courses for Community, Career & Creative"
+  description="Workshops and courses organized around Community, Career, and Creative learning paths. Delivered across Vancouver and the surrounding area, for all skill levels."
 >
   <Hero title="Programs built around<br />real outcomes.">
     <Fragment slot="lead">
-      <p>Workshops and courses for people, organizations, and communities ready to build practical skills with technology — and use those skills to do more of what matters to them. Delivered in Vancouver and the Greater Vancouver area, with selected programs also available through video.</p>
+      <p>Workshops and courses for people ready to build real skills with technology — and use those skills to do more of what they care about. Delivered across Vancouver and the surrounding area, with formats for community partners, organizations, and public learners. Accommodating all skill levels.</p>
     </Fragment>
     <Fragment slot="actions">
-      <Button href="#paths">Explore Learning Paths</Button>
-      <Button href="/partnerships" variant="secondary">Explore Funded Partnerships</Button>
+      <Button href="#community">Explore Community</Button>
+      <Button href="#career" variant="secondary">Explore Career</Button>
+      <Button href="#creative" variant="ghost">Explore Creative</Button>
     </Fragment>
   </Hero>
 
-  <section class="container-wide py-16 md:py-24">
+  <AnchorNav anchors={[
+    { label: 'How Learning Works', href: '#how-learning-works' },
+    { label: 'Community', href: '#community' },
+    { label: 'Career', href: '#career' },
+    { label: 'Creative', href: '#creative' },
+  ]} />
+
+  <section id="how-learning-works" class="container-wide py-16 md:py-24">
+    <SectionHeading title="How learning works." />
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="flex h-full flex-col rounded-[14px] border-2 border-ink bg-ink p-8 text-cream md:p-10">
+        <span class="inline-block w-fit rounded-pill bg-cream px-4 py-1 text-meta font-bold uppercase tracking-[0.04em] text-ink">Workshops</span>
+        <p class="mt-5 flex-1 text-body-lg">Single sessions or short series running 90 minutes to half a day. Practical and focused, designed to deliver immediately useful skills. Available through community partnerships and on a public schedule.</p>
+      </div>
+      <div class="flex h-full flex-col rounded-[14px] border-2 border-ink bg-brand-gold p-8 text-ink md:p-10">
+        <span class="inline-block w-fit rounded-pill bg-ink px-4 py-1 text-meta font-bold uppercase tracking-[0.04em] text-cream">Courses</span>
+        <p class="mt-5 flex-1 text-body-lg">Multi-session programs running 4 to 6 hours total, designed to build something functional by the end — a workflow, a digital presence, a grant-writing system, or a marketing strategy. Delivered through organizational partnerships.</p>
+      </div>
+    </div>
+
+    <div class="mt-6 grid gap-6 md:grid-cols-2">
+      <div class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+        <h3 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">Delivery options</h3>
+        <div class="mt-5"><IconList items={[
+          'Partnership delivery — we come to your organization, your space, your community.',
+          'Public schedule — open sessions anyone can register for.',
+          'Custom engagements — tailored programs for specific groups, industries, or cohorts.',
+        ]} /></div>
+      </div>
+      <div class="flex flex-col justify-between rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+        <div>
+          <h3 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">Funded partnerships</h3>
+          <p class="mt-4 text-body text-body-muted">Provincial and federal funding is available for many of these programs right now, particularly for digital skills and AI upskilling for specific communities. We can help identify what applies and work through the process alongside you.</p>
+        </div>
+        <div class="mt-6"><Button href="/partnerships">Explore Funded Partnerships</Button></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="community" class="container-wide scroll-mt-24 py-16 md:py-24">
     <div class="grid gap-10 md:grid-cols-2 md:items-center">
-      <SectionHeading title="Learning that meets people where they are.">
-        <p>Rize Skill Training offers practical learning experiences for people building confidence with everyday technology, strengthening their work and career skills, growing a business, or supporting a creative practice. Every program is designed around real use, real goals, and the actual comfort level people bring into the room.</p>
-        <p>We do not expect every group to start from the same place. We work with organizations and internal teams to shape delivery around the audience, the timeline, the learning level, and the community context so participants can engage in a way that feels useful, accessible, and grounded.</p>
+      <SectionHeading eyebrow="Community" title="Community programs.">
+        <p>Technology should feel useful, understandable, and within reach. This section is for people and organizations that want more confidence, more safety, and more capacity in everyday digital life.</p>
       </SectionHeading>
       <Photo
         src={workshopParticipants}
-        alt="Workshop participants smiling and following along on laptops in a bright community space"
+        alt="Community workshop participants following along on laptops in a bright space"
         class="aspect-[4/3]"
         loading="eager"
       />
     </div>
-  </section>
-
-  <section class="container-wide py-16 md:py-24">
-    <SectionHeading title="Workshops and courses, shaped around the people in the room." />
-
-    <div class="grid gap-6 md:grid-cols-2">
-      <div class="flex h-full flex-col rounded-[14px] border-2 border-ink bg-ink p-8 text-cream md:p-10">
-        <span class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-4xl"><Icon name="ph:chalkboard-teacher-bold" /></span>
-        <h3 class="mt-6 text-h2">Workshops</h3>
-        <p class="mt-3 flex-1 text-body-lg">Single sessions or short series running from 90 minutes to half a day. Practical, focused, and designed to give people skills they can use right away.</p>
-        <p class="mt-4 text-body font-bold">90 min–half day &middot; single session or short series &middot; in person or online</p>
-      </div>
-      <div class="flex h-full flex-col rounded-[14px] border-2 border-ink bg-white p-8 text-ink md:p-10">
-        <span class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-4xl"><Icon name="ph:graduation-cap-bold" /></span>
-        <h3 class="mt-6 text-h2">Courses</h3>
-        <p class="mt-3 flex-1 text-body-lg text-body-muted">Multi-session learning experiences for groups ready to go deeper — building confidence over time and leaving with a clearer way to use technology in work or everyday life.</p>
-        <p class="mt-4 text-body font-bold text-brand-red">Multi-session &middot; delivered in partnership &middot; selected courses through video</p>
-      </div>
+    <div class="mt-10 space-y-6">
+      {community.map((p) => (
+        <article class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+          <span class:list={["inline-block rounded-pill px-4 py-1 text-meta font-bold uppercase tracking-[0.04em]", p.kind === 'course' ? 'bg-brand-gold text-ink' : 'bg-ink text-cream']}>{p.kind === 'course' ? 'Course' : 'Workshop'}</span>
+          <h3 class="mt-4 text-h3"><a href={p.href} class="hover:text-brand-red">{p.title}</a></h3>
+          <p class="mt-3 max-w-3xl text-body text-body-muted">{p.tagline} {p.summary}</p>
+          {p.topics && (
+            <div class="mt-6 rounded-[14px] bg-cream p-6">
+              <h4 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">Topics covered</h4>
+              <div class="mt-4"><IconList items={p.topics} /></div>
+            </div>
+          )}
+          <div class="mt-6 grid gap-6 lg:grid-cols-2">
+            <div class="rounded-[14px] bg-cream p-6">
+              <h4 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">Good fit for</h4>
+              <div class="mt-4"><IconList items={p.whoFor} /></div>
+            </div>
+            <div class="rounded-[14px] bg-cream p-6">
+              <h4 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">What you'll walk away with</h4>
+              <div class="mt-4"><IconList items={p.outcomes} /></div>
+            </div>
+          </div>
+          <div class="mt-6 flex flex-wrap items-center justify-between gap-4">
+            <a href={p.href} class="font-bold uppercase tracking-[0.08em] text-brand-red hover:text-ink">View full details &rarr;</a>
+            {p.format && <p class="text-meta font-bold uppercase tracking-[0.04em] text-meta-muted">{p.format}</p>}
+          </div>
+        </article>
+      ))}
     </div>
+    <div class="mt-8"><Button href="/partnerships">Bring a Community Program to Your Organization</Button></div>
   </section>
 
-  <section id="paths" class="container-wide pt-16 md:pt-24">
-    <SectionHeading align="center" title="Learning paths.">
-      <p>Every program belongs to one of four learning paths. Courses are multi-session experiences for groups ready to go deeper; workshops are single sessions or short series. Open any program for who it fits best and what participants walk away with.</p>
+  <section id="career" class="container-wide scroll-mt-24 py-16 md:py-24">
+    <SectionHeading eyebrow="Career" title="Career programs.">
+      <p>This section stays focused and learning-centered. It is for people who want to build a stronger professional presence, understand how AI is changing work, and move forward with confidence.</p>
     </SectionHeading>
-  </section>
-
-  <PathNav items={pathNavItems} />
-
-  <section class="container-wide pb-16 md:pb-24">
-    {paths.map((path, i) => (
-      <div id={path.id} class:list={["scroll-mt-36", i === 0 ? "mt-12 md:mt-16" : "mt-20 md:mt-28"]}>
-        <h3 class="text-h1">{path.title}</h3>
-        <p class="mt-4 max-w-3xl text-body-lg text-body-muted">{path.description}</p>
-        <div class="mt-8 space-y-5">
-          {courses
-            .filter((c) => c.data.path === path.id)
-            .map((c) => (
-              <ProgramDrawer
-                kind="course"
-                title={c.data.title}
-                tagline={c.data.tagline}
-                summary={c.data.summary}
-                whoFor={c.data.whoFor}
-                outcomes={c.data.outcomes}
-                href={`/courses/${c.id}`}
-                ctaLabel="View Course Details"
-                accent={path.accent}
-              />
-            ))}
-          {workshops
-            .filter((w) => w.data.path === path.id)
-            .map((w) => (
-              <ProgramDrawer
-                kind="workshop"
-                title={w.data.title}
-                tagline={w.data.tagline}
-                summary={w.data.summary}
-                whoFor={w.data.whoFor}
-                outcomes={w.data.outcomes}
-                format={w.data.format}
-                href={`/workshops/${w.id}`}
-                ctaLabel="View Workshop Details"
-                accent={path.accent}
-              />
-            ))}
-        </div>
+    <div class="space-y-6">
+      {career.map((p) => (
+        <article class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+          <span class="inline-block rounded-pill bg-ink px-4 py-1 text-meta font-bold uppercase tracking-[0.04em] text-cream">Workshop</span>
+          <h3 class="mt-4 text-h3"><a href={p.href} class="hover:text-brand-red">{p.title}</a></h3>
+          <p class="mt-3 max-w-3xl text-body text-body-muted">{p.tagline} {p.summary}</p>
+          <div class="mt-6 grid gap-6 lg:grid-cols-2">
+            <div class="rounded-[14px] bg-cream p-6">
+              <h4 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">Good fit for</h4>
+              <div class="mt-4"><IconList items={p.whoFor} /></div>
+            </div>
+            <div class="rounded-[14px] bg-cream p-6">
+              <h4 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">What you'll walk away with</h4>
+              <div class="mt-4"><IconList items={p.outcomes} /></div>
+            </div>
+          </div>
+          <div class="mt-6 flex flex-wrap items-center justify-between gap-4">
+            <a href={p.href} class="font-bold uppercase tracking-[0.08em] text-brand-red hover:text-ink">View full details &rarr;</a>
+            {p.format && <p class="text-meta font-bold uppercase tracking-[0.04em] text-meta-muted">{p.format}</p>}
+          </div>
+        </article>
+      ))}
+      <div class="rounded-[14px] border-2 border-ink bg-cream p-6 md:p-8">
+        <h3 class="text-h3">Career-ready custom sessions</h3>
+        <p class="mt-3 max-w-3xl text-body text-body-muted">For employment centers, workforce partners, youth programs, settlement organizations, and other groups that want modular sessions tailored to their audience and goals.</p>
       </div>
-    ))}
-
-    <p class="mt-16 text-body text-body-muted">Additional workshops and courses are in development. <a href="/book" class="font-bold text-ink underline decoration-brand-red decoration-2 underline-offset-4 hover:decoration-ink">Talk to us about a custom program</a> for your community or sector.</p>
+    </div>
+    <div class="mt-8"><Button href="/book">Talk to Us About a Career Program</Button></div>
   </section>
 
-  <section class="container-wide pb-16 md:pb-24">
-    <div class="rounded-[14px] border-2 border-ink bg-white">
-      <div class="grid md:grid-cols-2 md:items-stretch">
-        <div class="p-8 md:p-12">
-          <h3 class="text-h2">Delivered in partnership</h3>
-          <p class="mt-6 text-body text-ink">The strongest version of this work happens in partnership with organizations that already have trusted relationships with the people they serve. We come to your organization, your space, and your community — and selected workshops also run on an open public schedule.</p>
-          <p class="mt-4 text-body text-ink">Every partnership starts with a conversation about who the program is for, what they need, and what success looks like in your context. Together with your internal team, we shape the format, pacing, accessibility, cultural safety, and learning level so the program fits the people it is meant to serve.</p>
-          <p class="mt-4 text-body text-ink">Need support with funding, planning, or program design? We work with community organizations, nonprofits, Indigenous-led groups, Black-led organizations, libraries, employment programs, and other trusted partners — and where relevant, we help identify funding pathways and shape a program package that fits both community need and available support.</p>
-          <div class="mt-8"><Button href="/partnerships">Explore Funded Partnerships</Button></div>
-        </div>
-        <div class="p-8 pt-0 md:p-12 md:pl-0 md:pt-12">
-          <Photo
-            src={courseComputerLab}
-            alt="Two women wearing headsets learning together at computers"
-            class="aspect-[4/3] h-full md:aspect-auto"
-          />
-        </div>
+  <section id="creative" class="container-wide scroll-mt-24 py-16 md:py-24">
+    <SectionHeading eyebrow="Creative" title="Creative programs.">
+      <p>Creative work deserves tools that support visibility, sustainability, and momentum. This section is for artists and creative professionals who want to build stronger systems around their work.</p>
+    </SectionHeading>
+    <div class="space-y-6">
+      {creative.map((p) => (
+        <article class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+          <span class="inline-block rounded-pill bg-brand-gold px-4 py-1 text-meta font-bold uppercase tracking-[0.04em] text-ink">Course</span>
+          <h3 class="mt-4 text-h3"><a href={p.href} class="hover:text-brand-red">{p.title}</a></h3>
+          <p class="mt-3 max-w-3xl text-body text-body-muted">{p.tagline} {p.summary}</p>
+          {p.topics && (
+            <div class="mt-6 rounded-[14px] bg-cream p-6">
+              <h4 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">Topics covered</h4>
+              <div class="mt-4"><IconList items={p.topics} /></div>
+            </div>
+          )}
+          <div class="mt-6 grid gap-6 lg:grid-cols-2">
+            <div class="rounded-[14px] bg-cream p-6">
+              <h4 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">Good fit for</h4>
+              <div class="mt-4"><IconList items={p.whoFor} /></div>
+            </div>
+            <div class="rounded-[14px] bg-cream p-6">
+              <h4 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">What you'll walk away with</h4>
+              <div class="mt-4"><IconList items={p.outcomes} /></div>
+            </div>
+          </div>
+          <div class="mt-6">
+            <a href={p.href} class="font-bold uppercase tracking-[0.08em] text-brand-red hover:text-ink">View full details &rarr;</a>
+          </div>
+        </article>
+      ))}
+      <div class="rounded-[14px] border-2 border-ink bg-cream p-6 md:p-8">
+        <h3 class="text-h3">Future creative offerings</h3>
+        <p class="mt-3 max-w-3xl text-body text-body-muted">More creative workshops and sector-specific sessions are in development. If you have a particular format or audience in mind, reach out and we can shape something custom.</p>
+      </div>
+    </div>
+    <div class="mt-8"><Button href="/book">Talk to Us About a Creative Program</Button></div>
+  </section>
+
+  <section class="bg-ink text-cream">
+    <div class="container-wide py-20 text-center">
+      <h2 class="text-h2 mb-6 text-brand-gold">Looking for something else?</h2>
+      <div class="text-body-lg max-w-3xl mx-auto mb-8 space-y-4">
+        <p>If these workshops and courses are not quite the right fit, there is more. We offer one-on-one tutoring and mentorship for individuals who want personalized support, small group instruction for specific topics, and team training for organizations with particular needs. We can also go deeper on more technical topics — development, systems, and tools — for people who are ready for that level.</p>
+        <p>More workshops are in development across additional topics and industries. If you have something specific in mind, reach out. The answer is probably yes.</p>
+        <p><a href="mailto:holler@weallrize.ca" class="underline hover:no-underline">holler@weallrize.ca</a></p>
+      </div>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <Button href="/book">Get in Touch</Button>
       </div>
     </div>
   </section>
-
-  <CTASection title="Not sure where to start?">
-    <Fragment slot="body">
-      <p>If you already know which workshop or course you want, we can start there. If you want help choosing the right fit for your audience, team, or community, we can shape that together.</p>
-      <p class="mt-4"><a href="mailto:holler@weallrize.ca" class="underline hover:no-underline">holler@weallrize.ca</a></p>
-    </Fragment>
-    <Fragment slot="actions">
-      <Button href="/book">Get in Touch</Button>
-      <Button href="/partnerships" variant="secondary">Explore Funded Partnerships</Button>
-    </Fragment>
-  </CTASection>
 </BaseLayout>
