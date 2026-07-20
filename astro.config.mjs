@@ -8,7 +8,7 @@ export default defineConfig({
   site: 'https://weallrize.ca',
   output: 'static',
   redirects: {
-    '/services': '/systems',
+    '/systems': '/services',
   },
   integrations: [sitemap(), icon()],
   vite: {

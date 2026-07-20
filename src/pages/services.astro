@@ -1,0 +1,185 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Button from '../components/Button.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import AnchorNav from '../components/AnchorNav.astro';
+import IconList from '../components/IconList.astro';
+import Steps from '../components/Steps.astro';
+import Photo from '../components/Photo.astro';
+import collaboratingLaptop from '../assets/images/collaborating-laptop.jpg';
+import handsKeyboard from '../assets/images/hands-keyboard.jpg';
+import grantPlanning from '../assets/images/grant-planning.jpg';
+
+const websiteAreas = [
+  {
+    title: 'Community and nonprofit websites',
+    icon: 'ph:buildings-bold',
+    desc: 'Public-facing sites that build trust, share your programs, and give your community a clear next step.',
+  },
+  {
+    title: 'Events and programming sites',
+    icon: 'ph:calendar-dots-bold',
+    desc: 'Registration, schedules, and program communication that keep up with the work you are doing.',
+  },
+  {
+    title: 'Creative and service-based websites',
+    icon: 'ph:palette-bold',
+    desc: 'A professional home for your work — portfolios, bookings, and inquiries that convert.',
+  },
+];
+
+const websiteSupports = [
+  'Public presence and trust-building',
+  'Program and event communication',
+  'Registration, donations, bookings, or inquiries',
+  'Mobile-friendly, accessible content management your team can handle after launch',
+];
+
+const internalAreas = [
+  'Google Workspace setup and cleanup',
+  'Communication workflows',
+  'Donation and CRM workflows',
+  'Reporting and follow-up systems',
+  'Automation for repetitive admin',
+];
+
+const grantSupport = [
+  'Funding source identification',
+  'Application support and co-writing',
+  'Program design language for submissions',
+  'Reporting templates and follow-up materials',
+];
+
+const serviceFlow = [
+  { title: 'Discovery call', body: 'We learn about your organization, your goals, and your current setup.' },
+  { title: 'Scope and recommendation', body: 'You get a clear recommendation, a realistic scope, and a practical path forward.' },
+  { title: 'Build and setup', body: 'We build the website, workflow, or system and configure it around how your team actually works.' },
+  { title: 'Handoff and training', body: 'We hand it over with training and documentation so your team can own it.' },
+  { title: 'Optional ongoing support', body: 'Stay supported with follow-up help, updates, or next-step work whenever you need it.' },
+];
+
+const whoFor = [
+  'Nonprofits and charities',
+  'Community organizations and community-led groups',
+  'Social service, settlement, and employment organizations',
+  'Libraries and public-serving community spaces',
+  'Indigenous-led groups and nations',
+  'Black-led community organizations',
+  'Creative or entrepreneurial teams that need public-facing websites or workflow support',
+];
+---
+<BaseLayout
+  title="Services | Websites, Internal Systems & Grant Support in Vancouver"
+  description="Beyond training, Rize builds websites, workflows, and internal systems that help organizations and small teams reach more people, reduce repetitive admin, and operate with more clarity."
+>
+  <Hero title="Services that make your<br />organization stronger.">
+    <Fragment slot="lead">
+      <p>Beyond training, we build websites, workflows, and internal systems that help organizations and small teams reach more people, reduce repetitive admin, and operate with more clarity. The goal is practical infrastructure: tools your team can actually use, manage, and build on.</p>
+    </Fragment>
+    <Fragment slot="actions">
+      <Button href="/book">Book a Discovery Call</Button>
+      <Button href="/partnerships" variant="secondary">Talk About a Partnership</Button>
+    </Fragment>
+  </Hero>
+
+  <AnchorNav anchors={[
+    { label: 'Websites', href: '#websites' },
+    { label: 'Internal Systems', href: '#internal-systems' },
+    { label: 'Grant Support', href: '#grant-support' },
+    { label: 'How It Works', href: '#how-it-works' },
+  ]} />
+
+  <section id="websites" class="container-wide py-16 md:py-24">
+    <div class="grid gap-10 md:grid-cols-2 md:items-center">
+      <SectionHeading eyebrow="Websites" title="A website that earns trust and moves people to act.">
+        <p>A strong website helps people understand who you are, trust what you do, and take the next step. Rize builds websites that support real-world goals like community outreach, registrations, donations, bookings, program communication, and local visibility.</p>
+      </SectionHeading>
+      <Photo
+        src={collaboratingLaptop}
+        alt="Two colleagues reviewing a website together on a laptop"
+        class="aspect-[4/3]"
+        loading="eager"
+      />
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {websiteAreas.map((area) => (
+        <div class="flex h-full flex-col rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+          <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-3xl"><Icon name={area.icon} /></span>
+          <h3 class="mt-5 text-h3">{area.title}</h3>
+          <p class="mt-3 flex-1 text-body text-body-muted">{area.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-6 rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+      <h3 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">What these sites can support</h3>
+      <div class="mt-5"><IconList items={websiteSupports} /></div>
+    </div>
+  </section>
+
+  <section id="internal-systems" class="container-wide py-16 md:py-24">
+    <div class="grid gap-10 md:grid-cols-2 md:items-center">
+      <Photo
+        src={handsKeyboard}
+        alt="Hands working at a keyboard, setting up a digital workflow"
+        class="aspect-[4/3] md:order-last"
+      />
+      <SectionHeading eyebrow="Internal Systems" title="The operational layer that helps you run better day to day.">
+        <p>Internal systems are the behind-the-scenes structures that make an organization run better day to day. Rize helps organizations reduce repetitive work, improve follow-up, and build better operational flow with practical tools and lightweight automation.</p>
+      </SectionHeading>
+    </div>
+
+    <div class="mt-8 rounded-[14px] border-2 border-ink bg-ink p-6 text-cream md:p-8">
+      <h3 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-gold">Internal transformation areas</h3>
+      <div class="mt-5"><IconList items={internalAreas} onDark /></div>
+    </div>
+  </section>
+
+  <section id="grant-support" class="container-wide py-16 md:py-24">
+    <div class="grid gap-10 md:grid-cols-2 md:items-center">
+      <SectionHeading eyebrow="Grant Support" title="Funding support that helps the work become possible.">
+        <p>Rize also supports organizations in identifying and applying for funding related to digital skills training, AI upskilling, and technology-enabled capacity building. In many cases, this support is what helps a training or systems project become possible in the first place.</p>
+      </SectionHeading>
+      <Photo
+        src={grantPlanning}
+        alt="A team planning a grant application together at a table"
+        class="aspect-[4/3]"
+      />
+    </div>
+
+    <div class="mt-8 rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+      <h3 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">Grant support can include</h3>
+      <div class="mt-5"><IconList items={grantSupport} /></div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="container-wide py-16 md:py-24">
+    <SectionHeading eyebrow="How It Works" title="How services work.">
+      <p>Every service engagement starts with a discovery call. We learn about your organization, your goals, and your current setup, then give you a clear recommendation, a realistic scope, and a practical path forward.</p>
+    </SectionHeading>
+    <Steps steps={serviceFlow} />
+  </section>
+
+  <section class="container-wide py-16 md:py-24">
+    <div class="rounded-[14px] border-2 border-ink bg-white p-8 md:p-12">
+      <SectionHeading title="Who this is for.">
+        <p>Rize works with organizations and teams that want to move from information to implementation.</p>
+      </SectionHeading>
+      <IconList items={whoFor} />
+    </div>
+  </section>
+
+  <section class="bg-ink text-cream">
+    <div class="container-wide py-20 text-center">
+      <h2 class="text-h2 mb-6 text-brand-gold">Training your people, building your systems, supporting the work over time.</h2>
+      <p class="text-body-lg max-w-2xl mx-auto mb-8">Some partners start with a workshop, some start with a website or workflow problem, and some need both from the beginning. Rize can support the full arc of the work.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <Button href="/partnerships">Talk About a Partnership</Button>
+        <Button href="/book" variant="secondary">Book a Discovery Call</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
