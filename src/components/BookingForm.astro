@@ -1,0 +1,203 @@
+---
+// Booking / intake form. Posts to web3forms (form-to-email).
+// NOTE: swap the placeholder access_key below for a real key from web3forms.com
+// before this can actually send. Until then the form renders but submissions fail.
+const needs = [
+  'Digital Confidence',
+  'Stay Safe Online',
+  'Future-Proof Your Career',
+  'AI and Modern Workflows',
+  'Entrepreneurs in Motion',
+  'Organizations That Move People',
+  'Creative Work, Amplified',
+  'Custom workshop',
+  'Custom course',
+  'Website',
+  'Internal systems',
+  'Grant support',
+  'Automation',
+  'Not sure yet',
+];
+const audienceTypes = [
+  'Community organization',
+  'Nonprofit',
+  'Social service agency',
+  'Library',
+  'School',
+  'Business',
+  'Entrepreneur',
+  'Individual',
+  'Other',
+];
+const inputClass = 'w-full rounded-xl border-2 border-ink bg-white px-4 py-3 text-body focus:outline-none focus:ring-2 focus:ring-brand-blue';
+const labelClass = 'block font-bold uppercase tracking-[0.04em] text-meta mb-2';
+---
+<form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+  <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY" />
+  <input type="hidden" name="subject" value="New booking enquiry — weallrize.ca" />
+  <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+  <!-- Contact basics -->
+  <fieldset class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+    <legend class="px-2 text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">Contact basics</legend>
+    <div class="mt-4 grid gap-5 md:grid-cols-2">
+      <div>
+        <label for="name" class={labelClass}>Name *</label>
+        <input id="name" name="name" required class={inputClass} />
+      </div>
+      <div>
+        <label for="organization" class={labelClass}>Organization name</label>
+        <input id="organization" name="organization" class={inputClass} />
+      </div>
+      <div>
+        <label for="email" class={labelClass}>Email *</label>
+        <input id="email" name="email" type="email" required class={inputClass} />
+      </div>
+      <div>
+        <label for="phone" class={labelClass}>Phone (optional)</label>
+        <input id="phone" name="phone" type="tel" class={inputClass} />
+      </div>
+      <div class="md:col-span-2">
+        <label for="website" class={labelClass}>Website (optional)</label>
+        <input id="website" name="website" type="url" placeholder="https://" class={inputClass} />
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Who you are -->
+  <fieldset class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+    <legend class="px-2 text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">Who you are</legend>
+    <div class="mt-4">
+      <label for="audience" class={labelClass}>This best describes you</label>
+      <select id="audience" name="audience_type" class={inputClass}>
+        <option value="" selected>Select one…</option>
+        {audienceTypes.map((t) => <option value={t}>{t}</option>)}
+      </select>
+    </div>
+  </fieldset>
+
+  <!-- What you need -->
+  <fieldset class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+    <legend class="px-2 text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">What you need</legend>
+    <p class="mt-3 text-body text-body-muted">Check anything that fits. Not sure yet is a perfectly good answer.</p>
+    <div class="mt-5 grid gap-3 sm:grid-cols-2">
+      {needs.map((item, i) => (
+        <label class="flex items-center gap-3 rounded-xl border-2 border-ink bg-cream px-4 py-3">
+          <input type="checkbox" name={`need_${i}`} value={item} class="h-5 w-5 shrink-0 accent-brand-red" />
+          <span class="text-body">{item}</span>
+        </label>
+      ))}
+    </div>
+  </fieldset>
+
+  <!-- Partnership and funding -->
+  <fieldset class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+    <legend class="px-2 text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">Partnership and funding</legend>
+    <div class="mt-4 grid gap-5 md:grid-cols-3">
+      <div>
+        <label for="funded_interest" class={labelClass}>Interested in a funded partnership?</label>
+        <select id="funded_interest" name="funded_interest" class={inputClass}>
+          <option value="" selected>Select…</option>
+          <option>Yes</option>
+          <option>No</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <div>
+        <label for="have_funding" class={labelClass}>Do you already have funding?</label>
+        <select id="have_funding" name="have_funding" class={inputClass}>
+          <option value="" selected>Select…</option>
+          <option>Yes</option>
+          <option>No</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <div>
+        <label for="help_funding" class={labelClass}>Want help finding funding?</label>
+        <select id="help_funding" name="help_funding" class={inputClass}>
+          <option value="" selected>Select…</option>
+          <option>Yes</option>
+          <option>No</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <div class="md:col-span-3">
+        <label for="communities" class={labelClass}>Which communities do you serve?</label>
+        <input id="communities" name="communities_served" class={inputClass} />
+      </div>
+      <div class="md:col-span-3">
+        <label for="accessibility" class={labelClass}>Accessibility, language, or delivery considerations?</label>
+        <input id="accessibility" name="accessibility_notes" class={inputClass} />
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Scope -->
+  <fieldset class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+    <legend class="px-2 text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">Scope</legend>
+    <div class="mt-4 grid gap-5 md:grid-cols-2">
+      <div>
+        <label for="format" class={labelClass}>Desired format</label>
+        <select id="format" name="desired_format" class={inputClass}>
+          <option value="" selected>Select…</option>
+          <option>Workshop</option>
+          <option>Short series</option>
+          <option>Course</option>
+          <option>Service project</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <div>
+        <label for="delivery" class={labelClass}>Delivery mode</label>
+        <select id="delivery" name="delivery_mode" class={inputClass}>
+          <option value="" selected>Select…</option>
+          <option>In-person</option>
+          <option>Online</option>
+          <option>Hybrid</option>
+        </select>
+      </div>
+      <div>
+        <label for="timeline" class={labelClass}>Preferred timeline</label>
+        <input id="timeline" name="timeline" placeholder="e.g. this fall, flexible" class={inputClass} />
+      </div>
+      <div>
+        <label for="group_size" class={labelClass}>Estimated group size</label>
+        <input id="group_size" name="group_size" class={inputClass} />
+      </div>
+      <div>
+        <label for="budget" class={labelClass}>Budget range</label>
+        <input id="budget" name="budget_range" placeholder="If you have one in mind" class={inputClass} />
+      </div>
+      <div>
+        <label for="followup" class={labelClass}>Want follow-up support?</label>
+        <select id="followup" name="followup_support" class={inputClass}>
+          <option value="" selected>Select…</option>
+          <option>Yes</option>
+          <option>No</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Open context -->
+  <fieldset class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+    <legend class="px-2 text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">Anything else</legend>
+    <div class="mt-4">
+      <label for="context" class={labelClass}>Tell us a little about what you are hoping to build, improve, or solve</label>
+      <textarea id="context" name="project_context" rows="5" class={inputClass}></textarea>
+    </div>
+  </fieldset>
+
+  <button type="submit" class="inline-block rounded-[12px] border-2 border-ink bg-brand-red px-8 py-4 font-bold uppercase tracking-[0.01em] text-white transition-colors hover:bg-ink">Submit Intake Form</button>
+</form>
+<script>
+  // Prefill the "What you need" checkboxes from a ?need= query param (e.g. linked from a program page)
+  const want = new URL(window.location.href).searchParams.get('need');
+  if (want) {
+    const match = [...document.querySelectorAll('input[type="checkbox"]')].find(
+      (el) => (el as HTMLInputElement).value.toLowerCase() === want.toLowerCase()
+    ) as HTMLInputElement | undefined;
+    if (match) match.checked = true;
+  }
+</script>

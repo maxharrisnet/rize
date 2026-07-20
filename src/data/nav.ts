@@ -4,4 +4,4 @@ export const navLinks = [
   { name: 'Partnerships', href: '/partnerships' },
   { name: 'About', href: '/about' },
 ];
-export const contactLink = { name: 'Contact', href: '/contact' };
+export const contactLink = { name: 'Book a Call', href: '/book' };

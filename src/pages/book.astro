@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Button from '../components/Button.astro';
+import BookingForm from '../components/BookingForm.astro';
+
+const whatHappens = [
+  'You share a few details about your organization, project, or community.',
+  'We review your needs and route the request to the right offer area.',
+  'We follow up with next steps, a call time, or an estimate path.',
+];
+
+const goodFit = [
+  'Community organizations and nonprofits looking for workshops or funded delivery.',
+  'Entrepreneurs and businesses needing websites or systems support.',
+  'Individuals with a specific learning need.',
+  'Organizations that want to explore a partnership or custom project.',
+];
+---
+<BaseLayout
+  title="Book a Discovery Call | Rize Skill Training"
+  description="Ready to talk about a workshop, course, partnership, website, or systems project? Share your details and we will come back with a practical next step."
+>
+  <Hero title="Book a discovery call.">
+    <Fragment slot="lead">
+      <p>If you are ready to talk about a workshop, course, partnership, website, or systems project, this is the place to start. We will review your details, figure out the best next step, and come back with a practical response.</p>
+    </Fragment>
+    <Fragment slot="actions">
+      <Button href="#intake">Submit Intake Form</Button>
+      <Button href="/partnerships" variant="secondary">Talk About a Partnership</Button>
+    </Fragment>
+  </Hero>
+
+  <section class="container-wide py-16 md:py-24">
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+        <h2 class="text-h3">What this page is for</h2>
+        <p class="mt-4 text-body text-body-muted">This page is designed for people who are ready to move forward. It helps us understand what you need, who you serve, and what kind of support will actually be useful. If you are not sure which offer fits best, send what you know — we can sort out the details together.</p>
+      </div>
+      <div class="rounded-[14px] border-2 border-ink bg-ink p-6 text-cream md:p-8">
+        <h2 class="text-h3 text-brand-gold">What happens next</h2>
+        <ol class="mt-5 space-y-4">
+          {whatHappens.map((step, i) => (
+            <li class="flex items-start gap-4">
+              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-gold text-ink font-black">{i + 1}</span>
+              <span class="text-body">{step}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="intake" class="container-wide scroll-mt-24 pb-8 md:pb-12">
+    <div class="max-w-3xl">
+      <h2 class="text-h2">Intake form</h2>
+      <p class="mt-4 text-body-lg text-body-muted">The more you share, the more useful our first response can be. Only name and email are required.</p>
+    </div>
+    <div class="mt-10 max-w-4xl">
+      <BookingForm />
+    </div>
+  </section>
+
+  <section class="container-wide py-16 md:py-24">
+    <div class="rounded-[14px] border-2 border-ink bg-white p-8 md:p-12">
+      <h2 class="text-h3">Good fit for</h2>
+      <ul class="mt-6 space-y-3">
+        {goodFit.map((item) => (
+          <li class="flex items-start gap-3">
+            <span class="mt-2 h-3 w-3 shrink-0 rounded-full bg-brand-red"></span>
+            <span class="text-body text-body-muted">{item}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-8 text-body text-body-muted">Prefer email? Reach us any time at <a href="mailto:holler@weallrize.ca" class="font-bold text-ink underline decoration-brand-red decoration-2 underline-offset-4 hover:decoration-ink">holler@weallrize.ca</a>.</p>
+    </div>
+  </section>
+</BaseLayout>
