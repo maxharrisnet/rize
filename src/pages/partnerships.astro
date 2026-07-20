@@ -4,226 +4,159 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Button from '../components/Button.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import AnchorNav from '../components/AnchorNav.astro';
+import IconList from '../components/IconList.astro';
 import Steps from '../components/Steps.astro';
 import CTASection from '../components/CTASection.astro';
-import { fundingGroups } from '../data/funding';
 import Photo from '../components/Photo.astro';
 import communityPlanning from '../assets/images/community-planning.jpg';
 import grantPlanning from '../assets/images/grant-planning.jpg';
 
-const model = [
-  {
-    title: 'You bring the community',
-    body: 'The people, the space, and the trust you have already built.',
-    icon: 'ph:users-three-bold',
-    chip: 'bg-brand-red text-white',
-  },
-  {
-    title: 'We bring the program',
-    body: 'Curriculum, facilitation, and materials, delivered by us alongside your team.',
-    icon: 'ph:chalkboard-teacher-bold',
-    chip: 'bg-brand-red text-white',
-  },
-  {
-    title: 'We bring the funding strategy',
-    body: 'We identify the grants that apply to your organization and help you apply.',
-    icon: 'ph:hand-coins-bold',
-    chip: 'bg-brand-red text-white',
-  },
+const chipClass = { red: 'bg-brand-red text-white', ink: 'bg-ink text-cream' } as const;
+
+const partnerTypes: { label: string; icon: string; accent: 'red' | 'ink' }[] = [
+  { label: 'Nonprofits and charities', icon: 'ph:hand-heart-bold', accent: 'red' },
+  { label: 'Community organizations and community-led groups', icon: 'ph:users-three-bold', accent: 'ink' },
+  { label: 'Social service, settlement, and employment organizations', icon: 'ph:lifebuoy-bold', accent: 'red' },
+  { label: 'Libraries and public-serving community spaces', icon: 'ph:books-bold', accent: 'ink' },
+  { label: 'Indigenous-led groups and nations', icon: 'ph:handshake-bold', accent: 'red' },
+  { label: 'Black-led community organizations', icon: 'ph:buildings-bold', accent: 'ink' },
 ];
 
-const team = [
-  {
-    title: 'We build with your team',
-    body: 'Your community leads, cultural workers, and program staff shape the content, so it reflects how your community actually works.',
-    icon: 'ph:handshake-bold',
-  },
-  {
-    title: 'We tailor everything to the group',
-    body: 'Content, examples, pace, and language adapt to each community — cultural, linguistic, and accessibility needs included.',
-    icon: 'ph:sliders-horizontal-bold',
-  },
-  {
-    title: 'Your mission comes first',
-    body: 'The technology serves your goals and your values. Your goals never bend to fit the tool.',
-    icon: 'ph:compass-bold',
-  },
-  {
-    title: 'People before technology',
-    body: 'We start with who is in the room and what matters to them. The tools come after.',
-    icon: 'ph:heart-bold',
-  },
+const components = [
+  'Workshops on digital confidence, digital safety, AI, modern work, and related topics.',
+  'Multi-session series for deeper transformation, including organizational capacity-building programs.',
+  'Tailored delivery for a specific audience, cohort, or community context.',
+  'Optional supporting services such as websites, internal systems, or grant-writing support when the engagement calls for it.',
+];
+
+const fundingHelp = [
+  'Identifying relevant funding opportunities.',
+  'Shaping a program to fit the opportunity.',
+  'Supporting application language and documentation where appropriate.',
+  'Delivering the actual program once the work is approved or scoped.',
 ];
 
 const steps = [
-  {
-    title: 'Reach out',
-    body: 'Tell us who you are, who your community is, and what you are hoping to achieve. A short conversation is all it takes to get started.',
-  },
-  {
-    title: 'We design together',
-    body: 'We work with you to identify the right program, confirm the format, and — where applicable — identify funding sources that can cover the cost.',
-  },
-  {
-    title: 'We show up and deliver',
-    body: 'We handle the curriculum, the facilitation, and the materials. Your community shows up and leaves with real skills and real confidence.',
-  },
-  {
-    title: 'You keep the momentum',
-    body: 'Every program comes with resources participants can reference independently. For organizations, we are available for follow-up support, ongoing training, or next-step programs.',
-  },
+  { title: 'Reach out', body: 'Share who you serve, what your goals are, and what kind of support you think may help.' },
+  { title: 'We design together', body: 'We identify the right format, topics, audience fit, and possible funding path where relevant.' },
+  { title: 'We deliver', body: 'Rize handles curriculum, facilitation, and materials, with delivery shaped for your community and context.' },
+  { title: 'You keep the momentum', body: 'Participants leave with practical tools and reference material, and organizations can continue with follow-up support, further training, or systems implementation if needed.' },
 ];
 
-const chipClass = {
-  red: 'bg-brand-red text-white',
-  ink: 'bg-ink text-cream',
-};
-
-const orgTypes: { label: string; icon: string; accent: 'red' | 'ink' }[] = [
-  { label: 'Community organizations', icon: 'ph:users-three-bold', accent: 'red' },
-  { label: 'Nonprofits and charities', icon: 'ph:hand-heart-bold', accent: 'ink' },
-  { label: 'Indigenous-led groups', icon: 'ph:handshake-bold', accent: 'red' },
-  { label: 'Black community organizations', icon: 'ph:buildings-bold', accent: 'ink' },
-  { label: 'Employment centers', icon: 'ph:briefcase-bold', accent: 'red' },
-  { label: 'Social service agencies', icon: 'ph:lifebuoy-bold', accent: 'ink' },
-];
-
-const grantHelp = [
-  { text: 'Funding source identification for your organization type and community', icon: 'ph:magnifying-glass-bold', accent: 'red' as const },
-  { text: 'Application support and co-writing', icon: 'ph:note-pencil-bold', accent: 'ink' as const },
-  { text: 'Program design documentation for grant submissions', icon: 'ph:file-text-bold', accent: 'red' as const },
-  { text: 'Reporting templates for funded programs', icon: 'ph:clipboard-text-bold', accent: 'ink' as const },
+const outcomes = [
+  'A program shaped to the actual needs of your community.',
+  'Participants who leave with more confidence and usable skills.',
+  'Resources and materials that help learning continue after the session.',
+  'In some engagements, stronger internal systems, clearer workflows, or next-step implementation support.',
 ];
 ---
 <BaseLayout
-  title="Funded Partnerships | Technology Training for Nonprofits in Vancouver"
-  description="Provincial, federal, and corporate funding is available now for digital skills and AI upskilling. We help Vancouver community organizations find funding, apply, and bring workshops and courses to the people they serve."
+  title="Partnerships | Funded Technology Education for Communities in Vancouver"
+  description="Rize partners with community organizations, nonprofits, and trusted groups to deliver workshops, series, and support that build real confidence with technology — often with funding that makes the work possible."
 >
-  <Hero title="Bring funded programs<br />to your community.">
+  <Hero title="Partnerships that bring practical<br />technology education to your community.">
     <Fragment slot="lead">
-      <p>Provincial, federal, and corporate programs are funding digital-skills and AI training right now. We help you find the funding that fits, handle the application, and deliver a program your community genuinely benefits from — often at little or no cost.</p>
+      <p>Rize partners with community organizations, nonprofits, and other trusted groups to deliver workshops, series, and related support that help people build real confidence with technology. In many cases, we also help identify funding opportunities that can make the work possible at little or no cost to the organization or participants.</p>
     </Fragment>
     <Fragment slot="actions">
-      <Button href="/book">Get in Touch</Button>
+      <Button href="/book">Talk About a Partnership</Button>
+      <Button href="/book#intake" variant="secondary">Book a Discovery Call</Button>
     </Fragment>
   </Hero>
 
-  <section class="container-wide py-16 md:py-24">
-    <SectionHeading title="How funded partnerships work.">
-      <p>You bring the community. We bring the program, the facilitation, and the funding strategy — so the cost lands on a grant, not on your budget.</p>
-    </SectionHeading>
-    <div class="grid gap-6 md:grid-cols-3">
-      {model.map((m) => (
-        <div class="h-full rounded-[14px] border-2 border-ink bg-ink p-6 text-cream">
-          <div class="flex items-center gap-4">
-            <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", m.chip]}>
-              <Icon name={m.icon} />
-            </span>
-            <h3 class="text-h3">{m.title}</h3>
-          </div>
-          <p class="mt-4 text-body">{m.body}</p>
-        </div>
-      ))}
-    </div>
-  </section>
+  <AnchorNav anchors={[
+    { label: "Who It's For", href: '#who-its-for' },
+    { label: 'What It Includes', href: '#includes' },
+    { label: 'Funding', href: '#funding' },
+    { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Outcomes', href: '#outcomes' },
+  ]} />
 
-  <section class="container-wide py-16 md:py-24">
-    <SectionHeading title="Funding for the communities you serve.">
-      <p>Different communities have different funding available. Here is where the support tends to be strongest — we help you find the specific program that fits and apply for it.</p>
+  <section id="who-its-for" class="container-wide scroll-mt-24 py-16 md:py-24">
+    <SectionHeading eyebrow="Who It's For" title="Who partnerships are for.">
+      <p>Rize works best with organizations that already have trust and relationships in the communities they serve.</p>
     </SectionHeading>
     <div class="grid gap-6 md:grid-cols-2">
-      {fundingGroups.map((g) => (
-        <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
-          <div class="flex items-center gap-4">
-            <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipClass[g.accent]]}>
-              <Icon name={g.icon} />
-            </span>
-            <h3 class="text-h3">{g.title}</h3>
-          </div>
-          <p class="mt-4 text-body text-body-muted">{g.body}</p>
+      {partnerTypes.map((p) => (
+        <div class="flex h-full items-center gap-4 rounded-[14px] border-2 border-ink bg-white p-6">
+          <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipClass[p.accent]]}>
+            <Icon name={p.icon} />
+          </span>
+          <p class="text-body-lg font-bold text-ink">{p.label}</p>
         </div>
       ))}
     </div>
-    <p class="mt-8 max-w-3xl text-body-lg font-bold text-ink">Programs change constantly. We track what is currently open and match it to your community — you do not have to keep up with it yourself.</p>
-  </section>
-
-  <section class="container-wide py-16 md:py-24">
-    <div class="mb-10 grid gap-10 md:grid-cols-2 md:items-center">
-      <SectionHeading title="Built around your team and your community.">
-        <p>We do not arrive with a fixed curriculum and hope it lands. We work alongside your staff — including the people who know your community best — so every session fits the people in the room.</p>
-      </SectionHeading>
-      <Photo
-        src={communityPlanning}
-        alt="A community group gathered around a table, planning a program together on paper"
-        class="aspect-[4/3]"
-      />
-    </div>
-    <div class="grid gap-6 md:grid-cols-2">
-      {team.map((t, i) => (
-        <div class="h-full rounded-[14px] border-2 border-ink bg-white p-6">
-          <div class="flex items-center gap-4">
-            <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", i % 2 === 0 ? chipClass.red : chipClass.ink]}>
-              <Icon name={t.icon} />
-            </span>
-            <h3 class="text-h3">{t.title}</h3>
-          </div>
-          <p class="mt-4 text-body text-body-muted">{t.body}</p>
-        </div>
-      ))}
+    <div class="mt-8 rounded-[14px] border-2 border-ink bg-ink p-8 text-cream md:p-10">
+      <p class="text-body-lg">You bring the community, the trust, and the local knowledge. Rize brings the curriculum, facilitation, technology guidance, and partnership support needed to deliver something genuinely useful.</p>
     </div>
   </section>
 
-  <section class="container-wide py-16 md:py-24">
-    <div class="mb-10 grid gap-10 md:grid-cols-2 md:items-center">
-      <SectionHeading title="Grant writing assistance.">
-        <p>We help organizations identify the provincial and federal funding available for digital skills training and AI upskilling — and assist with the application process. This service is often what makes a funded partnership possible in the first place.</p>
+  <section id="includes" class="container-wide scroll-mt-24 py-16 md:py-24">
+    <SectionHeading eyebrow="What It Includes" title="What partnership can include.">
+      <p>Partnerships can be as light or as deep as the context calls for.</p>
+    </SectionHeading>
+    <div class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+      <h3 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">Core partnership components</h3>
+      <div class="mt-5"><IconList items={components} /></div>
+    </div>
+  </section>
+
+  <section id="funding" class="container-wide scroll-mt-24 py-16 md:py-24">
+    <div class="grid gap-10 md:grid-cols-2 md:items-center">
+      <SectionHeading eyebrow="Funding" title="Funding and affordability.">
+        <p>Many organizations want to deliver this kind of training but assume it will be out of reach. In practice, some community-focused digital skills and AI upskilling work can be supported through existing provincial or federal funding streams, depending on the audience, geography, and program goals.</p>
       </SectionHeading>
       <Photo
         src={grantPlanning}
-        alt="Two colleagues reviewing documents and a laptop together at a work table"
+        alt="Two colleagues reviewing a grant application together at a work table"
         class="aspect-[4/3]"
       />
     </div>
-    <div class="grid gap-6 md:grid-cols-2">
-      {grantHelp.map((h) => (
-        <div class="flex h-full items-center gap-4 rounded-[14px] border-2 border-ink bg-white p-6">
-          <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipClass[h.accent]]}>
-            <Icon name={h.icon} />
-          </span>
-          <p class="text-body-lg font-bold text-ink">{h.text}</p>
-        </div>
-      ))}
+    <div class="mt-8 rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+      <h3 class="text-eyebrow font-bold uppercase tracking-[0.14em] text-brand-red">What Rize can help with</h3>
+      <div class="mt-5"><IconList items={fundingHelp} /></div>
     </div>
   </section>
 
-  <section class="container-wide py-16 md:py-24">
-    <SectionHeading title="How working with us works.">
-      <p>Simple and low-friction from the first conversation to the last session.</p>
+  <section id="how-it-works" class="container-wide scroll-mt-24 py-16 md:py-24">
+    <SectionHeading eyebrow="How It Works" title="How it works.">
+      <p>Simple and low-friction, from the first conversation to the last session.</p>
     </SectionHeading>
     <Steps steps={steps} />
   </section>
 
-  <section class="container-wide py-16 md:py-24">
-    <SectionHeading title="Who we work with." />
-    <div class="grid gap-6 md:grid-cols-2">
-      {orgTypes.map((o) => (
-        <div class="flex h-full items-center gap-4 rounded-[14px] border-2 border-ink bg-white p-6">
-          <span class:list={["flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-3xl", chipClass[o.accent]]}>
-            <Icon name={o.icon} />
-          </span>
-          <p class="text-body-lg font-bold text-ink">{o.label}</p>
+  <section id="outcomes" class="container-wide scroll-mt-24 py-16 md:py-24">
+    <div class="grid gap-10 md:grid-cols-2 md:items-center">
+      <Photo
+        src={communityPlanning}
+        alt="A community group planning a program together around a table"
+        class="aspect-[4/3] md:order-last"
+      />
+      <div>
+        <SectionHeading eyebrow="Outcomes" title="What partners walk away with." />
+        <div class="rounded-[14px] border-2 border-ink bg-white p-6 md:p-8">
+          <IconList items={outcomes} />
         </div>
-      ))}
+      </div>
     </div>
   </section>
 
-  <CTASection title="Let's find the funding for your community.">
+  <section class="container-wide pb-16 md:pb-24">
+    <div class="rounded-[14px] border-2 border-ink bg-brand-gold p-8 text-ink md:p-12">
+      <h2 class="text-h2">Why this model works.</h2>
+      <p class="mt-6 max-w-3xl text-body-lg">People learn best in places where they already feel supported. Community organizations understand their people, their barriers, and their goals. Rize's role is to bring practical technology education into those spaces in a way that feels useful, respectful, and grounded in real life.</p>
+    </div>
+  </section>
+
+  <CTASection title="Start the conversation.">
     <Fragment slot="body">
-      <p>Tell us about your community and we will help you find the funding and the program to match.</p>
+      <p>If you are interested in a workshop, a series, a funded partnership, or a broader implementation project, we would love to hear from you.</p>
       <p class="mt-4"><a href="mailto:holler@weallrize.ca" class="underline hover:no-underline">holler@weallrize.ca</a></p>
     </Fragment>
     <Fragment slot="actions">
-      <Button href="/book">Get in Touch</Button>
+      <Button href="/book">Talk About a Partnership</Button>
+      <Button href="/book#intake" variant="secondary">Book a Discovery Call</Button>
     </Fragment>
   </CTASection>
 </BaseLayout>
